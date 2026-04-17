@@ -344,7 +344,7 @@
       </tr>
       <tr>
         <th>所在地</th>
-        <td>千葉県千葉市美浜区</td>
+        <td id="address-full">千葉県千葉市美浜区幸町２−１６−１３−５０５</td>
       </tr>
       <tr>
         <th>事業内容</th>
@@ -386,5 +386,13 @@
   <p>&copy; 2026 合同会社まなびの森教育研究所 All Rights Reserved.</p>
 </footer>
 
+<script>
+  // 2026年5月1日0時以降は住所を非表示
+  var hideAfter = new Date('2026-05-01T00:00:00+09:00');
+  if (new Date() >= hideAfter) {
+    var el = document.getElementById('address-full');
+    if (el) el.textContent = '千葉県千葉市美浜区';
+  }
+</script>
 </body>
 </html>
