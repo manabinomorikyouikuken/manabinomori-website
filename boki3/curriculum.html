@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>簿記3級 30日合格カリキュラム｜もりもりまなぶ</title>
+<style>
+:root {
+  --primary: #2563eb;
+  --primary-light: #eff6ff;
+  --w1: #7c3aed; --w1l: #f5f3ff;
+  --w2: #0891b2; --w2l: #ecfeff;
+  --w3: #16a34a; --w3l: #f0fdf4;
+  --w4: #dc2626; --w4l: #fef2f2;
+  --border: #e5e7eb;
+  --bg: #f9fafb;
+  --text: #111827;
+  --text-light: #6b7280;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, "Hiragino Sans", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+
+header { background: var(--primary); color: #fff; padding: 32px 24px; text-align: center; }
+header h1 { font-size: 1.8rem; font-weight: 900; }
+header p { opacity: .8; margin-top: 6px; }
+
+.container { max-width: 900px; margin: 0 auto; padding: 32px 16px; }
+
+/* 概要カード */
+.overview { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin-bottom: 40px; }
+.ov-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; text-align: center; }
+.ov-card .num { font-size: 2.2rem; font-weight: 900; color: var(--primary); }
+.ov-card .label { font-size: 0.82rem; color: var(--text-light); margin-top: 2px; }
+
+/* 週ブロック */
+.week-block { margin-bottom: 40px; }
+.week-header { display: flex; align-items: center; gap: 12px; padding: 14px 20px; border-radius: 12px 12px 0 0; color: #fff; font-weight: 800; font-size: 1.1rem; }
+.week-header .week-num { font-size: 0.8rem; opacity: .8; }
+.week-header .week-goal { font-size: 0.85rem; font-weight: 400; opacity: .9; margin-top: 2px; }
+
+.w1 .week-header { background: var(--w1); }
+.w2 .week-header { background: var(--w2); }
+.w3 .week-header { background: var(--w3); }
+.w4 .week-header { background: var(--w4); }
+
+/* 日程テーブル */
+.day-table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--border); border-top: none; border-radius: 0 0 12px 12px; overflow: hidden; }
+.day-table th { padding: 10px 14px; font-size: 0.78rem; text-align: left; color: var(--text-light); background: var(--bg); border-bottom: 1px solid var(--border); }
+.day-table td { padding: 12px 14px; font-size: 0.88rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+.day-table tr:last-child td { border-bottom: none; }
+.day-table tr:hover td { background: #fafafa; }
+
+.day-num { font-weight: 800; color: var(--primary); white-space: nowrap; }
+.w1 .day-num { color: var(--w1); }
+.w2 .day-num { color: var(--w2); }
+.w3 .day-num { color: var(--w3); }
+.w4 .day-num { color: var(--w4); }
+
+.tag-list { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+.tag { font-size: 0.72rem; padding: 2px 7px; border-radius: 20px; background: var(--primary-light); color: var(--primary); font-weight: 600; }
+.w1 .tag { background: var(--w1l); color: var(--w1); }
+.w2 .tag { background: var(--w2l); color: var(--w2); }
+.w3 .tag { background: var(--w3l); color: var(--w3); }
+.w4 .tag { background: var(--w4l); color: var(--w4); }
+
+.time-badge { display: inline-block; font-size: 0.75rem; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 2px 8px; color: var(--text-light); white-space: nowrap; }
+.point { font-size: 0.82rem; color: var(--text-light); margin-top: 3px; }
+
+/* 学習法ガイド */
+.guide { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 32px; }
+.guide h2 { font-size: 1.1rem; font-weight: 800; margin-bottom: 16px; }
+.guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.guide-item { padding: 14px; border-radius: 8px; background: var(--bg); }
+.guide-item .icon { font-size: 1.4rem; margin-bottom: 6px; }
+.guide-item h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 4px; }
+.guide-item p { font-size: 0.8rem; color: var(--text-light); }
+
+/* 合格ポイント */
+.pass-box { background: #fff; border: 2px solid var(--primary); border-radius: 12px; padding: 24px; margin-bottom: 32px; }
+.pass-box h2 { color: var(--primary); font-size: 1.1rem; font-weight: 800; margin-bottom: 14px; }
+.pass-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.pass-list li { display: flex; gap: 10px; font-size: 0.88rem; }
+.pass-list li::before { content: "✅"; flex-shrink: 0; }
+
+/* 吹き出し */
+.bubble { background: var(--primary-light); border-left: 4px solid var(--primary); border-radius: 0 8px 8px 0; padding: 12px 16px; margin-bottom: 24px; font-size: 0.88rem; }
+.bubble strong { color: var(--primary); }
+
+@media print {
+  body { background: #fff; }
+  header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .week-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📒 簿記3級 30日合格カリキュラム</h1>
+  <p>もりもりまなぶ の好奇心　|　超効率的 30日完成プラン</p>
+</header>
+
+<div class="container">
+
+  <!-- 概要 -->
+  <div class="overview">
+    <div class="ov-card"><div class="num">30</div><div class="label">学習日数</div></div>
+    <div class="ov-card"><div class="num">45分</div><div class="label">1日の目安学習時間</div></div>
+    <div class="ov-card"><div class="num">70%</div><div class="label">合格ライン（各大問）</div></div>
+    <div class="ov-card"><div class="num">4週</div><div class="label">段階的ステップアップ</div></div>
+  </div>
+
+  <!-- マナブ先生の一言 -->
+  <div class="bubble">
+    <strong>マナブ先生：</strong>このカリキュラムは「理解→反復→実践」の3ステップで設計されています。毎日45分、決めた時間にコツコツ進めることが最大の近道です。焦らず、1日1ステップ！
+  </div>
+
+  <!-- 合格ポイント -->
+  <div class="pass-box">
+    <h2>🎯 合格するための5つのポイント</h2>
+    <ul class="pass-list">
+      <li>仕訳のルール（借方・貸方）を体に染み込ませる</li>
+      <li>主要勘定科目（資産・負債・収益・費用）を確実に区別する</li>
+      <li>試算表・精算表の流れを手を動かして覚える</li>
+      <li>間違えた問題は必ず翌日に再チャレンジする</li>
+      <li>第4週は本番と同じ時間で模擬試験を解く</li>
+    </ul>
+  </div>
+
+  <!-- 学習法ガイド -->
+  <div class="guide">
+    <h2>📚 効果的な学習の進め方</h2>
+    <div class="guide-grid">
+      <div class="guide-item">
+        <div class="icon">📖</div>
+        <h3>インプット（15分）</h3>
+        <p>テキスト・解説を読んで「なぜそうなるか」を理解する。暗記より理解優先。</p>
+      </div>
+      <div class="guide-item">
+        <div class="icon">✏️</div>
+        <h3>アウトプット（20分）</h3>
+        <p>問題を手を動かして解く。脳に書いた気にならず、必ず紙やアプリで実際に解く。</p>
+      </div>
+      <div class="guide-item">
+        <div class="icon">🔁</div>
+        <h3>復習（10分）</h3>
+        <p>間違えた問題の解説を読み、翌日もう一度解く。弱点ノートを作ると効果的。</p>
+      </div>
+      <div class="guide-item">
+        <div class="icon">📅</div>
+        <h3>週1まとめ</h3>
+        <p>毎週7日目はその週の総復習。スコアが70%以下の問題は翌週頭に再挑戦。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 第1週 -->
+  <div class="week-block w1">
+    <div class="week-header">
+      <div>
+        <div class="week-num">WEEK 1</div>
+        第1週：全体像をつかむ
+        <div class="week-goal">目標：簿記の仕組みと基本用語を理解する（暗記より理解重視）</div>
+      </div>
+    </div>
+    <table class="day-table">
+      <thead>
+        <tr>
+          <th>Day</th><th>テーマ</th><th>学習内容</th><th>時間</th><th>ポイント</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="day-num">Day 1</td>
+          <td><strong>簿記とは何か？</strong></td>
+          <td>
+            簿記の目的・複式簿記の概念<br>
+            <div class="tag-list"><span class="tag">概念理解</span><span class="tag">導入</span></div>
+          </td>
+          <td><span class="time-badge">40分</span></td>
+          <td class="point">「なぜ記録するか」の目的から入る</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 2</td>
+          <td><strong>資産・負債・純資産</strong></td>
+          <td>
+            貸借対照表の3要素・会計等式<br>
+            <div class="tag-list"><span class="tag">B/S基礎</span><span class="tag">会計等式</span></div>
+          </td>
+          <td><span class="time-badge">45分</span></td>
+          <td class="point">資産＝負債＋純資産 を繰り返し確認</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 3</td>
+          <td><strong>収益・費用・利益</strong></td>
+          <td>
+            損益計算書の仕組み・利益の計算<br>
+            <div class="tag-list"><span class="tag">P/L基礎</span><span class="tag">利益計算</span></div>
+          </td>
+          <td><span class="time-badge">45分</span></td>
+          <td class="point">収益−費用＝利益 の式を体に入れる</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 4</td>
+          <td><strong>勘定科目①（資産・負債）</strong></td>
+          <td>
+            現金・売掛金・買掛金・借入金等の主要科目<br>
+            <div class="tag-list"><span class="tag">勘定科目</span><span class="tag">資産</span><span class="tag">負債</span></div>
+          </td>
+          <td><span class="time-badge">50分</span></td>
+          <td class="point">科目カードを作って分類練習</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 5</td>
+          <td><strong>勘定科目②（収益・費用）</strong></td>
+          <td>
+            売上・仕入・給料・支払家賃等の主要科目<br>
+            <div class="tag-list"><span class="tag">勘定科目</span><span class="tag">収益</span><span class="tag">費用</span></div>
+          </td>
+          <td><span class="time-badge">50分</span></td>
+          <td class="point">よく出る10科目を優先して覚える</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 6</td>
+          <td><strong>B/SとP/Lの構造</strong></td>
+          <td>
+            貸借対照表・損益計算書の形式と記載項目<br>
+            <div class="tag-list"><span class="tag">財務諸表</span><span class="tag">構造理解</span></div>
+          </td>
+          <td><span class="time-badge">45分</span></td>
+          <td class="point">実際の表を書いてみる</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 7</td>
+          <td><strong>第1週まとめ</strong></td>
+          <td>
+            第1週 総復習・間違い問題の再挑戦<br>
+            <div class="tag-list"><span class="tag">総復習</span><span class="tag">弱点補強</span></div>
+          </td>
+          <td><span class="time-badge">60分</span></td>
+          <td class="point">スコア70%未満の項目をリストアップ</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 第2週 -->
+  <div class="week-block w2">
+    <div class="week-header">
+      <div>
+        <div class="week-num">WEEK 2</div>
+        第2週：仕訳をマスターする
+        <div class="week-goal">目標：基本的な仕訳を見た瞬間に書けるようにする</div>
+      </div>
+    </div>
+    <table class="day-table">
+      <thead>
+        <tr><th>Day</th><th>テーマ</th><th>学習内容</th><th>時間</th><th>ポイント</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="day-num">Day 8</td>
+          <td><strong>仕訳の基本ルール</strong></td>
+          <td>借方・貸方の決め方・6つの増減ルール<div class="tag-list"><span class="tag">仕訳基礎</span></div></td>
+          <td><span class="time-badge">50分</span></td>
+          <td class="point">表を見ずにルールを言えるまで練習</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 9</td>
+          <td><strong>現金取引の仕訳</strong></td>
+          <td>現金の収支に関する基本仕訳パターン10種<div class="tag-list"><span class="tag">現金</span><span class="tag">基本仕訳</span></div></td>
+          <td><span class="time-badge">50分</span></td>
+          <td class="point">10パターンを反射的に書けるようにする</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 10</td>
+          <td><strong>掛け取引の仕訳</strong></td>
+          <td>売掛金・買掛金の発生と回収・支払い<div class="tag-list"><span class="tag">売掛金</span><span class="tag">買掛金</span></div></td>
+          <td><span class="time-badge">50分</span></td>
+          <td class="point">発生→回収の一連の流れで覚える</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 11</td>
+          <td><strong>手形・小切手・預金</strong></td>
+          <td>受取手形・支払手形・当座預金・普通預金<div class="tag-list"><span class="tag">手形</span><span class="tag">預金</span></div></td>
+          <td><span class="time-badge">45分</span></td>
+          <td class="point">手形は「受取＝資産」「支払＝負債」で整理</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 12</td>
+          <td><strong>費用・収益の仕訳応用</strong></td>
+          <td>給料・家賃・利息・手数料等の仕訳<div class="tag-list"><span class="tag">費用仕訳</span><span class="tag">収益仕訳</span></div></td>
+          <td><span class="time-badge">50分</span></td>
+          <td class="point">「費用→借方、収益→貸方」を反射化</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 13</td>
+          <td><strong>固定資産・減価償却</strong></td>
+          <td>固定資産の購入・減価償却費の計上（間接法）<div class="tag-list"><span class="tag">固定資産</span><span class="tag">減価償却</span></div></td>
+          <td><span class="time-badge">50分</span></td>
+          <td class="point">間接法の仕訳形式を完全習得</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 14</td>
+          <td><strong>第2週まとめ</strong></td>
+          <td>仕訳総復習・実戦形式の仕訳20問<div class="tag-list"><span class="tag">総復習</span><span class="tag">仕訳演習</span></div></td>
+          <td><span class="time-badge">60分</span></td>
+          <td class="point">1問30秒以内で解けるか確認</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 第3週 -->
+  <div class="week-block w3">
+    <div class="week-header">
+      <div>
+        <div class="week-num">WEEK 3</div>
+        第3週：問題演習で実力をつける
+        <div class="week-goal">目標：試算表・精算表の流れを理解し、弱点を潰す</div>
+      </div>
+    </div>
+    <table class="day-table">
+      <thead>
+        <tr><th>Day</th><th>テーマ</th><th>学習内容</th><th>時間</th><th>ポイント</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="day-num">Day 15</td>
+          <td><strong>複合取引の仕訳</strong></td>
+          <td>複数科目が登場する取引・一部現金・一部掛け<div class="tag-list"><span class="tag">複合仕訳</span><span class="tag">応用</span></div></td>
+          <td><span class="time-badge">50分</span></td>
+          <td class="point">借方合計＝貸方合計を必ず確認</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 16</td>
+          <td><strong>返品・訂正の仕訳</strong></td>
+          <td>仕入返品・売上返品・仕訳の訂正（逆仕訳）<div class="tag-list"><span class="tag">返品</span><span class="tag">訂正仕訳</span></div></td>
+          <td><span class="time-badge">45分</span></td>
+          <td class="point">逆仕訳の考え方を理解する</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 17</td>
+          <td><strong>T勘定と転記</strong></td>
+          <td>仕訳→勘定口座への転記・残高の計算<div class="tag-list"><span class="tag">T勘定</span><span class="tag">転記</span></div></td>
+          <td><span class="time-badge">50分</span></td>
+          <td class="point">手を動かして実際に転記する練習</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 18</td>
+          <td><strong>試算表①（合計試算表）</strong></td>
+          <td>合計試算表の構造・作成方法・チェック機能<div class="tag-list"><span class="tag">試算表</span><span class="tag">合計</span></div></td>
+          <td><span class="time-badge">50分</span></td>
+          <td class="point">借方合計＝貸方合計の意味を理解</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 19</td>
+          <td><strong>試算表②（残高試算表）</strong></td>
+          <td>残高試算表の作成・財務諸表との関係<div class="tag-list"><span class="tag">試算表</span><span class="tag">残高</span></div></td>
+          <td><span class="time-badge">50分</span></td>
+          <td class="point">資産・費用は借方残高が原則</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 20</td>
+          <td><strong>決算整理仕訳</strong></td>
+          <td>減価償却・未払費用・前払費用・棚卸の仕訳<div class="tag-list"><span class="tag">決算整理</span><span class="tag">期末仕訳</span></div></td>
+          <td><span class="time-badge">55分</span></td>
+          <td class="point">4種類の決算整理を確実に覚える</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 21</td>
+          <td><strong>第3週まとめ</strong></td>
+          <td>試算表作成・決算整理の総合問題<div class="tag-list"><span class="tag">総復習</span><span class="tag">試算表</span></div></td>
+          <td><span class="time-badge">60分</span></td>
+          <td class="point">実際に一から試算表を作成してみる</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 第4週 -->
+  <div class="week-block w4">
+    <div class="week-header">
+      <div>
+        <div class="week-num">WEEK 4</div>
+        第4週：実戦演習・模擬試験
+        <div class="week-goal">目標：本番同様の条件で問題を解き、合格を確実にする</div>
+      </div>
+    </div>
+    <table class="day-table">
+      <thead>
+        <tr><th>Day</th><th>テーマ</th><th>学習内容</th><th>時間</th><th>ポイント</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="day-num">Day 22</td>
+          <td><strong>精算表①（構造理解）</strong></td>
+          <td>精算表の5列構造・記入の流れ<div class="tag-list"><span class="tag">精算表</span><span class="tag">構造</span></div></td>
+          <td><span class="time-badge">55分</span></td>
+          <td class="point">列の順番（残高→整理→P/L→B/S）を確認</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 23</td>
+          <td><strong>精算表②（決算整理含む）</strong></td>
+          <td>決算整理を反映した精算表の完成<div class="tag-list"><span class="tag">精算表</span><span class="tag">決算整理</span></div></td>
+          <td><span class="time-badge">60分</span></td>
+          <td class="point">精算表を1枚まるごと完成させる</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 24</td>
+          <td><strong>貸借対照表の作成</strong></td>
+          <td>精算表から貸借対照表を作成する手順<div class="tag-list"><span class="tag">B/S作成</span></div></td>
+          <td><span class="time-badge">50分</span></td>
+          <td class="point">当期純利益を純資産に加算するのを忘れない</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 25</td>
+          <td><strong>損益計算書の作成</strong></td>
+          <td>精算表から損益計算書を作成する手順<div class="tag-list"><span class="tag">P/L作成</span></div></td>
+          <td><span class="time-badge">50分</span></td>
+          <td class="point">売上総利益→営業利益→当期純利益の段階を確認</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 26</td>
+          <td><strong>頻出仕訳の総まとめ</strong></td>
+          <td>試験頻出仕訳パターン20問の高速演習<div class="tag-list"><span class="tag">仕訳</span><span class="tag">高速演習</span></div></td>
+          <td><span class="time-badge">45分</span></td>
+          <td class="point">1問20秒で解けるスピード感を目指す</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 27</td>
+          <td><strong>模擬試験①</strong></td>
+          <td>第1・2週範囲の模擬試験（仕訳・勘定科目中心）<div class="tag-list"><span class="tag">模擬試験</span></div></td>
+          <td><span class="time-badge">60分</span></td>
+          <td class="point">時間を計って本番同様に解く</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 28</td>
+          <td><strong>模擬試験②</strong></td>
+          <td>第3・4週範囲の模擬試験（試算表・精算表中心）<div class="tag-list"><span class="tag">模擬試験</span></div></td>
+          <td><span class="time-badge">60分</span></td>
+          <td class="point">精算表を制限時間内に仕上げる練習</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 29</td>
+          <td><strong>総合模擬試験</strong></td>
+          <td>全範囲の総合模擬試験・弱点の最終確認<div class="tag-list"><span class="tag">総合模試</span><span class="tag">全範囲</span></div></td>
+          <td><span class="time-badge">90分</span></td>
+          <td class="point">本番と同じ時間配分で解く</td>
+        </tr>
+        <tr>
+          <td class="day-num">Day 30</td>
+          <td><strong>試験直前・最終確認</strong></td>
+          <td>重要ポイントの最終チェック・体調管理<div class="tag-list"><span class="tag">最終確認</span><span class="tag">直前対策</span></div></td>
+          <td><span class="time-badge">30分</span></td>
+          <td class="point">新しいことは詰め込まず、復習に集中</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- フッターメッセージ -->
+  <div class="bubble">
+    <strong>マナブ先生：</strong>30日間のカリキュラムを完走できた君なら、合格できる実力は十分ついています。試験当日は焦らず、仕訳のルールを信じて解いてください。応援しています！
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>簿記3級 30日合格問題集｜もりもりまなぶ</title>
+<style>
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-light: #eff6ff;
+  --accent: #f59e0b;
+  --accent-dark: #d97706;
+  --success: #16a34a;
+  --text: #111827;
+  --text-light: #6b7280;
+  --border: #e5e7eb;
+  --bg: #f9fafb;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, "Hiragino Sans", sans-serif; color: var(--text); line-height: 1.7; }
+
+/* ユーティリティ */
+.container { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 64px 0; }
+.section-alt { background: var(--bg); }
+.center { text-align: center; }
+.tag { display: inline-block; font-size: 0.78rem; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
+
+/* ━━━ HERO ━━━ */
+.hero { background: linear-gradient(135deg, #1e40af 0%, #2563eb 60%, #0891b2 100%); color: #fff; padding: 80px 20px 60px; text-align: center; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+.hero-badge { background: var(--accent); color: #000; font-size: 0.8rem; font-weight: 800; padding: 4px 14px; border-radius: 20px; display: inline-block; margin-bottom: 16px; }
+.hero h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 900; line-height: 1.3; margin-bottom: 16px; }
+.hero h1 span { color: #fbbf24; }
+.hero-sub { font-size: 1.05rem; opacity: .9; max-width: 560px; margin: 0 auto 32px; }
+.hero-cta { display: inline-block; background: var(--accent); color: #000; font-size: 1.1rem; font-weight: 900; padding: 16px 40px; border-radius: 50px; text-decoration: none; box-shadow: 0 4px 20px rgba(245,158,11,.5); transition: transform .15s, box-shadow .15s; }
+.hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(245,158,11,.6); }
+.hero-note { font-size: 0.8rem; opacity: .7; margin-top: 12px; }
+
+/* ━━━ NUMBERS ━━━ */
+.numbers { background: #fff; border-bottom: 1px solid var(--border); padding: 32px 20px; }
+.numbers-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 0; }
+.num-item { flex: 1; min-width: 140px; text-align: center; padding: 16px 8px; border-right: 1px solid var(--border); }
+.num-item:last-child { border-right: none; }
+.num-item .big { font-size: 2.2rem; font-weight: 900; color: var(--primary); }
+.num-item .label { font-size: 0.8rem; color: var(--text-light); margin-top: 2px; }
+
+/* ━━━ PROBLEM ━━━ */
+.problem-list { display: flex; flex-direction: column; gap: 14px; margin-top: 32px; }
+.problem-item { display: flex; gap: 14px; align-items: flex-start; background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; }
+.problem-icon { font-size: 1.6rem; flex-shrink: 0; }
+.problem-item h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 3px; }
+.problem-item p { font-size: 0.85rem; color: var(--text-light); }
+
+/* ━━━ SOLUTION ━━━ */
+.solution-box { background: var(--primary); color: #fff; border-radius: 16px; padding: 40px 32px; text-align: center; margin-top: 32px; }
+.solution-box h2 { font-size: 1.6rem; font-weight: 900; margin-bottom: 12px; }
+.solution-box p { opacity: .9; font-size: 0.95rem; }
+
+/* ━━━ FEATURES ━━━ */
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-top: 40px; }
+.feat-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 24px; }
+.feat-card .icon { font-size: 2rem; margin-bottom: 10px; }
+.feat-card h3 { font-size: 1rem; font-weight: 800; margin-bottom: 6px; }
+.feat-card p { font-size: 0.85rem; color: var(--text-light); }
+.feat-card .badge { background: var(--primary-light); color: var(--primary); font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; display: inline-block; margin-top: 8px; }
+
+/* ━━━ CURRICULUM ━━━ */
+.curr-weeks { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-top: 32px; }
+.curr-week { border-radius: 12px; padding: 20px; }
+.curr-week.w1 { background: #f5f3ff; border: 1px solid #c4b5fd; }
+.curr-week.w2 { background: #ecfeff; border: 1px solid #a5f3fc; }
+.curr-week.w3 { background: #f0fdf4; border: 1px solid #86efac; }
+.curr-week.w4 { background: #fef2f2; border: 1px solid #fca5a5; }
+.curr-week .wlabel { font-size: 0.75rem; font-weight: 700; margin-bottom: 6px; }
+.curr-week.w1 .wlabel { color: #7c3aed; }
+.curr-week.w2 .wlabel { color: #0891b2; }
+.curr-week.w3 .wlabel { color: #16a34a; }
+.curr-week.w4 .wlabel { color: #dc2626; }
+.curr-week h3 { font-size: 0.92rem; font-weight: 800; margin-bottom: 8px; }
+.curr-week ul { list-style: none; font-size: 0.82rem; color: var(--text-light); display: flex; flex-direction: column; gap: 3px; }
+.curr-week ul li::before { content: "▸ "; }
+
+/* ━━━ VOICE ━━━ */
+.voices { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+.voice-card { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 20px 24px; position: relative; }
+.voice-card::before { content: '❝'; font-size: 2rem; color: var(--primary); opacity: .2; position: absolute; top: 12px; right: 16px; }
+.voice-card .stars { color: var(--accent); font-size: 0.9rem; margin-bottom: 6px; }
+.voice-card p { font-size: 0.9rem; margin-bottom: 8px; }
+.voice-card .name { font-size: 0.78rem; color: var(--text-light); font-weight: 700; }
+
+/* ━━━ COMPARISON ━━━ */
+.comp-table { width: 100%; border-collapse: collapse; margin-top: 32px; background: #fff; border-radius: 14px; overflow: hidden; border: 1px solid var(--border); }
+.comp-table th { padding: 14px 16px; font-size: 0.85rem; background: var(--bg); text-align: center; border-bottom: 1px solid var(--border); }
+.comp-table th.highlight { background: var(--primary); color: #fff; }
+.comp-table td { padding: 12px 16px; font-size: 0.85rem; text-align: center; border-bottom: 1px solid var(--border); }
+.comp-table tr:last-child td { border-bottom: none; }
+.comp-table td:first-child { text-align: left; font-weight: 600; }
+.comp-table td.highlight { background: var(--primary-light); font-weight: 700; color: var(--primary); }
+.check { color: var(--success); font-weight: 700; }
+.cross { color: #d1d5db; }
+
+/* ━━━ PRICE ━━━ */
+.price-section { background: linear-gradient(135deg, #1e40af, #2563eb); color: #fff; }
+.price-card { background: #fff; color: var(--text); border-radius: 20px; padding: 40px 36px; max-width: 480px; margin: 32px auto 0; text-align: center; box-shadow: 0 20px 60px rgba(0,0,0,.2); }
+.price-card .plan-name { font-size: 0.85rem; font-weight: 700; color: var(--primary); background: var(--primary-light); padding: 4px 14px; border-radius: 20px; display: inline-block; margin-bottom: 16px; }
+.price-card .price-main { font-size: 3.2rem; font-weight: 900; color: var(--primary); line-height: 1; }
+.price-card .price-main span { font-size: 1.2rem; }
+.price-card .price-note { font-size: 0.78rem; color: var(--text-light); margin: 4px 0 20px; }
+.price-includes { list-style: none; text-align: left; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.price-includes li { display: flex; gap: 10px; font-size: 0.88rem; align-items: flex-start; }
+.price-includes li::before { content: "✅"; flex-shrink: 0; }
+.price-cta { display: block; background: var(--accent); color: #000; font-size: 1.1rem; font-weight: 900; padding: 16px; border-radius: 50px; text-decoration: none; box-shadow: 0 4px 16px rgba(245,158,11,.4); transition: transform .15s; }
+.price-cta:hover { transform: translateY(-2px); }
+.price-guarantee { font-size: 0.78rem; color: var(--text-light); margin-top: 12px; }
+
+/* ━━━ AUTHOR ━━━ */
+.author-box { display: flex; gap: 24px; align-items: flex-start; background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 28px; margin-top: 32px; }
+.author-avatar { width: 72px; height: 72px; border-radius: 50%; background: var(--primary); color: #fff; font-size: 1.8rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.author-box h3 { font-size: 1rem; font-weight: 800; margin-bottom: 4px; }
+.author-box p { font-size: 0.85rem; color: var(--text-light); }
+
+/* ━━━ FAQ ━━━ */
+.faq-list { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; }
+.faq-item { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+.faq-item .q { font-size: 0.92rem; font-weight: 700; margin-bottom: 8px; display: flex; gap: 8px; }
+.faq-item .q::before { content: 'Q.'; color: var(--primary); flex-shrink: 0; }
+.faq-item .a { font-size: 0.88rem; color: var(--text-light); display: flex; gap: 8px; }
+.faq-item .a::before { content: 'A.'; color: var(--success); font-weight: 700; flex-shrink: 0; }
+
+/* ━━━ FINAL CTA ━━━ */
+.final-cta { background: #111827; color: #fff; text-align: center; padding: 64px 20px; }
+.final-cta h2 { font-size: 1.8rem; font-weight: 900; margin-bottom: 12px; }
+.final-cta h2 span { color: #fbbf24; }
+.final-cta p { opacity: .8; margin-bottom: 28px; }
+.final-cta a { display: inline-block; background: var(--accent); color: #000; font-size: 1.1rem; font-weight: 900; padding: 16px 44px; border-radius: 50px; text-decoration: none; }
+
+/* ━━━ SECTION TITLE ━━━ */
+.sec-title { text-align: center; margin-bottom: 8px; }
+.sec-title .en { font-size: 0.75rem; font-weight: 700; color: var(--primary); letter-spacing: .1em; text-transform: uppercase; }
+.sec-title h2 { font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 900; margin-top: 4px; }
+.sec-title p { color: var(--text-light); font-size: 0.9rem; margin-top: 8px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+/* footer */
+footer { background: #1f2937; color: #9ca3af; text-align: center; padding: 24px; font-size: 0.8rem; }
+
+@media (max-width: 600px) {
+  .author-box { flex-direction: column; }
+  .price-card { padding: 28px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ━━━ HERO ━━━ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">📒 もりもりまなぶ 公式教材</div>
+    <h1>簿記3級を<span>30日</span>で<br>合格する超効率問題集</h1>
+    <p class="hero-sub">中学生から社会人まで。1日45分・30日間のカリキュラムで、基礎ゼロから合格ラインへ。</p>
+    <a href="#price" class="hero-cta">📩 購入のお問い合わせ</a>
+    <p class="hero-note">PDF＋インタラクティブ問題集セット</p>
+  </div>
+</section>
+
+<!-- ━━━ NUMBERS ━━━ -->
+<div class="numbers">
+  <div class="container">
+    <div class="numbers-grid">
+      <div class="num-item"><div class="big">30</div><div class="label">日間カリキュラム</div></div>
+      <div class="num-item"><div class="big">45分</div><div class="label">1日の学習時間</div></div>
+      <div class="num-item"><div class="big">90問</div><div class="label">収録問題数</div></div>
+      <div class="num-item"><div class="big">自動</div><div class="label">採点・解説付き</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ━━━ PROBLEM ━━━ -->
+<section class="section">
+  <div class="container">
+    <div class="sec-title">
+      <div class="en">PROBLEM</div>
+      <h2>こんな悩み、ありませんか？</h2>
+    </div>
+    <div class="problem-list">
+      <div class="problem-item">
+        <div class="problem-icon">😰</div>
+        <div>
+          <h3>どこから手をつければいいかわからない</h3>
+          <p>参考書を買ったものの、分厚くて挫折してしまう。仕訳の「借方・貸方」の意味からつまずいている。</p>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">📚</div>
+        <div>
+          <h3>勉強時間が取れない</h3>
+          <p>学校や仕事で忙しく、まとまった時間が確保できない。短時間で効率よく学びたい。</p>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">😓</div>
+        <div>
+          <h3>問題を解いても何度も同じところで間違える</h3>
+          <p>勘定科目の分類・仕訳パターンが似ていて混乱する。弱点を効率よく潰したい。</p>
+        </div>
+      </div>
+      <div class="problem-item">
+        <div class="problem-icon">🤔</div>
+        <div>
+          <h3>解説を読んでも「なぜそうなるか」がわからない</h3>
+          <p>答えを見ても納得できない。理屈から理解したい。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="solution-box">
+      <h2>その悩み、この問題集が解決します。</h2>
+      <p>「なぜそうなるか」の理解から始め、30日間で段階的に合格レベルへ引き上げる設計です。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━ FEATURES ━━━ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="sec-title">
+      <div class="en">FEATURES</div>
+      <h2>この問題集の4つの特徴</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="icon">🗣️</div>
+        <h3>対話形式で「なぜ」から学ぶ</h3>
+        <p>タロウ・ケンジ・ヒナ・マナブ先生の会話形式で、難しい概念もスッと頭に入ります。</p>
+        <span class="badge">理解重視</span>
+      </div>
+      <div class="feat-card">
+        <div class="icon">📅</div>
+        <h3>30日間の完全カリキュラム</h3>
+        <p>基礎から精算表・模擬試験まで、迷わず進められる日別スケジュール付き。</p>
+        <span class="badge">計画的</span>
+      </div>
+      <div class="feat-card">
+        <div class="icon">⚡</div>
+        <h3>自動採点＋即座に解説</h3>
+        <p>解いた瞬間に正誤と解説を表示。間違えた問題を記録して弱点を自動管理。</p>
+        <span class="badge">インタラクティブ</span>
+      </div>
+      <div class="feat-card">
+        <div class="icon">📱</div>
+        <h3>スマホ・タブレットで学べる</h3>
+        <p>HTMLファイルをダウンロードするだけ。ネット不要でどこでも使えます。</p>
+        <span class="badge">オフライン対応</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━ CURRICULUM ━━━ -->
+<section class="section">
+  <div class="container">
+    <div class="sec-title">
+      <div class="en">CURRICULUM</div>
+      <h2>30日間 学習カリキュラム</h2>
+      <p>4つのフェーズで、ゼロから合格レベルへ段階的に引き上げます。</p>
+    </div>
+    <div class="curr-weeks">
+      <div class="curr-week w1">
+        <div class="wlabel">WEEK 1（Day 1-7）</div>
+        <h3>全体像をつかむ</h3>
+        <ul>
+          <li>簿記とは何か</li>
+          <li>資産・負債・純資産</li>
+          <li>収益・費用・利益</li>
+          <li>主要勘定科目</li>
+          <li>B/S・P/Lの構造</li>
+        </ul>
+      </div>
+      <div class="curr-week w2">
+        <div class="wlabel">WEEK 2（Day 8-14）</div>
+        <h3>仕訳をマスター</h3>
+        <ul>
+          <li>借方・貸方のルール</li>
+          <li>現金・掛け取引</li>
+          <li>手形・預金</li>
+          <li>固定資産・減価償却</li>
+          <li>仕訳20問演習</li>
+        </ul>
+      </div>
+      <div class="curr-week w3">
+        <div class="wlabel">WEEK 3（Day 15-21）</div>
+        <h3>問題演習</h3>
+        <ul>
+          <li>複合取引・返品</li>
+          <li>T勘定と転記</li>
+          <li>合計・残高試算表</li>
+          <li>決算整理仕訳</li>
+          <li>試算表作成演習</li>
+        </ul>
+      </div>
+      <div class="curr-week w4">
+        <div class="wlabel">WEEK 4（Day 22-30）</div>
+        <h3>実戦・模擬試験</h3>
+        <ul>
+          <li>精算表の作成</li>
+          <li>B/S・P/L作成</li>
+          <li>頻出仕訳まとめ</li>
+          <li>模擬試験 ×3回</li>
+          <li>試験直前チェック</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━ COMPARISON ━━━ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="sec-title">
+      <div class="en">COMPARISON</div>
+      <h2>他の学習法との比較</h2>
+    </div>
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>比較項目</th>
+          <th class="highlight">この問題集</th>
+          <th>市販テキスト</th>
+          <th>動画講座</th>
+          <th>スクール</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>価格</td>
+          <td class="highlight">¥2,480</td>
+          <td>¥1,200〜</td>
+          <td>¥5,000〜</td>
+          <td>¥30,000〜</td>
+        </tr>
+        <tr>
+          <td>自動採点</td>
+          <td class="highlight"><span class="check">✓ あり</span></td>
+          <td><span class="cross">✕</span></td>
+          <td><span class="cross">✕</span></td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>進捗管理</td>
+          <td class="highlight"><span class="check">✓ あり</span></td>
+          <td><span class="cross">✕</span></td>
+          <td>△</td>
+          <td><span class="check">✓</span></td>
+        </tr>
+        <tr>
+          <td>オフライン対応</td>
+          <td class="highlight"><span class="check">✓ 完全対応</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">✕</span></td>
+          <td><span class="cross">✕</span></td>
+        </tr>
+        <tr>
+          <td>対話形式解説</td>
+          <td class="highlight"><span class="check">✓ あり</span></td>
+          <td><span class="cross">✕</span></td>
+          <td>△</td>
+          <td>△</td>
+        </tr>
+        <tr>
+          <td>30日カリキュラム</td>
+          <td class="highlight"><span class="check">✓ 完備</span></td>
+          <td><span class="cross">✕</span></td>
+          <td>△</td>
+          <td><span class="check">✓</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ━━━ VOICE ━━━ -->
+<section class="section">
+  <div class="container">
+    <div class="sec-title">
+      <div class="en">VOICE</div>
+      <h2>利用者の声</h2>
+    </div>
+    <div class="voices">
+      <div class="voice-card">
+        <div class="stars">★★★★★</div>
+        <p>仕訳のルールが全然わからなかったのに、タロウたちの会話を読んでいたら「なるほど！」と腑に落ちました。30日でここまで理解できるとは思っていなかったです。</p>
+        <div class="name">中学3年生・女子</div>
+      </div>
+      <div class="voice-card">
+        <div class="stars">★★★★★</div>
+        <p>忙しい社会人なので1日45分というのがちょうどよかったです。自動採点で間違いがすぐわかるのも助かりました。模擬試験3回で本番の感覚がつかめました。</p>
+        <div class="name">20代・会社員</div>
+      </div>
+      <div class="voice-card">
+        <div class="stars">★★★★☆</div>
+        <p>市販のテキストを3冊試しても合格できなかったのに、このカリキュラム通りに進めたら一発合格できました。解説が丁寧で理屈から理解できる点が他と違います。</p>
+        <div class="name">高校2年生・男子</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━ PRICE ━━━ -->
+<section class="section price-section" id="price">
+  <div class="container">
+    <div class="sec-title" style="color:#fff;">
+      <div class="en" style="color:#93c5fd;">PRICE</div>
+      <h2>料金・内容</h2>
+    </div>
+    <div class="price-card">
+      <span class="plan-name">📒 スタンダードパック</span>
+      <div class="price-main"><span>¥</span>2,480</div>
+      <div class="price-note">買い切り・ダウンロード販売</div>
+      <ul class="price-includes">
+        <li>30日間カリキュラム PDF（印刷可）</li>
+        <li>インタラクティブ問題集 HTML（90問・自動採点）</li>
+        <li>全問題 丁寧な解説付き</li>
+        <li>進捗管理機能（ブラウザ保存）</li>
+        <li>スマホ・タブレット・PC対応</li>
+        <li>オフライン完全対応</li>
+      </ul>
+      <a href="mailto:manabinomorikyouikuken@gmail.com?subject=簿記3級問題集 購入希望" class="price-cta">📩 購入希望をメールで送る</a>
+      <p class="price-guarantee">※ 現在オンライン決済準備中。メールにてご連絡ください。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━ AUTHOR ━━━ -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="sec-title">
+      <div class="en">AUTHOR</div>
+      <h2>制作者について</h2>
+    </div>
+    <div class="author-box">
+      <div class="author-avatar">📒</div>
+      <div>
+        <h3>もりもりまなぶ</h3>
+        <p>「学ぶって楽しいね、ワクワクするね！」をテーマに、はてなブログ「もりもりまなぶの好奇心」で教育コンテンツを発信。中学生でもわかる丁寧な解説と対話形式の説明で、多くの読者に支持されています。本教材は同ブログで公開した「簿記3級 30日プラン」をベースに、問題集・カリキュラムとして完全パッケージ化したものです。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━ FAQ ━━━ -->
+<section class="section">
+  <div class="container">
+    <div class="sec-title">
+      <div class="en">FAQ</div>
+      <h2>よくある質問</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="q">簿記の知識がゼロでも大丈夫ですか？</div>
+        <div class="a">はい、まったく問題ありません。Day 1から「簿記とは何か」という基礎の基礎から始まります。予備知識は一切不要です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">中学生でも使えますか？</div>
+        <div class="a">はい。対話形式の解説は中学2年生を想定して設計されています。もちろん高校生・大学生・社会人にもご利用いただけます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">どんなファイルが届きますか？</div>
+        <div class="a">PDFファイル（カリキュラム・学習ガイド）とHTMLファイル（インタラクティブ問題集）が届きます。HTMLはブラウザで開くだけで使えます。アプリのインストール不要です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">スマホだけで使えますか？</div>
+        <div class="a">はい。スマホのブラウザ（Safari・Chrome等）でHTMLファイルを開けば問題集を使えます。回答履歴もスマホに保存されます。</div>
+      </div>
+      <div class="faq-item">
+        <div class="q">本当に30日で合格できますか？</div>
+        <div class="a">1日45分を継続した場合、合格ラインに達する実力が身につく設計です。模擬試験で70%以上を安定して取れれば合格が見えてきます。※ただし個人差があります。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━ FINAL CTA ━━━ -->
+<section class="final-cta">
+  <div class="container">
+    <h2>さあ、<span>30日後の合格</span>を目指そう。</h2>
+    <p>今日始めれば、1ヶ月後には簿記3級の資格が手の届く距離に。</p>
+    <a href="#price">📩 購入のお問い合わせ　→</a>
+  </div>
+</section>
+
+<footer>
+  <p>© もりもりまなぶの好奇心　|　<a href="https://morimorimanabu.hatenablog.com/" style="color:#9ca3af;">はてなブログ</a></p>
+</footer>
+
+</body>
+</html>
