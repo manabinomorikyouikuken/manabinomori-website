@@ -3,410 +3,554 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="合同会社まなびの森教育研究所｜千葉県千葉市美浜区。教育コンサルティング・研修企画・自然体験学習・教育イベントを手がける教育研究所です。">
-  <title>合同会社まなびの森教育研究所</title>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "合同会社まなびの森教育研究所",
-    "alternateName": "Manabi no Mori Educational Research Institute",
-    "url": "https://tomo26600055.wixsite.com/manabinomorikyouiku",
-    "email": "manabinomorikyouikuken@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressRegion": "千葉県",
-      "addressLocality": "千葉市美浜区",
-      "addressCountry": "JP"
-    },
-    "foundingDate": "2026-04-01",
-    "description": "教育コンサルティング・研修企画・自然体験学習プログラムを手がける教育研究所",
-    "sameAs": ["http://tomo26600055.wixsite.com/manabinomorikyouiku"]
-  }
-  </script>
+  <title>合同会社まなびの森教育研究所 | 教育相談・研修・教材提供</title>
+  <meta name="description" content="合同会社まなびの森教育研究所は、千葉市を拠点に、学校・家庭・地域・教育機関向けに教育相談、研修、自然体験学習、教材企画・販売を行う教育支援会社です。">
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --green: #2e7d32;
-      --green-light: #4caf50;
-      --green-pale: #e8f5e9;
-      --brown: #5d4037;
-      --text: #333;
-      --text-light: #666;
-      --white: #fff;
-      --border: #ddd;
+    :root{
+      --bg:#f7f5ef;
+      --panel:#ffffff;
+      --ink:#1f2a1f;
+      --sub:#58635b;
+      --line:#d7ddd6;
+      --accent:#5d7c61;
+      --accent-2:#8ea38c;
+      --soft:#eef3ed;
+      --soft-2:#f4f7f3;
+      --shadow:0 10px 30px rgba(20,40,20,0.08);
+      --radius:18px;
+      --max:1120px;
     }
-
-    body {
-      font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Meiryo", sans-serif;
-      color: var(--text);
-      line-height: 1.8;
-      font-size: 16px;
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;
+      color:var(--ink);
+      background:linear-gradient(180deg,#f8f6f1 0%, #f6f8f4 100%);
+      line-height:1.8;
     }
-
-    a { color: var(--green); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* ヘッダー */
-    header {
-      background: var(--green);
-      color: var(--white);
-      padding: 0 24px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    a{color:#285d39;text-decoration:none}
+    a:hover{text-decoration:underline}
+    img{max-width:100%;display:block}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+    .topbar{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:saturate(140%) blur(12px);
+      background:rgba(247,245,239,0.88);
+      border-bottom:1px solid rgba(215,221,214,0.9);
     }
-    .header-inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 64px;
+    .topbar-inner{
+      max-width:var(--max);margin:0 auto;padding:14px 20px;
+      display:flex;gap:18px;align-items:center;justify-content:space-between;
     }
-    .logo {
-      font-size: 1rem;
-      font-weight: bold;
-      letter-spacing: 0.05em;
+    .brand{
+      font-weight:800;font-size:1rem;letter-spacing:.02em;color:var(--ink);
     }
-    nav a {
-      color: var(--white);
-      margin-left: 24px;
-      font-size: 0.9rem;
-      opacity: 0.9;
+    .brand small{
+      display:block;font-weight:600;color:var(--sub);font-size:.78rem;letter-spacing:.04em;margin-top:2px;
     }
-    nav a:hover { opacity: 1; text-decoration: none; border-bottom: 2px solid white; }
-
-    /* ヒーロー */
-    .hero {
-      background: linear-gradient(135deg, var(--green) 0%, #1b5e20 100%);
-      color: var(--white);
-      text-align: center;
-      padding: 80px 24px;
+    nav ul{
+      list-style:none;margin:0;padding:0;display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end;
     }
-    .hero h1 {
-      font-size: clamp(1.4rem, 4vw, 2.2rem);
-      font-weight: bold;
-      margin-bottom: 16px;
-      line-height: 1.5;
+    nav a{
+      color:var(--sub);font-size:.95rem;font-weight:700;
     }
-    .hero p {
-      font-size: clamp(0.95rem, 2vw, 1.1rem);
-      opacity: 0.9;
-      max-width: 600px;
-      margin: 0 auto;
+    .hero{
+      padding:62px 0 34px;
     }
-
-    /* セクション共通 */
-    section {
-      padding: 64px 24px;
+    .hero-grid{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:stretch;
     }
-    section:nth-child(even) {
-      background: var(--green-pale);
+    .hero-main,.hero-side,.panel{
+      background:var(--panel);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);
     }
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
+    .hero-main{
+      padding:34px 32px 28px;
+      background:
+        radial-gradient(circle at top right, rgba(142,163,140,.16), transparent 34%),
+        linear-gradient(180deg,#ffffff 0%, #fcfdfb 100%);
     }
-    .section-title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: var(--green);
-      border-left: 4px solid var(--green);
-      padding-left: 16px;
-      margin-bottom: 32px;
+    .eyebrow{
+      display:inline-flex;gap:8px;align-items:center;
+      background:var(--soft);color:#35553a;border:1px solid #d6e3d4;
+      padding:8px 12px;border-radius:999px;font-size:.88rem;font-weight:800;
+      margin-bottom:18px;
     }
-
-    /* 私たちについて */
-    .about-text {
-      font-size: 1rem;
-      line-height: 2;
-      color: var(--text);
-      max-width: 720px;
+    h1{
+      margin:0 0 12px;font-size:clamp(2rem,4vw,3rem);line-height:1.28;letter-spacing:.01em;
     }
-
-    /* 事業内容 */
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
+    .hero-lead{
+      font-size:1.08rem;color:var(--sub);margin:0 0 22px;
     }
-    .service-card {
-      background: var(--white);
-      border-radius: 8px;
-      padding: 28px 24px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      border-top: 4px solid var(--green-light);
+    .chips{
+      display:flex;gap:10px;flex-wrap:wrap;margin:0 0 24px;padding:0;list-style:none;
     }
-    .service-card .icon {
-      font-size: 2rem;
-      margin-bottom: 12px;
+    .chips li{
+      background:#fafcf9;border:1px solid var(--line);border-radius:999px;
+      padding:8px 12px;font-size:.92rem;font-weight:700;color:#35553a;
     }
-    .service-card h3 {
-      font-size: 1rem;
-      font-weight: bold;
-      margin-bottom: 8px;
-      color: var(--green);
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-block;padding:12px 18px;border-radius:12px;font-weight:800;
+      border:1px solid var(--accent);transition:.2s ease;
     }
-    .service-card p {
-      font-size: 0.9rem;
-      color: var(--text-light);
-      line-height: 1.7;
+    .btn.primary{background:var(--accent);color:#fff}
+    .btn.secondary{background:#fff;color:var(--accent)}
+    .btn:hover{transform:translateY(-1px);text-decoration:none}
+    .hero-side{
+      padding:24px 22px;
+      display:flex;flex-direction:column;gap:16px;
+      background:linear-gradient(180deg,#f8fbf7 0%, #ffffff 100%);
     }
-
-    /* 代表者 */
-    .rep-box {
-      background: var(--white);
-      border-radius: 8px;
-      padding: 36px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      max-width: 720px;
+    .hero-side h2{
+      margin:0;font-size:1.12rem;
     }
-    .rep-box h3 {
-      font-size: 1.1rem;
-      font-weight: bold;
-      margin-bottom: 16px;
+    .checklist{
+      list-style:none;margin:0;padding:0;display:grid;gap:10px;
     }
-    .rep-box ul {
-      padding-left: 20px;
+    .checklist li{
+      background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;
     }
-    .rep-box li {
-      margin-bottom: 8px;
-      font-size: 0.95rem;
+    .checklist strong{display:block;font-size:.98rem}
+    .checklist span{display:block;color:var(--sub);font-size:.92rem}
+    section{padding:22px 0}
+    .section-head{
+      margin:0 0 16px;
     }
-
-    /* 会社概要 */
-    .overview-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--white);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    .section-head h2{
+      margin:0 0 8px;font-size:1.7rem;line-height:1.35;
     }
-    .overview-table th, .overview-table td {
-      padding: 16px 20px;
-      border-bottom: 1px solid var(--border);
-      font-size: 0.95rem;
-      text-align: left;
+    .section-head p{
+      margin:0;color:var(--sub);
     }
-    .overview-table th {
-      background: var(--green-pale);
-      font-weight: bold;
-      color: var(--green);
-      width: 30%;
-      white-space: nowrap;
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .panel{
+      padding:24px 22px;
     }
-    .overview-table tr:last-child th,
-    .overview-table tr:last-child td {
-      border-bottom: none;
+    .service-card h3{margin:0 0 8px;font-size:1.18rem}
+    .service-card p{margin:0 0 12px}
+    .meta{
+      display:grid;gap:8px;margin:0;padding:0;list-style:none;
     }
-
-    /* お問い合わせ */
-    .contact-box {
-      background: var(--white);
-      border-radius: 8px;
-      padding: 36px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      text-align: center;
-      max-width: 560px;
-      margin: 0 auto;
+    .meta li{
+      display:flex;gap:10px;align-items:flex-start;
+      padding:10px 12px;background:var(--soft-2);
+      border:1px solid #dfe7de;border-radius:12px;
+      font-size:.95rem;
     }
-    .contact-box p {
-      margin-bottom: 20px;
-      color: var(--text-light);
+    .meta b{min-width:78px;color:#35553a}
+    .flow{
+      counter-reset:step;
+      display:grid;grid-template-columns:repeat(5,1fr);gap:14px;
     }
-    .btn-mail {
-      display: inline-block;
-      background: var(--green);
-      color: var(--white);
-      padding: 14px 36px;
-      border-radius: 4px;
-      font-size: 1rem;
-      font-weight: bold;
-      transition: background 0.2s;
+    .flow .step{
+      position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 16px 16px;
+      box-shadow:var(--shadow);
     }
-    .btn-mail:hover {
-      background: #1b5e20;
-      text-decoration: none;
+    .flow .step::before{
+      counter-increment:step;content:"STEP " counter(step);
+      display:inline-block;font-size:.78rem;font-weight:900;letter-spacing:.06em;color:#35553a;
+      background:var(--soft);border:1px solid #d6e3d4;border-radius:999px;padding:6px 10px;margin-bottom:10px;
     }
-
-    /* フッター */
-    footer {
-      background: #1b5e20;
-      color: rgba(255,255,255,0.8);
-      text-align: center;
-      padding: 24px;
-      font-size: 0.85rem;
+    .flow h3{margin:0 0 6px;font-size:1rem}
+    .flow p{margin:0;color:var(--sub);font-size:.94rem}
+    .product{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:18px;
+      align-items:stretch;
     }
-
-    /* レスポンシブ */
-    @media (max-width: 600px) {
-      nav { display: none; }
-      .rep-box, .contact-box { padding: 24px 16px; }
-      .overview-table th { width: 40%; }
+    .price{
+      font-size:2rem;font-weight:900;line-height:1.2;margin:8px 0 14px;color:#294f31;
+    }
+    .notice{
+      background:#fff7e9;border:1px solid #eed8ab;border-radius:14px;padding:14px 16px;
+      color:#664e1d;font-size:.94rem;margin-top:14px;
+    }
+    .table{
+      width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    }
+    .table th,.table td{
+      padding:14px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;
+    }
+    .table th{
+      width:180px;background:#f8fbf7;color:#35553a;font-size:.95rem;
+    }
+    .table tr:last-child th,.table tr:last-child td{border-bottom:none}
+    .profile-list{margin:0;padding-left:1.2em}
+    .subgrid{
+      display:grid;grid-template-columns:1fr 1fr;gap:18px;
+    }
+    .muted{color:var(--sub)}
+    .foot{
+      padding:28px 0 44px;color:var(--sub);font-size:.92rem;
+    }
+    .foot .panel{padding:18px 20px}
+    .kicker{
+      font-size:.92rem;font-weight:800;color:#35553a;margin-bottom:10px;
+      letter-spacing:.04em;text-transform:none;
+    }
+    @media (max-width: 960px){
+      .hero-grid,.grid-2,.grid-3,.product,.subgrid{grid-template-columns:1fr}
+      .flow{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 720px){
+      .topbar-inner{align-items:flex-start;flex-direction:column}
+      nav ul{justify-content:flex-start}
+      .hero{padding-top:34px}
+      .hero-main{padding:24px 20px}
+      .hero-side{padding:20px}
+      .flow{grid-template-columns:1fr}
+      .table th,.table td{display:block;width:auto}
+      .table th{border-bottom:none;padding-bottom:4px}
+      .table td{padding-top:0}
     }
   </style>
 </head>
 <body>
-
-<header>
-  <div class="header-inner">
-    <div class="logo">まなびの森教育研究所</div>
-    <nav>
-      <a href="#about">私たちについて</a>
-      <a href="#services">事業内容</a>
-      <a href="#representative">代表者</a>
-      <a href="#overview">会社概要</a>
-      <a href="#materials">教材販売</a>
-      <a href="#blog">ブログ</a>
-      <a href="#contact">お問い合わせ</a>
-    </nav>
-  </div>
-</header>
-
-<div class="hero">
-  <h1>一人ひとりに寄り添う学びを、<br>学校・家庭・地域へ</h1>
-  <p>理論と実践の架け橋となり、どの子も夢中になれる場作りを目指します</p>
-</div>
-
-<section id="about">
-  <div class="container">
-    <h2 class="section-title">私たちについて</h2>
-    <p class="about-text">
-      合同会社まなびの森教育研究所は、千葉県千葉市を拠点に、教育の現場と家庭・地域をつなぐ架け橋として活動しています。<br><br>
-      特別支援教育・インクルーシブ教育の専門知識と、国内外での実践経験をもとに、学校・ご家庭・地域のあらゆる場面で「どの子も夢中になれる学び」を実現するためのコンサルティング・研修・プログラムを提供しています。<br><br>
-      既成概念にとらわれず、子ども一人ひとりの可能性を最大限に引き出すことが、私たちの使命です。
-    </p>
-  </div>
-</section>
-
-<section id="services">
-  <div class="container">
-    <h2 class="section-title">事業内容</h2>
-    <div class="services">
-      <div class="service-card">
-        <div class="icon">📋</div>
-        <h3>教育コンサルティング</h3>
-        <p>学校・教育機関・家庭に向けた教育課題の分析と改善提案を行います。</p>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        合同会社まなびの森教育研究所
+        <small>Manabi no Mori Educational Research Institute LLC</small>
       </div>
-      <div class="service-card">
-        <div class="icon">🏫</div>
-        <h3>研修の企画・運営</h3>
-        <p>学校・ご家庭向けに、実践的な教育研修プログラムを企画・運営します。</p>
+      <nav aria-label="ページ内メニュー">
+        <ul>
+          <li><a href="#about">私たちについて</a></li>
+          <li><a href="#services">事業内容</a></li>
+          <li><a href="#flow">ご依頼の流れ</a></li>
+          <li><a href="#product">教材販売</a></li>
+          <li><a href="#profile">代表者</a></li>
+          <li><a href="#company">会社概要</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-main">
+          <div class="eyebrow">学校・家庭・地域・教育機関向け</div>
+          <h1>教育相談・研修・教材提供を通じて、<br>学びの現場に実行できる支援を届けます。</h1>
+          <p class="hero-lead">
+            合同会社まなびの森教育研究所は、千葉市を拠点に、
+            学校・家庭・地域・教育機関向けの教育コンサルティング、研修企画・実施、
+            自然体験学習プログラム、教育教材の企画・販売を行う教育支援会社です。
+          </p>
+          <ul class="chips">
+            <li>設立：2026年4月1日</li>
+            <li>所在地：千葉県千葉市美浜区</li>
+            <li>主な領域：特別支援教育・インクルーシブ教育・自然体験学習</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn primary" href="#contact">お問い合わせ</a>
+            <a class="btn secondary" href="#services">事業内容を見る</a>
+          </div>
+        </div>
+
+        <aside class="hero-side" aria-label="事業概要">
+          <h2>このページで分かること</h2>
+          <ul class="checklist">
+            <li>
+              <strong>誰に何を提供しているか</strong>
+              <span>学校・家庭・地域・教育機関向けの相談、研修、教材、体験学習の内容</span>
+            </li>
+            <li>
+              <strong>どのように依頼できるか</strong>
+              <span>お問い合わせから内容確認、見積、実施、実施後フォローまでの流れ</span>
+            </li>
+            <li>
+              <strong>実際の提供形態</strong>
+              <span>対面・オンライン・教材提供など、サービスごとの対応方法</span>
+            </li>
+            <li>
+              <strong>販売中の教材</strong>
+              <span>簿記3級向け教材の内容、価格、問い合わせ先</span>
+            </li>
+          </ul>
+        </aside>
       </div>
-      <div class="service-card">
-        <div class="icon">🌿</div>
-        <h3>自然体験学習プログラム</h3>
-        <p>自然の中での体験を通じて、子どもたちの探究心と生きる力を育みます。</p>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>私たちについて</h2>
+          <p>
+            教育現場の課題は、制度だけではなく、日々の実践の中で見えてきます。
+            当社は、現場経験と教育実践を土台に、子ども一人ひとりに合った学びの環境づくりを支援します。
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="panel">
+            <div class="kicker">事業の特徴</div>
+            <p>
+              特別支援教育・インクルーシブ教育の知見を基盤に、
+              学校・家庭・地域のあいだをつなぐ支援を行っています。
+              理念だけで終わらず、実際の現場で使える形に落とし込むことを重視しています。
+            </p>
+          </div>
+          <div class="panel">
+            <div class="kicker">主な対応先</div>
+            <p>
+              学校、教育機関、保護者、地域団体、学習支援に関わる個人・団体からのご相談を受けています。
+              ご依頼内容に応じて、対面・オンラインの両方に対応します。
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="service-card">
-        <div class="icon">🎉</div>
-        <h3>教育関連イベント</h3>
-        <p>地域・学校・家庭をつなぐ教育イベントの企画・運営を承ります。</p>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>事業内容</h2>
+          <p>
+            各事業について、対象、提供内容、形式、ご依頼時の進め方が分かるように整理しています。
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <article class="panel service-card">
+            <h3>教育コンサルティング</h3>
+            <p>
+              学校・教育機関・家庭・地域団体に向けて、教育課題の整理と改善提案を行います。
+              学びの場づくり、支援体制の見直し、教育実践に関する相談に対応します。
+            </p>
+            <ul class="meta">
+              <li><b>対象</b><span>学校、教育機関、保護者、地域団体</span></li>
+              <li><b>内容</b><span>課題整理、ヒアリング、改善提案、学びの環境設計に関する助言</span></li>
+              <li><b>形式</b><span>対面／オンライン</span></li>
+              <li><b>費用</b><span>内容・時間・回数に応じて個別にお見積りします</span></li>
+            </ul>
+          </article>
+
+          <article class="panel service-card">
+            <h3>研修の企画・実施</h3>
+            <p>
+              学校や地域向けに、教育実践に役立つ研修・講座を企画し、運営します。
+              内容は、ご依頼先の課題や参加対象に合わせて調整します。
+            </p>
+            <ul class="meta">
+              <li><b>対象</b><span>学校、教職員、保護者、地域の学習会・研修会</span></li>
+              <li><b>内容</b><span>研修企画、資料作成、講義・対話型研修、実施後の振り返り</span></li>
+              <li><b>形式</b><span>対面／オンライン</span></li>
+              <li><b>費用</b><span>参加人数・実施時間・準備内容に応じて個別にお見積りします</span></li>
+            </ul>
+          </article>
+
+          <article class="panel service-card">
+            <h3>自然体験学習プログラム</h3>
+            <p>
+              自然の中での体験を通して、探究心や生活感覚を育むプログラムを企画・運営します。
+              実施内容は、対象年齢や目的に応じて調整します。
+            </p>
+            <ul class="meta">
+              <li><b>対象</b><span>子ども、保護者参加型プログラム、学校・地域団体</span></li>
+              <li><b>内容</b><span>自然体験、観察活動、生活体験型の学び、探究活動</span></li>
+              <li><b>形式</b><span>現地実施を基本に、事前相談・打合せはオンライン対応可</span></li>
+              <li><b>費用</b><span>実施場所・人数・時間・準備物に応じて個別にお見積りします</span></li>
+            </ul>
+          </article>
+
+          <article class="panel service-card">
+            <h3>教育関連イベントの企画・運営</h3>
+            <p>
+              学校・家庭・地域をつなぐ教育イベントの企画と運営を行います。
+              内容に応じて、企画立案から当日の進行まで対応します。
+            </p>
+            <ul class="meta">
+              <li><b>対象</b><span>学校、地域団体、保護者会、教育関連の活動団体</span></li>
+              <li><b>内容</b><span>企画設計、進行設計、資料準備、当日運営</span></li>
+              <li><b>形式</b><span>対面を基本に、事前打合せはオンライン対応可</span></li>
+              <li><b>費用</b><span>内容・規模・準備期間に応じて個別にお見積りします</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="flow">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>ご依頼の流れ</h2>
+          <p>
+            ご相談内容を確認したうえで、実施方法・費用・日程を調整します。
+            ご依頼前に内容と費用を確認できる流れにしています。
+          </p>
+        </div>
+
+        <div class="flow">
+          <div class="step">
+            <h3>お問い合わせ</h3>
+            <p>メールにて、ご相談内容・対象・ご希望の時期や形式をお知らせください。</p>
+          </div>
+          <div class="step">
+            <h3>内容確認</h3>
+            <p>通常2営業日以内を目安に返信し、必要に応じて追加確認や日程調整を行います。</p>
+          </div>
+          <div class="step">
+            <h3>ご提案・お見積り</h3>
+            <p>目的や対象に応じた実施案と費用をご案内します。内容確定前に金額をご確認いただけます。</p>
+          </div>
+          <div class="step">
+            <h3>実施</h3>
+            <p>確定した内容に基づき、相談、研修、イベント、教材提供を行います。</p>
+          </div>
+          <div class="step">
+            <h3>実施後フォロー</h3>
+            <p>必要に応じて振り返りや追加相談に対応します。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="product">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>教材販売</h2>
+          <p>
+            当社では、教育コンテンツの企画・制作・販売も行っています。
+            現在公開中の教材は以下のとおりです。
+          </p>
+        </div>
+
+        <div class="product">
+          <div class="panel">
+            <div class="kicker">販売事業者：合同会社まなびの森教育研究所</div>
+            <h3 style="margin:0 0 10px;font-size:1.45rem;">もりもりまなぶ公式教材<br>簿記3級 30日合格問題集</h3>
+            <p class="muted" style="margin:0 0 10px;">
+              中学生から社会人までを対象にした、1日45分・30日間のカリキュラム型教材です。
+            </p>
+            <div class="price">¥2,480（税込・買い切り）</div>
+            <ul class="meta">
+              <li><b>内容</b><span>インタラクティブ問題集（90問・自動採点）＋30日カリキュラムPDF</span></li>
+              <li><b>対象</b><span>簿記3級の基礎を固めたい学習者</span></li>
+              <li><b>購入方法</b><span>教材ページをご確認のうえ、お問い合わせください</span></li>
+              <li><b>詳細</b><span><a href="https://manabinomorikyouikuken.github.io/manabinomori-website/boki3/lp.html" target="_blank" rel="noopener noreferrer">教材の詳細ページを見る</a></span></li>
+            </ul>
+            <div class="notice">
+              デジタル教材のため、提供方法・支払方法・引渡し時期などの詳細は、販売ページまたは個別案内でご確認ください。
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="kicker">情報発信</div>
+            <h3 style="margin:0 0 10px;font-size:1.22rem;">活動ブログ・教育コラム</h3>
+            <p>
+              代表による教育コラム・実践レポートを発信しています。
+              教育現場の話題、学びに役立つテーマ、教材や活動に関する発信を継続しています。
+            </p>
+            <ul class="meta">
+              <li><b>ブログ</b><span><a href="https://morimorimanabu.hatenablog.com/" target="_blank" rel="noopener noreferrer">もりもりまなぶの好奇心</a></span></li>
+              <li><b>役割</b><span>教育分野の情報発信、教材・テーマ理解の補助、活動内容の紹介</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="profile">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>代表者プロフィール</h2>
+          <p>教育現場での経験を土台に、実践に結びつく支援を行います。</p>
+        </div>
+
+        <div class="subgrid">
+          <div class="panel">
+            <h3 style="margin:0 0 10px;font-size:1.28rem;">代表社員 小野 智広（おの ともひろ）</h3>
+            <ul class="profile-list">
+              <li>元公立学校教員</li>
+              <li>特別支援学校・小学校特別支援学級での指導経験</li>
+              <li>大学附属特別支援学校での勤務経験</li>
+              <li>フィリピン・ケニアにおける海外特殊教育への従事経験</li>
+              <li>特別支援教育・インクルーシブ教育・自然体験学習を専門とする</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <div class="kicker">対応領域</div>
+            <p>
+              特別支援教育、インクルーシブ教育、子どもの学びの場づくり、
+              体験学習、教材開発などを中心に、現場に即した支援を行います。
+            </p>
+            <p class="muted" style="margin-bottom:0;">
+              ご相談内容に応じて、個別相談、研修、教材提供、企画支援の形で対応します。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="company">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>会社概要</h2>
+          <p>法人情報・連絡先・事業領域を一覧で確認できます。</p>
+        </div>
+
+        <div class="panel">
+          <table class="table" aria-label="会社概要">
+            <tr>
+              <th>会社名</th>
+              <td>合同会社まなびの森教育研究所</td>
+            </tr>
+            <tr>
+              <th>英語名</th>
+              <td>Manabi no Mori Educational Research Institute LLC</td>
+            </tr>
+            <tr>
+              <th>設立</th>
+              <td>2026年4月1日</td>
+            </tr>
+            <tr>
+              <th>所在地</th>
+              <td>千葉県千葉市美浜区幸町2-16-13-505</td>
+            </tr>
+            <tr>
+              <th>事業内容</th>
+              <td>
+                教育コンサルティング／研修の企画・実施／自然体験学習プログラムの企画・運営／教育関連イベントの企画・運営／教育教材の企画・販売
+              </td>
+            </tr>
+            <tr>
+              <th>お問い合わせ</th>
+              <td><a href="mailto:manabinomorikyouikuken@gmail.com">manabinomorikyouikuken@gmail.com</a></td>
+            </tr>
+            <tr>
+              <th>対応方法</th>
+              <td>メールでのお問い合わせを受け付けています。内容確認後、必要に応じて対面・オンラインで対応します。</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="panel">
+          <div class="section-head" style="margin-bottom:10px;">
+            <h2>お問い合わせ</h2>
+            <p>
+              ご質問、ご依頼、取材、教材に関するお問い合わせは、メールにてご連絡ください。
+              通常2営業日以内を目安に返信します。
+            </p>
+          </div>
+          <div class="cta-row">
+            <a class="btn primary" href="mailto:manabinomorikyouikuken@gmail.com">メールで問い合わせる</a>
+            <a class="btn secondary" href="https://morimorimanabu.hatenablog.com/" target="_blank" rel="noopener noreferrer">活動ブログを見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap foot">
+      <div class="panel">
+        © 2026 合同会社まなびの森教育研究所 All Rights Reserved.
       </div>
     </div>
-  </div>
-</section>
-
-<section id="materials">
-  <div class="container">
-    <h2 class="section-title">教材販売</h2>
-    <div class="service-card" style="max-width:480px; border-top-color:#2e7d32;">
-      <div class="icon">📒</div>
-      <h3>簿記3級 30日合格問題集</h3>
-      <p>中学生から社会人まで。1日45分・30日間のカリキュラムで基礎ゼロから合格ラインへ。インタラクティブ問題集（90問・自動採点）＋30日カリキュラムPDFセット。</p>
-      <p style="margin-top:12px; font-weight:bold; color:#2e7d32;">¥2,480（買い切り）</p>
-      <a href="./boki3/lp.html" style="display:inline-block; margin-top:16px; background:#2e7d32; color:#fff; padding:10px 28px; border-radius:4px; font-weight:bold; text-decoration:none;">詳細を見る →</a>
-    </div>
-  </div>
-</section>
-
-<section id="representative">
-  <div class="container">
-    <h2 class="section-title">代表者プロフィール</h2>
-    <div class="rep-box">
-      <h3>代表社員　小野 智広（おの ともひろ）</h3>
-      <ul>
-        <li>元公立学校教員</li>
-        <li>特別支援学校・小学校特別支援学級での指導経験</li>
-        <li>大学附属特別支援学校での勤務経験</li>
-        <li>フィリピン・ケニアにおける海外特殊教育への従事経験</li>
-        <li>特別支援教育・インクルーシブ教育・自然体験学習を専門とする</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section id="overview">
-  <div class="container">
-    <h2 class="section-title">会社概要</h2>
-    <table class="overview-table">
-      <tr>
-        <th>会社名</th>
-        <td>合同会社まなびの森教育研究所</td>
-      </tr>
-      <tr>
-        <th>英語名</th>
-        <td>Manabi no Mori Educational Research Institute LLC</td>
-      </tr>
-      <tr>
-        <th>設立</th>
-        <td>2026年4月1日</td>
-      </tr>
-      <tr>
-        <th>所在地</th>
-        <td id="address-full">千葉県千葉市美浜区幸町２−１６−１３−５０５</td>
-      </tr>
-      <tr>
-        <th>事業内容</th>
-        <td>
-          教育コンサルティング／研修の企画・運営／<br>
-          自然体験学習プログラムの企画・運営／<br>
-          教育関連イベントの企画・運営
-        </td>
-      </tr>
-      <tr>
-        <th>メールアドレス</th>
-        <td><a href="mailto:manabinomorikyouikuken@gmail.com">manabinomorikyouikuken@gmail.com</a></td>
-      </tr>
-    </table>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <h2 class="section-title">お問い合わせ</h2>
-    <div class="contact-box">
-      <p>ご質問・ご依頼・取材等、お気軽にメールにてお問い合わせください。<br>通常2営業日以内にご返信いたします。</p>
-      <a class="btn-mail" href="mailto:manabinomorikyouikuken@gmail.com">メールで問い合わせる</a>
-    </div>
-  </div>
-</section>
-
-<section id="blog">
-  <div class="container">
-    <h2 class="section-title">活動ブログ</h2>
-    <div class="contact-box" style="text-align:left; max-width:720px; margin:0;">
-      <p style="margin-bottom:20px;">代表による教育コラム・実践レポートを発信しています。<br>教育現場の最新トピックや、子どもの学びに役立つ情報をお届けします。</p>
-      <a class="btn-mail" href="https://morimorimanabu.hatenablog.com/" target="_blank" rel="noopener">ブログを読む →</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>&copy; 2026 合同会社まなびの森教育研究所 All Rights Reserved.</p>
-</footer>
-
-<script>
-  // 2026年5月1日0時以降は住所を非表示
-  var hideAfter = new Date('2026-05-01T00:00:00+09:00');
-  if (new Date() >= hideAfter) {
-    var el = document.getElementById('address-full');
-    if (el) el.textContent = '千葉県千葉市美浜区';
-  }
-</script>
+  </main>
 </body>
 </html>
