@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【中２でもわかる】特別支援教育って何？―「助ける」じゃなくて「参加できる」をつくる話―</title>
+<style>
+:root {
+  --primary: #0d9488;
+  --primary-light: #ccfbf1;
+  --bg: #f9fafb;
+  --white: #fff;
+  --border: #e5e7eb;
+  --text: #111827;
+  --muted: #6b7280;
+  --yellow: #fffbeb;
+  --yellow-border: #f59e0b;
+  --red: #dc2626;
+  --blue: #2563eb;
+  --purple: #9333ea;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.9;
+  padding: 24px 16px;
+  font-size: 15px;
+}
+.wrapper { max-width: 740px; margin: 0 auto; }
+
+/* ヘッダー */
+.header {
+  background: var(--primary);
+  color: white;
+  border-radius: 14px;
+  padding: 28px 32px;
+  margin-bottom: 28px;
+}
+.header .series { font-size: 0.76rem; opacity: 0.85; letter-spacing: 0.12em; margin-bottom: 8px; }
+.header h1 { font-size: 1.35rem; font-weight: 800; line-height: 1.5; margin-bottom: 10px; }
+.header .lead { font-size: 0.88rem; opacity: 0.88; line-height: 1.7; }
+
+/* 目次 */
+.toc {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 22px;
+  margin-bottom: 28px;
+}
+.toc h3 { font-size: 0.78rem; color: var(--primary); letter-spacing: 0.12em; margin-bottom: 10px; }
+.toc ol { padding-left: 1.4em; }
+.toc li { font-size: 0.88rem; margin-bottom: 4px; }
+.toc a { color: var(--primary); text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+/* セクション */
+.section {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+.section h2 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 10px;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+.section h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 20px 0 10px;
+  color: #374151;
+}
+.section p { margin-bottom: 14px; }
+.section p:last-child { margin-bottom: 0; }
+
+/* 会話 */
+.conv { margin: 18px 0; }
+.line { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 10px; }
+.speaker {
+  font-weight: 800; font-size: 0.82rem;
+  white-space: nowrap; min-width: 76px; padding-top: 2px;
+}
+.speaker.taro   { color: var(--red); }
+.speaker.kenji  { color: var(--blue); }
+.speaker.hina   { color: var(--purple); }
+.speaker.sensei { color: var(--primary); }
+.text { font-size: 0.92rem; line-height: 1.85; }
+
+/* ポイントボックス */
+.point {
+  background: var(--yellow);
+  border-left: 4px solid var(--yellow-border);
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px;
+  margin: 16px 0;
+  font-size: 0.88rem;
+  line-height: 1.8;
+}
+.point strong { color: #92400e; }
+
+/* まとめ表 */
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  margin: 16px 0;
+}
+.summary-table th {
+  background: var(--primary);
+  color: white;
+  padding: 9px 12px;
+  text-align: left;
+  font-weight: 700;
+}
+.summary-table td {
+  border: 1px solid var(--border);
+  padding: 9px 12px;
+  vertical-align: top;
+}
+.summary-table tr:nth-child(even) td { background: #f0fdfa; }
+
+/* タグ */
+.tag {
+  display: inline-block;
+  background: var(--primary-light);
+  color: #0f766e;
+  font-size: 0.76rem;
+  font-weight: 600;
+  border-radius: 20px;
+  padding: 2px 10px;
+  margin: 2px 3px 2px 0;
+}
+
+/* 誤解バスター */
+.myth {
+  border: 1px solid #fca5a5;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  background: #fff5f5;
+}
+.myth .label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--red);
+  margin-bottom: 4px;
+}
+.myth .truth {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 8px 0 4px;
+}
+
+/* クレジット */
+.credit {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-top: 32px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  line-height: 2.2;
+}
+.credit a { color: var(--primary); }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <div class="series">📘 もりもりまなぶ の好奇心 ／ 中２でもわかるシリーズ</div>
+    <h1>【中２でもわかる】特別支援教育って何？<br>―「助ける」じゃなくて「参加できる」をつくる話―</h1>
+    <div class="lead">
+      特別支援学校・通級・合理的配慮・インクルーシブ教育……<br>
+      聞いたことはあるけど、なんとなく「自分には関係ない」と思っていない？<br>
+      実は、この話は全員に関係している。
+    </div>
+  </div>
+
+  <div class="toc">
+    <h3>目次</h3>
+    <ol>
+      <li><a href="#s1">「特別支援教育」って何？ まず言葉を整理しよう</a></li>
+      <li><a href="#s2">特別支援学校とは何か</a></li>
+      <li><a href="#s3">通級とは何か――教室を出る子は何をしているの？</a></li>
+      <li><a href="#s4">合理的配慮とは何か――「ずるい」は本当か</a></li>
+      <li><a href="#s5">インクルーシブ教育とは何か――「みんな一緒」が正解なの？</a></li>
+      <li><a href="#s6">特別支援教育はみんなの教育になる</a></li>
+      <li><a href="#s7">今の自分たちにどうつながるか</a></li>
+    </ol>
+  </div>
+
+  <!-- セクション1 -->
+  <div class="section" id="s1">
+    <h2>① 「特別支援教育」って何？ まず言葉を整理しよう</h2>
+
+    <div class="conv">
+      <div class="line">
+        <span class="speaker taro">タロウ</span>
+        <span class="text">「特別支援教育」って、障害がある子だけが受けるものでしょ？</span>
+      </div>
+      <div class="line">
+        <span class="speaker sensei">マナブ先生</span>
+        <span class="text">それ、よくある誤解のひとつだよ。正確に言うと――「一人ひとりの困り方に合わせて、学びやすくする教育」なんだ。</span>
+      </div>
+      <div class="line">
+        <span class="speaker hina">ヒナ</span>
+        <span class="text">困り方……って、どういうこと？</span>
+      </div>
+      <div class="line">
+        <span class="speaker sensei">マナブ先生</span>
+        <span class="text">たとえば、読むのに時間がかかる子、音が気になって集中できない子、見通しが立たないと不安になる子。みんな「学ぶのが難しい」という点は同じでも、その理由はそれぞれ違う。だから、「全員同じ方法で教える」だけじゃ足りないんだ。</span>
+      </div>
+    </div>
+
+    <div class="point">
+      <strong>📌 整理</strong><br>
+      特別支援教育＝「特別な子を助ける」教育ではなく、<strong>一人ひとりが学びやすく・参加しやすくなる条件を整える教育</strong>。<br>
+      対象は特定の子だけではなく、学校全体・社会全体に波及していく考え方。
+    </div>
+
+    <h3>よくある誤解を3つ、壊しておこう</h3>
+
+    <div class="myth">
+      <div class="label">❌ 誤解① 「特別な子だけの話」</div>
+      <p style="font-size:0.88rem">通常学級にいる子にも関係し、学校全体を学びやすくしていく取り組み。</p>
+      <div class="truth">✅ 正解</div>
+      <p style="font-size:0.88rem">クラスに通級を利用する子がいれば、その子への接し方を考えることは全員の問題になる。</p>
+    </div>
+    <div class="myth">
+      <div class="label">❌ 誤解② 「一時的な支援」</div>
+      <p style="font-size:0.88rem">「その場しのぎ」ではなく、その子が自分らしく学び、力をつけていくための継続的な仕組み。</p>
+      <div class="truth">✅ 正解</div>
+      <p style="font-size:0.88rem">支援の目的は「問題を消すこと」じゃなく、「その人が参加できる形をつくること」。</p>
+    </div>
+    <div class="myth">
+      <div class="label">❌ 誤解③ 「特別な場所だけの話」</div>
+      <p style="font-size:0.88rem">特別支援学校だけでなく、通常学級・通級・支援学級など、あらゆる場所で行われる。</p>
+      <div class="truth">✅ 正解</div>
+      <p style="font-size:0.88rem">普通の教室の中でも、説明の仕方を工夫したり、座席を調整したりすることが特別支援教育。</p>
+    </div>
+  </div>
+
+  <!-- セクション2 -->
+  <div class="section" id="s2">
+    <h2>② 特別支援学校とは何か</h2>
+
+    <div class="conv">
+      <div class="line">
+        <span class="speaker kenji">ケンジ</span>
+        <span class="text">特別支援学校って、普通の学校に行けない子が行く場所？</span>
+      </div>
+      <div class="line">
+        <span class="speaker sensei">マナブ先生</span>
+        <span class="text">「行けない子」という言い方は、少し違う。「一人ひとりに合った学び方や支えを、より専門的に整えやすい学びの場」なんだ。</span>
+      </div>
+      <div class="line">
+        <span class="speaker hina">ヒナ</span>
+        <span class="text">専門的って、たとえば？</span>
+      </div>
+      <div class="line">
+        <span class="speaker sensei">マナブ先生</span>
+        <span class="text">千葉県立仁戸名特別支援学校には、医療的ケアが必要な子が通っている。点滴をしながら学ぶ子に、医療スタッフと先生が連携して授業を組む。千葉盲学校では点字の読み書きや白杖の使い方を専門的に教える。こういった対応は、通常の学校では難しいことが多い。</span>
+      </div>
+    </div>
+
+    <p>特別支援学校で学ぶ科目は、国語・算数・理科・社会などの通常教科に加え、<strong>コミュニケーション・生活技能・進路準備</strong>なども含まれる。「学ぶ内容が少ない」わけではなく、その子にとって必要な学びが丁寧に組まれている。</p>
+
+    <div class="point">
+      <strong>📌 核心</strong><br>
+      「同じ場所にいること」より、「<strong>その子にとって何が必要か</strong>を考えること」が最重要。<br>
+      特別支援学校に通う選択は、「劣った選択」ではなく、「その子に合った学びの場を選ぶ」こと。
+    </div>
+  </div>
+
+  <!-- セクション3 -->
+  <div class="section" id="s3">
+    <h2>③ 通級とは何か――教室を出る子は何をしているの？</h2>
+
+    <div class="conv">
+      <div class="line">
+        <span class="speaker taro">タロウ</span>
+        <span class="text">クラスに、時々別の教室に行く子いるよな。あれって何してるの？</span>
+      </div>
+      <div class="line">
+        <span class="speaker sensei">マナブ先生</span>
+        <span class="text">それが「通級」だよ。大部分は通常のクラスで過ごしながら、必要な時間だけ別室で専門的な支援を受ける仕組みだ。</span>
+      </div>
+      <div class="line">
+        <span class="speaker kenji">ケンジ</span>
+        <span class="text">……補習？</span>
+      </div>
+      <div class="line">
+        <span class="speaker sensei">マナブ先生</span>
+        <span class="text">補習とは違う。教科の遅れを取り戻すというより、<strong>読み書きの工夫・感情の調整・対人スキル</strong>など、学校生活で困りやすい部分に特化した指導なんだ。</span>
+      </div>
+      <div class="line">
+        <span class="speaker hina">ヒナ</span>
+        <span class="text">「ずるい」って思う子もいるかも。</span>
+      </div>
+      <div class="line">
+        <span class="speaker sensei">マナブ先生</span>
+        <span class="text">そう思う気持ちはわかる。でも考えてみて。視力が弱い子が眼鏡をかけることは「ずるい」？</span>
+      </div>
+      <div class="line">
+        <span class="speaker taro">タロウ</span>
+        <span class="text">……それは、見えるようにするためだから違う。</span>
+      </div>
+      <div class="line">
+        <span class="speaker sensei">マナブ先生</span>
+        <span class="text">同じことだよ。通級は「有利にする」のではなく、「その子が学べる条件を整える」こと。公平性を欠くのではなく、不利を小さくする工夫なんだ。</span>
+      </div>
+    </div>
+
+    <div class="point">
+      <strong>📌 大事な視点</strong><br>
+      教室を出ていく子の姿は見えても、「その子が何に困り、どう学んでいるか」までは外から見えない。<br>
+      知らないことで生まれる誤解が、当事者の子を傷つけることがある。
+    </div>
+  </div>
+
+  <!-- セクション4 -->
+  <div class="section" id="s4">
+    <h2>④ 合理的配慮とは何か――「ずるい」は本当か</h2>
+
+    <p>「合理的配慮（ごうりてきはいりょ）」という言葉を聞いたことがあるだろうか。英語では「Reasonable Accommodation（リーズナブル・アコモデーション）」という。</p>
+
+    <div class="conv">
+      <div class="line">
+        <span class="speaker kenji">ケンジ</span>
+        <span class="text">試験で問題を読み上げてもらったり、時間を延長してもらったりするやつ？</span>
+      </div>
+      <div class="line">
+        <span class="speaker sensei">マナブ先生</span>
+        <span class="text">そう。他にも座席の調整、個別スペースでの対応、専門的な教材の使用なども含まれる。共通しているのは「その人が学びやすくなるよう、不利を小さくする工夫」というコンセプトだ。</span>
+      </div>
+      <div class="line">
+        <span class="speaker taro">タロウ</span>
+        <span class="text">でも、それって「特別扱い」じゃないの？</span>
+      </div>
+      <div class="line">
+        <span class="speaker sensei">マナブ先生</span>
+        <span class="text">「公平」には2種類ある。全員に同じものを与える「平等」と、その人に必要なものを与える「公正」だ。バリアフリーのスロープは、歩ける人には「余計なもの」かもしれない。でも車椅子の人には参加するための条件になる。合理的配慮はそのスロープと同じ考え方なんだ。</span>
+      </div>
+      <div class="line">
+        <span class="speaker hina">ヒナ</span>
+        <span class="text">……「同じにする」ことが公平じゃないこともある、か。</span>
+      </div>
+    </div>
+
+    <div class="point">
+      <strong>📌 整理</strong><br>
+      合理的配慮＝「有利にする」のではなく、「スタートラインを揃える」工夫。<br>
+      見えない困難（読むスピード・集中しやすさ・感覚の過敏さ）は外から判断しにくい。<br>
+      だからこそ、「ずるい」と感じた時こそ、「その人が何に困っているか」を想像することが大切。
+    </div>
+  </div>
+
+  <!-- セクション5 -->
+  <div class="section" id="s5">
+    <h2>⑤ インクルーシブ教育とは何か――「みんな一緒」が正解なの？</h2>
+
+    <div class="conv">
+      <div class="line">
+        <span class="speaker taro">タロウ</span>
+        <span class="text">インクルーシブって、みんな同じ教室で学ぶってこと？</span>
+      </div>
+      <div class="line">
+        <span class="speaker sensei">マナブ先生</span>
+        <span class="text">よくある誤解がまさにそれだ。インクルーシブ教育の核心は「みんなを無理に同じ形にそろえること」じゃない。「一人ひとりが学びに参加できる学校をどう作るかを考えること」なんだ。</span>
+      </div>
+      <div class="line">
+        <span class="speaker kenji">ケンジ</span>
+        <span class="text">……違いは？</span>
+      </div>
+      <div class="line">
+        <span class="speaker sensei">マナブ先生</span>
+        <span class="text">「同じ教室にいること」と「その場で実際に学べること」は別だ。聞き取りにくい、黒板が読みにくい、支援なしでは参加が難しい場合もある。その子に合う学び方を考えることが本質であって、「場所」そのものの良し悪しではない。</span>
+      </div>
+      <div class="line">
+        <span class="speaker hina">ヒナ</span>
+        <span class="text">じゃあ特別支援学校に通うことは、インクルーシブに反するわけじゃない？</span>
+      </div>
+      <div class="line">
+        <span class="speaker sensei">マナブ先生</span>
+        <span class="text">反しない。その子にとって最も学べる場所が特別支援学校であれば、それがその子にとってのインクルーシブな教育なんだよ。</span>
+      </div>
+    </div>
+
+    <h3>インクルーシブ的な工夫の例</h3>
+    <table class="summary-table">
+      <tr><th>困り方</th><th>工夫の例</th></tr>
+      <tr><td>聞き取りが苦手</td><td>板書を増やす・字幕・図で補足</td></tr>
+      <tr><td>読むのに時間がかかる</td><td>ルビ付き資料・読み上げツール</td></tr>
+      <tr><td>大人数が苦手</td><td>発表形式を選べる・個別対応スペース</td></tr>
+      <tr><td>見通しが立たないと不安</td><td>スケジュールの見える化・事前説明</td></tr>
+      <tr><td>移動に時間がかかる</td><td>早めの移動時間を確保</td></tr>
+    </table>
+
+    <div class="point">
+      <strong>📌 本質</strong><br>
+      「誰が困っているか」に気づき、その人が参加しやすくなるよう環境を整えること。<br>
+      これは授業だけでなく、<strong>学校生活のすべて</strong>で問われる視点。
+    </div>
+  </div>
+
+  <!-- セクション6 -->
+  <div class="section" id="s6">
+    <h2>⑥ 特別支援教育は「みんなの教育」になる</h2>
+
+    <p>特別支援教育の世界には「<strong>特別支援のための工夫は、全員に有効だ</strong>」という考え方がある。</p>
+
+    <div class="conv">
+      <div class="line">
+        <span class="speaker hina">ヒナ</span>
+        <span class="text">全員に？</span>
+      </div>
+      <div class="line">
+        <span class="speaker sensei">マナブ先生</span>
+        <span class="text">たとえば、黒板の文字に加えて図や写真で説明する。これは読み書きが苦手な子だけじゃなく、視覚的に学ぶのが得意な子全員に効果がある。スケジュールを見える化する。これは見通しが立たないと不安な子だけでなく、全員が安心して動けることにつながる。</span>
+      </div>
+      <div class="line">
+        <span class="speaker kenji">ケンジ</span>
+        <span class="text">……「一部の人のための工夫」が、いつのまにか「全員のための工夫」になる。</span>
+      </div>
+      <div class="line">
+        <span class="speaker sensei">マナブ先生</span>
+        <span class="text">それをユニバーサルデザインという考え方に近い。特定の人のために作られたものが、多くの人に使いやすくなる。段差をなくしたバリアフリーが、ベビーカーを押す人にも荷物を持つ人にも便利なように。</span>
+      </div>
+      <div class="line">
+        <span class="speaker taro">タロウ</span>
+        <span class="text">特別支援って聞くと「自分には関係ない」って思ってたけど……全然そうじゃなかった。</span>
+      </div>
+    </div>
+
+    <p>さらに重要なのが、<strong>「できるかどうか」より「どう関わるか」</strong>という視点の転換だ。できないことを直すのではなく、できる形で関われる場所を作ること。これは教育の枠を超えて、働く場所・地域・社会全体の問題でもある。</p>
+
+    <div class="point">
+      <strong>📌 まとめ</strong><br>
+      特別支援の工夫 → 全員に有効なユニバーサルデザインへ<br>
+      「一部の子のための特別な教育」→「<strong>みんなが参加しやすい社会</strong>」への転換<br>
+      鍵は「できるか否か」ではなく「<strong>どう関わるか</strong>」という問い。
+    </div>
+  </div>
+
+  <!-- セクション7 -->
+  <div class="section" id="s7">
+    <h2>⑦ 今の自分たちにどうつながるか</h2>
+
+    <div class="conv">
+      <div class="line">
+        <span class="speaker taro">タロウ</span>
+        <span class="text">正直、自分のクラスにも通級を使ってる子がいる。なんとなく「触れちゃいけない」って思ってた。</span>
+      </div>
+      <div class="line">
+        <span class="speaker sensei">マナブ先生</span>
+        <span class="text">「触れちゃいけない」という気持ちは、悪意じゃない。わからないから、傷つけたくないから、遠慮してるんだよね。でもその距離が、逆に孤立させてしまうこともある。</span>
+      </div>
+      <div class="line">
+        <span class="speaker hina">ヒナ</span>
+        <span class="text">じゃあどうすれば？</span>
+      </div>
+      <div class="line">
+        <span class="speaker sensei">マナブ先生</span>
+        <span class="text">聞き出そうとしなくていい。ただ、普通に話しかける。普通に遊ぶ。「何か知らないけど、別室に行ってることがある」という事実を、特別視せずに受け取る。それだけで十分なことが多い。</span>
+      </div>
+      <div class="line">
+        <span class="speaker kenji">ケンジ</span>
+        <span class="text">……「普通に」か。意外とそれが一番難しかったりする。</span>
+      </div>
+      <div class="line">
+        <span class="speaker sensei">マナブ先生</span>
+        <span class="text">そうだな。でも、その「普通に」を意識して選ぶことが、インクルーシブの第一歩だと思う。</span>
+      </div>
+    </div>
+
+    <h3>この記事で見てきたこと、一覧で確認</h3>
+    <table class="summary-table">
+      <tr><th>言葉</th><th>一言で言うと</th></tr>
+      <tr><td>特別支援教育</td><td>一人ひとりの困り方に合わせて学びやすくする教育</td></tr>
+      <tr><td>特別支援学校</td><td>専門的な支援が整えやすい学びの場</td></tr>
+      <tr><td>通級</td><td>通常学級で学びながら、必要な時間だけ専門支援を受ける仕組み</td></tr>
+      <tr><td>合理的配慮</td><td>スタートラインを揃えるための「不利を小さくする工夫」</td></tr>
+      <tr><td>インクルーシブ教育</td><td>一人ひとりが参加できる学校・社会をつくること</td></tr>
+    </table>
+
+    <div class="point">
+      <strong>📌 一文でいうと</strong><br>
+      特別支援教育とは、「誰かを特別扱いすること」ではなく、<br>
+      <strong>「誰もが参加できる条件を、その人に合わせて整えていくこと」</strong>。<br>
+      それは教室の話であり、社会の話でもある。
+    </div>
+
+    <p>知ることで、見え方が変わる。そして見え方が変われば、自分の行動も少し変わるかもしれない。</p>
+  </div>
+
+  <div class="credit">
+    もりもりまなぶ の好奇心<br>
+    <a href="https://morimorimanabu.hatenablog.com/">https://morimorimanabu.hatenablog.com/</a><br><br>
+    参考記事（本サイト内）：<br>
+    「特別支援教育って何？」「特別支援学校って何？」「通級って何？」<br>
+    「合理的配慮って何？」「インクルーシブ教育って何？」「特別支援教育は"みんなの教育"になる？」<br><br>
+    制作：合同会社まなびの森教育研究所<br>
+    &copy; 2026 Manabi no Mori Educational Research Institute LLC.
+  </div>
+
+</div>
+</body>
+</html>
