@@ -12,10 +12,12 @@
       --ink:#1f2a1f;
       --sub:#58635b;
       --line:#d7ddd6;
-      --accent:#5d7c61;
-      --accent-2:#8ea38c;
+      --accent:#58735a;
+      --accent-2:#7f9780;
       --soft:#eef3ed;
-      --soft-2:#f4f7f3;
+      --soft-2:#f7faf6;
+      --warn:#fff7e6;
+      --warn-line:#ecd8ac;
       --shadow:0 10px 30px rgba(20,40,20,0.08);
       --radius:18px;
       --max:1120px;
@@ -45,27 +47,37 @@
     }
     .brand{
       font-weight:800;font-size:1rem;letter-spacing:.02em;color:var(--ink);
+      line-height:1.4;
     }
     .brand small{
       display:block;font-weight:600;color:var(--sub);font-size:.78rem;letter-spacing:.04em;margin-top:2px;
+    }
+    .nav-row{
+      display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:flex-end;
     }
     nav ul{
       list-style:none;margin:0;padding:0;display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end;
     }
     nav a{
-      color:var(--sub);font-size:.95rem;font-weight:700;
+      color:var(--sub);font-size:.94rem;font-weight:700;
     }
+    .mini-cta{
+      display:inline-block;padding:10px 14px;border-radius:12px;
+      border:1px solid var(--accent);background:var(--accent);color:#fff;
+      font-size:.92rem;font-weight:800;
+    }
+    .mini-cta:hover{text-decoration:none;transform:translateY(-1px)}
     .hero{
-      padding:62px 0 34px;
+      padding:38px 0 24px;
     }
     .hero-grid{
-      display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:stretch;
+      display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:stretch;
     }
     .hero-main,.hero-side,.panel{
       background:var(--panel);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);
     }
     .hero-main{
-      padding:34px 32px 28px;
+      padding:28px 28px 24px;
       background:
         radial-gradient(circle at top right, rgba(142,163,140,.16), transparent 34%),
         linear-gradient(180deg,#ffffff 0%, #fcfdfb 100%);
@@ -74,16 +86,29 @@
       display:inline-flex;gap:8px;align-items:center;
       background:var(--soft);color:#35553a;border:1px solid #d6e3d4;
       padding:8px 12px;border-radius:999px;font-size:.88rem;font-weight:800;
-      margin-bottom:18px;
+      margin-bottom:14px;
+    }
+    .hero-badge{
+      margin-top:12px;
+      display:flex;gap:10px;flex-wrap:wrap;
+    }
+    .hero-badge span{
+      background:var(--warn);
+      border:1px solid var(--warn-line);
+      color:#6c5420;
+      border-radius:999px;
+      padding:7px 12px;
+      font-size:.88rem;
+      font-weight:800;
     }
     h1{
-      margin:0 0 12px;font-size:clamp(2rem,4vw,3rem);line-height:1.28;letter-spacing:.01em;
+      margin:0 0 10px;font-size:clamp(2.05rem,3.6vw,2.9rem);line-height:1.28;letter-spacing:.01em;
     }
     .hero-lead{
-      font-size:1.08rem;color:var(--sub);margin:0 0 22px;
+      font-size:1.05rem;color:var(--sub);margin:0 0 16px;
     }
     .chips{
-      display:flex;gap:10px;flex-wrap:wrap;margin:0 0 24px;padding:0;list-style:none;
+      display:flex;gap:10px;flex-wrap:wrap;margin:0 0 16px;padding:0;list-style:none;
     }
     .chips li{
       background:#fafcf9;border:1px solid var(--line);border-radius:999px;
@@ -98,12 +123,18 @@
     .btn.secondary{background:#fff;color:var(--accent)}
     .btn:hover{transform:translateY(-1px);text-decoration:none}
     .hero-side{
-      padding:24px 22px;
+      padding:20px;
       display:flex;flex-direction:column;gap:16px;
       background:linear-gradient(180deg,#f8fbf7 0%, #ffffff 100%);
     }
     .hero-side h2{
       margin:0;font-size:1.12rem;
+    }
+    .side-card{
+      background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;
+    }
+    .side-card h3{
+      margin:0 0 8px;font-size:1rem;
     }
     .checklist{
       list-style:none;margin:0;padding:0;display:grid;gap:10px;
@@ -113,6 +144,16 @@
     }
     .checklist strong{display:block;font-size:.98rem}
     .checklist span{display:block;color:var(--sub);font-size:.92rem}
+    .facts{
+      list-style:none;margin:0;padding:0;display:grid;gap:10px;
+    }
+    .facts li{
+      display:grid;grid-template-columns:88px 1fr;gap:10px;
+      padding:10px 0;border-bottom:1px dashed #dfe5dd;
+      font-size:.95rem;
+    }
+    .facts li:last-child{border-bottom:none;padding-bottom:0}
+    .facts b{color:#35553a}
     section{padding:22px 0}
     .section-head{
       margin:0 0 16px;
@@ -124,7 +165,6 @@
       margin:0;color:var(--sub);
     }
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .panel{
       padding:24px 22px;
     }
@@ -156,7 +196,7 @@
     .flow h3{margin:0 0 6px;font-size:1rem}
     .flow p{margin:0;color:var(--sub);font-size:.94rem}
     .product{
-      display:grid;grid-template-columns:1.1fr .9fr;gap:18px;
+      display:grid;grid-template-columns:1.05fr .95fr;gap:18px;
       align-items:stretch;
     }
     .price{
@@ -181,6 +221,15 @@
       display:grid;grid-template-columns:1fr 1fr;gap:18px;
     }
     .muted{color:var(--sub)}
+    .contact-strip{
+      background:linear-gradient(180deg,#f8fbf7 0%, #ffffff 100%);
+    }
+    .contact-grid{
+      display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;
+      background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px 24px;box-shadow:var(--shadow);
+    }
+    .contact-grid h2{margin:0 0 4px;font-size:1.28rem}
+    .contact-grid p{margin:0;color:var(--sub)}
     .foot{
       padding:28px 0 44px;color:var(--sub);font-size:.92rem;
     }
@@ -190,19 +239,22 @@
       letter-spacing:.04em;text-transform:none;
     }
     @media (max-width: 960px){
-      .hero-grid,.grid-2,.grid-3,.product,.subgrid{grid-template-columns:1fr}
+      .hero-grid,.grid-2,.product,.subgrid{grid-template-columns:1fr}
       .flow{grid-template-columns:1fr 1fr}
+      .contact-grid{grid-template-columns:1fr}
     }
     @media (max-width: 720px){
       .topbar-inner{align-items:flex-start;flex-direction:column}
+      .nav-row{justify-content:flex-start}
       nav ul{justify-content:flex-start}
-      .hero{padding-top:34px}
-      .hero-main{padding:24px 20px}
-      .hero-side{padding:20px}
+      .hero{padding-top:26px}
+      .hero-main{padding:22px 18px}
+      .hero-side{padding:16px}
       .flow{grid-template-columns:1fr}
       .table th,.table td{display:block;width:auto}
       .table th{border-bottom:none;padding-bottom:4px}
       .table td{padding-top:0}
+      .facts li{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -213,17 +265,19 @@
         合同会社まなびの森教育研究所
         <small>Manabi no Mori Educational Research Institute LLC</small>
       </div>
-      <nav aria-label="ページ内メニュー">
-        <ul>
-          <li><a href="#about">私たちについて</a></li>
-          <li><a href="#services">事業内容</a></li>
-          <li><a href="#flow">ご依頼の流れ</a></li>
-          <li><a href="#product">教材販売</a></li>
-          <li><a href="#profile">代表者</a></li>
-          <li><a href="#company">会社概要</a></li>
-          <li><a href="#contact">お問い合わせ</a></li>
-        </ul>
-      </nav>
+      <div class="nav-row">
+        <nav aria-label="ページ内メニュー">
+          <ul>
+            <li><a href="#about">私たちについて</a></li>
+            <li><a href="#services">事業内容</a></li>
+            <li><a href="#flow">ご依頼の流れ</a></li>
+            <li><a href="#product">教材販売</a></li>
+            <li><a href="#profile">代表者</a></li>
+            <li><a href="#company">会社概要</a></li>
+          </ul>
+        </nav>
+        <a class="mini-cta" href="#contact">お問い合わせ</a>
+      </div>
     </div>
   </header>
 
@@ -232,44 +286,74 @@
       <div class="wrap hero-grid">
         <div class="hero-main">
           <div class="eyebrow">学校・家庭・地域・教育機関向け</div>
-          <h1>教育相談・研修・教材提供を通じて、<br>学びの現場に実行できる支援を届けます。</h1>
+          <h1>教育相談・研修・教材提供で、<br>学びの現場を支えます。</h1>
           <p class="hero-lead">
             合同会社まなびの森教育研究所は、千葉市を拠点に、
             学校・家庭・地域・教育機関向けの教育コンサルティング、研修企画・実施、
             自然体験学習プログラム、教育教材の企画・販売を行う教育支援会社です。
           </p>
+
           <ul class="chips">
             <li>設立：2026年4月1日</li>
             <li>所在地：千葉県千葉市美浜区</li>
-            <li>主な領域：特別支援教育・インクルーシブ教育・自然体験学習</li>
+            <li>対応：対面／オンライン</li>
           </ul>
+
           <div class="cta-row">
             <a class="btn primary" href="#contact">お問い合わせ</a>
-            <a class="btn secondary" href="#services">事業内容を見る</a>
+            <a class="btn secondary" href="#product">教材販売を見る</a>
+          </div>
+
+          <div class="hero-badge">
+            <span>販売中教材：簿記3級 30日合格問題集</span>
+            <span>価格：¥2,480（税込・買い切り）</span>
           </div>
         </div>
 
         <aside class="hero-side" aria-label="事業概要">
-          <h2>このページで分かること</h2>
-          <ul class="checklist">
-            <li>
-              <strong>誰に何を提供しているか</strong>
-              <span>学校・家庭・地域・教育機関向けの相談、研修、教材、体験学習の内容</span>
-            </li>
-            <li>
-              <strong>どのように依頼できるか</strong>
-              <span>お問い合わせから内容確認、見積、実施、実施後フォローまでの流れ</span>
-            </li>
-            <li>
-              <strong>実際の提供形態</strong>
-              <span>対面・オンライン・教材提供など、サービスごとの対応方法</span>
-            </li>
-            <li>
-              <strong>販売中の教材</strong>
-              <span>簿記3級向け教材の内容、価格、問い合わせ先</span>
-            </li>
-          </ul>
+          <div class="side-card">
+            <h2>このページで分かること</h2>
+            <ul class="checklist">
+              <li>
+                <strong>誰に何を提供しているか</strong>
+                <span>学校・家庭・地域・教育機関向けの相談、研修、教材、体験学習の内容</span>
+              </li>
+              <li>
+                <strong>どのように依頼できるか</strong>
+                <span>お問い合わせから内容確認、見積、実施、実施後フォローまでの流れ</span>
+              </li>
+              <li>
+                <strong>実際の提供形態</strong>
+                <span>対面・オンライン・教材提供など、サービスごとの対応方法</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="side-card">
+            <h3>基本情報</h3>
+            <ul class="facts">
+              <li><b>所在地</b><span>千葉県千葉市美浜区幸町2-16-13-505</span></li>
+              <li><b>連絡先</b><span><a href="mailto:manabinomorikyouikuken@gmail.com">manabinomorikyouikuken@gmail.com</a></span></li>
+              <li><b>対応形式</b><span>対面／オンライン</span></li>
+              <li><b>教材販売</b><span>簿記3級 30日合格問題集　¥2,480（税込）</span></li>
+            </ul>
+          </div>
         </aside>
+      </div>
+    </section>
+
+    <section class="contact-strip">
+      <div class="wrap">
+        <div class="contact-grid">
+          <div>
+            <h2>ご相談・ご依頼はメールで受け付けています</h2>
+            <p>通常2営業日以内を目安に返信します。学校・教育機関・保護者・地域団体からのご相談に対応します。</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn primary" href="mailto:manabinomorikyouikuken@gmail.com">メールで問い合わせる</a>
+            <a class="btn secondary" href="#flow">依頼の流れを見る</a>
+          </div>
+        </div>
       </div>
     </section>
 
