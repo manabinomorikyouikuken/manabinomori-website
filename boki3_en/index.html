@@ -774,6 +774,18 @@ Object.assign(DAYS, {
         answer: 1,
         explanation: 'Current Account Deposit (当座預金, asset) increases → Dr. Current Account Deposit. Cash (asset) decreases → Cr. Cash. One asset simply replaces another.'
       },
+      {
+        type: "choice", id: "d11q3",
+        text: '"Issued a promissory note ¥150,000 to settle an accounts payable balance." Which is the correct journal entry?',
+        choices: [
+          "Dr. Bills Payable ¥150,000 / Cr. Accounts Payable ¥150,000",
+          "Dr. Accounts Payable ¥150,000 / Cr. Bills Payable ¥150,000",
+          "Dr. Accounts Payable ¥150,000 / Cr. Cash ¥150,000",
+          "Dr. Bills Receivable ¥150,000 / Cr. Accounts Payable ¥150,000"
+        ],
+        answer: 1,
+        explanation: 'Accounts Payable (買掛金, liability) decreases → Dr. Accounts Payable. Bills Payable (支払手形 / シハライテガタ, liability) increases → Cr. Bills Payable. The obligation changes form from an open payable to a formal promissory note. Both are liabilities — one asset has not changed.'
+      },
     ]
   },
 
@@ -869,6 +881,13 @@ Object.assign(DAYS, {
         ],
         answer: 1,
         explanation: 'Depreciation Expense is "recording the annual loss in value of a fixed asset (due to use over time) as an expense." Fixed assets gradually lose value each year.'
+      },
+      {
+        type: "choice", id: "d13q3",
+        text: 'Equipment was purchased for ¥600,000 with a useful life of 5 years and no residual value. What is the annual depreciation expense using the <strong>straight-line method</strong>?',
+        choices: ["¥120,000", "¥600,000", "¥60,000", "¥150,000"],
+        answer: 0,
+        explanation: 'Straight-line Depreciation = (Cost − Residual Value) ÷ Useful Life = (600,000 − 0) ÷ 5 = <strong>¥120,000 per year</strong>. Under IFRS (IAS 16), the straight-line method is the most widely used depreciation method. The journal entry each year: Dr. Depreciation Expense ¥120,000 / Cr. Accumulated Depreciation ¥120,000.'
       },
     ]
   },
