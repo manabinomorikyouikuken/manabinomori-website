@@ -1,0 +1,1914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bookkeeping Level 3 (日商簿記3級) — 30-Day Exam Prep | MoriMori Manabu</title>
+<style>
+:root {
+  --primary: #2563eb;
+  --primary-light: #eff6ff;
+  --success: #16a34a;
+  --success-light: #f0fdf4;
+  --error: #dc2626;
+  --error-light: #fef2f2;
+  --warn: #d97706;
+  --warn-light: #fffbeb;
+  --gray: #6b7280;
+  --border: #e5e7eb;
+  --bg: #f9fafb;
+  --white: #ffffff;
+  --text: #111827;
+  --text-light: #6b7280;
+  --sky: #0369a1;
+  --sky-light: #f0f9ff;
+  --sky-border: #bae6fd;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, "Segoe UI", "Hiragino Sans", sans-serif; background: var(--bg); color: var(--text); font-size: 15px; line-height: 1.7; }
+
+/* Header */
+header { background: var(--primary); color: #fff; padding: 20px 24px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 8px rgba(0,0,0,.2); }
+header h1 { font-size: 1.05rem; font-weight: 700; }
+header p  { font-size: 0.78rem; opacity: .8; margin-top: 2px; }
+.progress-bar { height: 6px; background: rgba(255,255,255,.3); border-radius: 3px; margin-top: 10px; }
+.progress-fill { height: 100%; background: #fff; border-radius: 3px; transition: width .4s; }
+
+/* Layout */
+.container { display: flex; max-width: 1120px; margin: 0 auto; padding: 24px 16px; gap: 20px; }
+
+/* Sidebar */
+.sidebar { width: 230px; flex-shrink: 0; }
+.sidebar h2 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--text-light); margin-bottom: 8px; }
+.week-group { margin-bottom: 16px; }
+.week-label { font-size: 0.75rem; font-weight: 700; color: var(--primary); margin-bottom: 4px; padding: 4px 8px; background: var(--primary-light); border-radius: 4px; }
+.day-btn { display: flex; align-items: center; gap: 6px; width: 100%; text-align: left; padding: 6px 10px; border: none; background: none; cursor: pointer; border-radius: 6px; font-size: 0.8rem; color: var(--text); transition: background .15s; }
+.day-btn:hover { background: var(--border); }
+.day-btn.active { background: var(--primary); color: #fff; font-weight: 700; }
+.day-btn.done .dot { background: var(--success); }
+.day-btn.partial .dot { background: var(--warn); }
+.day-btn.locked { color: var(--text-light); cursor: default; }
+.day-btn.locked:hover { background: none; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); flex-shrink: 0; }
+
+/* Main content */
+.main { flex: 1; min-width: 0; }
+.day-header { background: var(--white); border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; border: 1px solid var(--border); }
+.day-header .week-tag { font-size: 0.75rem; font-weight: 700; color: var(--primary); background: var(--primary-light); padding: 2px 8px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
+.day-header h2 { font-size: 1.25rem; font-weight: 800; }
+.day-header p { color: var(--text-light); font-size: 0.87rem; margin-top: 4px; }
+
+/* Key Terms Box */
+.key-terms-box { background: var(--sky-light); border: 1px solid var(--sky-border); border-radius: 10px; padding: 14px 16px; margin-bottom: 18px; }
+.key-terms-box h3 { font-size: 0.76rem; text-transform: uppercase; letter-spacing: .06em; color: var(--sky); margin-bottom: 10px; font-weight: 700; }
+.kt-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px; }
+.kt-card { background: white; border: 1px solid var(--sky-border); border-radius: 7px; padding: 9px 11px; }
+.kt-en { font-weight: 700; font-size: 0.87rem; color: var(--text); margin-bottom: 2px; }
+.kt-kanji { font-size: 0.98rem; margin: 2px 0; }
+.kt-read { font-size: 0.71rem; color: var(--gray); line-height: 1.6; }
+
+/* Dialogue */
+.dialogue { background: var(--primary-light); border-left: 4px solid var(--primary); border-radius: 0 8px 8px 0; padding: 14px 16px; margin-bottom: 20px; font-size: 0.9rem; }
+.dialogue .speaker { font-weight: 700; color: var(--primary); font-size: 0.8rem; margin-bottom: 4px; }
+.dialogue .line { margin-bottom: 6px; }
+.dialogue .line:last-child { margin-bottom: 0; }
+
+/* Question card */
+.q-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 14px; }
+.q-num { font-size: 0.74rem; font-weight: 700; color: var(--text-light); margin-bottom: 6px; }
+.q-text { font-size: 0.95rem; font-weight: 600; margin-bottom: 14px; }
+.q-sub { font-size: 0.85rem; color: var(--text-light); margin-bottom: 14px; background: var(--bg); padding: 8px 12px; border-radius: 6px; }
+.jterm { font-size: 0.8em; color: var(--gray); font-weight: 400; }
+
+/* Choices */
+.choices { display: flex; flex-direction: column; gap: 8px; }
+.choice-btn { padding: 10px 14px; border: 2px solid var(--border); border-radius: 8px; background: var(--white); text-align: left; cursor: pointer; font-size: 0.87rem; transition: border-color .15s, background .15s; }
+.choice-btn:hover:not(:disabled) { border-color: var(--primary); background: var(--primary-light); }
+.choice-btn.correct { border-color: var(--success); background: var(--success-light); color: var(--success); font-weight: 700; }
+.choice-btn.wrong   { border-color: var(--error);   background: var(--error-light);   color: var(--error); }
+
+/* Fill input */
+.fill-area { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.fill-input { border: 2px solid var(--border); border-radius: 8px; padding: 8px 12px; font-size: 0.9rem; outline: none; min-width: 170px; }
+.fill-input:focus { border-color: var(--primary); }
+.fill-input.correct { border-color: var(--success); background: var(--success-light); }
+.fill-input.wrong   { border-color: var(--error);   background: var(--error-light); }
+
+/* Buttons */
+.btn { padding: 10px 20px; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: opacity .15s; }
+.btn:hover { opacity: .85; }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-gray    { background: var(--border); color: var(--text); }
+
+/* Explanation */
+.explanation { margin-top: 12px; padding: 12px 14px; background: var(--warn-light); border-left: 3px solid var(--warn); border-radius: 0 8px 8px 0; font-size: 0.85rem; display: none; }
+.explanation.show { display: block; }
+.explanation strong { color: var(--warn); }
+
+/* Score box */
+.score-box { background: var(--white); border: 2px solid var(--primary); border-radius: 12px; padding: 24px; text-align: center; margin-top: 20px; display: none; }
+.score-box.show { display: block; }
+.score-big { font-size: 2.5rem; font-weight: 800; color: var(--primary); }
+.score-msg { font-size: 1rem; margin-top: 6px; font-weight: 600; }
+
+/* Locked day */
+.locked-panel { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 48px 24px; text-align: center; margin-top: 20px; }
+.locked-panel .lock-icon { font-size: 3rem; margin-bottom: 14px; }
+.locked-panel h2 { font-size: 1.15rem; font-weight: 700; margin-bottom: 8px; }
+.locked-panel p { color: var(--text-light); font-size: 0.88rem; max-width: 380px; margin: 0 auto; }
+
+/* Responsive */
+@media (max-width: 700px) {
+  .container { flex-direction: column; padding: 12px; }
+  .sidebar { width: 100%; }
+  .week-group { display: inline-flex; flex-wrap: wrap; gap: 4px; }
+  .kt-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📒 Bookkeeping Level 3 <span style="font-weight:400;font-size:.9em;">(日商簿記3級 / ニッショウボキサンキュウ / Nisshō Boki Sankyū)</span></h1>
+  <p>30-Day Exam Prep — For Foreign Workers in Japan &nbsp;|&nbsp; 日本で働く外国人向け問題集</p>
+  <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+</header>
+
+<div class="container">
+  <nav class="sidebar" id="sidebar"></nav>
+  <main class="main" id="main"></main>
+</div>
+
+<script>
+// =============================================
+// DATA — WEEKS
+// =============================================
+const WEEKS = [
+  { label: "Week 1: The Big Picture", days: [1,2,3,4,5,6,7] },
+  { label: "Week 2: Master Journal Entries", days: [8,9,10,11,12,13,14] },
+  { label: "Week 3: Practice Problems", days: [15,16,17,18,19,20,21] },
+  { label: "Week 4: Mock Exams & Review", days: [22,23,24,25,26,27,28,29,30] },
+];
+
+// =============================================
+// DATA — DAYS (Week 1: fully translated)
+// =============================================
+const DAYS = {
+
+  1: {
+    week: "Week 1", title: "What Is Bookkeeping?",
+    goal: "Understand the purpose and basic concept of bookkeeping",
+    terms: [
+      { en: "Bookkeeping",              kanji: "簿記（ぼき）",     katakana: "ボキ",             romaji: "Boki" },
+      { en: "Double-Entry Bookkeeping", kanji: "複式簿記（ふくしきぼき）", katakana: "フクシキボキ", romaji: "Fukushiki Boki" },
+      { en: "Debit (left side)",        kanji: "借方（かりかた）",   katakana: "カリカタ",          romaji: "Karikata" },
+      { en: "Credit (right side)",      kanji: "貸方（かしかた）",   katakana: "カシカタ",          romaji: "Kashikata" },
+      { en: "Commercial Bookkeeping",   kanji: "商業簿記（しょうぎょうぼき）", katakana: "ショウギョウボキ", romaji: "Shōgyō Boki" },
+    ],
+    dialogue: [
+      { speaker: "Taro", text: "Hey Mr. Manabu, why do we study bookkeeping?" },
+      { speaker: "Mr. Manabu", text: "Great question! Bookkeeping (簿記 / ボキ / Boki) is a set of rules for recording the flow of money. It's the skill of accurately tracking how much a shop or company earns and spends every day." },
+      { speaker: "Hina", text: "Is it like a household budget book?" },
+      { speaker: "Mr. Manabu", text: "Close! But it's more precise and has a fixed format. Learning this format is the first step in bookkeeping." },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d1q1",
+        text: 'What is the main purpose of bookkeeping <span class="jterm">(簿記 / ボキ / Boki)</span>?',
+        choices: [
+          "To record and manage the flow of money",
+          "To calculate taxes",
+          "To count product inventory",
+          "To decide employee salaries"
+        ],
+        answer: 0,
+        explanation: 'The purpose of bookkeeping is "to record and organize the flow of money (assets), and clarify the financial position and business performance." Tax calculation and inventory management are applications that use bookkeeping records.'
+      },
+      {
+        type: "choice", id: "d1q2",
+        text: 'What does "double-entry bookkeeping" <span class="jterm">(複式簿記 / フクシキボキ / Fukushiki Boki)</span> mean?',
+        choices: [
+          "Keeping two sets of account books",
+          "Recording each transaction from both the debit and credit sides",
+          "Two people keeping the books together",
+          "Closing the books twice a month"
+        ],
+        answer: 1,
+        explanation: 'Double-entry bookkeeping means recording every transaction from two sides — always as a "Debit (left / 借方 / カリカタ / Karikata)" and a "Credit (right / 貸方 / カシカタ / Kashikata)". This creates an automatic error-checking function.'
+      },
+      {
+        type: "choice", id: "d1q3",
+        text: 'What is the main subject of the Bookkeeping Level 3 <span class="jterm">(簿記3級 / ボキサンキュウ / Boki Sankyū)</span> exam?',
+        choices: [
+          "Consolidated accounting of large corporations",
+          "Commercial bookkeeping for small shops and companies",
+          "Cost accounting for manufacturing",
+          "Market value assessment of stocks"
+        ],
+        answer: 1,
+        explanation: 'Level 3 covers "Commercial Bookkeeping" (商業簿記 / ショウギョウボキ / Shōgyō Boki). It focuses on recording transactions at retail shops and small businesses, mainly buying and selling goods.'
+      },
+    ]
+  },
+
+  2: {
+    week: "Week 1", title: "Assets, Liabilities & Equity",
+    goal: "Distinguish the 3 elements of the Balance Sheet",
+    terms: [
+      { en: "Assets",       kanji: "資産（しさん）",   katakana: "シサン",     romaji: "Shisan" },
+      { en: "Liabilities",  kanji: "負債（ふさい）",   katakana: "フサイ",     romaji: "Fusai" },
+      { en: "Equity / Net Assets", kanji: "純資産（じゅんしさん）", katakana: "ジュンシサン", romaji: "Junshisan" },
+      { en: "Cash",         kanji: "現金（げんきん）", katakana: "ゲンキン",   romaji: "Genkin" },
+      { en: "Accounts Payable", kanji: "買掛金（かいかけきん）", katakana: "カイカケキン", romaji: "Kaikakekin" },
+      { en: "Capital Stock",     kanji: "資本金（しほんきん）",  katakana: "シホンキン",   romaji: "Shihonkin" },
+      { en: "Balance Sheet (B/S)", kanji: "貸借対照表（たいしゃくたいしょうひょう）", katakana: "タイシャクタイショウヒョウ", romaji: "Taishaku Taishōhyō" },
+    ],
+    dialogue: [
+      { speaker: "Kenji", text: 'Are "Assets," "Liabilities," and "Equity" all just about money?' },
+      { speaker: "Mr. Manabu", text: 'They\'re similar but different! Assets (資産 / シサン / Shisan) = things you own. Liabilities (負債 / フサイ / Fusai) = things you owe (obligation to repay). Equity (純資産 / ジュンシサン / Junshisan) = assets minus liabilities — what\'s truly yours.' },
+      { speaker: "Hina", text: "So if Assets = ¥1,000,000 and Liabilities = ¥600,000, Equity = ¥400,000?" },
+      { speaker: "Mr. Manabu", text: 'Perfect! That equation — <strong>Assets = Liabilities + Equity</strong> (資産 ＝ 負債 ＋ 純資産) — is the #1 rule in bookkeeping!' },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d2q1",
+        text: 'Which of the following is classified as an <strong>"Asset"</strong> <span class="jterm">(資産 / シサン / Shisan)</span>?',
+        choices: [
+          "Loans Payable (借入金 / カリイレキン / Kariirekin)",
+          "Cash (現金 / ゲンキン / Genkin)",
+          "Capital Stock (資本金 / シホンキン / Shihonkin)",
+          "Sales Revenue (売上 / ウリアゲ / Uriage)"
+        ],
+        answer: 1,
+        explanation: 'Cash (現金 / ゲンキン / Genkin) is something "you own," so it is an asset. Loans Payable is a liability, Capital Stock is equity, and Sales Revenue is income.'
+      },
+      {
+        type: "choice", id: "d2q2",
+        text: 'Which correctly describes <strong>"Liabilities"</strong> <span class="jterm">(負債 / フサイ / Fusai)</span>?',
+        choices: [
+          "The right to receive money in the future",
+          "The obligation to pay money in the future",
+          "Accumulated profits over time",
+          "The total amount of assets owned"
+        ],
+        answer: 1,
+        explanation: 'Liabilities are "obligations you must repay or pay in the future — things borrowed from others."'
+      },
+      {
+        type: "fill", id: "d2q3",
+        text: "Fill in the blank.",
+        sub: "Assets: ¥3,000,000 &nbsp;—&nbsp; Liabilities: ¥1,800,000 &nbsp;—&nbsp; Equity: ( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ) yen",
+        answer: "1200000",
+        unit: "yen (¥)",
+        hint: "Enter numbers only, e.g. 1200000",
+        explanation: "Equity = Assets − Liabilities = 3,000,000 − 1,800,000 = ¥1,200,000. The equation Assets = Liabilities + Equity holds."
+      },
+      {
+        type: "choice", id: "d2q4",
+        text: 'How is <strong>"Accounts Payable"</strong> <span class="jterm">(買掛金 / カイカケキン / Kaikakekin)</span> classified?',
+        choices: [
+          "Asset (資産 / Shisan)",
+          "Liability (負債 / Fusai)",
+          "Equity (純資産 / Junshisan)",
+          "Expense (費用 / Hiyō)"
+        ],
+        answer: 1,
+        explanation: 'Accounts Payable means "we purchased goods but haven\'t paid yet (obligation to pay later)." That\'s a liability.'
+      },
+    ]
+  },
+
+  3: {
+    week: "Week 1", title: "Revenue, Expenses & Profit",
+    goal: "Understand how the Income Statement works and how to calculate profit",
+    terms: [
+      { en: "Revenue / Income", kanji: "収益（しゅうえき）", katakana: "シュウエキ", romaji: "Shūeki" },
+      { en: "Expenses",         kanji: "費用（ひよう）",     katakana: "ヒヨウ",     romaji: "Hiyō" },
+      { en: "Profit",           kanji: "利益（りえき）",     katakana: "リエキ",     romaji: "Rieki" },
+      { en: "Net Loss",         kanji: "当期純損失（とうきじゅんそんしつ）", katakana: "トウキジュンソンシツ", romaji: "Tōki Jun Sonshitsu" },
+      { en: "Sales Revenue",    kanji: "売上（うりあげ）",   katakana: "ウリアゲ",   romaji: "Uriage" },
+      { en: "Purchases",        kanji: "仕入（しいれ）",     katakana: "シイレ",     romaji: "Shiire" },
+      { en: "Salaries",         kanji: "給料（きゅうりょう）", katakana: "キュウリョウ", romaji: "Kyūryō" },
+      { en: "Rent Expense",     kanji: "支払家賃（しはらいやちん）", katakana: "シハライヤチン", romaji: "Shiharai Yachin" },
+      { en: "Income Statement (P/L)", kanji: "損益計算書（そんえきけいさんしょ）", katakana: "ソンエキケイサンショ", romaji: "Son'eki Keisansho" },
+    ],
+    dialogue: [
+      { speaker: "Taro", text: "If sales are high, doesn't that mean you're making money?" },
+      { speaker: "Mr. Manabu", text: 'You can\'t tell from sales alone. Revenue (収益 / シュウエキ / Shūeki) minus Expenses (費用 / ヒヨウ / Hiyō) — like cost of goods, rent, and salaries — gives you Profit (利益 / リエキ / Rieki).' },
+      { speaker: "Hina", text: "So if sales are ¥1,000,000 but purchasing cost ¥900,000, profit is only ¥100,000?" },
+      { speaker: "Mr. Manabu", text: 'Exactly! <strong>Revenue − Expenses = Profit (or Loss)</strong>. That\'s the core of the Income Statement (損益計算書 / ソンエキケイサンショ / Son\'eki Keisansho, P/L)!' },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d3q1",
+        text: 'Which of the following is classified as <strong>"Revenue"</strong> <span class="jterm">(収益 / シュウエキ / Shūeki)</span>?',
+        choices: [
+          "Purchases (仕入 / Shiire)",
+          "Salaries (給料 / Kyūryō)",
+          "Sales Revenue (売上 / Uriage)",
+          "Rent Expense (支払家賃 / Shiharai Yachin)"
+        ],
+        answer: 2,
+        explanation: 'Sales Revenue (売上 / ウリアゲ / Uriage) is income earned by selling goods. Purchases, salaries, and rent expense are all Expenses (費用 / ヒヨウ / Hiyō).'
+      },
+      {
+        type: "fill", id: "d3q2",
+        text: "Calculate the profit.",
+        sub: "Sales ¥500,000 &nbsp;/&nbsp; Purchases ¥300,000 &nbsp;/&nbsp; Salaries ¥80,000 &nbsp;/&nbsp; Rent ¥40,000 &nbsp;→&nbsp; Profit = ( &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ) yen",
+        answer: "80000",
+        unit: "yen (¥)",
+        hint: "Enter numbers only",
+        explanation: "Profit = Revenue − Expenses = 500,000 − (300,000 + 80,000 + 40,000) = 500,000 − 420,000 = ¥80,000"
+      },
+      {
+        type: "choice", id: "d3q3",
+        text: "When expenses exceed revenue, what occurs?",
+        choices: [
+          "Net Profit (当期純利益 / Tōki Jun Rieki)",
+          "Net Loss (当期純損失 / Tōki Jun Sonshitsu)",
+          "Retained Earnings (繰越利益剰余金 / Kurikoshi Rieki Jōyokin)",
+          "Capital Surplus (資本剰余金 / Shihon Jōyokin)"
+        ],
+        answer: 1,
+        explanation: 'When Expenses > Revenue, a "Net Loss" (当期純損失 / トウキジュンソンシツ / Tōki Jun Sonshitsu) occurs. In everyday language, this is called "operating in the red" (赤字 / アカジ / Akaji).'
+      },
+    ]
+  },
+
+  4: {
+    week: "Week 1", title: "Account Titles ① — Assets & Liabilities",
+    goal: "Learn the names of key asset and liability account titles",
+    terms: [
+      { en: "Account Titles",     kanji: "勘定科目（かんじょうかもく）", katakana: "カンジョウカモク", romaji: "Kanjō Kamoku" },
+      { en: "Accounts Receivable", kanji: "売掛金（うりかけきん）", katakana: "ウリカケキン", romaji: "Urikakekin" },
+      { en: "Accounts Payable",    kanji: "買掛金（かいかけきん）", katakana: "カイカケキン", romaji: "Kaikakekin" },
+      { en: "Prepaid Amount",      kanji: "前払金（まえばらいきん）", katakana: "マエバライキン", romaji: "Maebarakin" },
+      { en: "Advance Received",    kanji: "前受金（まえうけきん）", katakana: "マエウケキン", romaji: "Maeuke Kin" },
+      { en: "Loans Receivable",    kanji: "貸付金（かしつけきん）", katakana: "カシツケキン", romaji: "Kashitsuke Kin" },
+      { en: "Loans Payable",       kanji: "借入金（かりいれきん）", katakana: "カリイレキン", romaji: "Kariirekin" },
+    ],
+    dialogue: [
+      { speaker: "Kenji", text: 'What are "Account Titles"? Can\'t I just write "cash" normally?' },
+      { speaker: "Mr. Manabu", text: '"Cash" IS a correct account title! Account titles (勘定科目 / カンジョウカモク / Kanjō Kamoku) are like standardized labels used when journalizing transactions. Without fixed names, everyone would record things differently.' },
+      { speaker: "Hina", text: "Do I have to memorize all of them?" },
+      { speaker: "Mr. Manabu", text: "You only need the top ~15 frequently tested ones. Today, let's understand — not just memorize — the key assets and liabilities!" },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d4q1",
+        text: 'What does <strong>"Accounts Receivable"</strong> <span class="jterm">(売掛金 / ウリカケキン / Urikakekin)</span> mean?',
+        choices: [
+          "The amount owed for goods purchased but not yet paid",
+          "The amount owed for goods sold but payment not yet received",
+          "Borrowings from a bank",
+          "Expenses paid in advance"
+        ],
+        answer: 1,
+        explanation: 'Accounts Receivable means "we sold goods but haven\'t collected payment yet (right to receive money later)." Since it\'s a right, it\'s classified as an Asset.'
+      },
+      {
+        type: "choice", id: "d4q2",
+        text: "Which correctly classifies the following accounts?",
+        choices: [
+          "Accounts Receivable (売掛金) → Liability,  Accounts Payable (買掛金) → Asset",
+          "Accounts Receivable (売掛金) → Asset,  Accounts Payable (買掛金) → Liability",
+          "Accounts Receivable (売掛金) → Asset,  Accounts Payable (買掛金) → Asset",
+          "Accounts Receivable (売掛金) → Liability,  Accounts Payable (買掛金) → Liability"
+        ],
+        answer: 1,
+        explanation: 'Accounts Receivable (売掛金) = right to receive money → Asset. Accounts Payable (買掛金) = obligation to pay money → Liability. "Receivable" = you get money; "Payable" = you pay money.'
+      },
+      {
+        type: "choice", id: "d4q3",
+        text: 'Which correctly describes <strong>"Prepaid Amount"</strong> <span class="jterm">(前払金 / マエバライキン / Maebarakin)</span>?',
+        choices: [
+          "Paid money in advance before receiving goods → Asset",
+          "Received money in advance before delivering goods → Liability",
+          "An expense incurred but not yet paid → Liability",
+          "Revenue earned but not yet received → Asset"
+        ],
+        answer: 0,
+        explanation: 'Prepaid Amount means "we paid money in advance but haven\'t received the goods yet." Since we have the right to receive goods in the future, it\'s an Asset.'
+      },
+      {
+        type: "choice", id: "d4q4",
+        text: 'How is <strong>"Advance Received"</strong> <span class="jterm">(前受金 / マエウケキン / Maeuke Kin)</span> classified?',
+        choices: [
+          "Asset (資産 / Shisan)",
+          "Liability (負債 / Fusai)",
+          "Equity (純資産 / Junshisan)",
+          "Expense (費用 / Hiyō)"
+        ],
+        answer: 1,
+        explanation: 'Advance Received means "we received money in advance but haven\'t delivered the goods yet." We have an obligation to deliver goods in the future → Liability.'
+      },
+    ]
+  },
+
+  5: {
+    week: "Week 1", title: "Account Titles ② — Revenue & Expenses",
+    goal: "Learn the names of key revenue and expense account titles",
+    terms: [
+      { en: "Interest Income",      kanji: "受取利息（うけとりりそく）", katakana: "ウケトリリソク", romaji: "Uketori Risoku" },
+      { en: "Rent Expense",         kanji: "支払家賃（しはらいやちん）", katakana: "シハライヤチン", romaji: "Shiharai Yachin" },
+      { en: "Commission Income",    kanji: "受取手数料（うけとりてすうりょう）", katakana: "ウケトリテスウリョウ", romaji: "Uketori Tesūryō" },
+      { en: "Depreciation Expense", kanji: "減価償却費（げんかしょうきゃくひ）", katakana: "ゲンカショウキャクヒ", romaji: "Genka Shōkyakuhi" },
+      { en: "Communication Exp.",   kanji: "通信費（つうしんひ）", katakana: "ツウシンヒ", romaji: "Tsūshinhi" },
+      { en: "Utilities Expense",    kanji: "水道光熱費（すいどうこうねつひ）", katakana: "スイドウコウネツヒ", romaji: "Suidō Kōnetsuhi" },
+      { en: "Rental Income",        kanji: "受取家賃（うけとりやちん）", katakana: "ウケトリヤチン", romaji: "Uketori Yachin" },
+    ],
+    dialogue: [
+      { speaker: "Taro", text: "There are so many types of expenses — do I have to memorize all of them?" },
+      { speaker: "Mr. Manabu", text: "About 10 key ones is enough. Today, let's go through the main revenue and expense accounts all at once." },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d5q1",
+        text: 'How is <strong>"Interest Income"</strong> <span class="jterm">(受取利息 / ウケトリリソク / Uketori Risoku)</span> classified?',
+        choices: [
+          "Asset (資産 / Shisan)",
+          "Liability (負債 / Fusai)",
+          "Revenue (収益 / Shūeki)",
+          "Expense (費用 / Hiyō)"
+        ],
+        answer: 2,
+        explanation: 'Interest Income is "interest received from bank deposits, etc." Money coming INTO the company → Revenue (収益 / シュウエキ / Shūeki).'
+      },
+      {
+        type: "choice", id: "d5q2",
+        text: 'How is <strong>"Rent Expense"</strong> <span class="jterm">(支払家賃 / シハライヤチン / Shiharai Yachin)</span> classified?',
+        choices: [
+          "Asset (資産 / Shisan)",
+          "Liability (負債 / Fusai)",
+          "Revenue (収益 / Shūeki)",
+          "Expense (費用 / Hiyō)"
+        ],
+        answer: 3,
+        explanation: 'Rent Expense is "money paid for office or store rent." Money going OUT of the company → Expense (費用 / ヒヨウ / Hiyō).'
+      },
+      {
+        type: "choice", id: "d5q3",
+        text: 'Which of the following is <strong>NOT</strong> classified as an "Expense" <span class="jterm">(費用 / ヒヨウ / Hiyō)</span>?',
+        choices: [
+          "Salaries (給料 / Kyūryō)",
+          "Communication Expenses (通信費 / Tsūshinhi)",
+          "Commission Income (受取手数料 / Uketori Tesūryō)",
+          "Depreciation Expense (減価償却費 / Genka Shōkyakuhi)"
+        ],
+        answer: 2,
+        explanation: 'Commission Income (受取手数料 / ウケトリテスウリョウ / Uketori Tesūryō) is "fees received for providing services" → Revenue, not Expense. The other three are all expenses.'
+      },
+      {
+        type: "choice", id: "d5q4",
+        text: 'What does the <strong>"Purchases"</strong> <span class="jterm">(仕入 / シイレ / Shiire)</span> account represent?',
+        choices: [
+          "The amount of goods sold",
+          "The cost of goods purchased for resale",
+          "The inventory balance",
+          "The inventory adjustment difference"
+        ],
+        answer: 1,
+        explanation: 'The Purchases (仕入 / シイレ / Shiire) account is an expense account that records "the cost of buying goods with the intention of reselling them."'
+      },
+    ]
+  },
+
+  6: {
+    week: "Week 1", title: "Balance Sheet & Income Statement",
+    goal: "Understand the structure of the two main financial statements",
+    terms: [
+      { en: "Balance Sheet (B/S)",   kanji: "貸借対照表（たいしゃくたいしょうひょう）", katakana: "タイシャクタイショウヒョウ", romaji: "Taishaku Taishōhyō" },
+      { en: "Income Statement (P/L)", kanji: "損益計算書（そんえきけいさんしょ）", katakana: "ソンエキケイサンショ", romaji: "Son'eki Keisansho" },
+      { en: "Net Profit",            kanji: "当期純利益（とうきじゅんりえき）", katakana: "トウキジュンリエキ", romaji: "Tōki Jun Rieki" },
+    ],
+    dialogue: [
+      { speaker: "Hina", text: "What's the difference between the Balance Sheet and the Income Statement?" },
+      { speaker: "Mr. Manabu", text: 'The Balance Sheet (貸借対照表 / タイシャクタイショウヒョウ / Taishaku Taishōhyō, B/S) shows the "financial position at a specific point in time." The Income Statement (損益計算書 / ソンエキケイサンショ / Son\'eki Keisansho, P/L) shows "the profit situation over a period of time." Like a photo vs. a video!' },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d6q1",
+        text: 'What is recorded on the <strong>Balance Sheet</strong> <span class="jterm">(貸借対照表 / タイシャクタイショウヒョウ / B/S)</span>?',
+        choices: [
+          "Sales Revenue (売上高 / Uriage-daka)",
+          "Purchases (仕入高 / Shiire-daka)",
+          "Cash (現金 / Genkin)",
+          "Salaries (給料 / Kyūryō)"
+        ],
+        answer: 2,
+        explanation: 'The Balance Sheet (B/S) records Assets, Liabilities, and Equity. Cash (現金) is an asset, so it appears on the B/S. Sales revenue, purchases, and salaries appear on the Income Statement (P/L).'
+      },
+      {
+        type: "choice", id: "d6q2",
+        text: 'Which correctly describes the <strong>Income Statement</strong> <span class="jterm">(損益計算書 / ソンエキケイサンショ / P/L)</span>?',
+        choices: [
+          "Shows the financial position at the closing date",
+          "Shows revenue, expenses, and profit over a period of time",
+          "Lists assets and liabilities",
+          "Records cash inflows and outflows"
+        ],
+        answer: 1,
+        explanation: 'The Income Statement (P/L) shows "how much was earned, how much was spent, and how much profit was made over a given period (usually one year)."'
+      },
+      {
+        type: "choice", id: "d6q3",
+        text: 'What appears on the <strong>left side (Debit / 借方)</strong> of the Balance Sheet?',
+        choices: [
+          "Liabilities (負債 / Fusai)",
+          "Equity (純資産 / Junshisan)",
+          "Assets (資産 / Shisan)",
+          "Revenue (収益 / Shūeki)"
+        ],
+        answer: 2,
+        explanation: 'The left side (Debit / 借方 / カリカタ / Karikata) of the Balance Sheet shows Assets. The right side (Credit / 貸方 / カシカタ / Kashikata) shows Liabilities and Equity. The totals of both sides always match!'
+      },
+    ]
+  },
+
+  7: {
+    week: "Week 1", title: "Week 1 Review",
+    goal: "Comprehensive review of everything covered in Week 1",
+    terms: [],
+    dialogue: [
+      { speaker: "Mr. Manabu", text: "Great work on Week 1! Today is a review. For any questions you get wrong, make sure to go back and review them." },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d7q1",
+        text: 'Using the equation <strong>Assets = Liabilities + Equity</strong>: if Assets = ¥2,000,000 and Equity = ¥700,000, what are the Liabilities?',
+        choices: ["¥1,300,000", "¥2,700,000", "¥1,400,000", "¥700,000"],
+        answer: 0,
+        explanation: "Liabilities = Assets − Equity = 2,000,000 − 700,000 = ¥1,300,000"
+      },
+      {
+        type: "choice", id: "d7q2",
+        text: "Which correctly classifies the following account titles?",
+        choices: [
+          "Accounts Receivable (売掛金) → Expense,  Accounts Payable (買掛金) → Revenue",
+          "Rental Income (受取家賃) → Revenue,  Rent Expense (支払家賃) → Expense",
+          "Loans Payable (借入金) → Asset,  Loans Receivable (貸付金) → Liability",
+          "Advance Received (前受金) → Asset,  Prepaid Amount (前払金) → Liability"
+        ],
+        answer: 1,
+        explanation: 'Rental Income (受取家賃 / ウケトリヤチン / Uketori Yachin) = money coming in → Revenue. Rent Expense (支払家賃 / シハライヤチン / Shiharai Yachin) = money going out → Expense.'
+      },
+      {
+        type: "choice", id: "d7q3",
+        text: "Sales ¥600,000 / Purchases ¥350,000 / Salaries ¥90,000 / Utilities ¥15,000 → What is the profit?",
+        choices: ["¥145,000", "¥165,000", "¥250,000", "¥455,000"],
+        answer: 0,
+        explanation: "Profit = 600,000 − (350,000 + 90,000 + 15,000) = 600,000 − 455,000 = ¥145,000"
+      },
+      {
+        type: "choice", id: "d7q4",
+        text: "What is recorded on the Income Statement (P/L)?",
+        choices: [
+          "Cash (現金 / Genkin)",
+          "Loans Payable (借入金 / Kariirekin)",
+          "Net Profit for the Period (当期純利益 / Tōki Jun Rieki)",
+          "Capital Stock (資本金 / Shihonkin)"
+        ],
+        answer: 2,
+        explanation: 'Net Profit for the Period (当期純利益) = "Revenue − Expenses" and is recorded on the Income Statement (P/L). Cash, Loans Payable, and Capital Stock all appear on the Balance Sheet (B/S).'
+      },
+    ]
+  },
+};
+
+// =============================================
+// DAYS — Week 2 (fully translated)
+// =============================================
+Object.assign(DAYS, {
+
+  8: {
+    week: "Week 2", title: "Journal Entry Basics",
+    goal: "Learn the rules for what goes on the Debit and Credit sides",
+    terms: [
+      { en: "Journal Entry",    kanji: "仕訳（しわけ）",   katakana: "シワケ",   romaji: "Shiwake" },
+      { en: "Debit (left)",     kanji: "借方（かりかた）",  katakana: "カリカタ", romaji: "Karikata" },
+      { en: "Credit (right)",   kanji: "貸方（かしかた）",  katakana: "カシカタ", romaji: "Kashikata" },
+      { en: "Dr. / Cr.",        kanji: "借方／貸方",        katakana: "カリカタ／カシカタ", romaji: "Dr. = Debit  /  Cr. = Credit" },
+    ],
+    dialogue: [
+      { speaker: "Taro",      text: 'Journal entries write something on the left and right — but which side gets what? I\'m confused…' },
+      { speaker: "Mr. Manabu", text: 'The rules are fixed! When assets increase → Debit (left / 借方). When assets decrease → Credit (right / 貸方). Liabilities and Equity are the opposite. Revenue → Credit. Expenses → Debit. Just 6 patterns!' },
+      { speaker: "Hina",      text: "Is there a trick to remember?" },
+      { speaker: "Mr. Manabu", text: '"Asset increases go to the Debit (left)" is your anchor. Practice the table until it\'s automatic.' },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d8q1",
+        text: 'When <strong>assets increase</strong> <span class="jterm">(資産の増加 / Shisan no Zōka)</span>, on which side of the journal entry do you record?',
+        choices: ["Debit — left side (借方 / Karikata)", "Credit — right side (貸方 / Kashikata)", "Either side is fine", "Record on both sides"],
+        answer: 0,
+        explanation: 'Rule: Asset increases → Debit (left / 借方). Asset decreases → Credit (right / 貸方).'
+      },
+      {
+        type: "choice", id: "d8q2",
+        text: 'When <strong>an expense occurs</strong> <span class="jterm">(費用の発生 / Hiyō no Hassei)</span>, on which side do you record?',
+        choices: ["Debit — left side (借方 / Karikata)", "Credit — right side (貸方 / Kashikata)", "Either side is fine", "No entry needed"],
+        answer: 0,
+        explanation: 'Expense occurrence → Debit (left / 借方). Expenses appear on the left of the Income Statement, which matches.'
+      },
+      {
+        type: "choice", id: "d8q3",
+        text: 'When <strong>revenue occurs</strong> <span class="jterm">(収益の発生 / Shūeki no Hassei)</span>, on which side do you record?',
+        choices: ["Debit — left side (借方 / Karikata)", "Credit — right side (貸方 / Kashikata)", "Either side is fine", "No entry needed"],
+        answer: 1,
+        explanation: 'Revenue occurrence → Credit (right / 貸方). Tip: expenses and revenue go on opposite sides.'
+      },
+      {
+        type: "choice", id: "d8q4",
+        text: 'When <strong>liabilities increase</strong> <span class="jterm">(負債の増加 / Fusai no Zōka)</span>, on which side do you record?',
+        choices: ["Debit — left side (借方 / Karikata)", "Credit — right side (貸方 / Kashikata)", "Either side is fine", "Net them out"],
+        answer: 1,
+        explanation: 'Liability increases → Credit (right / 貸方). The opposite of assets. Remember: Liabilities & Equity are always on the opposite side from Assets.'
+      },
+    ]
+  },
+
+  9: {
+    week: "Week 2", title: "Cash Transaction Entries",
+    goal: "Correctly journalize cash receipts and payments",
+    terms: [
+      { en: "Cash",             kanji: "現金（げんきん）",   katakana: "ゲンキン",   romaji: "Genkin" },
+      { en: "Sales Revenue",    kanji: "売上（うりあげ）",   katakana: "ウリアゲ",   romaji: "Uriage" },
+      { en: "Rent Expense",     kanji: "支払家賃（しはらいやちん）", katakana: "シハライヤチン", romaji: "Shiharai Yachin" },
+      { en: "Loans Payable",    kanji: "借入金（かりいれきん）", katakana: "カリイレキン", romaji: "Kariirekin" },
+    ],
+    dialogue: [
+      { speaker: "Kenji",      text: "How do you actually write a journal entry? Can you show me a real example?" },
+      { speaker: "Mr. Manabu", text: 'Sure! Say "received cash ¥10,000." Cash (an asset) is increasing → Debit Cash ¥10,000. The right side depends on why you received it. If it\'s for sales, → Credit Sales Revenue ¥10,000.' },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d9q1",
+        text: '"Received cash ¥20,000 as sales revenue." Which is the correct journal entry?',
+        choices: [
+          "Dr. Sales Revenue ¥20,000 / Cr. Cash ¥20,000",
+          "Dr. Cash ¥20,000 / Cr. Sales Revenue ¥20,000",
+          "Dr. Cash ¥20,000 / Cr. Purchases ¥20,000",
+          "Dr. Sales Revenue ¥20,000 / Cr. Purchases ¥20,000"
+        ],
+        answer: 1,
+        explanation: 'Cash (asset) increases → Dr. Cash. Sales Revenue (income) occurs → Cr. Sales Revenue.'
+      },
+      {
+        type: "choice", id: "d9q2",
+        text: '"Paid rent ¥30,000 in cash." Which is the correct journal entry?',
+        choices: [
+          "Dr. Cash ¥30,000 / Cr. Rent Expense ¥30,000",
+          "Dr. Rent Expense ¥30,000 / Cr. Sales Revenue ¥30,000",
+          "Dr. Rent Expense ¥30,000 / Cr. Cash ¥30,000",
+          "Dr. Cash ¥30,000 / Cr. Rental Income ¥30,000"
+        ],
+        answer: 2,
+        explanation: 'Rent Expense (支払家賃) occurs → Dr. Rent Expense. Cash (asset) decreases → Cr. Cash.'
+      },
+      {
+        type: "choice", id: "d9q3",
+        text: '"Repaid loans payable ¥50,000 in cash." Which is the correct journal entry?',
+        choices: [
+          "Dr. Cash ¥50,000 / Cr. Loans Payable ¥50,000",
+          "Dr. Loans Payable ¥50,000 / Cr. Cash ¥50,000",
+          "Dr. Loans Payable ¥50,000 / Cr. Sales Revenue ¥50,000",
+          "Dr. Expense ¥50,000 / Cr. Loans Payable ¥50,000"
+        ],
+        answer: 1,
+        explanation: 'Loans Payable (liability) decreases → Dr. Loans Payable. Cash (asset) decreases → Cr. Cash.'
+      },
+    ]
+  },
+
+  10: {
+    week: "Week 2", title: "Accounts Receivable & Payable Entries",
+    goal: "Master journal entries for credit transactions",
+    terms: [
+      { en: "Accounts Receivable", kanji: "売掛金（うりかけきん）", katakana: "ウリカケキン", romaji: "Urikakekin" },
+      { en: "Accounts Payable",    kanji: "買掛金（かいかけきん）", katakana: "カイカケキン", romaji: "Kaikakekin" },
+      { en: "Credit Transaction",  kanji: "掛け取引（かけとりひき）", katakana: "カケトリヒキ", romaji: "Kake Torihiki" },
+      { en: "Purchases",           kanji: "仕入（しいれ）",         katakana: "シイレ",         romaji: "Shiire" },
+    ],
+    dialogue: [
+      { speaker: "Taro",      text: 'What does "credit" (掛け / カケ / Kake) mean in business?' },
+      { speaker: "Mr. Manabu", text: 'It means "pay later." Sold goods but haven\'t received payment yet → Accounts Receivable (売掛金, an asset). Bought goods but haven\'t paid yet → Accounts Payable (買掛金, a liability).' },
+      { speaker: "Hina",      text: "Like a running tab at a convenience store?" },
+      { speaker: "Mr. Manabu", text: "Exactly! When money will be exchanged later, you first record Accounts Receivable or Accounts Payable." },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d10q1",
+        text: '"Sold goods ¥100,000 on credit." Which is the correct journal entry?',
+        choices: [
+          "Dr. Cash ¥100,000 / Cr. Sales Revenue ¥100,000",
+          "Dr. Accounts Receivable ¥100,000 / Cr. Sales Revenue ¥100,000",
+          "Dr. Sales Revenue ¥100,000 / Cr. Accounts Receivable ¥100,000",
+          "Dr. Accounts Payable ¥100,000 / Cr. Sales Revenue ¥100,000"
+        ],
+        answer: 1,
+        explanation: 'Credit sale → Accounts Receivable (売掛金, asset) increases → Dr. Accounts Receivable. Sales Revenue (income) occurs → Cr. Sales Revenue.'
+      },
+      {
+        type: "choice", id: "d10q2",
+        text: '"Collected accounts receivable ¥80,000 in cash." Which is the correct journal entry?',
+        choices: [
+          "Dr. Accounts Receivable ¥80,000 / Cr. Cash ¥80,000",
+          "Dr. Cash ¥80,000 / Cr. Sales Revenue ¥80,000",
+          "Dr. Cash ¥80,000 / Cr. Accounts Receivable ¥80,000",
+          "Dr. Sales Revenue ¥80,000 / Cr. Cash ¥80,000"
+        ],
+        answer: 2,
+        explanation: 'Cash (asset) increases → Dr. Cash. Accounts Receivable (asset) decreases → Cr. Accounts Receivable. Do NOT record Sales Revenue again — it was already recorded at the time of the original sale.'
+      },
+      {
+        type: "choice", id: "d10q3",
+        text: '"Purchased goods ¥60,000 on credit." Which is the correct journal entry?',
+        choices: [
+          "Dr. Purchases ¥60,000 / Cr. Accounts Payable ¥60,000",
+          "Dr. Accounts Payable ¥60,000 / Cr. Purchases ¥60,000",
+          "Dr. Purchases ¥60,000 / Cr. Cash ¥60,000",
+          "Dr. Accounts Receivable ¥60,000 / Cr. Purchases ¥60,000"
+        ],
+        answer: 0,
+        explanation: 'Purchases (仕入, expense) occurs → Dr. Purchases. Accounts Payable (買掛金, liability) increases → Cr. Accounts Payable.'
+      },
+    ]
+  },
+
+  11: {
+    week: "Week 2", title: "Bills Receivable & Payable",
+    goal: "Understand journal entries for promissory notes and current account deposits",
+    terms: [
+      { en: "Bills Receivable",         kanji: "受取手形（うけとりてがた）", katakana: "ウケトリテガタ", romaji: "Uketori Tegata" },
+      { en: "Bills Payable",            kanji: "支払手形（しはらいてがた）", katakana: "シハライテガタ", romaji: "Shiharai Tegata" },
+      { en: "Promissory Note",          kanji: "約束手形（やくそくてがた）", katakana: "ヤクソクテガタ", romaji: "Yakusoku Tegata" },
+      { en: "Current Account Deposit",  kanji: "当座預金（とうざよきん）",   katakana: "トウザヨキン",   romaji: "Tōza Yokin" },
+      { en: "Ordinary Savings Account", kanji: "普通預金（ふつうよきん）",   katakana: "フツウヨキン",   romaji: "Futsū Yokin" },
+    ],
+    dialogue: [
+      { speaker: "Kenji",      text: "What's a promissory note (手形 / テガタ / Tegata)? I've seen it in business dramas but it seems complicated." },
+      { speaker: "Mr. Manabu", text: 'A promissory note is a document that says "I promise to pay on this future date." Bills Receivable (受取手形) = the right to receive money later → Asset. Bills Payable (支払手形) = the obligation to pay later → Liability. Those two are all you need for Level 3.' },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d11q1",
+        text: '"Sold goods ¥200,000 and received a promissory note as payment." Which is the correct journal entry?',
+        choices: [
+          "Dr. Bills Receivable ¥200,000 / Cr. Sales Revenue ¥200,000",
+          "Dr. Bills Payable ¥200,000 / Cr. Sales Revenue ¥200,000",
+          "Dr. Sales Revenue ¥200,000 / Cr. Bills Receivable ¥200,000",
+          "Dr. Cash ¥200,000 / Cr. Sales Revenue ¥200,000"
+        ],
+        answer: 0,
+        explanation: 'Received a note → Bills Receivable (受取手形, asset) increases → Dr. Bills Receivable. Sales Revenue (income) → Cr. Sales Revenue.'
+      },
+      {
+        type: "choice", id: "d11q2",
+        text: '"Deposited cash ¥100,000 into a current account." Which is the correct journal entry?',
+        choices: [
+          "Dr. Cash ¥100,000 / Cr. Current Account Deposit ¥100,000",
+          "Dr. Current Account Deposit ¥100,000 / Cr. Cash ¥100,000",
+          "Dr. Current Account Deposit ¥100,000 / Cr. Sales Revenue ¥100,000",
+          "Dr. Cash ¥100,000 / Cr. Sales Revenue ¥100,000"
+        ],
+        answer: 1,
+        explanation: 'Current Account Deposit (当座預金, asset) increases → Dr. Current Account Deposit. Cash (asset) decreases → Cr. Cash. One asset simply replaces another.'
+      },
+    ]
+  },
+
+  12: {
+    week: "Week 2", title: "Expense & Revenue Entries (Advanced)",
+    goal: "Practice journal entries for various expenses and revenue",
+    terms: [
+      { en: "Salaries",           kanji: "給料（きゅうりょう）",   katakana: "キュウリョウ",   romaji: "Kyūryō" },
+      { en: "Interest Income",    kanji: "受取利息（うけとりりそく）", katakana: "ウケトリリソク", romaji: "Uketori Risoku" },
+      { en: "Interest Expense",   kanji: "支払利息（しはらいりそく）", katakana: "シハライリソク", romaji: "Shiharai Risoku" },
+      { en: "Utilities Expense",  kanji: "水道光熱費（すいどうこうねつひ）", katakana: "スイドウコウネツヒ", romaji: "Suidō Kōnetsuhi" },
+      { en: "Ordinary Savings",   kanji: "普通預金（ふつうよきん）", katakana: "フツウヨキン", romaji: "Futsū Yokin" },
+    ],
+    dialogue: [
+      { speaker: "Hina",       text: "There are so many expense entries — it's confusing…" },
+      { speaker: "Mr. Manabu", text: 'No worries. For any expense, just follow 2 steps: ① Expense occurs → Debit. ② How was it paid (cash / bank transfer)? → Credit. That\'s it!' },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d12q1",
+        text: '"Paid salaries ¥250,000 in cash." Which is the correct journal entry?',
+        choices: [
+          "Dr. Cash ¥250,000 / Cr. Salaries ¥250,000",
+          "Dr. Salaries ¥250,000 / Cr. Cash ¥250,000",
+          "Dr. Salaries ¥250,000 / Cr. Sales Revenue ¥250,000",
+          "Dr. Expense ¥250,000 / Cr. Cash ¥250,000"
+        ],
+        answer: 1,
+        explanation: 'Salaries (給料, expense) occur → Dr. Salaries. Cash (asset) decreases → Cr. Cash.'
+      },
+      {
+        type: "choice", id: "d12q2",
+        text: '"Received interest income ¥15,000 in cash." Which is the correct journal entry?',
+        choices: [
+          "Dr. Interest Income ¥15,000 / Cr. Cash ¥15,000",
+          "Dr. Interest Expense ¥15,000 / Cr. Cash ¥15,000",
+          "Dr. Cash ¥15,000 / Cr. Interest Income ¥15,000",
+          "Dr. Cash ¥15,000 / Cr. Interest Expense ¥15,000"
+        ],
+        answer: 2,
+        explanation: 'Cash (asset) increases → Dr. Cash. Interest Income (受取利息, revenue) occurs → Cr. Interest Income.'
+      },
+      {
+        type: "choice", id: "d12q3",
+        text: '"Utilities expense ¥8,000 was automatically deducted from the ordinary savings account." Which is the correct journal entry?',
+        choices: [
+          "Dr. Utilities Expense ¥8,000 / Cr. Ordinary Savings ¥8,000",
+          "Dr. Ordinary Savings ¥8,000 / Cr. Utilities Expense ¥8,000",
+          "Dr. Utilities Expense ¥8,000 / Cr. Cash ¥8,000",
+          "Dr. Cash ¥8,000 / Cr. Utilities Expense ¥8,000"
+        ],
+        answer: 0,
+        explanation: 'Utilities Expense (水道光熱費) occurs → Dr. Utilities Expense. Ordinary Savings (asset) decreases → Cr. Ordinary Savings.'
+      },
+    ]
+  },
+
+  13: {
+    week: "Week 2", title: "Fixed Assets",
+    goal: "Understand journal entries for fixed asset purchases and depreciation",
+    terms: [
+      { en: "Fixed Assets",          kanji: "固定資産（こていしさん）",   katakana: "コテイシサン",   romaji: "Kotei Shisan" },
+      { en: "Equipment / Fixtures",  kanji: "備品（びひん）",            katakana: "ビヒン",         romaji: "Bihin" },
+      { en: "Vehicles",              kanji: "車両運搬具（しゃりょううんぱんぐ）", katakana: "シャリョウウンパング", romaji: "Sharyō Unpangu" },
+      { en: "Depreciation Expense",  kanji: "減価償却費（げんかしょうきゃくひ）", katakana: "ゲンカショウキャクヒ", romaji: "Genka Shōkyakuhi" },
+      { en: "Accumulated Depreciation", kanji: "減価償却累計額（げんかしょうきゃくるいけいがく）", katakana: "ゲンカショウキャクルイケイガク", romaji: "Genka Shōkyaku Ruikei-gaku" },
+    ],
+    dialogue: [
+      { speaker: "Taro",       text: "If you buy a car or computer, isn't that just 'Purchases'?" },
+      { speaker: "Mr. Manabu", text: 'No! Assets NOT for resale are called "Fixed Assets" (固定資産 / コテイシサン / Kotei Shisan). A computer → "Equipment" (備品 / ビヒン / Bihin). A car → "Vehicles" (車両運搬具). And each year, their value decreases — that\'s "Depreciation" (減価償却費 / Genka Shōkyakuhi). Super important!' },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d13q1",
+        text: '"Purchased a computer ¥300,000 in cash." Which is the correct journal entry?',
+        choices: [
+          "Dr. Purchases ¥300,000 / Cr. Cash ¥300,000",
+          "Dr. Equipment ¥300,000 / Cr. Cash ¥300,000",
+          "Dr. Cash ¥300,000 / Cr. Equipment ¥300,000",
+          "Dr. Supplies Expense ¥300,000 / Cr. Cash ¥300,000"
+        ],
+        answer: 1,
+        explanation: 'A computer is a fixed asset → use "Equipment" (備品 / ビヒン / Bihin). Equipment (asset) increases → Dr. Equipment. Cash (asset) decreases → Cr. Cash.'
+      },
+      {
+        type: "choice", id: "d13q2",
+        text: 'What is <strong>Depreciation Expense</strong> <span class="jterm">(減価償却費 / ゲンカショウキャクヒ / Genka Shōkyakuhi)</span>?',
+        choices: [
+          "The purchase price paid when buying a fixed asset",
+          "The annual decrease in value of a fixed asset recognized as an expense",
+          "The profit made when selling a fixed asset",
+          "The increase in land value"
+        ],
+        answer: 1,
+        explanation: 'Depreciation Expense is "recording the annual loss in value of a fixed asset (due to use over time) as an expense." Fixed assets gradually lose value each year.'
+      },
+    ]
+  },
+
+  14: {
+    week: "Week 2", title: "Week 2 Review",
+    goal: "Comprehensive review of all basic journal entry patterns",
+    terms: [
+      { en: "Accrued Expenses",  kanji: "未払費用（みばらいひよう）",  katakana: "ミバライヒヨウ", romaji: "Mibarai Hiyō" },
+      { en: "Prepaid Expenses",  kanji: "前払費用（まえばらいひよう）", katakana: "マエバライヒヨウ", romaji: "Maebarai Hiyō" },
+    ],
+    dialogue: [
+      { speaker: "Mr. Manabu", text: "Week 2 done — great effort! Journal entries are the heart of bookkeeping. Let's nail them all in today's review!" },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d14q1",
+        text: '"Purchased goods ¥150,000 on credit." Which is the correct journal entry?',
+        choices: [
+          "Dr. Accounts Payable ¥150,000 / Cr. Purchases ¥150,000",
+          "Dr. Purchases ¥150,000 / Cr. Accounts Payable ¥150,000",
+          "Dr. Purchases ¥150,000 / Cr. Cash ¥150,000",
+          "Dr. Accounts Receivable ¥150,000 / Cr. Purchases ¥150,000"
+        ],
+        answer: 1,
+        explanation: 'Purchases (仕入, expense) → Dr. Purchases. Accounts Payable (負債, liability) increases → Cr. Accounts Payable.'
+      },
+      {
+        type: "choice", id: "d14q2",
+        text: '"Paid accounts payable ¥120,000 in cash." Which is the correct journal entry?',
+        choices: [
+          "Dr. Cash ¥120,000 / Cr. Accounts Payable ¥120,000",
+          "Dr. Accounts Payable ¥120,000 / Cr. Sales Revenue ¥120,000",
+          "Dr. Accounts Payable ¥120,000 / Cr. Cash ¥120,000",
+          "Dr. Purchases ¥120,000 / Cr. Cash ¥120,000"
+        ],
+        answer: 2,
+        explanation: 'Accounts Payable (liability) decreases → Dr. Accounts Payable. Cash (asset) decreases → Cr. Cash.'
+      },
+      {
+        type: "choice", id: "d14q3",
+        text: '"Accounts receivable ¥200,000 was transferred into the current account." Which is the correct journal entry?',
+        choices: [
+          "Dr. Accounts Receivable ¥200,000 / Cr. Current Account Deposit ¥200,000",
+          "Dr. Current Account Deposit ¥200,000 / Cr. Sales Revenue ¥200,000",
+          "Dr. Current Account Deposit ¥200,000 / Cr. Accounts Receivable ¥200,000",
+          "Dr. Cash ¥200,000 / Cr. Accounts Receivable ¥200,000"
+        ],
+        answer: 2,
+        explanation: 'Current Account Deposit (asset) increases → Dr. Current Account Deposit. Accounts Receivable (asset) decreases → Cr. Accounts Receivable.'
+      },
+      {
+        type: "choice", id: "d14q4",
+        text: '"Office rent ¥45,000 will be paid next month (accrued this period)." Which is the correct journal entry?',
+        choices: [
+          "Dr. Rent Expense ¥45,000 / Cr. Cash ¥45,000",
+          "Dr. Rent Expense ¥45,000 / Cr. Accrued Expenses ¥45,000",
+          "Dr. Accrued Expenses ¥45,000 / Cr. Rent Expense ¥45,000",
+          "Dr. Prepaid Expenses ¥45,000 / Cr. Cash ¥45,000"
+        ],
+        answer: 1,
+        explanation: 'Rent Expense (費用) occurs → Dr. Rent Expense. Not yet paid → Accrued Expenses (未払費用, liability) → Cr. Accrued Expenses.'
+      },
+    ]
+  },
+
+});
+
+// =============================================
+// DAYS — Week 3 (fully translated)
+// =============================================
+Object.assign(DAYS, {
+
+  15: {
+    week: "Week 3", title: "Journal Practice ① — Compound Entries",
+    goal: "Journalize transactions involving three or more accounts",
+    terms: [
+      { en: "Compound Entry",     kanji: "複合仕訳（ふくごうしわけ）", katakana: "フクゴウシワケ",   romaji: "Fukugō Shiwake" },
+      { en: "Other Payables",     kanji: "未払金（みばらいきん）",      katakana: "ミバライキン",     romaji: "Mibarakin" },
+      { en: "Note: Accounts Payable (買掛金) is for merchandise only. For other credit purchases, use Other Payables (未払金).", kanji: "", katakana: "", romaji: "" },
+    ],
+    dialogue: [
+      { speaker: "Kenji",      text: "Can a single transaction involve three or more accounts?" },
+      { speaker: "Mr. Manabu", text: "Absolutely! For example, if you sell goods and receive part in cash and the rest on credit: Dr. Cash + Dr. Accounts Receivable / Cr. Sales Revenue — three accounts! As long as total Debits = total Credits, you're fine." },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d15q1",
+        text: '"Sold goods ¥300,000: received ¥100,000 in cash, remainder on credit." Which is the correct journal entry?',
+        choices: [
+          "Dr. Cash ¥300,000 / Cr. Sales Revenue ¥300,000",
+          "Dr. Cash ¥100,000 + Dr. Accounts Receivable ¥200,000 / Cr. Sales Revenue ¥300,000",
+          "Dr. Sales Revenue ¥300,000 / Cr. Cash ¥100,000 + Cr. Accounts Receivable ¥200,000",
+          "Dr. Cash ¥100,000 + Dr. Accounts Payable ¥200,000 / Cr. Sales Revenue ¥300,000"
+        ],
+        answer: 1,
+        explanation: 'Cash (asset) +¥100,000 → Dr. Cash. Accounts Receivable (asset) +¥200,000 → Dr. A/R. Sales Revenue (income) → Cr. Sales Revenue ¥300,000. Debit total (300,000) = Credit total (300,000). ✓'
+      },
+      {
+        type: "choice", id: "d15q2",
+        text: '"Purchased equipment ¥500,000: paid ¥200,000 in cash, remainder on account." Which is correct?',
+        choices: [
+          "Dr. Equipment ¥500,000 / Cr. Cash ¥200,000 + Cr. Other Payables ¥300,000",
+          "Dr. Equipment ¥500,000 / Cr. Cash ¥500,000",
+          "Dr. Purchases ¥500,000 / Cr. Cash ¥200,000 + Cr. Accounts Payable ¥300,000",
+          "Dr. Equipment ¥500,000 / Cr. Cash ¥200,000 + Cr. Accounts Payable ¥300,000"
+        ],
+        answer: 0,
+        explanation: 'Equipment (fixed asset) +¥500,000 → Dr. Equipment. Important: credit purchases of fixed assets use <strong>Other Payables (未払金 / Mibarakin)</strong>, NOT Accounts Payable (買掛金 is for merchandise only). Cash −¥200,000 → Cr. Cash. Other Payables +¥300,000 → Cr. Other Payables.'
+      },
+    ]
+  },
+
+  16: {
+    week: "Week 3", title: "Journal Practice ② — Returns & Corrections",
+    goal: "Understand return and correction journal entries",
+    terms: [
+      { en: "Purchase Returns",    kanji: "仕入戻し（しいれもどし）",   katakana: "シイレモドシ",   romaji: "Shiire Modoshi" },
+      { en: "Sales Returns",       kanji: "売上戻り（うりあげもどり）", katakana: "ウリアゲモドリ", romaji: "Uriage Modori" },
+      { en: "Reversing Entry",     kanji: "逆仕訳（ぎゃくしわけ）",     katakana: "ギャクシワケ",   romaji: "Gyaku Shiwake" },
+    ],
+    dialogue: [
+      { speaker: "Hina",       text: "What do you do if you make an error in a journal entry? Can you erase it?" },
+      { speaker: "Mr. Manabu", text: "You can never erase entries in accounting books! Instead, you add a reversing entry (逆仕訳) — the exact opposite of the wrong entry. Returns work the same way: cancel the original entry." },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d16q1",
+        text: '"Returned defective goods worth ¥5,000 (out of a ¥20,000 credit purchase)." Which is the correct journal entry?',
+        choices: [
+          "Dr. Accounts Payable ¥5,000 / Cr. Purchases ¥5,000",
+          "Dr. Purchases ¥5,000 / Cr. Accounts Payable ¥5,000",
+          "Dr. Accounts Receivable ¥5,000 / Cr. Purchases ¥5,000",
+          "Dr. Accounts Payable ¥5,000 / Cr. Cash ¥5,000"
+        ],
+        answer: 0,
+        explanation: 'Reverse the original purchase entry. Purchases (expense) decreases → Cr. Purchases. Accounts Payable (liability) decreases (we no longer owe for the returned goods) → Dr. Accounts Payable.'
+      },
+      {
+        type: "choice", id: "d16q2",
+        text: '"Goods worth ¥10,000 were returned by a customer (originally sold on credit)." Which is the correct journal entry?',
+        choices: [
+          "Dr. Accounts Receivable ¥10,000 / Cr. Sales Revenue ¥10,000",
+          "Dr. Sales Revenue ¥10,000 / Cr. Accounts Receivable ¥10,000",
+          "Dr. Sales Revenue ¥10,000 / Cr. Cash ¥10,000",
+          "Dr. Purchases ¥10,000 / Cr. Accounts Receivable ¥10,000"
+        ],
+        answer: 1,
+        explanation: 'Reverse the original sale entry. Sales Revenue (income) decreases → Dr. Sales Revenue. Accounts Receivable (asset) decreases (we can no longer collect for returned goods) → Cr. Accounts Receivable.'
+      },
+    ]
+  },
+
+  17: {
+    week: "Week 3", title: "T-Accounts & Posting",
+    goal: "Post journal entries to ledger accounts and calculate balances",
+    terms: [
+      { en: "T-Account / Ledger Account", kanji: "T勘定（ティーかんじょう）", katakana: "ティーカンジョウ", romaji: "T-Kanjō" },
+      { en: "Posting",                    kanji: "転記（てんき）",             katakana: "テンキ",           romaji: "Tenki" },
+      { en: "Debit Balance",              kanji: "借方残高（かりかたざんだか）", katakana: "カリカタザンダカ", romaji: "Karikata Zandaka" },
+      { en: "Credit Balance",             kanji: "貸方残高（かしかたざんだか）", katakana: "カシカタザンダカ", romaji: "Kashikata Zandaka" },
+    ],
+    dialogue: [
+      { speaker: "Taro",       text: "Why is it called a 'T-account'?" },
+      { speaker: "Mr. Manabu", text: "Because it looks like the letter T! The left side is Debit, the right side is Credit. You post (transfer) each journal entry into the appropriate T-account, then calculate the balance. Assets and Expenses have debit balances; Liabilities, Equity, and Revenue have credit balances." },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d17q1",
+        text: 'In the Cash T-account: Debit total = ¥500,000, Credit total = ¥320,000. What is the balance?',
+        choices: [
+          "¥820,000 (credit balance)",
+          "¥180,000 (credit balance)",
+          "¥180,000 (debit balance)",
+          "¥820,000 (debit balance)"
+        ],
+        answer: 2,
+        explanation: 'Cash is an asset → carries a <strong>debit balance</strong>. Balance = Debit total − Credit total = 500,000 − 320,000 = <strong>¥180,000 (debit balance)</strong>.'
+      },
+      {
+        type: "choice", id: "d17q2",
+        text: 'In the Accounts Payable T-account: Debit total = ¥80,000, Credit total = ¥150,000. What is the balance?',
+        choices: [
+          "¥70,000 (credit balance)",
+          "¥70,000 (debit balance)",
+          "¥230,000 (credit balance)",
+          "¥230,000 (debit balance)"
+        ],
+        answer: 0,
+        explanation: 'Accounts Payable is a liability → carries a <strong>credit balance</strong>. Balance = Credit total − Debit total = 150,000 − 80,000 = <strong>¥70,000 (credit balance)</strong>.'
+      },
+    ]
+  },
+
+  18: {
+    week: "Week 3", title: "Trial Balance ① — Total Trial Balance",
+    goal: "Understand the purpose and structure of a trial balance",
+    terms: [
+      { en: "Trial Balance",              kanji: "試算表（しさんひょう）",       katakana: "シサンヒョウ",       romaji: "Shisan-hyō" },
+      { en: "Total Trial Balance",        kanji: "合計試算表（ごうけいしさんひょう）", katakana: "ゴウケイシサンヒョウ", romaji: "Gōkei Shisan-hyō" },
+      { en: "Balance of Accounts Trial Balance", kanji: "残高試算表（ざんだかしさんひょう）", katakana: "ザンダカシサンヒョウ", romaji: "Zandaka Shisan-hyō" },
+      { en: "⚠ IFRS note: Equivalent to the 'Unadjusted Trial Balance' in IFRS/US GAAP workflow.", kanji: "", katakana: "", romaji: "" },
+    ],
+    dialogue: [
+      { speaker: "Hina",       text: "What is a trial balance for?" },
+      { speaker: "Mr. Manabu", text: "It's a verification sheet — it checks whether your journal entries and postings have errors. If total Debits = total Credits, your records are likely correct!" },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d18q1",
+        text: 'What is the primary purpose of a <strong>Trial Balance</strong> <span class="jterm">(試算表 / シサンヒョウ / Shisan-hyō)</span>?',
+        choices: [
+          "To calculate profit",
+          "To detect errors in journal entries and posting",
+          "To count inventory quantities",
+          "To file a tax return"
+        ],
+        answer: 1,
+        explanation: 'A trial balance checks "whether journalizing and posting were done correctly." If Debit total = Credit total, the records are arithmetically correct. However, it cannot detect all types of errors (e.g., wrong account used).'
+      },
+      {
+        type: "choice", id: "d18q2",
+        text: 'What is the difference between a <strong>Total Trial Balance</strong> and a <strong>Balance of Accounts Trial Balance</strong>?',
+        choices: [
+          "Total Trial Balance shows cumulative totals for each account; Balance Trial Balance shows the net balance of each account",
+          "Total Trial Balance is prepared monthly; Balance Trial Balance is prepared annually",
+          "Total Trial Balance covers only expenses; Balance Trial Balance covers only revenue",
+          "There is no difference — they are the same"
+        ],
+        answer: 0,
+        explanation: 'Total Trial Balance (合計試算表): records the total debit and credit amounts for each account. Balance Trial Balance (残高試算表): records only the net balance (difference) of each account. The balance version is closer to a pre-closing trial balance in IFRS/US GAAP practice.'
+      },
+    ]
+  },
+
+  19: {
+    week: "Week 3", title: "Trial Balance ② — Reading the Balance Trial Balance",
+    goal: "Interpret a balance of accounts trial balance",
+    terms: [
+      { en: "Debit Column",  kanji: "借方欄（かりかたらん）", katakana: "カリカタラン", romaji: "Karikata Ran" },
+      { en: "Credit Column", kanji: "貸方欄（かしかたらん）", katakana: "カシカタラン", romaji: "Kashikata Ran" },
+    ],
+    dialogue: [
+      { speaker: "Kenji",      text: "Is a balance trial balance the same as a financial statement?" },
+      { speaker: "Mr. Manabu", text: "Similar, but different. The balance trial balance is a list of all account balances. The financial statements (B/S and P/L) are built from it. Next week, we'll use a worksheet to convert it all at once!" },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d19q1",
+        text: 'What appears in the <strong>Debit column</strong> of a balance of accounts trial balance?',
+        choices: [
+          "Liability balances",
+          "Revenue balances",
+          "Asset and Expense balances",
+          "Equity balances"
+        ],
+        answer: 2,
+        explanation: 'Assets and Expenses increase on the Debit side → their normal balances are debit balances → they appear in the Debit column. Liabilities, Equity, and Revenue have credit balances → they appear in the Credit column.'
+      },
+      {
+        type: "choice", id: "d19q2",
+        text: 'In a trial balance, when the Debit total does NOT equal the Credit total, what is the most likely cause?',
+        choices: [
+          "The business is not profitable",
+          "There is an error in journal entries or posting",
+          "Inventory is insufficient",
+          "Tax rates have changed"
+        ],
+        answer: 1,
+        explanation: 'Under double-entry bookkeeping, every transaction records equal debits and credits → Debit total must always equal Credit total. A mismatch means there is an arithmetic error in a journal entry or posting.'
+      },
+    ]
+  },
+
+  20: {
+    week: "Week 3", title: "Closing / Year-End Adjusting Entries",
+    goal: "Understand the types of adjusting journal entries at year-end",
+    terms: [
+      { en: "Adjusting Entry",        kanji: "決算整理仕訳（けっさんせいりしわけ）", katakana: "ケッサンセイリシワケ", romaji: "Kessan Seiri Shiwake" },
+      { en: "Depreciation (Indirect Method)", kanji: "減価償却費・間接法（げんかしょうきゃくひ・かんせつほう）", katakana: "ゲンカショウキャクヒ・カンセツホウ", romaji: "Genka Shōkyakuhi — Kansetsu-hō" },
+      { en: "Accumulated Depreciation", kanji: "減価償却累計額（げんかしょうきゃくるいけいがく）", katakana: "ゲンカショウキャクルイケイガク", romaji: "Genka Shōkyaku Ruikei-gaku" },
+      { en: "Cash Short and Over",     kanji: "現金過不足（げんきんかふそく）",   katakana: "ゲンキンカフソク",   romaji: "Genkin Kafusoku" },
+      { en: "⚠ IFRS note: The indirect method for depreciation (recording Accumulated Depreciation separately) is the standard practice under IFRS/US GAAP.", kanji: "", katakana: "", romaji: "" },
+    ],
+    dialogue: [
+      { speaker: "Hina",       text: "What happens during 'closing'?" },
+      { speaker: "Mr. Manabu", text: "At year-end, you finalise the whole year's transactions to produce accurate financial statements. If the accounting records need corrections, you add 'adjusting entries' to make them precise." },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d20q1",
+        text: '"Record depreciation expense ¥60,000 on equipment (indirect method)." Which is the correct journal entry?',
+        choices: [
+          "Dr. Equipment ¥60,000 / Cr. Depreciation Expense ¥60,000",
+          "Dr. Depreciation Expense ¥60,000 / Cr. Equipment ¥60,000",
+          "Dr. Depreciation Expense ¥60,000 / Cr. Accumulated Depreciation ¥60,000",
+          "Dr. Equipment Write-down ¥60,000 / Cr. Cash ¥60,000"
+        ],
+        answer: 2,
+        explanation: 'Depreciation Expense (費用) occurs → Dr. Depreciation Expense. Under the <strong>indirect method</strong> (standard in IFRS/US GAAP), the asset account is NOT reduced directly — instead, Accumulated Depreciation (a contra-asset) is credited → Cr. Accumulated Depreciation. The net book value = Cost − Accumulated Depreciation.'
+      },
+      {
+        type: "choice", id: "d20q2",
+        text: '"At year-end, the actual cash count is ¥3,000 less than the book balance." Which is the correct journal entry?',
+        choices: [
+          "Dr. Cash ¥3,000 / Cr. Cash Short and Over ¥3,000",
+          "Dr. Cash Short and Over ¥3,000 / Cr. Cash ¥3,000",
+          "Dr. Miscellaneous Loss ¥3,000 / Cr. Cash ¥3,000",
+          "Dr. Cash ¥3,000 / Cr. Miscellaneous Gain ¥3,000"
+        ],
+        answer: 1,
+        explanation: 'Actual cash < book balance → cash is short. Cash (asset) decreases → Cr. Cash. The temporary difference is recorded as Cash Short and Over (現金過不足) → Dr. Cash Short and Over. Note: if the cause is still unknown at year-end, transfer to Miscellaneous Loss (雑損) or Miscellaneous Gain (雑益).'
+      },
+    ]
+  },
+
+  21: {
+    week: "Week 3", title: "Week 3 Review",
+    goal: "Comprehensive review of all Week 3 topics",
+    terms: [],
+    dialogue: [
+      { speaker: "Mr. Manabu", text: "Three weeks in — the fundamentals of journal entries are nearly complete! Today's review covers compound entries, trial balances, and adjustments. Let's cement everything!" },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d21q1",
+        text: '"Sold goods ¥250,000: received ¥50,000 cash and a promissory note for ¥200,000." Which is the correct journal entry?',
+        choices: [
+          "Dr. Cash ¥250,000 / Cr. Sales Revenue ¥250,000",
+          "Dr. Cash ¥50,000 + Dr. Bills Receivable ¥200,000 / Cr. Sales Revenue ¥250,000",
+          "Dr. Cash ¥50,000 + Dr. Bills Payable ¥200,000 / Cr. Sales Revenue ¥250,000",
+          "Dr. Sales Revenue ¥250,000 / Cr. Cash ¥50,000 + Cr. Bills Receivable ¥200,000"
+        ],
+        answer: 1,
+        explanation: 'Cash (asset) +¥50,000 → Dr. Cash. Bills Receivable (受取手形, asset) +¥200,000 → Dr. Bills Receivable. Sales Revenue ¥250,000 → Cr. Sales Revenue. Debit total = Credit total = ¥250,000. ✓'
+      },
+      {
+        type: "choice", id: "d21q2",
+        text: 'Why do Debit totals always equal Credit totals in a trial balance?',
+        choices: [
+          "Because profit is zero",
+          "Because double-entry bookkeeping records every transaction with equal debit and credit amounts",
+          "Because assets and liabilities are always equal",
+          "Because revenue and expenses are always equal"
+        ],
+        answer: 1,
+        explanation: 'The fundamental rule of double-entry bookkeeping: every single transaction is recorded with equal debit and credit amounts. Sum up all transactions → Debit total = Credit total. This is why it\'s called "double-entry."'
+      },
+      {
+        type: "choice", id: "d21q3",
+        text: '"Accumulated Depreciation" (減価償却累計額) is classified as which element?',
+        choices: [
+          "A contra-asset (deduction from assets on the Balance Sheet)",
+          "Liability",
+          "Expense",
+          "Revenue"
+        ],
+        answer: 0,
+        explanation: 'Accumulated Depreciation is a <strong>contra-asset account</strong> — it reduces the carrying (book) value of fixed assets on the Balance Sheet. It appears on the asset side of the B/S as a deduction. In IFRS/US GAAP, this is standard presentation under the indirect depreciation method.'
+      },
+    ]
+  },
+
+});
+
+// =============================================
+// DAYS — Week 4 (fully translated)
+// =============================================
+Object.assign(DAYS, {
+
+  22: {
+    week: "Week 4", title: "Worksheet ①",
+    goal: "Understand the structure and how to complete a worksheet",
+    terms: [
+      { en: "Worksheet",             kanji: "精算表（せいさんひょう）",   katakana: "セイサンヒョウ",   romaji: "Seisan-hyō" },
+      { en: "Adjusted Trial Balance", kanji: "修正後試算表",              katakana: "シュウセイゴシサンヒョウ", romaji: "Shūseigo Shisan-hyō" },
+      { en: "⚠ IFRS note: The Japanese 精算表 (worksheet) corresponds to the 10-column work sheet used in US GAAP practice — a working paper, not a formal financial statement.", kanji: "", katakana: "", romaji: "" },
+    ],
+    dialogue: [
+      { speaker: "Taro",       text: "What is a worksheet for?" },
+      { speaker: "Mr. Manabu", text: "It's a working paper that converts the trial balance into financial statements (B/S and P/L) on a single sheet. You apply adjusting entries along the way to arrive at the final numbers." },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d22q1",
+        text: 'What is the correct column order in a <strong>Worksheet</strong> <span class="jterm">(精算表 / セイサンヒョウ / Seisan-hyō)</span>?',
+        choices: [
+          "Income Statement → Trial Balance → Adjustments → Balance Sheet",
+          "Trial Balance → Adjustments → Income Statement / Balance Sheet",
+          "Balance Sheet → Income Statement → Trial Balance → Adjustments",
+          "Adjustments → Trial Balance → Income Statement → Balance Sheet"
+        ],
+        answer: 1,
+        explanation: 'Worksheet column order: ① Trial Balance (残高試算表) → ② Adjustments (決算整理) → ③ Income Statement (P/L) → ④ Balance Sheet (B/S). This matches the standard accounting cycle in both Japanese practice and IFRS/US GAAP workflows.'
+      },
+      {
+        type: "choice", id: "d22q2",
+        text: 'On the worksheet, how is <strong>"Net Profit for the Period"</strong> entered?',
+        choices: [
+          "Debit side of P/L column and Debit side of B/S column",
+          "Credit side of P/L column and Credit side of B/S column",
+          "Debit side of P/L column and Credit side of B/S column",
+          "Credit side of P/L column and Debit side of B/S column"
+        ],
+        answer: 2,
+        explanation: 'Net Profit: In the P/L column, it is entered on the <strong>Debit side</strong> to balance the column (expenses side). In the B/S column, it is entered on the <strong>Credit side</strong> to reflect the increase in Equity (Retained Earnings). This balances both columns simultaneously.'
+      },
+    ]
+  },
+
+  23: {
+    week: "Week 4", title: "Worksheet ② — With Adjusting Entries",
+    goal: "Complete a worksheet incorporating year-end adjustments",
+    terms: [
+      { en: "Prepaid Insurance",    kanji: "前払保険料（まえばらいほけんりょう）", katakana: "マエバライホケンリョウ", romaji: "Maebarai Hokenyō" },
+      { en: "Merchandise Inventory", kanji: "繰越商品（くりこししょうひん）",       katakana: "クリコシショウヒン",     romaji: "Kurikoshi Shōhin" },
+      { en: "Insurance Expense",    kanji: "保険料（ほけんりょう）",               katakana: "ホケンリョウ",           romaji: "Hokenyō" },
+      { en: "⚠ IFRS note: Prepaid expenses are classified as current assets under IFRS (IAS 1). Merchandise Inventory corresponds to 'Inventories' under IAS 2.", kanji: "", katakana: "", romaji: "" },
+    ],
+    dialogue: [
+      { speaker: "Hina",       text: "What goes in the 'Adjustments' column of the worksheet?" },
+      { speaker: "Mr. Manabu", text: "Depreciation, accrued expenses, prepaid expenses, and inventory adjustments — any year-end corrections needed. Getting this column right is the core of completing a worksheet!" },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d23q1",
+        text: '"Record prepaid insurance of ¥12,000 as an adjusting entry." How is this entered in the Adjustments column?',
+        choices: [
+          "Dr. Prepaid Insurance ¥12,000 / Cr. Insurance Expense ¥12,000",
+          "Dr. Insurance Expense ¥12,000 / Cr. Prepaid Insurance ¥12,000",
+          "Dr. Prepaid Insurance ¥12,000 / Cr. Cash ¥12,000",
+          "Dr. Insurance Expense ¥12,000 / Cr. Accrued Expenses ¥12,000"
+        ],
+        answer: 0,
+        explanation: 'The next-period portion of insurance is separated out as a prepaid asset. Prepaid Insurance (前払保険料, asset) increases → Dr. Prepaid Insurance. Insurance Expense (費用) decreases → Cr. Insurance Expense. Under IFRS, Prepaid Insurance is a current asset (IAS 1).'
+      },
+      {
+        type: "choice", id: "d23q2",
+        text: '"Record ending merchandise inventory" — which entry correctly transfers ending inventory from Purchases to Merchandise Inventory?',
+        choices: [
+          "Dr. Purchases / Cr. Merchandise Inventory",
+          "Dr. Merchandise Inventory / Cr. Purchases",
+          "Dr. Sales Revenue / Cr. Merchandise Inventory",
+          "Dr. Merchandise Inventory / Cr. Sales Revenue"
+        ],
+        answer: 1,
+        explanation: 'Year-end inventory entry: Record ending stock as Merchandise Inventory (繰越商品, asset) → Dr. Merchandise Inventory. Remove it from Purchases (費用) → Cr. Purchases. This corresponds to the inventory adjustment under IFRS IAS 2 (Inventories), where ending inventory is carried as an asset.'
+      },
+    ]
+  },
+
+  24: {
+    week: "Week 4", title: "Creating the Balance Sheet",
+    goal: "Prepare a Balance Sheet from the worksheet",
+    terms: [
+      { en: "Balance Sheet (B/S)",             kanji: "貸借対照表（たいしゃくたいしょうひょう）", katakana: "タイシャクタイショウヒョウ", romaji: "Taishaku Taishōhyō" },
+      { en: "Statement of Financial Position",  kanji: "（IFRS名称）",                             katakana: "",                          romaji: "IFRS name for Balance Sheet" },
+      { en: "Retained Earnings",               kanji: "繰越利益剰余金（くりこしりえきじょうよきん）", katakana: "クリコシリエキジョウヨキン", romaji: "Kurikoshi Rieki Jōyokin" },
+      { en: "Net Assets / Equity",             kanji: "純資産（じゅんしさん）",                     katakana: "ジュンシサン",               romaji: "Junshisan" },
+    ],
+    dialogue: [
+      { speaker: "Kenji",      text: "Do I just copy everything from the B/S column of the worksheet?" },
+      { speaker: "Mr. Manabu", text: "Essentially yes — organize assets, liabilities, and equity into the correct format. Equity includes net profit for the period. Under IFRS, the Balance Sheet is officially called the 'Statement of Financial Position.'" },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d24q1",
+        text: 'Which statement about the left and right totals of a Balance Sheet is correct?',
+        choices: [
+          "Left (Assets) total > Right (Liabilities + Equity) total",
+          "Left (Assets) total = Right (Liabilities + Equity) total",
+          "Left (Assets) total < Right (Liabilities + Equity) total",
+          "They match only when the business is profitable"
+        ],
+        answer: 1,
+        explanation: 'From the accounting equation <strong>Assets = Liabilities + Equity</strong>, the two sides of the Balance Sheet always balance. This is true regardless of whether the business is profitable. Under IFRS (IAS 1), this equation is the foundation of the "Statement of Financial Position."'
+      },
+      {
+        type: "choice", id: "d24q2",
+        text: 'What appears in the <strong>Equity section</strong> of the Balance Sheet?',
+        choices: [
+          "Accounts Receivable and Bills Receivable",
+          "Capital Stock and Retained Earnings (including current net profit)",
+          "Loans Payable and Accounts Payable",
+          "Sales Revenue and Purchases"
+        ],
+        answer: 1,
+        explanation: 'The Equity section (純資産の部) contains Capital Stock (資本金) and Retained Earnings (繰越利益剰余金), which includes net profit for the current period. Under IFRS (IAS 1), this section is called "Equity" and includes Share Capital, Retained Earnings, and Other Reserves.'
+      },
+    ]
+  },
+
+  25: {
+    week: "Week 4", title: "Creating the Income Statement",
+    goal: "Prepare an Income Statement from the worksheet",
+    terms: [
+      { en: "Income Statement (P/L)",              kanji: "損益計算書（そんえきけいさんしょ）", katakana: "ソンエキケイサンショ", romaji: "Son'eki Keisansho" },
+      { en: "Statement of Profit or Loss (IFRS)",  kanji: "（IFRS名称）",                      katakana: "",                    romaji: "IFRS official name for P/L" },
+      { en: "Gross Profit",                        kanji: "売上総利益（うりあげそうりえき）",   katakana: "ウリアゲソウリエキ", romaji: "Uriage Sō-rieki" },
+      { en: "Net Profit for the Period",           kanji: "当期純利益（とうきじゅんりえき）",   katakana: "トウキジュンリエキ", romaji: "Tōki Jun Rieki" },
+    ],
+    dialogue: [
+      { speaker: "Hina",       text: "Where do I get the numbers for the Income Statement?" },
+      { speaker: "Mr. Manabu", text: "Pick up all revenue and expense items from the P/L columns of the worksheet. Calculate net profit at the bottom. Under IFRS, this statement is officially called the 'Statement of Profit or Loss.'" },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d25q1",
+        text: 'Which formula correctly calculates <strong>Net Profit for the Period</strong>?',
+        choices: [
+          "Total Revenue + Total Expenses",
+          "Total Assets − Total Liabilities",
+          "Total Revenue − Total Expenses",
+          "Total Expenses − Total Revenue"
+        ],
+        answer: 2,
+        explanation: '<strong>Net Profit = Total Revenue − Total Expenses</strong>. If expenses exceed revenue, the result is a Net Loss (当期純損失). Under IFRS (IAS 1), this is "Profit for the period" on the Statement of Profit or Loss.'
+      },
+      {
+        type: "choice", id: "d25q2",
+        text: 'Which of the following is <strong>NOT</strong> recorded on the Income Statement?',
+        choices: [
+          "Sales Revenue (売上高 / Uriage-daka)",
+          "Salaries (給料 / Kyūryō)",
+          "Interest Income (受取利息 / Uketori Risoku)",
+          "Accounts Receivable (売掛金 / Urikakekin)"
+        ],
+        answer: 3,
+        explanation: 'Accounts Receivable (売掛金) is an <strong>asset</strong> → it appears on the Balance Sheet (B/S), NOT on the Income Statement (P/L). Sales revenue, salaries, and interest income are all P/L items.'
+      },
+    ]
+  },
+
+  26: {
+    week: "Week 4", title: "High-Frequency Journal Entries — Final Summary",
+    goal: "Master the most frequently tested journal entry patterns for the exam",
+    terms: [
+      { en: "Accrued Salaries",     kanji: "未払給料（みばらいきゅうりょう）", katakana: "ミバライキュウリョウ", romaji: "Mibarai Kyūryō" },
+      { en: "Communication Exp.",   kanji: "通信費（つうしんひ）",             katakana: "ツウシンヒ",           romaji: "Tsūshinhi" },
+    ],
+    dialogue: [
+      { speaker: "Taro",       text: "The exam is almost here! What should I review first?" },
+      { speaker: "Mr. Manabu", text: "Four patterns come up most often: ① credit sales/purchases, ② cash transactions, ③ accrued expenses, and ④ prepaid expenses. Let's run through all of them!" },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d26q1",
+        text: '"Paid communication expenses ¥5,000 in cash." Which is the correct journal entry?',
+        choices: [
+          "Dr. Cash ¥5,000 / Cr. Communication Expenses ¥5,000",
+          "Dr. Communication Expenses ¥5,000 / Cr. Cash ¥5,000",
+          "Dr. Communication Expenses ¥5,000 / Cr. Sales Revenue ¥5,000",
+          "Dr. Sales Revenue ¥5,000 / Cr. Communication Expenses ¥5,000"
+        ],
+        answer: 1,
+        explanation: 'Communication Expenses (通信費, expense) occur → Dr. Communication Expenses. Cash (asset) decreases → Cr. Cash.'
+      },
+      {
+        type: "choice", id: "d26q2",
+        text: '"Borrowed ¥500,000 from a bank; the amount was deposited into the ordinary savings account." Which is the correct journal entry?',
+        choices: [
+          "Dr. Loans Payable ¥500,000 / Cr. Ordinary Savings ¥500,000",
+          "Dr. Ordinary Savings ¥500,000 / Cr. Loans Payable ¥500,000",
+          "Dr. Cash ¥500,000 / Cr. Loans Payable ¥500,000",
+          "Dr. Loans Payable ¥500,000 / Cr. Cash ¥500,000"
+        ],
+        answer: 1,
+        explanation: 'Ordinary Savings (asset) increases → Dr. Ordinary Savings. Loans Payable (liability) increases → Cr. Loans Payable. Under IFRS (IAS 7), borrowings from banks are classified as financing activities in the Cash Flow Statement.'
+      },
+      {
+        type: "choice", id: "d26q3",
+        text: '"At year-end, accrued (unpaid) salaries of ¥30,000 are recognized." Which is the correct journal entry?',
+        choices: [
+          "Dr. Accrued Salaries ¥30,000 / Cr. Salaries ¥30,000",
+          "Dr. Salaries ¥30,000 / Cr. Cash ¥30,000",
+          "Dr. Salaries ¥30,000 / Cr. Accrued Salaries ¥30,000",
+          "Dr. Cash ¥30,000 / Cr. Accrued Salaries ¥30,000"
+        ],
+        answer: 2,
+        explanation: 'Salaries (費用, expense) are recognized this period → Dr. Salaries. Not yet paid → Accrued Salaries (未払給料, liability) → Cr. Accrued Salaries. Under IFRS (IAS 19), this is "Employee Benefits Payable" — an accrual liability.'
+      },
+    ]
+  },
+
+  27: {
+    week: "Week 4", title: "Mock Exam ①",
+    goal: "Test your ability under exam conditions (Weeks 1 & 2 content)",
+    terms: [],
+    dialogue: [
+      { speaker: "Mr. Manabu", text: "It's mock exam time! Try to stay aware of time. If you're stuck, skip and come back — that's good exam strategy." },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d27q1",
+        text: '[Mock ①-1] "Sold goods ¥180,000 on credit." Which is the correct journal entry?',
+        choices: [
+          "Dr. Cash ¥180,000 / Cr. Sales Revenue ¥180,000",
+          "Dr. Accounts Receivable ¥180,000 / Cr. Sales Revenue ¥180,000",
+          "Dr. Accounts Payable ¥180,000 / Cr. Sales Revenue ¥180,000",
+          "Dr. Sales Revenue ¥180,000 / Cr. Accounts Receivable ¥180,000"
+        ],
+        answer: 1,
+        explanation: 'Credit sale → Accounts Receivable (asset) increases → Dr. A/R. Sales Revenue (income) → Cr. Sales Revenue.'
+      },
+      {
+        type: "choice", id: "d27q2",
+        text: '[Mock ①-2] Which group contains ONLY Liabilities?',
+        choices: [
+          "Cash, Bills Receivable, Accounts Receivable",
+          "Accounts Payable, Loans Payable, Accrued Expenses",
+          "Capital Stock, Retained Earnings",
+          "Sales Revenue, Interest Income, Commission Income"
+        ],
+        answer: 1,
+        explanation: 'Accounts Payable (買掛金), Loans Payable (借入金), and Accrued Expenses (未払費用) are all "obligations to pay in the future" → Liabilities. Under IFRS, these are "Current Liabilities" or "Non-current Liabilities" depending on their due date.'
+      },
+      {
+        type: "choice", id: "d27q3",
+        text: '[Mock ①-3] Sales Revenue ¥700,000, Cost of Goods Sold ¥420,000. What is the Gross Profit?',
+        choices: ["¥280,000", "¥1,120,000", "¥420,000", "¥700,000"],
+        answer: 0,
+        explanation: '<strong>Gross Profit = Sales Revenue − Cost of Goods Sold</strong> = 700,000 − 420,000 = ¥280,000. Under IFRS, this is "Gross profit" on the Statement of Profit or Loss.'
+      },
+      {
+        type: "choice", id: "d27q4",
+        text: '[Mock ①-4] "Collected accounts receivable ¥55,000 in cash." Which is the correct journal entry?',
+        choices: [
+          "Dr. Accounts Receivable ¥55,000 / Cr. Cash ¥55,000",
+          "Dr. Cash ¥55,000 / Cr. Sales Revenue ¥55,000",
+          "Dr. Cash ¥55,000 / Cr. Accounts Receivable ¥55,000",
+          "Dr. Sales Revenue ¥55,000 / Cr. Cash ¥55,000"
+        ],
+        answer: 2,
+        explanation: 'Cash (asset) increases → Dr. Cash. Accounts Receivable (asset) decreases → Cr. A/R. Do NOT record Sales Revenue again — it was already recorded at the time of sale.'
+      },
+    ]
+  },
+
+  28: {
+    week: "Week 4", title: "Mock Exam ②",
+    goal: "Test your ability under exam conditions (Weeks 3 & 4 content)",
+    terms: [],
+    dialogue: [
+      { speaker: "Mr. Manabu", text: "Mock Exam #2! This one covers closing entries, worksheets, and financial statements. You've got this!" },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d28q1",
+        text: '[Mock ②-1] What is the correct column order in a worksheet?',
+        choices: [
+          "Income Statement → Trial Balance → Adjustments → Balance Sheet",
+          "Trial Balance → Adjustments → Income Statement / Balance Sheet",
+          "Adjustments → Trial Balance → Financial Statements",
+          "Balance Sheet → Income Statement → Trial Balance"
+        ],
+        answer: 1,
+        explanation: 'Worksheet order: ① Trial Balance → ② Adjustments → ③ Income Statement (P/L) → ④ Balance Sheet (B/S). This follows the standard accounting cycle.'
+      },
+      {
+        type: "choice", id: "d28q2",
+        text: '[Mock ②-2] "Record depreciation expense ¥80,000 on equipment (indirect method)." Which is the correct journal entry?',
+        choices: [
+          "Dr. Equipment ¥80,000 / Cr. Depreciation Expense ¥80,000",
+          "Dr. Depreciation Expense ¥80,000 / Cr. Equipment ¥80,000",
+          "Dr. Depreciation Expense ¥80,000 / Cr. Accumulated Depreciation ¥80,000",
+          "Dr. Accumulated Depreciation ¥80,000 / Cr. Equipment ¥80,000"
+        ],
+        answer: 2,
+        explanation: 'Depreciation Expense (費用) → Dr. Depreciation Expense. Indirect method (IFRS standard): do NOT reduce Equipment directly — instead Cr. Accumulated Depreciation (contra-asset). Net book value = Cost − Accumulated Depreciation.'
+      },
+      {
+        type: "choice", id: "d28q3",
+        text: '[Mock ②-3] Total Revenue = ¥900,000, Total Expenses = ¥650,000. What is Net Profit for the Period?',
+        choices: ["¥1,550,000", "¥250,000", "¥650,000", "¥900,000"],
+        answer: 1,
+        explanation: 'Net Profit = Total Revenue − Total Expenses = 900,000 − 650,000 = <strong>¥250,000</strong>.'
+      },
+      {
+        type: "choice", id: "d28q4",
+        text: '[Mock ②-4] Total Assets = ¥1,200,000, Total Liabilities = ¥800,000. What is Equity?',
+        choices: ["¥2,000,000", "¥800,000", "¥400,000", "¥1,200,000"],
+        answer: 2,
+        explanation: 'Equity = Assets − Liabilities = 1,200,000 − 800,000 = <strong>¥400,000</strong>. (Accounting equation: Assets = Liabilities + Equity)'
+      },
+    ]
+  },
+
+  29: {
+    week: "Week 4", title: "Mock Exam ③ — Comprehensive",
+    goal: "Final comprehensive mock exam covering all 30 days",
+    terms: [],
+    dialogue: [
+      { speaker: "Mr. Manabu", text: "The final mock exam! This is the culmination of 30 days of study. Trust your preparation and go for it!" },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d29q1",
+        text: '[Comprehensive-1] "Purchased goods ¥400,000: paid ¥200,000 in cash, remainder on credit." Which is the correct journal entry?',
+        choices: [
+          "Dr. Purchases ¥400,000 / Cr. Cash ¥400,000",
+          "Dr. Purchases ¥400,000 / Cr. Cash ¥200,000 + Cr. Accounts Payable ¥200,000",
+          "Dr. Purchases ¥400,000 / Cr. Cash ¥200,000 + Cr. Other Payables ¥200,000",
+          "Dr. Purchases ¥400,000 / Cr. Accounts Payable ¥400,000"
+        ],
+        answer: 1,
+        explanation: 'Purchases (費用) ¥400,000 → Dr. Purchases. Cash −¥200,000 → Cr. Cash. Accounts Payable (買掛金 is used for merchandise purchases on credit) +¥200,000 → Cr. Accounts Payable. Debit ¥400,000 = Credit ¥400,000. ✓'
+      },
+      {
+        type: "choice", id: "d29q2",
+        text: '[Comprehensive-2] "Transfer prepaid insurance ¥24,000 (carried forward from the prior period) to current period insurance expense." Which is the correct journal entry?',
+        choices: [
+          "Dr. Prepaid Insurance ¥24,000 / Cr. Insurance Expense ¥24,000",
+          "Dr. Insurance Expense ¥24,000 / Cr. Prepaid Insurance ¥24,000",
+          "Dr. Cash ¥24,000 / Cr. Prepaid Insurance ¥24,000",
+          "Dr. Insurance Expense ¥24,000 / Cr. Cash ¥24,000"
+        ],
+        answer: 1,
+        explanation: 'The prepaid asset from the prior period is now being consumed → Insurance Expense (費用) is recognized → Dr. Insurance Expense. Prepaid Insurance (asset) decreases → Cr. Prepaid Insurance. Under IFRS, this is a standard accrual accounting adjustment (IAS 1).'
+      },
+      {
+        type: "choice", id: "d29q3",
+        text: '[Comprehensive-3] Which items are recorded on the Balance Sheet (Statement of Financial Position)?',
+        choices: [
+          "Sales Revenue, Purchases, Salaries",
+          "Cash, Accounts Receivable, Accounts Payable, Capital Stock",
+          "Interest Income, Interest Expense, Depreciation Expense",
+          "Gross Profit, Operating Profit, Net Profit"
+        ],
+        answer: 1,
+        explanation: 'Cash (asset), Accounts Receivable (asset), Accounts Payable (liability), Capital Stock (equity) are all Balance Sheet items. Revenue, expenses, and profit items belong on the Income Statement (P/L).'
+      },
+      {
+        type: "choice", id: "d29q4",
+        text: '[Comprehensive-4] "Bills receivable ¥300,000 matured and was deposited into the current account." Which is the correct journal entry?',
+        choices: [
+          "Dr. Cash ¥300,000 / Cr. Bills Receivable ¥300,000",
+          "Dr. Current Account Deposit ¥300,000 / Cr. Bills Receivable ¥300,000",
+          "Dr. Bills Receivable ¥300,000 / Cr. Current Account Deposit ¥300,000",
+          "Dr. Current Account Deposit ¥300,000 / Cr. Sales Revenue ¥300,000"
+        ],
+        answer: 1,
+        explanation: 'Current Account Deposit (asset) increases → Dr. Current Account Deposit. Bills Receivable (asset) decreases (the note has been settled) → Cr. Bills Receivable.'
+      },
+    ]
+  },
+
+  30: {
+    week: "Week 4", title: "Final Review — Exam Day Preparation",
+    goal: "Last-minute review of the most critical points before the exam",
+    terms: [
+      { en: "Key formula: Assets = Liabilities + Equity", kanji: "資産 ＝ 負債 ＋ 純資産", katakana: "シサン ＝ フサイ ＋ ジュンシサン", romaji: "Shisan = Fusai + Junshisan" },
+      { en: "Key formula: Net Profit = Revenue − Expenses", kanji: "当期純利益 ＝ 収益 − 費用", katakana: "トウキジュンリエキ ＝ シュウエキ − ヒヨウ", romaji: "Tōki Jun Rieki = Shūeki − Hiyō" },
+    ],
+    dialogue: [
+      { speaker: "Mr. Manabu", text: "30 days — you made it! Today is your final review. If these three things are solid in your head, you will pass: ① journal entry rules, ② key account titles, ③ worksheet flow." },
+      { speaker: "Hina",       text: "I'm a little nervous…" },
+      { speaker: "Mr. Manabu", text: "You've built 30 days of solid knowledge. Believe in your preparation. You can do this!" },
+    ],
+    questions: [
+      {
+        type: "choice", id: "d30q1",
+        text: '[Final Check-1] Which correctly states the basic journal entry rules?',
+        choices: [
+          "Asset increases → Credit; Liability increases → Debit",
+          "Asset increases → Debit; Revenue occurs → Debit",
+          "Asset increases → Debit; Expense occurs → Debit; Revenue occurs → Credit",
+          "Expense occurs → Credit; Revenue occurs → Debit"
+        ],
+        answer: 2,
+        explanation: '<strong>The #1 rule to memorize:</strong> Asset increases & Expense occurrences → <strong>Debit (left)</strong>. Liability increases, Equity increases & Revenue occurrences → <strong>Credit (right)</strong>. This is consistent with double-entry bookkeeping used worldwide under both Japanese GAAP and IFRS.'
+      },
+      {
+        type: "choice", id: "d30q2",
+        text: '[Final Check-2] For the two-step sequence "purchased on credit → paid the balance in cash," which account combination is correct?',
+        choices: [
+          "Purchases / Accounts Receivable → Accounts Receivable / Cash",
+          "Purchases / Accounts Payable → Accounts Payable / Cash",
+          "Sales Revenue / Accounts Payable → Accounts Payable / Cash",
+          "Purchases / Other Payables → Other Payables / Cash"
+        ],
+        answer: 1,
+        explanation: 'Step 1 — Credit purchase: Dr. Purchases / Cr. Accounts Payable. Step 2 — Cash payment: Dr. Accounts Payable / Cr. Cash. The liability is created and then settled. This is the most-tested pattern in Level 3.'
+      },
+      {
+        type: "choice", id: "d30q3",
+        text: '[Final Check-3] What are the most important tasks covered in the Bookkeeping Level 3 exam?',
+        choices: [
+          "Consolidated financial statements of large corporations",
+          "Journal entries, ledger accounts, trial balance, worksheet, and financial statements",
+          "Cost accounting and factory accounting",
+          "Cash flow statement preparation"
+        ],
+        answer: 1,
+        explanation: 'Level 3 core topics: ① Journal entries (仕訳) ② Ledger posting / T-accounts ③ Trial balance ④ Worksheet (精算表) ⑤ Financial statements (B/S and P/L). Master these five and you will pass!'
+      },
+      {
+        type: "choice", id: "d30q4",
+        text: '[Final Check-4] If net profit of ¥200,000 is confirmed for the period, how does it affect the Equity section of the Balance Sheet?',
+        choices: [
+          "Equity decreases by ¥200,000",
+          "Equity increases by ¥200,000",
+          "Equity does not change",
+          "Liabilities increase by ¥200,000"
+        ],
+        answer: 1,
+        explanation: 'Net profit increases Retained Earnings (繰越利益剰余金), which is part of Equity. Equity increases by ¥200,000. This is consistent with IFRS (IAS 1): profit for the period is transferred to Equity via Retained Earnings. Assets = Liabilities + Equity → a profit increases both Assets and Equity equally.'
+      },
+    ]
+  },
+
+});
+
+// =============================================
+// State
+// =============================================
+let currentDay = 1;
+const state = JSON.parse(localStorage.getItem('boki3en_state') || '{}');
+
+function saveState() {
+  localStorage.setItem('boki3en_state', JSON.stringify(state));
+}
+
+function getDayScore(day) {
+  const d = DAYS[day];
+  if (!d || d.locked) return { answered: 0, correct: 0, total: 0 };
+  const total = d.questions.length;
+  let answered = 0, correct = 0;
+  d.questions.forEach(q => {
+    if (state[q.id] !== undefined) {
+      answered++;
+      if (state[q.id] === true) correct++;
+    }
+  });
+  return { answered, correct, total };
+}
+
+function getTotalProgress() {
+  let done = 0, unlockedCount = 0;
+  for (let d = 1; d <= 30; d++) {
+    if (DAYS[d] && !DAYS[d].locked) {
+      unlockedCount++;
+      const { answered, total } = getDayScore(d);
+      if (total > 0 && answered >= total) done++;
+    }
+  }
+  return unlockedCount > 0 ? Math.round(done / unlockedCount * 100) : 0;
+}
+
+// =============================================
+// Sidebar
+// =============================================
+function renderSidebar() {
+  const sb = document.getElementById('sidebar');
+  sb.innerHTML = '<h2>30-Day Curriculum</h2>';
+  WEEKS.forEach(w => {
+    const wg = document.createElement('div');
+    wg.className = 'week-group';
+    wg.innerHTML = `<div class="week-label">${w.label}</div>`;
+    w.days.forEach(d => {
+      const day = DAYS[d];
+      const { answered, correct, total } = getDayScore(d);
+      const isDone = !day.locked && answered >= total && total > 0;
+      const isPartial = !day.locked && answered > 0 && !isDone;
+      const btn = document.createElement('button');
+      const lockIcon = day.locked ? '🔒 ' : '';
+      btn.className = 'day-btn'
+        + (d === currentDay ? ' active' : '')
+        + (isDone ? ' done' : isPartial ? ' partial' : '')
+        + (day.locked ? ' locked' : '');
+      btn.innerHTML = `<span class="dot"></span>${lockIcon}Day ${d}: ${day.title}`;
+      btn.onclick = () => { currentDay = d; renderAll(); window.scrollTo(0,0); };
+      wg.appendChild(btn);
+    });
+    sb.appendChild(wg);
+  });
+}
+
+// =============================================
+// Main Content
+// =============================================
+function renderMain() {
+  const main = document.getElementById('main');
+  const day = DAYS[currentDay];
+  if (!day) return;
+
+  if (day.locked) {
+    main.innerHTML = `
+      <div class="locked-panel">
+        <div class="lock-icon">🔒</div>
+        <h2>${day.week} — Day ${currentDay}: ${day.title}</h2>
+        <p>This lesson is coming soon! Complete Week 1 first, then we'll unlock Weeks 2–4.</p>
+        <p style="margin-top:10px;font-size:.8rem;">（このレッスンは近日公開予定です）</p>
+      </div>`;
+    return;
+  }
+
+  const { answered, correct, total } = getDayScore(currentDay);
+  const allDone = answered >= total && total > 0;
+
+  let html = `
+    <div class="day-header">
+      <span class="week-tag">${day.week}</span>
+      <h2>Day ${currentDay}: ${day.title}</h2>
+      <p>🎯 Goal: ${day.goal}</p>
+    </div>`;
+
+  if (day.terms && day.terms.length > 0) {
+    html += `<div class="key-terms-box"><h3>📖 Key Terms for Today</h3><div class="kt-grid">`;
+    day.terms.forEach(t => {
+      html += `<div class="kt-card">
+        <div class="kt-en">${t.en}</div>
+        <div class="kt-kanji">${t.kanji}</div>
+        <div class="kt-read">${t.katakana} &nbsp;·&nbsp; ${t.romaji}</div>
+      </div>`;
+    });
+    html += `</div></div>`;
+  }
+
+  html += `<div class="dialogue"><div class="speaker">💬 Introduction</div>`;
+  day.dialogue.forEach(l => {
+    html += `<div class="line"><strong>${l.speaker}:</strong> ${l.text}</div>`;
+  });
+  html += `</div>`;
+
+  day.questions.forEach((q, i) => {
+    html += renderQuestion(q, i + 1);
+  });
+
+  const pct = total > 0 ? Math.round(correct / total * 100) : 0;
+  const msg = pct === 100
+    ? '🎉 Perfect score! Outstanding!'
+    : pct >= 70 ? '👍 Above passing mark! Keep it up!'
+    : '📚 Review the explanations and try again!';
+  html += `
+    <div class="score-box ${allDone ? 'show' : ''}" id="scoreBox">
+      <div class="score-big">${correct} / ${total}</div>
+      <div class="score-msg">${msg} &nbsp;(Score: ${pct}%)</div>
+      <br>
+      ${currentDay === 30
+        ? `<p style="color:var(--success);font-weight:700;font-size:1.1rem;">🏆 All 30 Days Complete! Good luck on your exam!</p>`
+        : [7,14,21].includes(currentDay)
+          ? `<p style="color:var(--success);font-weight:700;">🏅 Week ${Math.ceil(currentDay/7)} Complete!</p>
+             <button class="btn btn-primary" style="margin-top:10px" onclick="goNext()">Start Week ${Math.ceil(currentDay/7)+1} →</button>`
+          : `<button class="btn btn-primary" onclick="goNext()">Next Day →</button>`
+      }
+    </div>`;
+
+  main.innerHTML = html;
+  attachHandlers(day);
+}
+
+function renderQuestion(q, num) {
+  const answered = state[q.id] !== undefined;
+  const isCorrect = state[q.id] === true;
+
+  if (q.type === 'choice') {
+    const choicesHtml = q.choices.map((c, i) => {
+      let cls = 'choice-btn';
+      if (answered) {
+        if (i === q.answer) cls += ' correct';
+        else if (!isCorrect && state[q.id + '_sel'] === i) cls += ' wrong';
+      }
+      return `<button class="${cls}" data-qid="${q.id}" data-idx="${i}" ${answered ? 'disabled' : ''}>${c}</button>`;
+    }).join('');
+    return `
+      <div class="q-card">
+        <div class="q-num">Question ${num}</div>
+        <div class="q-text">${q.text}</div>
+        ${q.sub ? `<div class="q-sub">${q.sub}</div>` : ''}
+        <div class="choices">${choicesHtml}</div>
+        <div class="explanation ${answered ? 'show' : ''}" id="exp_${q.id}">
+          <strong>${isCorrect ? '✅ Correct!' : '❌ Incorrect'}</strong> &nbsp;${q.explanation}
+        </div>
+      </div>`;
+  }
+
+  if (q.type === 'fill') {
+    const val = state[q.id + '_val'] || '';
+    const cls = answered ? (isCorrect ? 'correct' : 'wrong') : '';
+    return `
+      <div class="q-card">
+        <div class="q-num">Question ${num}</div>
+        <div class="q-text">${q.text}</div>
+        ${q.sub ? `<div class="q-sub">${q.sub}</div>` : ''}
+        ${q.hint ? `<p style="font-size:.8rem;color:var(--gray);margin-bottom:8px;">💡 ${q.hint}</p>` : ''}
+        <div class="fill-area">
+          <input class="fill-input ${cls}" id="fill_${q.id}" type="text" placeholder="Enter your answer"
+            value="${val}" ${answered ? 'disabled' : ''}/>
+          ${q.unit ? `<span style="font-size:.85rem;color:var(--gray)">${q.unit}</span>` : ''}
+          ${!answered ? `<button class="btn btn-primary" onclick="checkFill('${q.id}')">Check</button>` : ''}
+        </div>
+        <div class="explanation ${answered ? 'show' : ''}" id="exp_${q.id}">
+          <strong>${isCorrect ? '✅ Correct!' : '❌ Incorrect'}</strong> &nbsp;${q.explanation}
+        </div>
+      </div>`;
+  }
+  return '';
+}
+
+// =============================================
+// Event Handlers
+// =============================================
+function attachHandlers(day) {
+  document.querySelectorAll('.choice-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const qid = btn.dataset.qid;
+      const idx = parseInt(btn.dataset.idx);
+      const q = day.questions.find(x => x.id === qid);
+      if (!q || state[qid] !== undefined) return;
+      state[qid] = (idx === q.answer);
+      state[qid + '_sel'] = idx;
+      saveState();
+      renderAll();
+    });
+  });
+}
+
+function checkFill(qid) {
+  const day = DAYS[currentDay];
+  const q = day.questions.find(x => x.id === qid);
+  const input = document.getElementById('fill_' + qid);
+  const val = input.value.trim().replace(/,/g, '').replace(/¥/g, '');
+  const ans = q.answer.replace(/,/g, '');
+  state[qid] = (val === ans);
+  state[qid + '_val'] = input.value.trim();
+  saveState();
+  renderAll();
+}
+
+function goNext() {
+  if (currentDay < 30) { currentDay++; renderAll(); window.scrollTo(0,0); }
+}
+
+function renderAll() {
+  renderSidebar();
+  renderMain();
+  document.getElementById('progressFill').style.width = getTotalProgress() + '%';
+}
+
+renderAll();
+</script>
+</body>
+</html>

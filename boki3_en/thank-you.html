@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Purchase Complete | Bookkeeping Level 3 — English Edition</title>
+  <style>
+    :root {
+      --bg: #f0f9ff;
+      --accent: #2563eb;
+      --accent-dark: #1d4ed8;
+      --ink: #111827;
+      --sub: #6b7280;
+      --line: #e5e7eb;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "Segoe UI", "Hiragino Sans", sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 48px 40px;
+      max-width: 580px;
+      width: 100%;
+      box-shadow: 0 10px 40px rgba(0,0,0,.10);
+      text-align: center;
+    }
+    .check {
+      width: 72px; height: 72px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 36px;
+      color: #fff;
+    }
+    h1 { font-size: 1.6rem; font-weight: 800; margin-bottom: 12px; }
+    .sub { color: var(--sub); font-size: 0.95rem; line-height: 1.8; margin-bottom: 32px; }
+    .product-info {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: left;
+      margin-bottom: 28px;
+    }
+    .product-info h2 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; color: var(--accent-dark); }
+    .product-info ul { list-style: none; font-size: 0.9rem; color: var(--sub); line-height: 2; }
+    .product-info ul li::before { content: "✓ "; color: var(--accent); font-weight: 700; }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 700;
+      padding: 18px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background .2s, transform .15s;
+      margin-bottom: 16px;
+    }
+    .download-btn:hover { background: var(--accent-dark); transform: translateY(-2px); }
+    .note { font-size: 0.82rem; color: #9ca3af; margin-top: 8px; line-height: 1.7; }
+    .how-to {
+      background: #f9fafb;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 18px 20px;
+      text-align: left;
+      margin: 24px 0;
+    }
+    .how-to h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 10px; color: var(--ink); }
+    .how-to ol { padding-left: 18px; font-size: 0.85rem; color: var(--sub); line-height: 2; }
+    hr { border: none; border-top: 1px solid var(--line); margin: 28px 0; }
+    .footer-link { font-size: 0.85rem; color: var(--sub); }
+    .footer-link a { color: var(--accent); }
+    .jp-note { font-size: 0.78rem; color: #9ca3af; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="check">✓</div>
+    <h1>Thank you for your purchase!</h1>
+    <p class="sub">
+      Your payment is complete.<br>
+      Download your workbook using the button below and start studying today!
+    </p>
+
+    <div class="product-info">
+      <h2>📦 What you've purchased</h2>
+      <ul>
+        <li>Interactive question workbook (index.html) — 90 questions, auto-grading</li>
+        <li>All 30 days fully in English with trilingual Japanese term guides</li>
+        <li>IFRS / international standard references throughout</li>
+        <li>Works offline on any device — no internet required</li>
+      </ul>
+    </div>
+
+    <a href="boki3_en_mondaishu.zip" download class="download-btn">
+      ⬇ Download Workbook
+    </a>
+    <div class="note">
+      Open the downloaded HTML file in any browser (Safari, Chrome, Firefox).<br>
+      No app installation required. Works completely offline.
+    </div>
+
+    <div class="how-to">
+      <h3>📱 How to open the file</h3>
+      <ol>
+        <li>Download and unzip the file</li>
+        <li>Open <strong>index.html</strong> in your browser</li>
+        <li>Start with Day 1 — 45 minutes per day</li>
+        <li>Your progress is saved automatically in the browser</li>
+      </ol>
+    </div>
+
+    <hr>
+
+    <div class="footer-link">
+      <a href="../index.html">← Back to Manabinomori Educational Institute</a>
+    </div>
+    <p class="jp-note">
+      ご不明な点はお気軽にお問い合わせください：manabinomorikyouikuken@gmail.com
+    </p>
+  </div>
+</body>
+</html>
