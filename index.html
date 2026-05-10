@@ -718,17 +718,46 @@
           <p style="font-size:.78rem;color:#8a9e8a;margin:12px 0 0;">※ AIによる情報提供です。診断・治療の代替にはなりません。重要なご相談はメールまたは専門家へ。</p>
         </div>
         <div class="panel">
-          <div class="section-head" style="margin-bottom:10px;">
+          <div class="section-head" style="margin-bottom:16px;">
             <h2>お問い合わせ</h2>
-            <p>
-              ご質問、ご依頼、取材、教材に関するお問い合わせは、メールにてご連絡ください。
-              通常2営業日以内を目安に返信します。
-            </p>
+            <p>ご質問、ご依頼、取材、教材に関するお問い合わせはフォームまたはメールにてご連絡ください。通常2営業日以内を目安に返信します。</p>
           </div>
-          <div class="cta-row">
-            <a class="btn primary" href="mailto:manabinomorikyouikuken@gmail.com">メールで問い合わせる</a>
-            <a class="btn secondary" href="https://morimorimanabu.hatenablog.com/" target="_blank" rel="noopener noreferrer">活動ブログを見る</a>
-          </div>
+          <form action="https://formspree.io/f/mykolgnd" method="POST" style="display:grid;gap:12px;">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+              <div>
+                <label style="display:block;font-size:.88rem;font-weight:700;color:#35553a;margin-bottom:4px;">お名前 <span style="color:#c0392b;">*</span></label>
+                <input type="text" name="name" required placeholder="山田 太郎"
+                  style="width:100%;border:1px solid #d7ddd6;border-radius:10px;padding:10px 12px;font-size:.95rem;box-sizing:border-box;font-family:inherit;">
+              </div>
+              <div>
+                <label style="display:block;font-size:.88rem;font-weight:700;color:#35553a;margin-bottom:4px;">メールアドレス <span style="color:#c0392b;">*</span></label>
+                <input type="email" name="email" required placeholder="example@gmail.com"
+                  style="width:100%;border:1px solid #d7ddd6;border-radius:10px;padding:10px 12px;font-size:.95rem;box-sizing:border-box;font-family:inherit;">
+              </div>
+            </div>
+            <div>
+              <label style="display:block;font-size:.88rem;font-weight:700;color:#35553a;margin-bottom:4px;">お問い合わせ種別</label>
+              <select name="category" style="width:100%;border:1px solid #d7ddd6;border-radius:10px;padding:10px 12px;font-size:.95rem;box-sizing:border-box;font-family:inherit;background:#fff;">
+                <option value="">選択してください</option>
+                <option value="教材について">教材について</option>
+                <option value="研修・コンサルタント">研修・コンサルタント依頼</option>
+                <option value="教育相談">教育相談</option>
+                <option value="取材・メディア">取材・メディア</option>
+                <option value="その他">その他</option>
+              </select>
+            </div>
+            <div>
+              <label style="display:block;font-size:.88rem;font-weight:700;color:#35553a;margin-bottom:4px;">お問い合わせ内容 <span style="color:#c0392b;">*</span></label>
+              <textarea name="message" required rows="5" placeholder="お問い合わせ内容をご記入ください。"
+                style="width:100%;border:1px solid #d7ddd6;border-radius:10px;padding:10px 12px;font-size:.95rem;box-sizing:border-box;font-family:inherit;resize:vertical;"></textarea>
+            </div>
+            <input type="hidden" name="_subject" value="【まなびの森】お問い合わせが届きました">
+            <button type="submit"
+              style="background:#5d7c61;color:#fff;border:none;border-radius:12px;padding:14px 24px;font-size:1rem;font-weight:800;cursor:pointer;font-family:inherit;">
+              送信する
+            </button>
+          </form>
+          <p style="margin-top:12px;font-size:.85rem;color:#58635b;">または直接メール：<a href="mailto:manabinomorikyouikuken@gmail.com">manabinomorikyouikuken@gmail.com</a></p>
         </div>
       </div>
     </section>
