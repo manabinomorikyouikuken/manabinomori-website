@@ -209,7 +209,7 @@
     .flow h3{margin:0 0 6px;font-size:1rem}
     .flow p{margin:0;color:var(--sub);font-size:.94rem}
     .product{
-      display:grid;grid-template-columns:1.1fr .9fr;gap:18px;
+      display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
       align-items:stretch;
     }
     .price{
@@ -276,6 +276,7 @@
           <li><a href="services.html">研修・相談</a></li>
           <li><a href="#flow">ご依頼の流れ</a></li>
           <li><a href="#product">教材販売</a></li>
+          <li><a href="#tools">無料ツール</a></li>
           <li><a href="#column">コラム</a></li>
           <li><a href="#profile">代表者</a></li>
           <li><a href="#company">会社概要</a></li>
@@ -493,7 +494,7 @@
         <div class="flow">
           <div class="step">
             <h3>お問い合わせ</h3>
-            <p><a href="index.html#contact">お問い合わせフォーム</a>またはメールで、相談内容をお知らせください。</p>
+            <p><a href="#contact">お問い合わせフォーム</a>またはメールで、相談内容をお知らせください。</p>
           </div>
           <div class="step">
             <h3>内容確認</h3>
@@ -592,6 +593,39 @@
       </div>
     </section>
 
+    <section id="tools">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>無料ツール</h2>
+          <p>特別支援教育の現場で使えるWebアプリを無料で公開しています。インストール不要・ブラウザで動作します。</p>
+        </div>
+        <div class="subgrid">
+          <a href="https://manabinomorikyouikuken.github.io/kodo-kiroku/" target="_blank" rel="noopener noreferrer" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
+            <div class="kicker">無料Webアプリ</div>
+            <h3 style="margin:0 0 10px;font-size:1.15rem;">行動記録</h3>
+            <p class="muted" style="margin:0 0 12px;font-size:.92rem;">子どもの行動を場所・きっかけ・対応と合わせて記録。傾向グラフとCSV出力で支援会議や保護者面談に活用できます。</p>
+            <ul class="meta" style="margin-bottom:12px;">
+              <li><b>対象</b><span>特別支援学級・特別支援学校の先生・支援員</span></li>
+              <li><b>機能</b><span>子ども登録・行動記録・傾向グラフ・CSV出力</span></li>
+              <li><b>費用</b><span>完全無料・インストール不要</span></li>
+            </ul>
+            <span style="color:#285d39;font-weight:700;font-size:.9rem;">アプリを開く →</span>
+          </a>
+          <a href="https://manabinomorikyouikuken.github.io/iep-maker/" target="_blank" rel="noopener noreferrer" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
+            <div class="kicker">無料Webアプリ（3件まで）</div>
+            <h3 style="margin:0 0 10px;font-size:1.15rem;">個別の指導計画（IEP）作成補助</h3>
+            <p class="muted" style="margin:0 0 12px;font-size:.92rem;">自立活動6区分27項目に沿って、個別の指導計画を効率よく作成できます。A4印刷・JSONバックアップ対応。</p>
+            <ul class="meta" style="margin-bottom:12px;">
+              <li><b>対象</b><span>特別支援学級・特別支援学校の先生</span></li>
+              <li><b>機能</b><span>実態把握・短期目標・手立て文例・評価根拠・保護者確認欄</span></li>
+              <li><b>費用</b><span>3件まで無料</span></li>
+            </ul>
+            <span style="color:#285d39;font-weight:700;font-size:.9rem;">アプリを開く →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section id="column">
       <div class="wrap">
         <div class="section-head">
@@ -645,6 +679,12 @@
             <div class="kicker">特別支援学校シリーズ</div>
             <h3 style="margin:0 0 10px;font-size:1.1rem;">各教科等を合わせた指導って何？<br>特別支援学校ならではの学び方の特徴と良さ</h3>
             <p class="muted" style="margin:0 0 12px;font-size:.9rem;">日常生活の指導・遊びの指導・生活単元学習・作業学習の4形態と生活中心教育との関係を解説。</p>
+            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
+          </a>
+          <a href="tokushi/seikatsu_chusin.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
+            <div class="kicker">特別支援学校シリーズ</div>
+            <h3 style="margin:0 0 10px;font-size:1.1rem;">特別支援教育は、教科だけじゃない。<br>「各教科等を合わせた指導」が問い直す学びの本質</h3>
+            <p class="muted" style="margin:0 0 12px;font-size:.9rem;">生活中心教育とは何か。糸賀一雄の思想から2017年学習指導要領改訂まで、その哲学的背景を解説。</p>
             <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
           </a>
         </div>
@@ -821,7 +861,7 @@
             </div>
             <input type="hidden" name="_subject" value="【まなびの森】お問い合わせが届きました">
             <input type="hidden" name="_next" value="https://manabinomorikyouikuken.github.io/manabinomori-website/thanks.html">
-            <input type="text" name="_gotcha" style="display:none;">
+            <input type="text" name="_gotcha" style="display:none;" aria-hidden="true" tabindex="-1" autocomplete="off">
             <button type="submit"
               style="background:#5d7c61;color:#fff;border:none;border-radius:12px;padding:14px 24px;font-size:1rem;font-weight:800;cursor:pointer;font-family:inherit;">
               送信する

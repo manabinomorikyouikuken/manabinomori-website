@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>家庭でできる！発達支援ワークシート集</title>
+  <meta name="description" content="保護者・支援員のための発達支援ワークシート集。得意・苦手発見シート、スケジュール表、気持ちの温度計など5種を収録。TEACCH・ABA・SEL等の国際標準理論に基づき作成。">
   <style>
     /* ── 基本 ── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -810,7 +811,7 @@
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td>${t}</td>
-      <td class="icon-cell" onclick="this.dataset.editing='1'" contenteditable="true" style="outline:none;cursor:pointer;"></td>
+      <td class="icon-cell" contenteditable="true" style="outline:none;cursor:pointer;"></td>
       <td><input type="text" placeholder="　"></td>
     `;
     tbody.appendChild(tr);
