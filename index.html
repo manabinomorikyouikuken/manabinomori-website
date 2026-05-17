@@ -83,6 +83,7 @@
       line-height:1.8;
     }
     a{color:#285d39;text-decoration:none}
+    a[href^="mailto:"]{overflow-wrap:anywhere}
     a:hover{text-decoration:underline}
     img{max-width:100%;display:block}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 40px}
@@ -129,8 +130,12 @@
       padding:8px 12px;border-radius:999px;font-size:.88rem;font-weight:800;
       margin-bottom:18px;
     }
+    .eyebrow-stacked{
+      display:inline-grid;gap:3px;align-items:start;border-radius:18px;
+      padding:10px 14px;line-height:1.55;
+    }
     h1{
-      margin:0 0 12px;font-size:clamp(2rem,4vw,3rem);line-height:1.28;letter-spacing:.01em;
+      margin:0 0 12px;font-size:clamp(1.72rem,3.4vw,2.55rem);line-height:1.34;letter-spacing:.01em;
     }
     .hero-lead{
       font-size:1.08rem;color:var(--sub);margin:0 0 22px;
@@ -141,6 +146,15 @@
     .chips li{
       background:#fafcf9;border:1px solid var(--line);border-radius:999px;
       padding:8px 12px;font-size:.92rem;font-weight:700;color:#35553a;
+    }
+    .chips .chip-stacked{
+      display:grid;gap:3px;border-radius:18px;padding:10px 14px;line-height:1.55;
+    }
+    .chip-label{
+      display:block;font-size:.78rem;letter-spacing:.04em;color:#4f6b53;
+    }
+    .chip-text{
+      display:block;font-size:.95rem;color:#35553a;
     }
     .cta-row{display:flex;gap:12px;flex-wrap:wrap}
     .btn{
@@ -181,6 +195,22 @@
     .panel{
       padding:24px 22px;
     }
+    .entry-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
+    }
+    .entry-card{
+      display:flex;flex-direction:column;gap:12px;
+    }
+    .entry-card h3{
+      margin:0;font-size:1.22rem;line-height:1.35;
+    }
+    .entry-card p{
+      margin:0;color:var(--sub);
+    }
+    .entry-note{
+      margin-top:auto;padding-top:12px;border-top:1px solid var(--line);
+      color:#4f5d52;font-size:.9rem;
+    }
     .service-card h3{margin:0 0 8px;font-size:1.18rem}
     .service-card p{margin:0 0 12px}
     .meta{
@@ -212,6 +242,12 @@
       display:grid;grid-template-columns:repeat(3,1fr);gap:18px;
       align-items:stretch;
     }
+    .product-title-compact{
+      margin:0 0 10px;font-size:1.45rem;line-height:1.55;
+    }
+    .product-title-compact span{
+      display:block;
+    }
     .price{
       font-size:2rem;font-weight:900;line-height:1.2;margin:8px 0 14px;color:#294f31;
     }
@@ -224,6 +260,7 @@
     }
     .table th,.table td{
       padding:14px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;
+      overflow-wrap:anywhere;
     }
     .table th{
       width:180px;background:#f8fbf7;color:#35553a;font-size:.95rem;
@@ -232,6 +269,9 @@
     .profile-list{margin:0;padding-left:1.2em}
     .subgrid{
       display:grid;grid-template-columns:1fr 1fr;gap:18px;
+    }
+    .contact-fields{
+      display:grid;grid-template-columns:1fr 1fr;gap:12px;
     }
     .muted{color:var(--sub)}
     .foot{
@@ -243,7 +283,7 @@
       letter-spacing:.04em;text-transform:none;
     }
     @media (max-width: 960px){
-      .hero-grid,.grid-2,.grid-3,.product,.subgrid{grid-template-columns:1fr}
+      .hero-grid,.grid-2,.grid-3,.entry-grid,.product,.subgrid{grid-template-columns:1fr}
       .flow{grid-template-columns:1fr 1fr}
     }
     @media (max-width: 720px){
@@ -254,10 +294,58 @@
       .hero{padding-top:34px}
       .hero-main{padding:24px 20px}
       .hero-side{padding:20px}
+      .eyebrow-stacked{
+        width:min(100%,300px);margin-left:auto;margin-right:auto;
+      }
+      .chips{justify-content:center}
+      .chips li{text-align:center}
+      .chips .chip-stacked{
+        width:min(100%,300px);margin-left:auto;margin-right:auto;text-align:left;
+      }
+      .hero-main > .cta-row{
+        justify-content:center;
+      }
+      .hero-main > .cta-row .btn{
+        width:min(100%,300px);text-align:center;
+      }
+      .hero-side h2{
+        text-align:center;
+      }
+      .checklist{
+        justify-items:center;
+      }
+      .checklist li{
+        width:min(100%,300px);
+      }
+      .entry-card .cta-row{
+        justify-content:center;
+      }
+      .entry-card .btn{
+        width:min(100%,300px);text-align:center;
+      }
+      .panel > .cta-row{
+        justify-content:center;
+      }
+      .panel > .cta-row .btn{
+        width:min(100%,300px);text-align:center;
+      }
+      .price{
+        max-width:100%;font-size:clamp(1.12rem,4.8vw,1.45rem);text-align:center;white-space:nowrap;
+      }
+      #entryways .section-head h2{
+        font-size:1.42rem;white-space:nowrap;
+      }
+      .product-title-compact{
+        font-size:clamp(1.16rem,5vw,1.34rem);line-height:1.55;
+      }
+      .product-title-compact span{
+        white-space:nowrap;
+      }
       .flow{grid-template-columns:1fr}
       .table th,.table td{display:block;width:auto}
       .table th{border-bottom:none;padding-bottom:4px}
       .table td{padding-top:0}
+      .contact-fields{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -296,8 +384,11 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-main">
-          <div class="eyebrow">学校・家庭・地域・教育機関向け</div>
-          <h1>教育相談・研修・教材提供を通じて、<br>学びの現場に実行できる支援を届けます。</h1>
+          <div class="eyebrow eyebrow-stacked">
+            <span class="chip-label">対象</span>
+            <span class="chip-text">学校・家庭・地域<br>教育機関向け</span>
+          </div>
+          <h1>教育相談・研修・教材で、学びの現場を支えます。</h1>
           <p class="hero-lead">
             合同会社まなびの森教育研究所は、千葉市を拠点に、
             学校・家庭・地域・教育機関向けの教育コンサルティング、研修企画・実施、
@@ -306,11 +397,14 @@
           <ul class="chips">
             <li>設立：2026年4月1日</li>
             <li>所在地：千葉県千葉市美浜区</li>
-            <li>主な領域：特別支援教育・インクルーシブ教育・自然体験学習</li>
+            <li class="chip-stacked">
+              <span class="chip-label">主な領域</span>
+              <span class="chip-text">特別支援教育・インクルーシブ教育・自然体験学習</span>
+            </li>
           </ul>
           <div class="cta-row">
-            <a class="btn primary" href="#contact">お問い合わせ</a>
-            <a class="btn secondary" href="#services">事業内容を見る</a>
+            <a class="btn primary" href="#entryways">3つの入口を見る</a>
+            <a class="btn secondary" href="#contact">相談・お問い合わせ</a>
           </div>
         </div>
 
@@ -338,6 +432,55 @@
       </div>
     </section>
 
+    <section id="entryways">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>ご相談・ご利用の入口</h2>
+          <p>目的に合わせて、必要な情報へ進めるように整理しています。</p>
+        </div>
+
+        <div class="entry-grid">
+          <article class="panel entry-card">
+            <div class="kicker">保護者の方へ</div>
+            <h3>子どもの困り感や学校との相談を、一緒に整理します</h3>
+            <p>
+              登校しぶり、学校生活の不安、合理的配慮、就学や進路のことなど、家庭だけで抱え込みやすい内容を整理します。
+              診断や治療ではなく、学校や関係機関と話し合うための材料づくりを大切にします。
+            </p>
+            <div class="entry-note">保護者や子どもを責めず、状況と支援ニーズを分けて考えます。</div>
+            <div class="cta-row">
+              <a class="btn secondary" href="services.html#support">保護者向け相談を見る</a>
+            </div>
+          </article>
+
+          <article class="panel entry-card">
+            <div class="kicker">学校・教職員の方へ</div>
+            <h3>特別支援教育・不登校支援・合理的配慮の研修、相談に対応します</h3>
+            <p>
+              校内研修、教職員向け講演、支援体制づくり、保護者との情報共有などを、学校現場で共有しやすい言葉と実行しやすい形に整理します。
+            </p>
+            <div class="entry-note">学校現場の実情を踏まえ、制度と日々の実践をつなげて考えます。</div>
+            <div class="cta-row">
+              <a class="btn secondary" href="services.html">研修・講演の相談を見る</a>
+            </div>
+          </article>
+
+          <article class="panel entry-card">
+            <div class="kicker">教材を購入したい方へ</div>
+            <h3>教材・ワークシートの内容を確認できます</h3>
+            <p>
+              特別支援教育の初任者向け教材、家庭や支援場面で使えるワークシート、簿記3級教材などを掲載しています。
+              対象、内容、価格、購入後の流れを確認してから選べます。
+            </p>
+            <div class="entry-note">購入前に、内容・対象・納品方法・注意事項を確認できます。</div>
+            <div class="cta-row">
+              <a class="btn secondary" href="#product">教材一覧を見る</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="news">
       <div class="wrap">
         <div class="section-head">
@@ -354,8 +497,7 @@
           </p>
           <div class="price">¥980（税込・PDF）</div>
           <div class="cta-row">
-            <a class="btn primary" href="https://buy.stripe.com/9B63cu4TmcY93aw1fr8Vi04" target="_blank" rel="noopener noreferrer">今すぐ購入する ¥980</a>
-            <a class="btn secondary" href="tokushi/first_30days_checksheet.html">商品ページを見る</a>
+            <a class="btn primary" href="tokushi/first_30days_checksheet.html">教材を見る</a>
             <a class="btn secondary" href="products/first_30days_checksheet/first_30days_checksheet_sample.pdf" target="_blank" rel="noopener noreferrer">無料サンプルPDFを見る</a>
           </div>
           <div class="notice">
@@ -571,7 +713,10 @@
           <div class="panel">
             <div class="kicker" style="color:#7a5c2e;background:#fdf6ec;border:1px solid #e8d4a0;display:inline-block;padding:4px 10px;border-radius:6px;margin-bottom:8px;">📚 学習教材（特別支援教育とは異なる分野）</div>
             <div class="kicker">販売事業者：合同会社まなびの森教育研究所</div>
-            <h3 style="margin:0 0 10px;font-size:1.45rem;">もりもりまなぶ公式教材<br>簿記3級 30日合格問題集</h3>
+            <h3 class="product-title-compact">
+              <span>もりもりまなぶ公式教材</span>
+              <span>簿記3級30日合格問題集</span>
+            </h3>
             <p class="muted" style="margin:0 0 10px;">
               中学生から社会人までを対象にした、1日45分・30日間のカリキュラム型教材です。
             </p>
@@ -818,12 +963,16 @@
       <div class="wrap">
         <div class="panel" style="margin-bottom:20px;background:linear-gradient(135deg,#eef7ee,#f0f7f0);border:1px solid #b8d4b8;">
           <div class="kicker">AI教育相談サービス（無料）</div>
-          <h3 style="margin:0 0 10px;font-size:1.3rem;">🌳 教育相談AIに質問する</h3>
-          <p class="muted" style="margin:0 0 16px;">特別支援教育・発達支援・学習サポートなど、お子さんのことで気になることをAIに相談できます。24時間対応・完全無料。</p>
+          <h3 style="margin:0 0 10px;font-size:1.3rem;">教育相談AIで、考えを整理する</h3>
+          <p class="muted" style="margin:0 0 16px;">
+            特別支援教育、発達支援、学習サポートなどについて、考えを整理する補助として使えるAIサービスです。
+            個別の重要な相談は、学校、専門機関、医療機関、行政窓口、または当社へのお問い合わせをご利用ください。
+          </p>
           <div class="cta-row">
             <a class="btn primary" href="https://kyoiku-bot.onrender.com" target="_blank" rel="noopener noreferrer">AIに相談する（無料）→</a>
+            <a class="btn secondary" href="#contact">人に相談する</a>
           </div>
-          <p style="font-size:.78rem;color:#8a9e8a;margin:12px 0 0;">※ AIによる情報提供です。診断・治療の代替にはなりません。重要なご相談はメールまたは専門家へ。</p>
+          <p style="font-size:.85rem;color:#58635b;margin:12px 0 0;">※ AIによる情報提供と整理の補助です。医療診断、治療、法的判断、学校としての判断を代替するものではありません。</p>
         </div>
         <div class="panel">
           <div class="section-head" style="margin-bottom:16px;">
@@ -831,7 +980,7 @@
             <p>ご質問、ご依頼、取材、教材に関するお問い合わせは、<a href="#contact">お問い合わせフォーム</a>またはメールにてご連絡ください。通常2営業日以内を目安に返信します。</p>
           </div>
           <form action="https://formspree.io/f/mykolgnd" method="POST" style="display:grid;gap:12px;" onsubmit="this.querySelector('button[type=submit]').disabled=true;this.querySelector('button[type=submit]').textContent='送信中...';">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div class="contact-fields">
               <div>
                 <label for="contact-name" style="display:block;font-size:.88rem;font-weight:700;color:#35553a;margin-bottom:4px;">お名前 <span style="color:#c0392b;">*</span></label>
                 <input id="contact-name" type="text" name="name" required autocomplete="name" placeholder="山田 太郎"
