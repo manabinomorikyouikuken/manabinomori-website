@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>重度重複障害児とAI――コミュニケーション支援の可能性と「意思解釈」の倫理的課題 | 合同会社まなびの森教育研究所</title>
+  <meta name="description" content="重度重複障害児のコミュニケーション支援におけるAI活用の可能性と「意思解釈」の倫理的課題を論じる研究ノート。AAC・BCI・生成AI・CRPD・EU AI Actを横断した考察。">
+  <link rel="canonical" href="https://manabinomorikyouikuken.github.io/manabinomori-website/research-note-severe-multiple-disabilities-ai.html">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://manabinomorikyouikuken.github.io/manabinomori-website/research-note-severe-multiple-disabilities-ai.html">
+  <meta property="og:title" content="重度重複障害児とAI――コミュニケーション支援の可能性と「意思解釈」の倫理的課題">
+  <meta property="og:description" content="AIは補助具として機能すべきであり意思決定の代理者となってはならない――5名の専門家による3ラウンドの外部評価を経た研究ノート。">
+  <meta property="og:image" content="https://manabinomorikyouikuken.github.io/manabinomori-website/assets/ogp.png">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="合同会社まなびの森教育研究所">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="重度重複障害児とAI――コミュニケーション支援の可能性と「意思解釈」の倫理的課題">
+  <meta name="twitter:description" content="AIは補助具として機能すべきであり意思決定の代理者となってはならない――専門家5名による外部評価済み研究ノート。">
+  <meta name="twitter:image" content="https://manabinomorikyouikuken.github.io/manabinomori-website/assets/ogp.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "重度重複障害児とAI――コミュニケーション支援の可能性と「意思解釈」の倫理的課題",
+    "description": "重度重複障害児のコミュニケーション支援におけるAI活用の可能性と倫理的課題を論じる研究ノート。",
+    "author": {"@type": "Person", "name": "小野智広"},
+    "publisher": {"@type": "Organization", "name": "合同会社まなびの森教育研究所", "logo": {"@type": "ImageObject", "url": "https://manabinomorikyouikuken.github.io/manabinomori-website/logo.png"}},
+    "datePublished": "2026-05-19",
+    "dateModified": "2026-05-20",
+    "mainEntityOfPage": "https://manabinomorikyouikuken.github.io/manabinomori-website/research-note-severe-multiple-disabilities-ai.html"
+  }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MRXYRR7DF7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MRXYRR7DF7');
+  </script>
+  <style>
+    :root {
+      --text: #1a1a2e;
+      --sub: #4a4a6a;
+      --accent: #2c5f8a;
+      --bg: #fafaf8;
+      --line: #ddd;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Hiragino Mincho ProN", "Yu Mincho", "Georgia", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.9;
+      font-size: 16px;
+    }
+    .wrapper {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 32px 100px;
+    }
+    header {
+      border-bottom: 2px solid var(--text);
+      padding-bottom: 24px;
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-size: 1.55rem;
+      line-height: 1.6;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .meta {
+      font-size: 0.85rem;
+      color: var(--sub);
+    }
+    .abstract {
+      background: #f0f4f8;
+      border-left: 4px solid var(--accent);
+      padding: 20px 24px;
+      margin: 32px 0;
+      font-size: 0.95rem;
+    }
+    .abstract-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      color: var(--accent);
+    }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-top: 52px;
+      margin-bottom: 16px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--line);
+      counter-increment: h2;
+    }
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+    p {
+      margin-bottom: 16px;
+    }
+    .note {
+      font-size: 0.88rem;
+      color: var(--sub);
+      border-top: 1px solid var(--line);
+      margin-top: 60px;
+      padding-top: 20px;
+    }
+    .note p { margin-bottom: 8px; }
+    .ref {
+      font-size: 0.88rem;
+      color: var(--sub);
+      margin-top: 48px;
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+    }
+    .ref h2 { font-size: 1rem; border-bottom: none; margin-top: 0; }
+    .ref ol { padding-left: 1.4em; }
+    .ref li { margin-bottom: 8px; }
+    .wip {
+      background: #fff8e1;
+      border: 1px dashed #f59e0b;
+      padding: 8px 12px;
+      font-size: 0.85rem;
+      color: #92400e;
+      margin: 16px 0;
+    }
+    sup { font-size: 0.75em; color: var(--accent); }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+<header>
+  <h1>重度重複障害児とAI<br>――コミュニケーション支援の可能性と「意思解釈」の倫理的課題</h1>
+  <div class="meta">
+    合同会社まなびの森教育研究所 &nbsp;|&nbsp; 小野智広<br>
+    初稿：2026年5月19日<br>
+    <span style="font-size:0.82rem; color:#4a4a6a;">本稿は特別支援教育・AI倫理・障害学・生命倫理・教育政策の専門家5名による3ラウンドの外部評価（計15回の査読）を経ている。</span>
+  </div>
+</header>
+
+<div class="abstract">
+  <div class="abstract-title">要旨</div>
+  <p>本論文は、重度重複障害のある児童・生徒（以下「重度重複障害児」）の教育・支援における人工知能（AI）技術の応用可能性と、その倫理的課題を論じるものである。従来の拡大代替コミュニケーション（AAC）は、スイッチアクセスや視線入力など物理的な操作を前提としており、運動機能の著しい制限を伴う重度重複障害児にとって常に有効とは限らなかった。近年、AIを組み合わせた微細動作の検出・シンボル語彙の動的生成・感情推定システムが登場し、この状況は変わりつつある。一方で、AIが他者の「意思」を代理的に解釈することへの根源的な問いが生じている。本論文では先行研究・国内外の政策動向を整理したうえで、「AIは補助具として機能すべきか、それとも意思決定の代理者となり得るか」という問いに考察を加え、AIは補助具として機能すべきであり意思決定の代理者となってはならないという立場を示す。あわせて当事者参加型デザインの必要性と今後の研究課題を提示する。</p>
+  <p><strong>キーワード：</strong>重度重複障害、AAC、拡大代替コミュニケーション、人工知能、意思解釈、コミュニケーション支援、自立活動</p>
+</div>
+
+
+<h2>序論</h2>
+
+<h3>背景</h3>
+
+<p>重度重複障害とは、視覚障害・聴覚障害・知的障害・肢体不自由などの複数の障害を重複して有し、かつ各障害の程度が重篤な状態を指す<sup>1</sup>。本論文では学校教育法施行令第22条の3および特別支援学校学習指導要領解説総則編に基づく行政的定義を用いるが、「重度」という序列的な表記は、その人の状態ではなく現行の社会・教育環境との不整合を反映したカテゴリーであるという障害の社会モデルの視座も踏まえておく必要がある。医療的ケア（吸引・経管栄養・酸素吸入等）を必要とする児童が含まれる場合も多い。文科省の学校基本調査（2023年度）によれば、特別支援学校（肢体不自由・病弱）の在籍者数は増加傾向にあり、医療的ケア児の在籍者数も年々増加している<sup>2</sup>。</p>
+
+<p>これらの児童にとって、「コミュニケーション」は教育の中心的課題の一つである。特別支援学校の教育課程において、自立活動の「コミュニケーション」領域は、他者の意図や感情の理解・状況に応じた表現・コミュニケーション手段の選択と活用を指導内容として位置づけられている<sup>3</sup>。しかし現場では、教員一人ひとりが対象児の微細な反応を丁寧に読み取り、個別に対応手段を構築するという高度に熟練した実践が求められており、担い手の専門性と人的リソースへの依存度が極めて高い。</p>
+
+<h3>従来のAACとその限界</h3>
+
+<p>重度重複障害児のコミュニケーション支援において、AACは長年にわたり中心的な役割を担ってきた。AACとは、音声言語によるコミュニケーションが困難な者を対象に、現有の表現能力を拡大（Augmentative）し、あるいは身振り・シンボル・文字・音声産出機器（VOCA）などで代替（Alternative）する手段を組み合わせる支援体系の総称である<sup>4</sup>。</p>
+
+<p>特に重度重複障害児に対しては、スイッチアクセス（身体の一部でスイッチを操作してVOCAを起動する手法）や視線入力装置（視線の方向をカメラが検出してディスプレイ上のシンボルを選択する手法）が広く用いられてきた。これらの機器は、身体運動の著しい制限がある児童に対してもコミュニケーションの糸口を提供した点で画期的であった。</p>
+
+<p>しかし限界もある。第一に、スイッチアクセスや視線入力は一定の随意運動の維持を前提とするため、重篤な運動障害や意識レベルの変動がある児童には適用が困難な場合がある。第二に、シンボル語彙はあらかじめ登録されたものに限られるため、「今この瞬間に伝えたいこと」を表現できない場面が生じる。第三に、機器の設定・メンテナンス・語彙の更新には高度な専門知識が必要で、教員・支援者の負担が大きい。</p>
+
+<h3>本論文の問い</h3>
+
+<p>なお本論文で使用する「補助具」という語は、障害者総合支援法が定める法的な「補装具」（義肢・装具・車椅子等）とは区別される機能的・操作的概念であり、「AIの役割を支援者の判断を代行しない情報提供ツールとして限定する」という意味で用いる。</p>
+
+<p>こうした背景の中で、AIは重度重複障害児のコミュニケーション支援にどのような変化をもたらし得るのか。本論文はこの問いを中心に据え、以下の三点を検討する。</p>
+
+<p>第一に、AIを用いた支援技術の現状を整理し、何が実現しつつあり何がいまだ困難かを明らかにする。第二に、AIが他者の「意思」を代理的に解釈するという行為に内在する倫理的問題を考察する。第三に、これらの検討を踏まえ、重度重複障害児の教育における今後の研究・政策的方向性を提言する。</p>
+
+
+<h2>第１章　重度重複障害児の教育とコミュニケーション</h2>
+
+<h3>1-1. 自立活動「コミュニケーション」領域の現状</h3>
+
+<p>特別支援学校学習指導要領（2017年改訂）において、自立活動は「健康の保持」「心理的な安定」「人間関係の形成」「環境の把握」「身体の動き」「コミュニケーション」の6区分27項目から構成されている<sup>5</sup>。重度重複障害児の教育では、これらの区分を横断的に組み合わせた個別の指導計画が中心となる。</p>
+
+<p>「コミュニケーション」区分には、①コミュニケーションの基礎的能力に関すること、②言語の受容と表出に関すること、③言語の形成と活用に関すること、④コミュニケーション手段の選択と活用に関すること、⑤状況に応じたコミュニケーションに関することの5項目が含まれる。このうち重度重複障害児に特に関係が深いのは①④⑤であり、「何らかの手段で意思を表出し、相手に受け取ってもらえる」という経験の積み重ねが支援の出発点となる。</p>
+
+<p>国立特別支援教育総合研究所（NISE）の調査研究によれば、特別支援学校でのICT・AT活用は近年進んでいるものの、重度重複障害を対象とした実践的な蓄積はまだ限られており、個人の経験知に依存している部分が大きいとされる<sup>6</sup>。</p>
+
+<h3>1-2. 医療的ケア児の増加と教育現場</h3>
+
+<p>2021年に「医療的ケア児及びその家族に対する支援に関する法律」が施行され、医療的ケア児の学校教育への参加を促進する法的基盤が整った。文科省の調査（2023年度）では、特別支援学校に在籍する医療的ケア児は8,218人（令和5年度調査）に上り、増加傾向にある<sup>7</sup>。</p>
+
+<p>医療的ケア児の多くは重複障害を有し、コミュニケーション面での支援ニーズも高い。一方、医療的ケアへの対応（吸引・経管栄養等）に時間と人員が割かれる現場では、コミュニケーション支援に充てられるリソースが限られるという構造的問題がある。AIがこの人的負担を部分的に肩代わりし得るとすれば、医療的ケア児の教育の質に直接的な影響を与える可能性がある。</p>
+
+
+<h2>第２章　AIの現在地――何ができて何ができないか</h2>
+
+<h3>2-1. 視線入力×AI：動的補正と精度向上</h3>
+
+<p>視線入力技術とAIの組み合わせは、重度重複障害児のコミュニケーション支援において最も実用化が進んでいる領域の一つである。従来の視線入力装置は、明確な視線の停留（固視）を検出することを前提としており、眼球運動の制御が不安定な児童には適用が難しかった。Borgestegら（2016）は、重篤な運動障害を持つ児童・青年に対する視線制御コンピュータを用いたAAC介入を12ヵ月にわたって追跡し、眼球運動能力の向上と保護者・教師の期待感の変化を報告した<sup>11</sup>。この縦断研究は、視線入力AACの基礎的有効性を示す実証として現在も頻繁に引用されている。</p>
+
+<p>近年ではHsiehら（2023）が、台湾の特別支援学校に在籍する重篤な運動・コミュニケーション困難のある学生を対象に視線入力AACの介入可能性を検証し<sup>12</sup>、保護者側の認識調査（2024年）でも、物体から絵カードへ、さらにコンピュータへという段階的導入の有効性が報告されている<sup>13</sup>。国内では、Tobii Dynavoxをはじめとする視線入力機器の特別支援学校への導入事例が報告されているが、AIによる動的補正（使用者ごとの視線パターンを機械学習で最適化する仕組み）を実装したシステムの実践研究は発展途上にある。</p>
+
+<h3>2-2. 生成AIとAACの統合：シンボル語彙の動的生成</h3>
+
+<p>AACにおける最大の制約の一つは、「あらかじめ登録されたシンボル語彙しか使えない」という静的な構造にある。生成AIとAACを統合する研究は、この制約を根本的に乗り越えようとする試みとして2020年代以降に急速に発展している。</p>
+
+<p>OTTAAプロジェクトは、NLP（自然言語処理）と機械学習を組み合わせたピクトグラム型AACプラットフォームであり、文脈・場所・時間帯に応じてシンボルをリアルタイムに提示し、重度認知障害者の発話速度向上を目指している<sup>14</sup>。同様に、PicTalkyはNLPモジュールを連結してテキストとピクトグラムを双方向処理するAACとして開発された<sup>15</sup>。</p>
+
+<p>これらをさらに進めた研究が、Sánchez-Cortésら（2024）による「AMBRA」プラットフォームである<sup>16</sup>。連合学習（Federated Learning）と生成AIを統合したオープンプラットフォームであり、各デバイスでモデルを学習してその更新量のみをサーバに送信することでデータの外部送信を抑制しつつ、個人に最適化した語彙を学習・生成する（ただし、勾配情報の逆算によるプライバシー漏洩リスクが残存することも指摘されている）。同プレプリントはAACへの基盤モデル（Foundation Models）統合という方向性を包括的に示した先行提案として注目される。</p>
+
+<p>ただし、これらのシステムは現状、重度重複障害児を主な対象とした実証が限られている。生成AIの「ハルシネーション」（誤情報の生成）リスクは、コミュニケーション支援の文脈では特に深刻であり、支援者によるフィルタリングなしに直接適用することには危険性がある。加えて、AIが生成した語彙がその児童の「言いたいこと」を本当に反映しているのかという、より根本的な問いが残る。この問題は次章で詳しく論じる。</p>
+
+<h3>2-3. BCI（ブレイン・コンピューター・インターフェース）×AI</h3>
+
+<p>BCIは脳の電気的活動を直接計測し、身体の筋肉や神経を経由せずに外部機器を操作・制御する技術であり、最も運動機能が制限された状態においても意思表出の回路を開く可能性を持つ。</p>
+
+<p>国際的には、2023年にChangら（Chang et al., 2023）が脳埋込み型デバイスとAIを組み合わせた音声合成BCIにより毎分78語での会話を実現し<sup>17</sup>、2024年1月にはNeuralinkが初の人体埋込み（N1チップ）に成功した。2025年時点で複数名への埋込みが実施され、ロボットアームの制御・ゲーム操作・プログラミングが実現されていると報告されている<sup>18</sup>。小児への適用は現時点で公式計画は未発表だが、生成AIと脳波データを組み合わせたBCIシステムはパリ2024パラリンピック聖火リレーで社会実装の事例も生まれた。</p>
+
+<p>小児領域では、Suttrup（2022）による6〜18歳の重篤な身体障害を持つ児童を対象とした臨床BCIプログラムが報告されており<sup>19</sup>、またMercierら（2021）による複雑なコミュニケーションニーズと限定的な移動能力を持つ子ども・成人へのBCI研究のシステマティックレビューも発表されている<sup>20</sup>。国内では大阪大学が深層学習モデルを活用した脳情報解読と脳機能修飾の研究を進めており、非侵襲BCIの精度向上が目標として掲げられている<sup>21</sup>。</p>
+
+<p>BCIは将来的に重度重複障害児の意思表出回路を大きく拡張しうる技術だが、侵襲型BCIの小児適用には外科的リスク・倫理委員会による審査・保護者同意という複数の障壁があり、現時点では研究段階にある。</p>
+
+<h3>2-4. 国内における先行研究と支援者支援アプローチ</h3>
+
+<p>国内の先行研究として注目されるのが、宮崎・坂井（2023）による「マシンビジョンを応用した重度重複障害者に向けたインタフェースシステムの開発」である<sup>22</sup>。本研究（科研費19K11417, 2019〜2022年）は、複数のWebカメラで重度重複障害者の表情・姿勢・動作を撮影し、マシンビジョン（画像認識）によってその非言語的信号をリアルタイムに検出・提示することで、支援者が読み取りを行う際の情報基盤を提供するシステムの試作を目的としている。すなわち「AIが直接意思を解釈する」のではなく「AIが支援者の読み取りを補助する情報を提示する」という設計方針を採っている。</p>
+
+<p>このアプローチは、「AIは判断者ではなく情報提供者に留まるべき」という考え方の国内における具体的事例として位置づけられる。AIの役割を「支援者の専門性を強化するツール」に限定する設計は、倫理的観点からも現実的観点からも、重度重複障害支援におけるAI活用の当面の方向性として参照に値する。</p>
+
+<p>国際的にも同様の構造をもつシステムが開発されている。INSENSIONプロジェクト（Slapničarら、2025年）は、センサーと機械学習を組み合わせて重度重複障害者の非言語的信号をリアルタイムに検出し、その情報を支援者に提示するシステムである<sup>26</sup>。「AIが本人に代わって判断する」のではなく「支援者が判断するための情報をAIが提供する」という設計は、科研費19K11417の着想と共鳴しており、国際的にも同一の方向性が模索されていることを示している。</p>
+
+<h3>2-5. センサー・画像認識による感情・状態推定</h3>
+
+<p>表情認識・姿勢推定・生体センサーとAIを組み合わせた「感情・状態推定」システムも研究が進んでいる。これらは、随意的なコミュニケーション表出が極めて困難な重度重複障害児に対し、生理的指標（心拍・体温変動など）や微細な表情変化を手がかりに快・不快・覚醒状態などを推定しようとするものである。</p>
+
+<p>これらの技術は研究が進んでいるが、個人差が大きく、同じ表情・生体反応が異なる感情・状態に対応するケースも多いことが課題として指摘されている。AIが出力した「この子は今不快を感じています」というラベルを、支援者が無批判に受け入れることのリスクは、次章で詳しく考察する。
+
+加えて、感情推定AIの科学的根拠そのものにも根本的な課題がある。感情表情の普遍性については科学的コンセンサスが現時点でも未確立であり、Barrettら（2019）は「普遍的感情表情」仮説に対する批判的検討を行い、表情と感情の対応関係が文化・個人・文脈によって大きく異なりうることを示している<sup>28</sup>（Ekman派との論争は継続中であり、一方の立場が確定したわけではない）。さらに、表情認識・感情推定システムの学習データは人口統計的に偏っており（Buolamwini &amp; Gebru, 2018）<sup>29</sup>、重度重複障害児のように標準的な学習データから大きく外れた身体特徴・表情の様態・筋緊張のパターンを持つ集団では、アルゴリズムバイアスによる誤推定率が特に高くなるリスクがある。また、抗てんかん薬・筋弛緩薬等を常用する医療的ケア児においては、心拍・体温等の生体信号の基準値自体が健常者のデータと大きく異なるため、生体センサーを用いた状態推定にも同様の限界がある。</p>
+
+<p>以上の技術的検討は、重度重複障害支援においてAIが何をできつつあり、何がいまだ困難かを整理した。しかしこれらの技術が現場に実装されるとき、技術的可否の問いに先立って問わなければならないことがある。「AIが他者の意思を代理的に解釈するとはどういうことか、そしてそれは倫理的に許容されるのか」という根本的問いである。次章では、この問いに正面から向き合う。</p>
+
+
+<h2>第３章　考察――「意思解釈」の倫理的問題</h2>
+
+<h3>3-1. AIによる代理的意思解釈の危うさ</h3>
+
+<p>重度重複障害児の支援において、AIが「この人はこう感じている」「この人はこれを求めている」と推定・出力する行為は、本質的に代理的な意思解釈である。これは、熟練した教員や支援者が長年の関係性の中で行ってきた「読み取り」とは性質が異なる。</p>
+
+<p>熟練した支援者による読み取りは、対象児の個別の文脈・歴史・関係性に根ざした解釈であり、常に「わからないかもしれない」という謙虚さを伴う実践的知識である。ただし支援者の「読み取り」もまた誤解や権力性を帯びることがあり、本人の意思を支援者の解釈で上書きしてしまうリスクは実践研究において繰り返し指摘されている。一方、AIの推定は統計的パターンマッチングに基づいており、「確率的にこうである」という出力を「この子はこう感じている」という断言として受け取るリスクが生じる。医療倫理の文脈でも、意思決定能力を持たない者へのAI代理判断については、AIが家族よりも本人の意向に近い判断を出せる可能性を指摘する見方がある一方、患者の価値観・関係性・世界観への道徳的代表性という点では根本的な限界があるという批判も提出されている<sup>23</sup>。</p>
+
+<p>ここで注意すべきは、重度重複障害児の代理的意思解釈はAI登場以前からすでに構造的に存在するという点である。保護者・成年後見人・担任教員・医療関係者は、現行の制度上すでに本人の意思を代理的に解釈する役割を担っている。AIの導入が問題となるのは、これらの既存の代理判断者に取って代わることではなく、AIの出力が「客観的根拠」として既存の代理判断の連鎖に組み込まれ、個々の判断者の見直しや修正を困難にする点にある。つまりAIは新たな代理者を加えるのではなく、既存の代理判断の構造をより固定化・可視化・権威化するリスクをはらんでいる。</p>
+
+<p>国際的な規範的枠組みとして、国連障害者権利条約（CRPD）第12条は「法的能力の平等な承認」を定めており、CRPD委員会の一般的意見第1号（2014年）はこの条文の解釈として、代替意思決定（substituted decision-making）から意思決定支援（supported decision-making: SDM）への移行を規範的方向性として示している（ただし、この解釈については締約国間・学術界において議論が継続中であり、重篤な意思疎通困難者への最善の利益基準の一定の保持を許容するという解釈も存在する）<sup>30</sup>。日本は2014年にCRPDを批准し、2022年の初回対日審査（CRPD/C/JPN/CO/1）では代理判断制度の改革が勧告されており、国内制度との乖離が課題として残る。SDMの枠組みに照らせば、AIは本人の意思を代替する存在ではなく、本人の意思表出を最大化するための支援ツールとして位置づけられるべきであり、これは本論文の「AIは補助具であるべき」という主張に国際人権規範上の根拠を与える。</p>
+
+<p>本論文のテーマに直接関連するCRPD条文として、第21条（表現及び意見の自由並びに情報の利用の機会）も見落とせない。同条は障害のある人が自ら選択するコミュニケーション方法を使用できるよう締約国が必要な措置を取ることを義務づけており、AIを活用したAAC支援の倫理的正当化の直接の根拠規定として機能しうる。また第24条（教育）はインクルーシブ教育制度の確保を義務づけており、重度重複障害児へのAI支援の位置づけは、日本の特別支援学校制度がCRPD第24条の趣旨とどう整合するかという政策的課題と切り離せない。</p>
+
+<p>インフォームドコンセント（IC）の理論では、代理意思決定の正当化根拠は①本人の明示的な事前指示の確認、②代替判断基準（本人であればどう判断するかの推定）、③最善の利益基準（上記二つが不可能な場合の最終手段）という三段階で整理される。AIの推定出力がこの三段階のどの層に介入するかを特定することなしに「補助か代理か」を論じることはできない。</p>
+
+<p>重度重複障害児に対してこの三段階を適用すると、①明示的な事前指示の取得は現実的に困難であることが多く、②代替判断基準も長期支援者による仮説的推測の域を出ない。したがって、実際には③最善の利益基準が主要な根拠となる。この枠組みにおけるAIの役割は、最善の利益を判断する際の情報（生体状態・行動パターン・文脈）を支援者に提供する補助的機能として定義される。逆に、AIが「最善の利益」の判断そのものを代替するならば、それは代理意思決定に踏み込むことになり、倫理的問題を生じさせる。</p>
+
+<p>Foley &amp; Melese（2025）の「Disabling AI」は、AIが「規範的な学び方・コミュニケーション方法」を特権化し、障害者の多様な表現・知の形式を否定する危険性を批判的に論じている<sup>8</sup>。重度重複障害児の文脈でいえば、「目が動かない＝意思がない」「表情が乏しい＝感情がない」というAIの誤推定が、「正解」として機能してしまう事態が最も警戒すべきリスクである。この問題は国際的にも認識されており、Tacchiniら（2024）はPIMD（重篤な知的・重複障害）を対象としたAI研究における倫理的課題を論じ、AIによる感情認識研究のデータ収集プロセスにおけるプライバシー侵害・同意取得の困難・ゲートキーパー（保護者・支援者）による否定的態度という構造的障壁を指摘している<sup>27</sup>。</p>
+
+<p>現行の国内法上、代理意思決定の権限構造は複数の法源に分散している。民法820条（親権者の監護教育権）は保護者が重度重複障害児の意思決定に関与する主要な根拠となるが、成人後は成年後見制度（民法838条以下）に移行する。学校教育法上、教員は教育的専門裁量権を持つが、医療的ケアの決定は医師法17条（医師の業務独占）のもと医師が権限を有する。AIが「苦痛のサイン」を出力した際に医療的ケアの判断が変更されるような意思決定フローが構築された場合、AIの誤推定が直接的に健康・生命にかかわる結果を招く可能性があり、その責任は製造物責任法（PL法）上のデバイス製造者・導入を決定した学校設置者・判断を行った教員・処置を実施した医療従事者にそれぞれ分散しうる。こうした責任構造を明確にすることなしに「AI補助情報として位置づける」という設計方針だけでは安全基準として不十分であり、明確な責任規定を伴う制度整備が求められる。</p>
+
+<h3>3-2. 保護者・支援者・AIの三者関係</h3>
+
+<p>重度重複障害児の支援では、本人・保護者・教員・医療関係者・福祉職など多くのステークホルダーが関与する。AIが「意思」を推定した場合、その出力はこれらの関係者にどのように受け取られるか。</p>
+
+<p>一方では、AIの出力が保護者に「客観的証拠」として受け止められ、教員の専門的判断が軽視されるリスクがある。他方、教員がAIの出力を過信して保護者の異なる見解を退けるリスクもある。CDT（民主主義・技術センター、2025）は、AIが生成した個別計画書類について、米国の障害者教育法（IDEA法）が定める「真に個別化された書類」要件との矛盾を指摘している<sup>9</sup>。IDEA法は障害のある子どもの個別教育計画（IEP）が画一的でなく本人の実態に即した内容であることを義務づけているが、AI生成文書はこの要件を形骸化させる恐れがある。同様の問題は日本の個別の指導計画にも当てはまる。個別の指導計画は学校教育法施行規則第130条・第131条および特別支援学校学習指導要領総則を根拠とする法定書類であり、その記載・変更・保管は法的義務を伴う。AIが生成した出力を教員の専門的判断を経ずに直接記録することは、法定書類の正確性・専門性要件を形骸化させるリスクがある。文部科学省の「初等中等教育段階における生成AIの利活用に関するガイドライン Ver.2.0」（2024年）も、AI出力を教育記録へ直接反映することへの慎重な姿勢を求めており、教員による検証・確認のプロセスを必須とすることが本ガイドラインの趣旨と整合する。</p>
+
+<h3>3-3. 医療的ケアとAIの接点における安全性</h3>
+
+<p>医療的ケアを必要とする重度重複障害児の場合、AIが発する「不快のサイン」が医療的判断に影響を与える可能性がある。たとえば、AIが「苦痛を感じている」と推定した際に、医療的ケアの内容・タイミングが変更されるような判断フローが構築された場合、AIの誤推定は直接的に健康・生命にかかわる問題となる。</p>
+
+<p>この観点から、AIは医療的判断を代替するものではなく、あくまでも「検討のきっかけを提供する補助情報」として位置づけることが不可欠である。国内では医療AI推進協議会（HAIP）が医療・ヘルスケア分野における生成AI利用ガイドライン（2024年）を公表しており、生成AIを医療支援に用いる際の判断基準・責任の所在を整理している<sup>25</sup>。医療的ケア児の支援にAIを導入する際には、こうした医療分野のガイドラインを教育現場にも適用する枠組みが必要となる。OECD AI原則（2019年策定、2024年更新）が示す「人間中心のAI（Human-Centric AI）」の考え方――AIを人間の能力を強化するものとして設計し、最終判断権限は人間に留保する――は、重度重複障害支援において特に重要な原則である<sup>10</sup>。</p>
+
+<p>データガバナンスの観点からも慎重な設計が必要である。日本の改正個人情報保護法（2022年施行）は障害に関する情報を「要配慮個人情報」として特別に保護しており、感情推定AIが生体情報・映像・コミュニケーションログを収集・処理する場合は原則として本人（または保護者）の明示的同意が必要となる。なお、保護者が同意主体となる場合であっても、保護者の利益と本人の利益が乖離する場面がありうることが指摘されており、同意の代理正当化根拠は常に確実とは言えない。こうした場合、データ最小化原則の厳格な適用や独立した第三者によるデータ利用審査が保護措置として機能しうる。</p>
+
+<p>EUにおいてはGDPR第9条が健康・障害に関するデータを「特別カテゴリの個人データ」として原則処理禁止とし（例外的に明示的同意等が必要）、EU AI Act（2024年8月発効、高リスクAI要件は2026年8月以降段階的適用）はこのGDPRとの整合を前提として教育・医療支援分野のAIシステムを「高リスクAI」に分類し、適合性評価・透明性要件・人間による監視義務を課している<sup>31</sup>。日本においても同等の制度的枠組みの構築が急務であり、個人情報保護法・学校保健安全法・医療的ケア児支援法を横断する安全基準の策定が求められる。</p>
+
+<p>「補助具」と「代理者」の境界を実践的に定義する概念として、AI安全設計の国際的議論では「Human-in-the-Loop（HIL）」モデルが標準的に用いられる（EU AI Act, OECD AI原則）。HILは、AIの全処理段階で人間の関与と判断を必要とする設計を指し、AI出力を「参考情報」として支援者に提示する設計はHILに該当するが、AI出力が個別の指導計画に自動記録・適用されるような設計はこの原則を逸脱する。本論文が定義する「補助具」とはすなわちHIL設計に準拠したAIであり、そこから外れるものが「代理者」に相当する。</p>
+
+
+<h2>結論</h2>
+
+<h3>AIは「補助具」か「意思決定の代理者」か</h3>
+
+<p>本論文の検討を通じて明らかになったことは、AIが重度重複障害児のコミュニケーション支援に対して一定の可能性を持つと同時に、その可能性の行使には慎重な設計が必要であるという点である。</p>
+
+<p>AIは、視線入力精度の向上・シンボル語彙の動的生成・感情状態の推定など、従来のAACが解決できなかった課題に対して技術的なアプローチを提供しつつある。これらの応用は、周囲がその形式を受け取るシステムをこれまで持てなかった表現・意思の回路を拡張する可能性を持つ。</p>
+
+<p>しかし同時に、AIが代理的に「意思」を解釈する行為は、当事者の本来の意思を上書きするリスクがある。特に重度重複障害のある人々は、長らく「意思がない」「理解できない」という偏見にさらされてきた歴史を持つ。AIがその誤解を技術的に「確定」してしまうとすれば、それは支援ではなく抑圧となる。</p>
+
+<p>したがって、AIは重度重複障害児支援において「補助具」として機能すべきであり、「意思決定の代理者」となってはならない。AIの出力は常に支援者・保護者・当事者（可能な限り）による解釈と検証の対象であり、「確定した事実」として扱われるべきではない。</p>
+
+<p>「AIの方が熟練支援者より本人の意思に近い判断を出せる場合でも代理者を否定するのか」という反論に対しては、まず事実として、AIの意思推定精度が人間の専門的判断より優れているという実証は現時点で存在しない。その前提が未確立であることを確認したうえで、仮に将来精度が担保された場合についても、手続的正当性の観点から応答できる。重度重複障害のある人にとって、意思の内容（何が決まるか）と同等かそれ以上に重要なのは、意思表出プロセスへの参加という経験そのものである。AIが「より正確な」出力を出したとしても、表出のプロセスから当事者が排除されるならば、そのシステムはCRPD委員会が示す意思決定支援の原則と相容れない。AIは「最終判断を出す者」ではなく「当事者の表出プロセスを支える者」として機能することが求められる。</p>
+
+<p>この原則は、AIの技術的精度が将来どれほど向上しても揺らがない。その理由は二つある。第一に、CRPD第12条が示す意思決定支援の理念は、意思の「正確な読み取り」を目標とするのではなく、本人が意思形成・表出の主体であり続けることを保障することを本質とする。AIが「より正確な」解釈を出力したとしても、それは本人の意思ではなくAIが推定した意思であり、この両者は原理的に異なる。第二に、教育的観点からは、コミュニケーションは「正確な意思の伝達」以上のものを含む。関係性の構築・表出の試み・失敗と修正の繰り返し——これらのプロセス自体が重度重複障害のある人の発達と尊厳にとって本質的な価値を持つ。AIが代わりに「答えを出す」ことはこのプロセスを短絡させ、当事者の発達的可能性を閉じることになりかねない。AIは常に「補助具」として機能すべきであり、それは技術的限界からではなく、人の尊厳と教育の本質から導かれる原理的要請である。</p>
+
+<h3>当事者参加型デザインの必要性</h3>
+
+<p>OECD AI原則（2019/2024）・CIDDL（2024）<sup>32</sup>をはじめ複数の国際的研究機関が共通して求めているのが、障害のある人々をAIシステムの設計・評価プロセスに参加させる「当事者参加型デザイン」である。重度重複障害のある人々の「参加」は、従来の意味でのユーザーテストや意見表明の形では困難であることが多い。しかしそれは「参加できない」のではなく、「参加の方法を設計側が構築していない」ということである。</p>
+
+<p>重度重複障害児の家族・長期支援者・当事者団体をAIシステム開発のプロセスに組み込む制度的枠組みは、日本においてほぼ存在しない。これは技術の問題ではなく、設計の思想と政策の問題である。なお、AI搭載AACが利用者の日常会話をログして学習する場合、利用者のエージェンシー・アイデンティティ・プライバシーが継続的に再交渉されるという倫理的問題が生じることも指摘されており<sup>24</sup>、重度重複障害児支援における当事者参加型デザインの検討においても無視できない論点である。</p>
+
+<h3>今後の研究課題と政策提言</h3>
+
+<p>本論文は、以下の研究・政策課題を提示して結びとする。</p>
+
+<p>研究面では、①重度重複障害児を対象としたAI支援技術の有効性・安全性に関する国内実証研究の蓄積、②AI推定と熟練支援者の「読み取り」の一致率・乖離率の系統的調査、③当事者参加型デザインを重度重複障害支援に応用する方法論の開発、が急務である。</p>
+
+<p>政策面では、①AI支援機器を活用する教員への専門研修体制の整備（実施主体：文科省・NISE、根拠：特別支援学校学習指導要領・医療的ケア児支援法）、②AI出力を個別の指導計画に組み込む際の基準・ガイドラインの策定（文科省生成AIガイドラインVer.2.0の特別支援教育版として位置づけ）、③医療的ケアとAI支援の接点に関する安全基準の明確化（医療的ケア児及びその家族に対する支援に関する法律第11条（学校の設置者の責務）および第3条（国及び地方公共団体の責務）が定める学校における医療的ケアの適切な実施義務との整合を確保し、AIが人員削減の口実に使われないための制度的歯止めを明記する）、④障害者データのプライバシー保護に関する学校現場向けの指針整備（改正個人情報保護法の「要配慮個人情報」規定および個人情報保護委員会ガイドラインとの整合）、が求められる。</p>
+
+<p>AIは万能ではない。しかし正しく設計・運用されれば、これまで社会・制度・技術環境が受け取る形式を構築できていなかった表現と意思の回路を広げる可能性がある。重度重複障害のある人が、自らの意思で世界に関わる経験を積み重ねられる教育・支援環境の構築に、AIが補助的かつ倫理的な役割を果たすための制度的・研究的基盤の整備が、早急に求められる。</p>
+
+
+<div class="note">
+<h2>注</h2>
+<p>1. 文部科学省「特別支援教育の現状」2023年度。</p>
+<p>2. 文部科学省「学校基本調査」2023年度版。</p>
+<p>3. 文部科学省「特別支援学校学習指導要領解説 自立活動編」2018年。</p>
+<p>4. American Speech-Language-Hearing Association (ASHA). Augmentative and Alternative Communication (AAC). https://www.asha.org/public/speech/disorders/aac/</p>
+<p>5. 文部科学省「特別支援学校学習指導要領解説 自立活動編（幼稚部・小学部・中学部）」2018年。</p>
+<p>6. 国立特別支援教育総合研究所（NISE）. 研究成果データベース. https://nise.repo.nii.ac.jp/（重複障害・ICT・AAC関連の各年度報告書を参照）</p>
+<p>7. 文部科学省「令和5年度学校における医療的ケアに関する実態調査結果」初等中等教育局特別支援教育課, 2024年3月. https://www.mext.go.jp/content/20240623-mxt_tokubetu01-000032436_2.pdf</p>
+<p>8. Foley, A., &amp; Melese, F. (2025). Disabling AI: power, exclusion, and disability. <em>British Journal of Sociology of Education</em>, 1–22. doi:10.1080/01425692.2025.2519482</p>
+<p>9. CDT（Center for Democracy and Technology）(2025). The Use of Generative AI to Develop Individualized Education Programs.</p>
+<p>10. OECD (2019, updated 2024). Recommendation of the Council on Artificial Intelligence (OECD/LEGAL/0449). https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449</p>
+<p>11. Borgestig, M. et al. (2016). Eye gaze performance for children with severe physical impairments using gaze-based assistive technology. <em>Disability and Rehabilitation: Assistive Technology</em>. PMC4867850.</p>
+<p>12. Hsieh, Y.-H., Granlund, M., Hwang, A.-W., &amp; Hemmingsson, H. (2023). Feasibility of an eye-gaze technology intervention for students with severe motor and communication difficulties in Taiwan. <em>Augmentative and Alternative Communication</em>, 40(3), 196–207. doi:10.1080/07434618.2023.2288837</p>
+<p>13. Masayko, S., McGowan, J., &amp; Grampurohit, N. (2024). Parents' Perceptions of Eye-Gaze Technology Use by Children With Complex Communication Needs. <em>American Journal of Speech-Language Pathology</em>, 33(3), 1254–1265. doi:10.1044/2023_AJSLP-23-00100</p>
+<p>14. OTTAAプロジェクト. Frontiers in Artificial Intelligence, "Cutting-edge communication and learning assistive technologies for disabled children: An AI perspective" (2022). PMC9650429.</p>
+<p>15. PicTalky. arXiv:2109.12941 (2021).</p>
+<p>16. Sánchez-Cortés et al. (2024). AMBRA: Foundation Models in Augmentative and Alternative Communication. arXiv:2401.08866.</p>
+<p>17. Chang, E. F. et al. (2023). A high-performance speech neuroprosthesis. <em>Nature</em>, 620, 1031–1036. doi:10.1038/s41586-023-06377-x</p>
+<p>18. Neuralink N1チップ. Frontiers in Human Dynamics (2025). doi:10.3389/fhumd.2025.1553905</p>
+<p>19. Suttrup, J. et al. (2022). Establishing a Clinical Brain-Computer Interface Program for Children With Severe Neurological Disabilities. PMC9307353.</p>
+<p>20. Mercier, L. et al. (2021). Brain-Computer Interfaces for Children With Complex Communication Needs and Limited Mobility: A Systematic Review. PMC8319030.</p>
+<p>21. 大阪大学 SDGs研究サイト. BCIと深層学習による言語障害治療研究. https://sdgs.osaka-u.ac.jp/research/3305.html</p>
+<p>22. 宮崎英一・坂井聡（2023）「マシンビジョンを応用した重度重複障害者に向けたインタフェースシステムの開発」『香川大学教育学部研究報告』第8巻，63-68頁（科研費19K11417成果）.</p>
+<p>23. American Journal of Bioethics (Taylor &amp; Francis, 2024). AIによる代理意思決定の倫理的複雑性. doi:10.1080/15265161.2024.2362553</p>
+<p>24. arXiv:2509.13671 (2025, CHI '26査読済み). 超個人化AI搭載AACとエージェンシー.</p>
+<p>25. 一般社団法人 医療AI推進協議会（HAIP, 2024年10月）「医療・ヘルスケア分野における生成AI利用ガイドライン（第2版）」. https://haip-cip.org/assets/documents/nr_20241002_02.pdf</p>
+<p>26. Slapničar, G. et al. (2025). Intelligent Supportive System for People with Profound Intellectual and Multiple Disabilities (INSENSION Project). <em>Advanced Intelligent Systems</em>. doi:10.1002/aisy.202400925</p>
+<p>27. Tacchini, M. et al. (2024). At the Limits of Feasibility: AI-Based Research for and with People with Profound Intellectual and Multiple Disabilities. <em>Intellectual and Developmental Disabilities</em>. doi:10.1080/19315864.2024.2333240</p>
+<p>28. Barrett, L. F. et al. (2019). Emotional Expressions Reconsidered: Challenges to Inferring Emotion from Human Facial Movements. <em>Psychological Science in the Public Interest</em>, 20(1), 1–68. doi:10.1177/1529100619832930</p>
+<p>29. Buolamwini, J., &amp; Gebru, T. (2018). Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification. <em>Proceedings of Machine Learning Research</em>, 81, 1–15.</p>
+<p>30. 国連障害者権利条約（CRPD）第12条「法律の前において等しく認められる権利」（2006年採択、日本は2014年批准）. 一般的意見第1号（2014年）: 法的能力の平等な承認. https://www.mofa.go.jp/mofaj/fp/hr_ha/page22_000899.html</p>
+<p>31. Regulation (EU) 2024/1689 of the European Parliament and of the Council (EU AI Act). Annex III（高リスクAIシステムの分類）. https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689</p>
+<p>32. CIDDL（Center for Innovation, Design, and Digital Learning）(2024). Empowering Special Education Faculty: Navigating the AI Landscape in Higher Education. University of Kansas. https://ciddl.org/empowering-special-education-faculty-navigating-the-ai-landscape-in-higher-education-for-2023-2024/</p>
+</div>
+
+<div class="ref">
+<h2>参考文献</h2>
+<ol>
+  <li>文部科学省（2024）「初等中等教育段階における生成AIの利活用に関するガイドライン Ver.2.0」</li>
+  <li>文部科学省（2018）「特別支援学校学習指導要領解説 自立活動編」</li>
+  <li>国立特別支援教育総合研究所（NISE）各年度研究成果報告書</li>
+  <li>文部科学省（2023）「医療的ケア児等の支援に関する施策について」</li>
+  <li>宮崎英一・坂井聡（2023）「マシンビジョンを応用した重度重複障害者に向けたインタフェースシステムの開発」『香川大学教育学部研究報告』第8巻，63-68頁</li>
+  <li>Borgestig, M. et al. (2016). Eye gaze performance for children with severe physical impairments. <em>Disability and Rehabilitation: Assistive Technology</em>.</li>
+  <li>Hsieh, Y.-H., Granlund, M., Hwang, A.-W., &amp; Hemmingsson, H. (2023). Feasibility of an eye-gaze technology intervention for students with severe motor and communication difficulties in Taiwan. <em>Augmentative and Alternative Communication</em>, 40(3), 196–207. doi:10.1080/07434618.2023.2288837</li>
+  <li>Masayko, S., McGowan, J., &amp; Grampurohit, N. (2024). Parents' Perceptions of Eye-Gaze Technology Use by Children With Complex Communication Needs. <em>American Journal of Speech-Language Pathology</em>, 33(3), 1254–1265. doi:10.1044/2023_AJSLP-23-00100</li>
+  <li>Sánchez-Cortés, D. et al. (2024). Foundation Models in Augmentative and Alternative Communication. arXiv:2401.08866.</li>
+  <li>Suttrup, J. et al. (2022). Establishing a Clinical Brain-Computer Interface Program for Children With Severe Neurological Disabilities. PMC9307353.</li>
+  <li>Mercier, L. et al. (2021). Brain-Computer Interfaces for Children With Complex Communication Needs and Limited Mobility. PMC8319030.</li>
+  <li>OECD (2019, updated 2024). Recommendation of the Council on Artificial Intelligence (OECD/LEGAL/0449). https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0449</li>
+  <li>CDT (2025). The Use of Generative AI to Develop Individualized Education Programs.</li>
+  <li>Foley, A., &amp; Melese, F. (2025). Disabling AI: power, exclusion, and disability. <em>British Journal of Sociology of Education</em>, 1–22. doi:10.1080/01425692.2025.2519482</li>
+  <li>arXiv:2509.13671 (2025). Hyper-Personalized AI-Augmented AAC and Agency. CHI '26.</li>
+  <li>Springer Nature (2024). Ethical Issues in AI-Enhanced Assistive Technologies.</li>
+  <li>一般社団法人 医療AI推進協議会（HAIP）（2024）「医療・ヘルスケア分野における生成AI利用ガイドライン（第2版）」</li>
+  <li>DINF（障害保健福祉研究情報システム）「意思決定が難しい人へのコミュニケーション支援」NORMA 411号</li>
+  <li>Augmentative and Alternative Communication (2025). Future of AAC technologies: priorities for inclusive innovation.</li>
+  <li>日本教育工学会研究会（2024）「小学校特別支援学級におけるAIロボットを活用したコミュニケーション支援の可能性」JSET2024-3-A12</li>
+  <li>Slapničar, G. et al. (2025). Intelligent Supportive System for People with Profound Intellectual and Multiple Disabilities. <em>Advanced Intelligent Systems</em>. doi:10.1002/aisy.202400925</li>
+  <li>Tacchini, M. et al. (2024). At the Limits of Feasibility: AI-Based Research for and with People with Profound Intellectual and Multiple Disabilities. <em>Intellectual and Developmental Disabilities</em>. doi:10.1080/19315864.2024.2333240</li>
+  <li>Barrett, L. F. et al. (2019). Emotional Expressions Reconsidered: Challenges to Inferring Emotion from Human Facial Movements. <em>Psychological Science in the Public Interest</em>, 20(1), 1–68. doi:10.1177/1529100619832930</li>
+  <li>Buolamwini, J., &amp; Gebru, T. (2018). Gender Shades: Intersectional Accuracy Disparities in Commercial Gender Classification. <em>Proceedings of Machine Learning Research</em>, 81, 1–15.</li>
+  <li>国連障害者権利条約（CRPD）第12条・第21条・第24条・一般的意見第1号（2014年）. 外務省. https://www.mofa.go.jp/mofaj/fp/hr_ha/page22_000899.html</li>
+  <li>CIDDL（Center for Innovation, Design, and Digital Learning）(2024). Empowering Special Education Faculty: Navigating the AI Landscape in Higher Education. University of Kansas. https://ciddl.org/empowering-special-education-faculty-navigating-the-ai-landscape-in-higher-education-for-2023-2024/</li>
+  <li>EU AI Act: Regulation (EU) 2024/1689 of the European Parliament and of the Council.</li>
+  <li>Chang, E. F. et al. (2023). A high-performance speech neuroprosthesis. <em>Nature</em>, 620, 1031–1036. doi:10.1038/s41586-023-06377-x</li>
+</ol>
+</div>
+
+</div>
+
+<div style="max-width:780px; margin:0 auto; padding:32px 32px 64px; text-align:center; font-family:sans-serif;">
+  <a href="research-notes.html" style="display:inline-block; margin:8px; padding:10px 24px; background:#2c5f8a; color:#fff; text-decoration:none; border-radius:4px; font-size:0.9rem;">研究ノート一覧へ</a>
+  <a href="index.html" style="display:inline-block; margin:8px; padding:10px 24px; background:#eee; color:#333; text-decoration:none; border-radius:4px; font-size:0.9rem;">トップページへ</a>
+</div>
+
+</body>
+</html>
