@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>家庭でできる！発達支援ワークシート集 | 合同会社まなびの森教育研究所</title>
-  <meta name="description" content="保護者・支援員のための発達支援ワークシート集。得意・苦手発見シート、スケジュール表、気持ちの温度計など5種を収録。TEACCH・ABA・SEL等の考え方を参考に作成。">
+  <meta name="description" content="保護者・支援員のための発達支援ワークシート集。得意・苦手発見シート、スケジュール表、気持ちの温度計、保護者面談メモなど5種を収録。診断や治療ではなく、家庭と学校の情報共有を助ける教材です。">
   <link rel="canonical" href="https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/worksheets.html">
   <style>
     /* ── 基本 ── */
@@ -245,11 +245,13 @@
     }
     .coping-tag.picked { background: #4e7dca; color: white; border-color: #4e7dca; }
 
-    /* ── Sheet 4：学校への連絡メモ ── */
+    /* ── Sheet 4：保護者面談メモ ── */
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     .contact-field { display: flex; flex-direction: column; gap: 6px; }
     .contact-field.full { grid-column: 1/-1; }
     .contact-field label { font-size: 0.82rem; color: #666; font-weight: 700; }
+    .contact-field .field-hint { font-size: 0.74rem; color: #777; line-height: 1.5; }
+    .interview-focus input,
     .contact-field input, .contact-field textarea {
       border: 1.5px solid #ddd;
       border-radius: 8px;
@@ -259,21 +261,67 @@
       resize: none;
     }
     .contact-field textarea { height: 72px; }
-    .priority-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-    .priority-tag {
-      padding: 5px 14px;
-      border-radius: 20px;
-      font-size: 0.82rem;
-      border: 2px solid;
-      cursor: pointer;
+    .contact-field textarea.tall { height: 96px; }
+    .interview-guide {
+      background: #f2f8f2;
+      border: 1px solid #c9dfc9;
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 18px;
     }
-    .pri-urgent { border-color: #e04040; color: #e04040; }
-    .pri-urgent.on { background: #e04040; color: white; }
-    .pri-normal { border-color: #4e7dca; color: #4e7dca; }
-    .pri-normal.on { background: #4e7dca; color: white; }
-    .pri-info   { border-color: #888; color: #888; }
-    .pri-info.on { background: #888; color: white; }
-
+    .interview-guide strong {
+      display: block;
+      color: #2f6e3b;
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+    }
+    .interview-guide p { font-size: 0.84rem; color: #4f624f; line-height: 1.7; }
+    .interview-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .interview-point {
+      background: #fff;
+      border: 1px solid #c9dfc9;
+      color: #356840;
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+    .interview-mini-note {
+      margin-top: 10px;
+      font-size: 0.74rem;
+      color: #6b776b;
+      line-height: 1.6;
+    }
+    .interview-focus {
+      background: #fffdf7;
+      border: 1px solid #ead9a8;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 18px;
+    }
+    .interview-focus h3 {
+      font-size: 0.95rem;
+      color: #5f4a18;
+      margin-bottom: 10px;
+    }
+    .focus-row {
+      display: grid;
+      grid-template-columns: 8.5em 1fr;
+      gap: 10px;
+      align-items: center;
+      margin-top: 8px;
+    }
+    .focus-row label {
+      color: #6a5720;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+    .focus-row input { width: 100%; background: white; }
     /* ── Sheet 5：ほめ記録シート ── */
     .praise-entries { display: flex; flex-direction: column; gap: 12px; }
     .praise-entry {
@@ -479,10 +527,62 @@
 
     /* ── 印刷 ── */
     @media print {
+      @page { size: A4; margin: 12mm; }
       body { background: white; }
-      .lp-topbar, .lp-hero, .lp-legal-section, .lp-preview-section, .nav, .add-btn, .icon-picker, .coping, .priority-tags, .hint-list { display: none !important; }
-      .sheet { box-shadow: none; border-radius: 0; margin: 0; border: 1px solid #ddd; }
-      .cover { min-height: auto; padding: 40px 20px; }
+      .lp-topbar,
+      .lp-hero,
+      .lp-legal-section,
+      .lp-preview-section,
+      .nav,
+      .add-btn,
+      .icon-picker,
+      .coping,
+      .hint-list,
+      .evidence-box,
+      .ref-page,
+      .footer-note {
+        display: none !important;
+      }
+      .cover {
+        height: 273mm;
+        min-height: 273mm;
+        padding: 28mm 20px;
+        break-after: always;
+        page-break-after: always;
+      }
+      .sheet {
+        box-shadow: none;
+        border-radius: 0;
+        margin: 0;
+        border: none;
+        overflow: visible;
+        break-before: page;
+        page-break-before: always;
+        break-after: page;
+        page-break-after: always;
+      }
+      .sheet.sh5 {
+        break-after: auto;
+        page-break-after: auto;
+      }
+      .sheet-header {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+      .strong-weak,
+      .thermometer-wrap,
+      .interview-guide,
+      .interview-focus,
+      .praise-entry,
+      .author-card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .schedule-table thead { display: table-header-group; }
+      .schedule-table tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
     }
 
     @media (max-width: 600px) {
@@ -517,6 +617,7 @@
       .schedule-table td:first-child { width: 72px; font-size: .82rem; padding: 6px; }
       .schedule-table td .icon-cell { width: 44px; font-size: 1.2rem; padding: 6px; }
       .schedule-table th, .schedule-table td input[type="text"] { font-size: .84rem; }
+      .focus-row { grid-template-columns: 1fr; gap: 4px; }
       .evidence-box { padding: 12px 14px; }
       .evidence-box p, .evidence-box .ev-cite, .ref-list li { overflow-wrap: anywhere; }
       .author-card { flex-direction: column; gap: 14px; }
@@ -534,13 +635,13 @@
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/worksheets.html">
   <meta property="og:title" content="家庭でできる！発達支援ワークシート集">
-  <meta property="og:description" content="保護者・支援員のための発達支援ワークシート集。得意・苦手発見シート、スケジュール表、気持ちの温度計など5種を収録。TEACCH・ABA・SEL等の考え方を参考に作成。">
+  <meta property="og:description" content="保護者・支援員のための発達支援ワークシート集。得意・苦手発見シート、スケジュール表、気持ちの温度計、保護者面談メモなど5種を収録。家庭と学校の情報共有を助ける教材です。">
   <meta property="og:image" content="https://manabinomorikyouikuken.github.io/manabinomori-website/assets/ogp.png">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="合同会社まなびの森教育研究所">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="家庭でできる！発達支援ワークシート集">
-  <meta name="twitter:description" content="保護者・支援員のための発達支援ワークシート集。得意・苦手発見シート、スケジュール表、気持ちの温度計など5種を収録。TEACCH・ABA・SEL等の考え方を参考に作成。">
+  <meta name="twitter:description" content="保護者・支援員のための発達支援ワークシート集。得意・苦手発見シート、スケジュール表、気持ちの温度計、保護者面談メモなど5種を収録。家庭と学校の情報共有を助ける教材です。">
   <meta name="twitter:image" content="https://manabinomorikyouikuken.github.io/manabinomori-website/assets/ogp.png">
   <script type="application/ld+json">
   {
@@ -549,7 +650,7 @@
       {
         "@type": "Product",
         "name": "家庭でできる！発達支援ワークシート集",
-        "description": "保護者・支援員のための発達支援ワークシート集。得意・苦手発見シート、スケジュール表、気持ちの温度計など5種を収録。TEACCH・ABA・SEL等の考え方を参考に作成しています。",
+        "description": "保護者・支援員のための発達支援ワークシート集。得意・苦手発見シート、スケジュール表、気持ちの温度計、保護者面談メモなど5種を収録。診断や治療ではなく、家庭と学校の情報共有を助ける教材です。",
         "url": "https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/worksheets.html",
         "image": "https://manabinomorikyouikuken.github.io/manabinomori-website/assets/ogp.png",
         "brand": {
@@ -611,9 +712,10 @@
   <ul class="lp-features">
     <li>子どもの得意・苦手を発見する記録シート</li>
     <li>視覚支援付き1日のスケジュール表</li>
+    <li>面談で何を話せばよいか整理できる保護者面談メモ</li>
     <li>気持ちの温度計・ほめ記録シートほか全5種</li>
     <li>TEACCH・ABA・SEL等の考え方を参考に作成</li>
-    <li>専門知識がなくても今日から使える設計</li>
+    <li>診断・治療ではなく、家庭と学校の情報共有を助ける教材</li>
   </ul>
   <div class="lp-price-block">
     <div class="lp-price">¥1,980 <small>（税込）</small></div>
@@ -649,7 +751,7 @@
 <!-- LP：プレビュー見出し -->
 <div class="lp-preview-section" id="preview">
   <h2>📄 教材プレビュー（全5シート）</h2>
-  <p>下記は購入後にお届けするワークシートの全内容です。実際に入力・印刷してご利用いただけます。</p>
+  <p>下記は購入後にお届けするワークシートの全内容です。入力・印刷に加え、スマホで見返しながら使えます。</p>
   <a class="lp-btn dark" href="https://buy.stripe.com/cNi4gy85yaQ15iEaQ18Vi06" target="_blank" rel="noopener noreferrer">今すぐ購入する ¥1,980</a>
 </div>
 
@@ -664,7 +766,7 @@
       <li>Sheet 1　子どもの「得意・苦手」発見シート</li>
       <li>Sheet 2　1日のスケジュール表（視覚支援版）</li>
       <li>Sheet 3　気持ちの温度計</li>
-      <li>Sheet 4　学校への連絡メモ</li>
+      <li>Sheet 4　保護者面談メモ</li>
       <li>Sheet 5　ほめ記録シート</li>
     </ul>
   </div>
@@ -677,7 +779,7 @@
   <a href="#sh1">① 得意・苦手</a>
   <a href="#sh2">② スケジュール</a>
   <a href="#sh3">③ 気持ち温度計</a>
-  <a href="#sh4">④ 学校連絡</a>
+  <a href="#sh4">④ 面談メモ</a>
   <a href="#sh5">⑤ ほめ記録</a>
   <button class="print-btn" onclick="window.print()">🖨 印刷する</button>
 </nav>
@@ -816,45 +918,80 @@
 <div class="sheet sh4" id="sh4">
   <div class="sheet-header">
     <div class="sheet-num">SHEET 04</div>
-    <h2>学校への連絡メモ</h2>
-    <p class="sheet-desc">先生に伝えたいことを整理して、連携をスムーズにします。</p>
+    <h2>保護者面談メモ</h2>
+    <p class="sheet-desc">年に数回の面談前に、先生に伝えたいこと・聞きたいことを短く整理します。</p>
   </div>
   <div class="sheet-body">
     <div class="evidence-box">
-      <div class="ev-label">研究根拠 Research Base</div>
-      <p>家庭と学校の連携（家庭-学校パートナーシップ）は、障害のある子どもの学習成果に最も強く影響する要因の一つです。Epstein（2001）の<strong>「家族関与の6類型」モデル</strong>では、「学校とのコミュニケーション」が子どもの学業・情緒発達に与える効果は、授業内容の改善と同等以上とされています。また<strong>Turnbull & Turnbull（2006）</strong>の研究では、保護者が学校の意思決定に参加するほど、子どもの自立度・社会参加度が高まることが縦断的に示されています。日本の特別支援教育においても「個別の教育支援計画」への家庭参加は法的に位置づけられています。</p>
+      <div class="ev-label">使い方の目安</div>
+      <p>面談では、家での様子、最近気になること、学校で確認したいことを先に短く書いておくと、限られた時間でも話が散らばりにくくなります。診断名や細かな個人情報を最初から多く書く必要はありません。必要なことを、先生と一緒に整理するためのメモとして使います。</p>
       <div class="ev-cite">Epstein, J.L. (2001). School, Family, and Community Partnerships. Westview Press. ／ Turnbull, A. et al. (2006). Families, Professionals, and Exceptionality. Pearson. ／ 学校教育法施行規則 第134条の2.</div>
     </div>
-    <p style="font-size:0.85rem;color:#666;margin-bottom:10px;">優先度を選んでください：</p>
-    <div class="priority-tags">
-      <span class="priority-tag pri-urgent" onclick="togglePri(this)">🔴 至急・重要</span>
-      <span class="priority-tag pri-normal" onclick="togglePri(this)">🔵 通常連絡</span>
-      <span class="priority-tag pri-info"   onclick="togglePri(this)">⚪ 情報共有</span>
+    <div class="interview-guide">
+      <strong>スマホで面談中に見返す前提のメモです。</strong>
+      <p>すべて埋める必要はありません。面談前に「これだけは伝えたい」「これだけは聞きたい」を2〜3個に絞ると、先生とも共有しやすくなります。</p>
+      <div class="interview-points">
+        <span class="interview-point">家での様子</span>
+        <span class="interview-point">気になる変化</span>
+        <span class="interview-point">学校で聞きたいこと</span>
+        <span class="interview-point">次に試すこと</span>
+      </div>
+      <p class="interview-mini-note">入力内容は、ブラウザを閉じたりページを更新したりすると残らない場合があります。必要に応じて、面談前にスクリーンショットや印刷で控えてください。</p>
+    </div>
+    <div class="interview-focus">
+      <h3>面談でまず見る3つ</h3>
+      <div class="focus-row">
+        <label for="focus-tell">必ず伝える</label>
+        <input id="focus-tell" type="text" placeholder="例：最近、登校前の不安が強くなっています。">
+      </div>
+      <div class="focus-row">
+        <label for="focus-ask">必ず聞く</label>
+        <input id="focus-ask" type="text" placeholder="例：学校では休み時間をどう過ごしていますか。">
+      </div>
+      <div class="focus-row">
+        <label for="focus-next">次に試す</label>
+        <input id="focus-next" type="text" placeholder="例：朝の予定を写真カードで確認してみます。">
+      </div>
     </div>
     <div class="contact-grid">
       <div class="contact-field">
-        <label>日付</label>
+        <label>面談日</label>
         <input type="date">
       </div>
       <div class="contact-field">
-        <label>連絡先（担任・支援員など）</label>
-        <input type="text" placeholder="例：山田先生">
+        <label>相談する先生・担当</label>
+        <input type="text" placeholder="例：担任の先生、特別支援教育コーディネーター">
       </div>
       <div class="contact-field full">
-        <label>昨日・今朝の様子（家庭での状況）</label>
-        <textarea placeholder="例：昨夜なかなか寝付けず、今朝は少し元気がない様子でした。"></textarea>
+        <label>家での様子</label>
+        <span class="field-hint">最近の生活リズム、表情、好きなこと、家で落ち着く場面など。</span>
+        <textarea class="tall" placeholder="例：帰宅後は一人で休む時間があると落ち着きます。朝は声かけが多いと少し不安そうです。"></textarea>
       </div>
       <div class="contact-field full">
-        <label>学校にお願いしたいこと</label>
-        <textarea placeholder="例：大きな音が苦手なので、体育館での活動の際は事前に声かけをお願いします。"></textarea>
+        <label>日常生活面で共有したいこと</label>
+        <span class="field-hint">あいさつ、食事、排泄、遊び、親子関係、友達関係など。</span>
+        <textarea class="tall" placeholder="例：食事は少しずつ食べられるものが増えています。友達との関わりは、誘われると参加しやすいようです。"></textarea>
       </div>
       <div class="contact-field full">
-        <label>最近できるようになったこと・良かったこと</label>
-        <textarea placeholder="例：自分から「手伝って」と言えるようになりました。"></textarea>
+        <label>最近気になっていること</label>
+        <textarea class="tall" placeholder="例：帰宅後に疲れが強く、宿題に向かうまで時間がかかる日があります。"></textarea>
       </div>
       <div class="contact-field full">
-        <label>その他・質問など</label>
-        <textarea placeholder="自由記入…"></textarea>
+        <label>「あれ？」と思う、気になるところ</label>
+        <textarea class="tall" placeholder="例：前は平気だった音を嫌がることが増えました。理由はまだ分かりません。"></textarea>
+      </div>
+      <div class="contact-field full">
+        <label>通院予定・学校に共有しておきたい予定</label>
+        <span class="field-hint">必要な範囲だけで大丈夫です。診断や治療内容を詳しく書きすぎる必要はありません。</span>
+        <textarea placeholder="例：来月、定期受診があります。必要があれば結果を共有します。"></textarea>
+      </div>
+      <div class="contact-field full">
+        <label>先生に聞きたいこと</label>
+        <textarea placeholder="例：学校では休み時間をどのように過ごしていますか。困ったときに誰に相談できていますか。"></textarea>
+      </div>
+      <div class="contact-field full">
+        <label>面談後に確認したこと・次に試すこと</label>
+        <textarea class="tall" placeholder="例：朝の準備は家庭で写真カードを使ってみる。学校では予定変更を早めに伝えてもらう。"></textarea>
       </div>
     </div>
   </div>
@@ -1008,12 +1145,6 @@
     el.classList.add('selected');
   }
   function toggleCoping(el) { el.classList.toggle('picked'); }
-
-  // 優先度タグ
-  function togglePri(el) {
-    document.querySelectorAll('.priority-tag').forEach(e => e.classList.remove('on'));
-    el.classList.add('on');
-  }
 
   // ほめ記録
   function starClick(el) {
