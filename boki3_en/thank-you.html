@@ -56,22 +56,19 @@
     .product-info h2 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; color: var(--accent-dark); }
     .product-info ul { list-style: none; font-size: 0.9rem; color: var(--sub); line-height: 2; }
     .product-info ul li::before { content: "✓ "; color: var(--accent); font-weight: 700; }
-    .download-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--accent);
-      color: white;
-      font-size: 1.1rem;
-      font-weight: 700;
-      padding: 18px 40px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: background .2s, transform .15s;
-      margin-bottom: 16px;
-    }
-    .download-btn:hover { background: var(--accent-dark); transform: translateY(-2px); }
     .note { font-size: 0.82rem; color: #9ca3af; margin-top: 8px; line-height: 1.7; }
+    .mail-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 18px 20px;
+      text-align: left;
+      margin: 0 0 16px;
+      color: var(--sub);
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+    .mail-box strong { color: var(--accent-dark); }
     .how-to {
       background: #f9fafb;
       border: 1px solid var(--line);
@@ -114,7 +111,7 @@
     <h1>Thank you for your purchase!</h1>
     <p class="sub">
       Your payment is complete.<br>
-      Download your workbook using the button below and start studying today!
+      Your workbook will be sent by email after payment confirmation.
     </p>
 
     <div class="product-info">
@@ -127,40 +124,20 @@
       </ul>
     </div>
 
-    <button onclick="downloadFile()" class="download-btn" style="border:none;cursor:pointer;width:100%;justify-content:center;">
-      ⬇ Download Workbook
-    </button>
-    <div class="note">
-      Open the downloaded HTML file in any browser (Safari, Chrome, Firefox).<br>
-      No app installation required. Works completely offline.<br>
-      If the button doesn't respond, try <a href="boki3_en_mondaishu.zip" style="color:#93c5fd;">this direct link</a> (long-press on mobile to save).<br>
-      Still having trouble? <a href="mailto:manabinomorikyouikuken@gmail.com" style="color:#93c5fd;">Contact us</a> and we'll send it by email.
+    <div class="mail-box">
+      <strong>Delivery by email</strong><br>
+      After confirming your payment, we will send the workbook files to the email address used at checkout.
+      Delivery is usually completed within 2 business days.
     </div>
-    <script>
-      function downloadFile() {
-        const url = 'boki3_en_mondaishu.zip';
-        const filename = 'boki3_en_mondaishu.zip';
-        fetch(url)
-          .then(res => res.blob())
-          .then(blob => {
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = filename;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(a.href);
-          })
-          .catch(() => {
-            window.location.href = url;
-          });
-      }
-    </script>
+    <div class="note">
+      Please also check your spam or promotions folder.<br>
+      If you do not receive the email after 2 business days, <a href="mailto:manabinomorikyouikuken@gmail.com" style="color:#93c5fd;">contact us</a>.
+    </div>
 
     <div class="how-to">
       <h3>📱 How to open the file</h3>
       <ol>
-        <li>Download and unzip the file</li>
+        <li>Save and unzip the file attached to the delivery email</li>
         <li>Open <strong>index.html</strong> in your browser</li>
         <li>Start with Day 1 — 45 minutes per day</li>
         <li>Your progress is saved automatically in the browser</li>

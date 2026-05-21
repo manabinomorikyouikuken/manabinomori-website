@@ -185,6 +185,30 @@ footer a { color: #9ca3af; }
   .author-box { flex-direction: column; }
   .price-card { padding: 28px 20px; }
   .hero-trilingual .row { gap: 12px; }
+  .comp-table {
+    table-layout: fixed;
+  }
+  .comp-table th,
+  .comp-table td {
+    padding: 8px 4px;
+    font-size: 0.64rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+  #commerce table,
+  #commerce tbody,
+  #commerce tr,
+  #commerce th,
+  #commerce td {
+    display: block;
+    width: 100% !important;
+  }
+  #commerce tr {
+    margin-bottom: 10px;
+  }
+  #commerce th {
+    border-bottom: none !important;
+  }
 }
 </style>
   <!-- OGP -->
@@ -234,8 +258,8 @@ footer a { color: #9ca3af; }
         <div class="term"><div class="en-t">Balance Sheet</div><div class="jp-t">貸借対照表 / タイシャクタイショウヒョウ</div></div>
       </div>
     </div>
-    <a href="https://buy.stripe.com/5kQ00iclObU5eTe8HT8Vi01" class="hero-cta" target="_blank" rel="noopener noreferrer">📥 Download Now</a>
-    <p class="hero-note">One-time purchase · Offline · Works on any device</p>
+    <a href="https://buy.stripe.com/5kQ00iclObU5eTe8HT8Vi01" class="hero-cta" target="_blank" rel="noopener noreferrer">Purchase Workbook</a>
+    <p class="hero-note">One-time purchase · Email delivery after payment confirmation</p>
   </div>
 </section>
 
@@ -511,28 +535,25 @@ footer a { color: #9ca3af; }
   </div>
 </section>
 
-<!-- ━━━ VOICE ━━━ -->
+<!-- ━━━ USE CASES ━━━ -->
 <section class="section section-alt">
   <div class="container">
     <div class="sec-title">
-      <div class="en">VOICE</div>
-      <h2>What learners are saying</h2>
+      <div class="en">USE CASES</div>
+      <h2>Who this workbook is designed for</h2>
     </div>
     <div class="voices">
       <div class="voice-card">
-        <div class="stars">★★★★★</div>
-        <p><span class="flag-icon">🇻🇳</span>I had worked in accounting back home, so I knew debits and credits — but I had no idea how to read 借方 (karikata) or 貸方 (kashikata). The 4-way notation made the Japanese terms click immediately. I passed the exam in my first attempt.</p>
-        <div class="name">Vietnamese worker, 28, manufacturing company in Aichi</div>
+        <p><span class="flag-icon">🌏</span>For learners who understand basic accounting concepts in another language, but need help connecting those concepts to Japanese bookkeeping terms.</p>
+        <div class="name">Accounting terms are shown in English, Japanese, furigana, katakana, and romaji.</div>
       </div>
       <div class="voice-card">
-        <div class="stars">★★★★★</div>
-        <p><span class="flag-icon">🇧🇷</span>Every study resource I found was in Japanese and I got frustrated immediately. This was the first thing I could actually read and understand. 45 minutes a day for 30 days — it really worked. The IFRS comparisons helped me connect what I already knew from Brazilian GAAP.</p>
-        <div class="name">Brazilian worker, 34, administrative staff in Tokyo</div>
+        <p><span class="flag-icon">📘</span>For learners who want to study in small daily steps instead of reading a full Japanese textbook from the beginning.</p>
+        <div class="name">The curriculum is divided into 30 days with short goals and practice questions.</div>
       </div>
       <div class="voice-card">
-        <div class="stars">★★★★☆</div>
-        <p><span class="flag-icon">🇵🇭</span>The character dialogues are really fun — it doesn't feel like studying. The mock exams in Week 4 were close to the real exam format. I felt fully prepared walking into the test room.</p>
-        <div class="name">Filipino worker, 25, logistics company in Osaka</div>
+        <p><span class="flag-icon">🧾</span>For learners who want repeated practice with automatic feedback before moving on to Japanese exam-style materials.</p>
+        <div class="name">Results vary by learner. This workbook supports preparation; it does not guarantee exam success.</div>
       </div>
     </div>
   </div>
@@ -549,7 +570,7 @@ footer a { color: #9ca3af; }
       <span class="plan-name">📒 Standard Pack — English Edition</span>
       <p class="for-who">For foreign workers in Japan · 日本で働く外国人向け</p>
       <div class="price-main"><span>¥</span>2,680</div>
-      <div class="price-note">One-time purchase · Instant download · No subscription</div>
+      <div class="price-note">One-time purchase · Email delivery · No subscription</div>
       <ul class="price-includes">
         <li>Interactive question workbook HTML (90 questions · auto-grading)</li>
         <li>30-day curriculum with daily goals</li>
@@ -558,10 +579,10 @@ footer a { color: #9ca3af; }
         <li>IFRS / international standard references throughout</li>
         <li>Progress tracking saved in your browser</li>
         <li>Works on smartphone, tablet &amp; PC</li>
-        <li>100% offline — no internet required after download</li>
+        <li>100% offline after receiving the files</li>
       </ul>
-      <a href="https://buy.stripe.com/5kQ00iclObU5eTe8HT8Vi01" class="price-cta" target="_blank" rel="noopener noreferrer">📥 Purchase &amp; Download</a>
-      <p class="price-guarantee">🔒 Download available immediately after purchase</p>
+      <a href="https://buy.stripe.com/5kQ00iclObU5eTe8HT8Vi01" class="price-cta" target="_blank" rel="noopener noreferrer">Purchase Workbook</a>
+      <p class="price-guarantee">Delivery by email after payment confirmation, usually within 2 business days</p>
       <div class="price-lang">
         <span>🇬🇧 English</span>
         <span>🇯🇵 日本語ルビ付き</span>
@@ -630,7 +651,7 @@ footer a { color: #9ca3af; }
   <div class="container">
     <h2>Start today. <span>Pass in 30 days.</span></h2>
     <p>One workbook. One month. One new qualification on your résumé.</p>
-    <a href="https://buy.stripe.com/5kQ00iclObU5eTe8HT8Vi01" target="_blank" rel="noopener noreferrer">📥 Download Now &nbsp;→</a>
+    <a href="https://buy.stripe.com/5kQ00iclObU5eTe8HT8Vi01" target="_blank" rel="noopener noreferrer">Purchase Workbook &nbsp;→</a>
   </div>
 </section>
 
@@ -650,7 +671,7 @@ footer a { color: #9ca3af; }
         <tr><th style="width:36%;background:#f4f7f3;padding:12px 14px;border:1px solid #d7ddd6;text-align:left;font-size:.93rem;color:#35553a;vertical-align:top;">Additional Fees</th><td style="padding:12px 14px;border:1px solid #d7ddd6;vertical-align:top;">Internet connection fees are the customer's responsibility.</td></tr>
         <tr><th style="width:36%;background:#f4f7f3;padding:12px 14px;border:1px solid #d7ddd6;text-align:left;font-size:.93rem;color:#35553a;vertical-align:top;">How to Order</th><td style="padding:12px 14px;border:1px solid #d7ddd6;vertical-align:top;">Click the purchase button on this page to proceed to Stripe checkout.</td></tr>
         <tr><th style="width:36%;background:#f4f7f3;padding:12px 14px;border:1px solid #d7ddd6;text-align:left;font-size:.93rem;color:#35553a;vertical-align:top;">Payment</th><td style="padding:12px 14px;border:1px solid #d7ddd6;vertical-align:top;">Credit card (via Stripe). Payment is processed immediately upon purchase.</td></tr>
-        <tr><th style="width:36%;background:#f4f7f3;padding:12px 14px;border:1px solid #d7ddd6;text-align:left;font-size:.93rem;color:#35553a;vertical-align:top;">Delivery</th><td style="padding:12px 14px;border:1px solid #d7ddd6;vertical-align:top;">Access is granted immediately after payment via automatic redirect to the download page.</td></tr>
+        <tr><th style="width:36%;background:#f4f7f3;padding:12px 14px;border:1px solid #d7ddd6;text-align:left;font-size:.93rem;color:#35553a;vertical-align:top;">Delivery</th><td style="padding:12px 14px;border:1px solid #d7ddd6;vertical-align:top;">Workbook files are sent by email after payment confirmation, usually within 2 business days.</td></tr>
         <tr><th style="width:36%;background:#f4f7f3;padding:12px 14px;border:1px solid #d7ddd6;text-align:left;font-size:.93rem;color:#35553a;vertical-align:top;">Returns &amp; Cancellations</th><td style="padding:12px 14px;border:1px solid #d7ddd6;vertical-align:top;">Due to the digital nature of this product, refunds are not available after delivery. If there is a defect or error in the product, please contact us within 5 business days.</td></tr>
         <tr><th style="width:36%;background:#f4f7f3;padding:12px 14px;border:1px solid #d7ddd6;text-align:left;font-size:.93rem;color:#35553a;vertical-align:top;">System Requirements</th><td style="padding:12px 14px;border:1px solid #d7ddd6;vertical-align:top;">A modern web browser (Chrome, Safari, Firefox, Edge — latest versions). No download or installation required.</td></tr>
       </table>

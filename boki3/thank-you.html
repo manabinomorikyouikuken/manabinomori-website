@@ -54,30 +54,25 @@
       line-height: 1.8;
       margin-bottom: 32px;
     }
-    .download-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--accent);
-      color: white;
-      font-size: 1.1rem;
-      font-weight: 700;
-      padding: 18px 40px;
-      border-radius: 50px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-      margin-bottom: 16px;
-    }
-    .download-btn:hover {
-      background: var(--accent-dark);
-      transform: translateY(-2px);
-      text-decoration: none;
-    }
     .note {
       font-size: 0.82rem;
       color: #999;
       margin-top: 8px;
       line-height: 1.7;
+    }
+    .mail-box {
+      background: #f7faf6;
+      border: 1px solid #d7ddd6;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 0 0 16px;
+      text-align: left;
+      color: var(--sub);
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+    .mail-box strong {
+      color: var(--accent-dark);
     }
     .divider {
       border: none;
@@ -143,45 +138,26 @@
     <h1>ご購入ありがとうございます！</h1>
     <p class="sub">
       お支払いが完了しました。<br>
-      下のボタンから問題集をダウンロードしてください。
+      教材は決済確認後、メールでお送りします。
     </p>
 
     <div class="product-info">
-      <h2>📦 ダウンロード内容</h2>
+      <h2>お届け内容</h2>
       <ul>
         <li>インタラクティブ問題集（index.html）― 90問・自動採点</li>
         <li>30日カリキュラム（curriculum.html）― 学習スケジュール</li>
       </ul>
     </div>
 
-    <button onclick="downloadFile()" class="download-btn" style="border:none;cursor:pointer;width:100%;justify-content:center;">
-      ⬇ 問題集をダウンロード
-    </button>
-    <div class="note">
-      ※ ブラウザでそのまま開いてご使用ください（インターネット不要）<br>
-      ※ ボタンが反応しない場合は<a href="boki3_mondaishu.zip" style="color:var(--accent);">こちら</a>を長押し（スマホ）またはクリックして保存してください<br>
-      ※ それでもダウンロードできない場合は <a href="mailto:manabinomorikyouikuken@gmail.com" style="color:var(--accent);">メールでお問い合わせください</a>
+    <div class="mail-box">
+      <strong>教材のお届けについて</strong><br>
+      決済内容を確認後、購入時に入力されたメールアドレス宛に教材ファイルをお送りします。
+      通常2営業日以内を目安に対応します。
     </div>
-    <script>
-      function downloadFile() {
-        const url = 'boki3_mondaishu.zip';
-        const filename = 'boki3_mondaishu.zip';
-        fetch(url)
-          .then(res => res.blob())
-          .then(blob => {
-            const a = document.createElement('a');
-            a.href = URL.createObjectURL(blob);
-            a.download = filename;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(a.href);
-          })
-          .catch(() => {
-            window.location.href = url;
-          });
-      }
-    </script>
+    <div class="note">
+      ※ メールが届かない場合は、迷惑メールフォルダもご確認ください。<br>
+      ※ 2営業日を過ぎても届かない場合は <a href="mailto:manabinomorikyouikuken@gmail.com" style="color:var(--accent);">メールでお問い合わせください</a>
+    </div>
 
     <hr class="divider">
 
