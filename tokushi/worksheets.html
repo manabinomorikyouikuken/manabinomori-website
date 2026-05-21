@@ -291,6 +291,7 @@
       font-size: 0.78rem;
       font-weight: 700;
     }
+    .print-only { display: none !important; }
     .interview-mini-note {
       margin-top: 10px;
       font-size: 0.74rem;
@@ -503,7 +504,8 @@
     .lp-hero{background:linear-gradient(135deg,#4e7dca 0%,#6ab4a0 100%);color:#fff;padding:56px 24px 48px;text-align:center;}
     .lp-hero .lp-badge{display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:4px 16px;font-size:.82rem;margin-bottom:16px;}
     .lp-hero h1{font-size:clamp(1.8rem,5vw,2.6rem);font-weight:900;line-height:1.3;margin:0 0 16px;}
-    .lp-hero .lp-sub{font-size:1rem;opacity:.9;margin-bottom:28px;}
+    .lp-hero .lp-sub{font-size:1rem;opacity:.9;margin-bottom:10px;}
+    .lp-hero .lp-lead{max-width:640px;margin:0 auto 28px;font-size:1.02rem;line-height:1.8;font-weight:700;}
     .lp-hero .lp-features{list-style:none;display:inline-block;text-align:left;margin:0 0 32px;padding:0;font-size:.95rem;}
     .lp-hero .lp-features li{padding:4px 0;}
     .lp-hero .lp-features li::before{content:"✓ ";opacity:.8;}
@@ -543,6 +545,8 @@
       .footer-note {
         display: none !important;
       }
+      .screen-only { display: none !important; }
+      .print-only { display: block !important; }
       .cover {
         height: 273mm;
         min-height: 273mm;
@@ -607,6 +611,7 @@
       .lp-topbar a { font-size: .8rem; white-space: nowrap; }
       .lp-hero { padding: 40px 20px 36px; }
       .lp-hero h1 { font-size: 1.72rem; }
+      .lp-hero .lp-lead { font-size: .92rem; }
       .lp-hero .lp-features { font-size: .9rem; }
       .lp-price { font-size: clamp(1.45rem, 8vw, 1.7rem); }
       .lp-btn { width: min(100%, 320px); padding: 12px 20px; font-size: .95rem; }
@@ -706,9 +711,10 @@
 
 <!-- LP：ヒーロー -->
 <div class="lp-hero">
-  <div class="lp-badge">保護者・支援員のための実践ツール</div>
+  <div class="lp-badge">保護者面談前にも使える実践ツール</div>
   <h1>家庭でできる！<br>発達支援ワークシート集</h1>
   <p class="lp-sub">PDF形式・全5シート</p>
+  <p class="lp-lead">年に2〜3回の学校面談前に、家での様子・気になること・先生に聞きたいことを短く整理できます。</p>
   <ul class="lp-features">
     <li>子どもの得意・苦手を発見する記録シート</li>
     <li>視覚支援付き1日のスケジュール表</li>
@@ -928,7 +934,8 @@
       <div class="ev-cite">Epstein, J.L. (2001). School, Family, and Community Partnerships. Westview Press. ／ Turnbull, A. et al. (2006). Families, Professionals, and Exceptionality. Pearson. ／ 学校教育法施行規則 第134条の2.</div>
     </div>
     <div class="interview-guide">
-      <strong>スマホで面談中に見返す前提のメモです。</strong>
+      <strong class="screen-only">スマホで面談中に見返す前提のメモです。</strong>
+      <strong class="print-only">面談前に話すことを短く整理するメモです。</strong>
       <p>すべて埋める必要はありません。面談前に「これだけは伝えたい」「これだけは聞きたい」を2〜3個に絞ると、先生とも共有しやすくなります。</p>
       <div class="interview-points">
         <span class="interview-point">家での様子</span>
@@ -936,7 +943,7 @@
         <span class="interview-point">学校で聞きたいこと</span>
         <span class="interview-point">次に試すこと</span>
       </div>
-      <p class="interview-mini-note">入力内容は、ブラウザを閉じたりページを更新したりすると残らない場合があります。必要に応じて、面談前にスクリーンショットや印刷で控えてください。</p>
+      <p class="interview-mini-note screen-only">入力内容は、ブラウザを閉じたりページを更新したりすると残らない場合があります。必要に応じて、面談前にスクリーンショットや印刷で控えてください。</p>
     </div>
     <div class="interview-focus">
       <h3>面談でまず見る3つ</h3>
