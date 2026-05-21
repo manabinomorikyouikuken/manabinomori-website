@@ -1022,7 +1022,7 @@
         <div class="panel">
           <div class="section-head" style="margin-bottom:16px;">
             <h2>お問い合わせ</h2>
-            <p>ご質問、ご依頼、取材、教材に関するお問い合わせは、<a href="#contact">お問い合わせフォーム</a>またはメールにてご連絡ください。通常2営業日以内を目安に返信します。</p>
+            <p>保護者向け相談、研修・講演、教材、取材などのお問い合わせは、<a href="#contact">お問い合わせフォーム</a>またはメールにてご連絡ください。通常2営業日以内を目安に返信します。</p>
           </div>
           <form action="https://formspree.io/f/mykolgnd" method="POST" style="display:grid;gap:12px;" onsubmit="this.querySelector('button[type=submit]').disabled=true;this.querySelector('button[type=submit]').textContent='送信中...';">
             <div class="contact-fields">
@@ -1042,17 +1042,17 @@
               <select id="contact-category" name="category" style="width:100%;border:1px solid #d7ddd6;border-radius:10px;padding:10px 12px;font-size:.95rem;box-sizing:border-box;font-family:inherit;background:#fff;">
                 <option value="">選択してください</option>
                 <option value="教材について">教材について</option>
+                <option value="保護者向け教育相談">保護者向け教育相談</option>
                 <option value="研修・講演・相談">研修・講演・相談</option>
-                <option value="教育相談">教育相談</option>
                 <option value="取材・メディア">取材・メディア</option>
                 <option value="その他">その他</option>
               </select>
             </div>
             <div>
               <label for="contact-message" style="display:block;font-size:.88rem;font-weight:700;color:#35553a;margin-bottom:4px;">お問い合わせ内容 <span style="color:#c0392b;">*</span></label>
-              <textarea id="contact-message" name="message" required rows="5" placeholder="お問い合わせ内容をご記入ください。"
+              <textarea id="contact-message" name="message" required rows="5" placeholder="保護者向け相談の場合は、学年、困っている場面、学校に相談済みか、希望する相談方法などを、分かる範囲でご記入ください。"
                 style="width:100%;border:1px solid #d7ddd6;border-radius:10px;padding:10px 12px;font-size:.95rem;box-sizing:border-box;font-family:inherit;resize:vertical;"></textarea>
-              <p style="margin:6px 0 0;font-size:.83rem;color:#58635b;">お子さんの氏名、学校名、住所、診断名などの詳しい個人情報は、初回のお問い合わせでは必要な範囲にとどめてください。</p>
+              <p style="margin:6px 0 0;font-size:.83rem;color:#58635b;">初回は、学年、困っている場面、学校への相談状況、希望する相談方法を分かる範囲でお知らせください。お子さんの氏名、学校名、住所、診断名などの詳しい個人情報は、必要な範囲にとどめてください。</p>
             </div>
             <input type="hidden" name="_subject" value="【まなびの森】お問い合わせが届きました">
             <input type="hidden" name="_next" value="https://manabinomorikyouikuken.github.io/manabinomori-website/thanks.html">
