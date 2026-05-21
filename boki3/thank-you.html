@@ -154,13 +154,34 @@
       </ul>
     </div>
 
-    <a href="boki3_mondaishu.zip" download class="download-btn">
+    <button onclick="downloadFile()" class="download-btn" style="border:none;cursor:pointer;width:100%;justify-content:center;">
       ⬇ 問題集をダウンロード
-    </a>
+    </button>
     <div class="note">
       ※ ブラウザでそのまま開いてご使用ください（インターネット不要）<br>
-      ※ ダウンロードできない場合はお問い合わせください
+      ※ ボタンが反応しない場合は<a href="boki3_mondaishu.zip" style="color:var(--accent);">こちら</a>を長押し（スマホ）またはクリックして保存してください<br>
+      ※ それでもダウンロードできない場合は <a href="mailto:manabinomorikyouikuken@gmail.com" style="color:var(--accent);">メールでお問い合わせください</a>
     </div>
+    <script>
+      function downloadFile() {
+        const url = 'boki3_mondaishu.zip';
+        const filename = 'boki3_mondaishu.zip';
+        fetch(url)
+          .then(res => res.blob())
+          .then(blob => {
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(a.href);
+          })
+          .catch(() => {
+            window.location.href = url;
+          });
+      }
+    </script>
 
     <hr class="divider">
 

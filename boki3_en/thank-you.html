@@ -127,13 +127,35 @@
       </ul>
     </div>
 
-    <a href="boki3_en_mondaishu.zip" download class="download-btn">
+    <button onclick="downloadFile()" class="download-btn" style="border:none;cursor:pointer;width:100%;justify-content:center;">
       ⬇ Download Workbook
-    </a>
+    </button>
     <div class="note">
       Open the downloaded HTML file in any browser (Safari, Chrome, Firefox).<br>
-      No app installation required. Works completely offline.
+      No app installation required. Works completely offline.<br>
+      If the button doesn't respond, try <a href="boki3_en_mondaishu.zip" style="color:#93c5fd;">this direct link</a> (long-press on mobile to save).<br>
+      Still having trouble? <a href="mailto:manabinomorikyouikuken@gmail.com" style="color:#93c5fd;">Contact us</a> and we'll send it by email.
     </div>
+    <script>
+      function downloadFile() {
+        const url = 'boki3_en_mondaishu.zip';
+        const filename = 'boki3_en_mondaishu.zip';
+        fetch(url)
+          .then(res => res.blob())
+          .then(blob => {
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(a.href);
+          })
+          .catch(() => {
+            window.location.href = url;
+          });
+      }
+    </script>
 
     <div class="how-to">
       <h3>📱 How to open the file</h3>
