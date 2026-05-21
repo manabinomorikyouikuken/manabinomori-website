@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>家庭でできる！発達支援ワークシート集 | 合同会社まなびの森教育研究所</title>
-  <meta name="description" content="保護者・支援員のための発達支援ワークシート集。得意・苦手発見シート、スケジュール表、気持ちの温度計など5種を収録。TEACCH・ABA・SEL等の国際標準理論に基づき作成。">
+  <meta name="description" content="保護者・支援員のための発達支援ワークシート集。得意・苦手発見シート、スケジュール表、気持ちの温度計など5種を収録。TEACCH・ABA・SEL等の考え方を参考に作成。">
   <link rel="canonical" href="https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/worksheets.html">
   <style>
     /* ── 基本 ── */
@@ -15,6 +15,7 @@
       color: #2d2d2d;
       line-height: 1.7;
     }
+    input, textarea, select, button { max-width: 100%; }
 
     /* ── 表紙 ── */
     .cover {
@@ -449,7 +450,7 @@
 
     /* ── LP セクション ── */
     .lp-topbar{background:rgba(255,255,255,0.97);border-bottom:1px solid #e0e0e0;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;}
-    .lp-topbar .brand{font-weight:800;font-size:.95rem;color:#2d2d2d;}
+    .lp-topbar .brand{font-weight:800;font-size:.95rem;color:#2d2d2d;white-space:nowrap;}
     .lp-topbar a{font-size:.88rem;color:#5d7c61;font-weight:600;text-decoration:none;}
     .lp-hero{background:linear-gradient(135deg,#4e7dca 0%,#6ab4a0 100%);color:#fff;padding:56px 24px 48px;text-align:center;}
     .lp-hero .lp-badge{display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:4px 16px;font-size:.82rem;margin-bottom:16px;}
@@ -461,7 +462,7 @@
     .lp-price-block{margin:0 0 24px;}
     .lp-price{font-size:2rem;font-weight:900;letter-spacing:.02em;}
     .lp-price small{font-size:1rem;opacity:.8;}
-    .lp-btn{display:inline-block;background:#fff;color:#4e7dca;padding:14px 36px;border-radius:40px;font-weight:800;font-size:1.05rem;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.2);}
+    .lp-btn{display:inline-block;max-width:100%;background:#fff;color:#4e7dca;padding:14px 36px;border-radius:40px;font-weight:800;font-size:1.05rem;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.2);text-align:center;}
     .lp-btn:hover{background:#f0f7ff;text-decoration:none;}
     .lp-btn.dark{background:linear-gradient(135deg,#4e7dca,#6ab4a0);color:#fff;margin-top:12px;}
     .lp-preview-link{display:block;margin-top:16px;font-size:.88rem;opacity:.75;color:#fff;text-decoration:none;}
@@ -498,16 +499,27 @@
       .cover-title { font-size: 1.6rem; }
       .cover .contents-box { padding: 18px 20px; }
       /* LP スマホ対応 */
-      .lp-topbar { padding: 12px 16px; }
+      .nav { gap: 6px; padding: 8px 12px; }
+      .nav span { flex-basis: 100%; margin-right: 0; }
+      .print-btn { margin-left: 0; }
+      .lp-topbar { padding: 12px 16px; gap: 10px; }
+      .lp-topbar .brand { font-size: .86rem; }
+      .lp-topbar a { font-size: .8rem; white-space: nowrap; }
       .lp-hero { padding: 40px 20px 36px; }
-      .lp-hero h1 { font-size: 1.8rem; }
+      .lp-hero h1 { font-size: 1.72rem; }
       .lp-hero .lp-features { font-size: .9rem; }
-      .lp-price { font-size: 1.7rem; }
-      .lp-btn { padding: 12px 24px; font-size: .95rem; }
+      .lp-price { font-size: clamp(1.45rem, 8vw, 1.7rem); }
+      .lp-btn { width: min(100%, 320px); padding: 12px 20px; font-size: .95rem; }
       .lp-legal-section { padding: 24px 16px; }
       .lp-legal-section dl { grid-template-columns: 1fr; gap: 4px 0; }
       .lp-legal-section dt { margin-top: 10px; }
       .lp-preview-section { padding: 24px 16px; }
+      .schedule-table td:first-child { width: 72px; font-size: .82rem; padding: 6px; }
+      .schedule-table td .icon-cell { width: 44px; font-size: 1.2rem; padding: 6px; }
+      .schedule-table th, .schedule-table td input[type="text"] { font-size: .84rem; }
+      .evidence-box { padding: 12px 14px; }
+      .evidence-box p, .evidence-box .ev-cite, .ref-list li { overflow-wrap: anywhere; }
+      .author-card { flex-direction: column; gap: 14px; }
     }
   </style>
   <!-- Google Analytics GA4 -->
@@ -522,33 +534,85 @@
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/worksheets.html">
   <meta property="og:title" content="家庭でできる！発達支援ワークシート集">
-  <meta property="og:description" content="保護者・支援員のための発達支援ワークシート集。得意・苦手発見シート、スケジュール表、気持ちの温度計など5種を収録。TEACCH・ABA・SEL等の国際標準理論に基づき作成。">
+  <meta property="og:description" content="保護者・支援員のための発達支援ワークシート集。得意・苦手発見シート、スケジュール表、気持ちの温度計など5種を収録。TEACCH・ABA・SEL等の考え方を参考に作成。">
   <meta property="og:image" content="https://manabinomorikyouikuken.github.io/manabinomori-website/assets/ogp.png">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="合同会社まなびの森教育研究所">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="家庭でできる！発達支援ワークシート集">
-  <meta name="twitter:description" content="保護者・支援員のための発達支援ワークシート集。得意・苦手発見シート、スケジュール表、気持ちの温度計など5種を収録。TEACCH・ABA・SEL等の国際標準理論に基づき作成。">
+  <meta name="twitter:description" content="保護者・支援員のための発達支援ワークシート集。得意・苦手発見シート、スケジュール表、気持ちの温度計など5種を収録。TEACCH・ABA・SEL等の考え方を参考に作成。">
   <meta name="twitter:image" content="https://manabinomorikyouikuken.github.io/manabinomori-website/assets/ogp.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "name": "家庭でできる！発達支援ワークシート集",
+        "description": "保護者・支援員のための発達支援ワークシート集。得意・苦手発見シート、スケジュール表、気持ちの温度計など5種を収録。TEACCH・ABA・SEL等の考え方を参考に作成しています。",
+        "url": "https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/worksheets.html",
+        "image": "https://manabinomorikyouikuken.github.io/manabinomori-website/assets/ogp.png",
+        "brand": {
+          "@type": "Brand",
+          "name": "合同会社まなびの森教育研究所"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://buy.stripe.com/cNi4gy85yaQ15iEaQ18Vi06",
+          "priceCurrency": "JPY",
+          "price": "1980",
+          "availability": "https://schema.org/InStock",
+          "seller": {
+            "@type": "Organization",
+            "name": "合同会社まなびの森教育研究所"
+          }
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "トップ",
+            "item": "https://manabinomorikyouikuken.github.io/manabinomori-website/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "教材販売",
+            "item": "https://manabinomorikyouikuken.github.io/manabinomori-website/#product"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "発達支援ワークシート集",
+            "item": "https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/worksheets.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
 <!-- LP：ナビバー -->
 <header class="lp-topbar">
-  <div class="brand">まなびの森教育研究所</div>
-  <a href="../index.html#column">← コラム一覧へ</a>
+  <div class="brand">合同会社まなびの森教育研究所</div>
+  <a href="../index.html#product">← 教材一覧へ</a>
 </header>
 
 <!-- LP：ヒーロー -->
 <div class="lp-hero">
   <div class="lp-badge">保護者・支援員のための実践ツール</div>
   <h1>家庭でできる！<br>発達支援ワークシート集</h1>
-  <p class="lp-sub">ダウンロードしてすぐ使えるPDF形式・全5シート</p>
+  <p class="lp-sub">PDF形式・全5シート</p>
   <ul class="lp-features">
     <li>子どもの得意・苦手を発見する記録シート</li>
     <li>視覚支援付き1日のスケジュール表</li>
     <li>気持ちの温度計・ほめ記録シートほか全5種</li>
-    <li>TEACCH・ABA・SEL等の国際標準理論に基づいて作成</li>
+    <li>TEACCH・ABA・SEL等の考え方を参考に作成</li>
     <li>専門知識がなくても今日から使える設計</li>
   </ul>
   <div class="lp-price-block">

@@ -23,16 +23,37 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "保護者向け教育相談",
-    "provider": {
-      "@type": "Organization",
-      "name": "合同会社まなびの森教育研究所",
-      "url": "https://manabinomorikyouikuken.github.io/manabinomori-website/"
-    },
-    "areaServed": ["千葉市", "千葉県", "オンライン"],
-    "serviceType": "特別支援教育に関する保護者向け相談",
-    "description": "子ども・保護者・教員のあいだにある困り感を、学校や関係機関と共有しやすい支援と学びの言葉に整理する教育相談です。"
+    "@graph": [
+      {
+        "@type": "Service",
+        "name": "保護者向け教育相談",
+        "provider": {
+          "@type": "Organization",
+          "name": "合同会社まなびの森教育研究所",
+          "url": "https://manabinomorikyouikuken.github.io/manabinomori-website/"
+        },
+        "areaServed": ["千葉市", "千葉県", "オンライン"],
+        "serviceType": "特別支援教育に関する保護者向け相談",
+        "description": "子ども・保護者・教員のあいだにある困り感を、学校や関係機関と共有しやすい支援と学びの言葉に整理する教育相談です。"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "トップ",
+            "item": "https://manabinomorikyouikuken.github.io/manabinomori-website/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "保護者向け教育相談",
+            "item": "https://manabinomorikyouikuken.github.io/manabinomori-website/parents.html"
+          }
+        ]
+      }
+    ]
   }
   </script>
 

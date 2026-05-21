@@ -287,6 +287,13 @@
     .contact-fields{
       display:grid;grid-template-columns:1fr 1fr;gap:12px;
     }
+    .contact-examples{
+      margin:0 0 16px;color:var(--sub);font-size:.94rem;
+    }
+    .contact-examples p{margin:0 0 8px}
+    .contact-examples ul{
+      margin:0;padding-left:1.2em;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 18px;
+    }
     .muted{color:var(--sub)}
     .foot{
       padding-top:28px;padding-bottom:44px;color:var(--sub);font-size:.92rem;
@@ -365,6 +372,7 @@
       .table th{border-bottom:none;padding-bottom:4px}
       .table td{padding-top:0}
       .contact-fields{grid-template-columns:1fr}
+      .contact-examples ul{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -495,45 +503,10 @@
       <div class="wrap">
         <div class="section-head">
           <h2>お知らせ</h2>
-          <p>新しい教材、公開情報、販売中の商品についてお知らせします。</p>
-        </div>
-
-        <div class="panel" style="margin-bottom:18px;background:linear-gradient(135deg,#eef7ee,#fff);">
-          <div class="kicker">研究ノート</div>
-          <h3 style="margin:0 0 10px;font-size:1.35rem;">重度・重複障害児の学びと未来を考える研究ノート</h3>
-          <p class="muted" style="margin:0 0 12px;">
-            AI、地域資源、特別支援教育をつなぎ、実践前の論点を整理する未査読の研究ノートを一覧にまとめました。
-          </p>
-          <div class="cta-row">
-            <a class="btn primary" href="research-notes.html">研究ノート一覧を見る</a>
-          </div>
+          <p>新しい教材、相談導線、公開情報についてお知らせします。</p>
         </div>
 
         <div class="panel" style="margin-bottom:18px;">
-          <div class="kicker">2026年5月19日 研究ノート公開</div>
-          <h3 style="margin:0 0 10px;font-size:1.35rem;">重度重複障害児とAI</h3>
-          <p class="muted" style="margin:0 0 12px;">
-            AIを意思決定の代理者ではなく補助具として位置づける研究ノートです。特別支援教育・AI倫理・障害学・生命倫理・教育政策の専門家5名による3ラウンドの外部評価を経ています。
-            AAC・BCI・生成AI・CRPD・EU AI Actを横断した倫理的考察を含みます。
-          </p>
-          <div class="cta-row">
-            <a class="btn primary" href="research-note-severe-multiple-disabilities-ai.html">研究ノートを読む</a>
-          </div>
-        </div>
-
-        <div class="panel" style="margin-bottom:18px;">
-          <div class="kicker">2026年5月19日 研究ノート公開</div>
-          <h3 style="margin:0 0 10px;font-size:1.35rem;">重度・重複障害児の学びを地域森林資源へ接続する試論</h3>
-          <p class="muted" style="margin:0 0 12px;">
-            自伐型林業を含む地域森林資源を、感覚、身体、関係、時間、将来をつなぐ学びの環境として捉え直す未査読の研究ノートです。
-            実践データに基づく効果検証ではなく、先行研究と公的資料を踏まえた探索的試論として掲載しています。
-          </p>
-          <div class="cta-row">
-            <a class="btn primary" href="research-note-forest-resources.html">研究ノートを読む</a>
-          </div>
-        </div>
-
-        <div class="panel">
           <div class="kicker">2026年5月8日 教材販売のお知らせ</div>
           <h3 style="margin:0 0 10px;font-size:1.35rem;">初めて特別支援学級担任になった先生のための<br>最初の30日チェックシートを公開しました</h3>
           <p class="muted" style="margin:0 0 12px;">
@@ -547,6 +520,20 @@
           </div>
           <div class="notice">
             決済完了後、Stripe決済時に入力されたメールアドレス宛に、原則3営業日以内にPDFまたはダウンロード方法をご案内します。
+          </div>
+        </div>
+
+        <div class="panel" style="background:#fbfcfa;border:1px solid var(--line);">
+          <div class="kicker">専門性の裏づけ</div>
+          <h3 style="margin:0 0 10px;font-size:1.16rem;">研究ノートも公開しています</h3>
+          <p class="muted" style="margin:0 0 12px;">
+            相談や教材づくりの背景にある考え方を、未査読の研究ノートとして整理しています。
+            実践前の論点整理や専門性の確認資料としてご覧いただけます。
+          </p>
+          <div class="cta-row">
+            <a class="btn secondary" href="research-notes.html">研究ノート一覧を見る</a>
+            <a class="btn secondary" href="research-note-severe-multiple-disabilities-ai.html">AIと特別支援教育の研究ノート</a>
+            <a class="btn secondary" href="research-note-forest-resources.html">地域資源と学びの研究ノート</a>
           </div>
         </div>
       </div>
@@ -917,6 +904,19 @@
             <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
           </a>
         </div>
+        <div class="panel" style="margin-top:18px;background:linear-gradient(135deg,#f5faf3,#fff);border:1px solid #c9dbc7;">
+          <div class="kicker">記事を読んだ後の相談・教材導線</div>
+          <h3 style="margin:0 0 10px;font-size:1.18rem;">個別の状況を整理したい方へ</h3>
+          <p class="muted" style="margin:0 0 14px;font-size:.94rem;">
+            コラムの内容を読んでも、家庭や学校の状況によって次に考えることは変わります。
+            学校との相談、合理的配慮、就学・通級・特別支援学級のことで迷う場合は、保護者向け相談ページへ進めます。
+            家庭や支援場面で使える教材を探している場合は、教材一覧をご確認ください。
+          </p>
+          <div class="cta-row">
+            <a class="btn primary" href="parents.html">保護者向け相談を見る</a>
+            <a class="btn secondary" href="#product">教材一覧を見る</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1007,22 +1007,32 @@
     <section id="contact">
       <div class="wrap">
         <div class="panel" style="margin-bottom:20px;background:linear-gradient(135deg,#eef7ee,#f0f7f0);border:1px solid #b8d4b8;">
-          <div class="kicker">AI教育相談サービス（無料）</div>
-          <h3 style="margin:0 0 10px;font-size:1.3rem;">教育相談AIで、考えを整理する</h3>
+          <div class="kicker">AI教育相談サービス（補助ツール）</div>
+          <h3 style="margin:0 0 10px;font-size:1.3rem;">AIで考えを整理し、人への相談につなげる</h3>
           <p class="muted" style="margin:0 0 16px;">
             特別支援教育、発達支援、学習サポートなどについて、考えを整理する補助として使えるAIサービスです。
-            個別の重要な相談は、学校、専門機関、医療機関、行政窓口、または当社へのお問い合わせをご利用ください。
+            個別の重要な相談は、学校、専門機関、医療機関、行政窓口、または下の問い合わせフォームをご利用ください。
           </p>
           <div class="cta-row">
-            <a class="btn primary" href="https://kyoiku-bot.onrender.com" target="_blank" rel="noopener noreferrer">AIに相談する（無料）→</a>
-            <a class="btn secondary" href="#contact">人に相談する</a>
+            <a class="btn primary" href="#contact-form">人に相談する</a>
+            <a class="btn secondary" href="https://kyoiku-bot.onrender.com" target="_blank" rel="noopener noreferrer">AIで整理する（無料）→</a>
           </div>
           <p style="font-size:.85rem;color:#58635b;margin:12px 0 0;">※ AIによる情報提供と整理の補助です。医療診断、治療、法的判断、学校としての判断を代替するものではありません。</p>
         </div>
-        <div class="panel">
+        <div class="panel" id="contact-form">
           <div class="section-head" style="margin-bottom:16px;">
             <h2>お問い合わせ</h2>
             <p>保護者向け相談、研修・講演、教材、取材などのお問い合わせは、<a href="#contact">お問い合わせフォーム</a>またはメールにてご連絡ください。通常2営業日以内を目安に返信します。</p>
+          </div>
+          <div class="contact-examples" aria-label="保護者向け相談の例">
+            <p><strong>保護者向け相談の例</strong></p>
+            <ul>
+              <li>学校との話し合いの前に、伝えたいことを整理したい</li>
+              <li>合理的配慮をどうお願いすればよいか迷っている</li>
+              <li>登校しぶりについて、学校と共有する内容を整理したい</li>
+              <li>特別支援学級、通級、就学相談について考えたい</li>
+              <li>保護者面談前に、家庭で見えている困り感を整理したい</li>
+            </ul>
           </div>
           <form action="https://formspree.io/f/mykolgnd" method="POST" style="display:grid;gap:12px;" onsubmit="this.querySelector('button[type=submit]').disabled=true;this.querySelector('button[type=submit]').textContent='送信中...';">
             <div class="contact-fields">
