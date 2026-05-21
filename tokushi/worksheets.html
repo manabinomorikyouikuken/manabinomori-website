@@ -446,10 +446,39 @@
       padding: 0 20px;
     }
 
+    /* ── LP セクション ── */
+    .lp-topbar{background:rgba(255,255,255,0.97);border-bottom:1px solid #e0e0e0;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:200;}
+    .lp-topbar .brand{font-weight:800;font-size:.95rem;color:#2d2d2d;}
+    .lp-topbar a{font-size:.88rem;color:#5d7c61;font-weight:600;text-decoration:none;}
+    .lp-hero{background:linear-gradient(135deg,#4e7dca 0%,#6ab4a0 100%);color:#fff;padding:56px 24px 48px;text-align:center;}
+    .lp-hero .lp-badge{display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.5);border-radius:20px;padding:4px 16px;font-size:.82rem;margin-bottom:16px;}
+    .lp-hero h1{font-size:clamp(1.8rem,5vw,2.6rem);font-weight:900;line-height:1.3;margin:0 0 16px;}
+    .lp-hero .lp-sub{font-size:1rem;opacity:.9;margin-bottom:28px;}
+    .lp-hero .lp-features{list-style:none;display:inline-block;text-align:left;margin:0 0 32px;padding:0;font-size:.95rem;}
+    .lp-hero .lp-features li{padding:4px 0;}
+    .lp-hero .lp-features li::before{content:"✓ ";opacity:.8;}
+    .lp-price-block{margin:0 0 24px;}
+    .lp-price{font-size:2rem;font-weight:900;letter-spacing:.02em;}
+    .lp-price small{font-size:1rem;opacity:.8;}
+    .lp-btn{display:inline-block;background:#fff;color:#4e7dca;padding:14px 36px;border-radius:40px;font-weight:800;font-size:1.05rem;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.2);}
+    .lp-btn:hover{background:#f0f7ff;text-decoration:none;}
+    .lp-btn.dark{background:linear-gradient(135deg,#4e7dca,#6ab4a0);color:#fff;margin-top:12px;}
+    .lp-preview-link{display:block;margin-top:16px;font-size:.88rem;opacity:.75;color:#fff;text-decoration:none;}
+    .lp-preview-link:hover{opacity:1;}
+    .lp-legal-section{background:#f9f9f9;border-top:1px solid #ddd;border-bottom:1px solid #ddd;padding:32px 24px;max-width:800px;margin:0 auto;}
+    .lp-legal-section h3{font-size:1rem;font-weight:700;margin:0 0 16px;color:#444;}
+    .lp-legal-section dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:.88rem;color:#555;}
+    .lp-legal-section dt{font-weight:700;color:#333;white-space:nowrap;}
+    .lp-legal-section dd{margin:0;}
+    .lp-legal-section .legal-link{display:block;margin-top:14px;font-size:.82rem;color:#5d7c61;}
+    .lp-preview-section{background:#eef6ff;padding:32px 24px;text-align:center;}
+    .lp-preview-section h2{font-size:1.1rem;font-weight:800;margin:0 0 8px;color:#2d2d2d;}
+    .lp-preview-section p{font-size:.9rem;color:#666;margin:0 0 20px;}
+
     /* ── 印刷 ── */
     @media print {
       body { background: white; }
-      .nav, .add-btn, .icon-picker, .coping, .priority-tags, .hint-list { display: none !important; }
+      .lp-topbar, .lp-hero, .lp-legal-section, .lp-preview-section, .nav, .add-btn, .icon-picker, .coping, .priority-tags, .hint-list { display: none !important; }
       .sheet { box-shadow: none; border-radius: 0; margin: 0; border: 1px solid #ddd; }
       .cover { min-height: auto; padding: 40px 20px; }
     }
@@ -487,6 +516,62 @@
   <meta name="twitter:image" content="https://manabinomorikyouikuken.github.io/manabinomori-website/assets/ogp.png">
 </head>
 <body>
+
+<!-- LP：ナビバー -->
+<header class="lp-topbar">
+  <div class="brand">まなびの森教育研究所</div>
+  <a href="../index.html#column">← コラム一覧へ</a>
+</header>
+
+<!-- LP：ヒーロー -->
+<div class="lp-hero">
+  <div class="lp-badge">保護者・支援員のための実践ツール</div>
+  <h1>家庭でできる！<br>発達支援ワークシート集</h1>
+  <p class="lp-sub">ダウンロードしてすぐ使えるPDF形式・全5シート</p>
+  <ul class="lp-features">
+    <li>子どもの得意・苦手を発見する記録シート</li>
+    <li>視覚支援付き1日のスケジュール表</li>
+    <li>気持ちの温度計・ほめ記録シートほか全5種</li>
+    <li>TEACCH・ABA・SEL等の国際標準理論に基づいて作成</li>
+    <li>専門知識がなくても今日から使える設計</li>
+  </ul>
+  <div class="lp-price-block">
+    <div class="lp-price">¥1,980 <small>（税込）</small></div>
+  </div>
+  <a class="lp-btn" href="https://buy.stripe.com/cNi4gy85yaQ15iEaQ18Vi06" target="_blank" rel="noopener noreferrer">今すぐ購入する</a>
+  <a href="#preview" class="lp-preview-link">↓ 中身を見てから購入する</a>
+</div>
+
+<!-- LP：特定商取引法記載 -->
+<div style="max-width:800px;margin:0 auto;">
+<div class="lp-legal-section">
+  <h3>📋 購入前にご確認ください</h3>
+  <dl>
+    <dt>販売者</dt>
+    <dd>合同会社まなびの森教育研究所（代表：小野 智広）</dd>
+    <dt>所在地</dt>
+    <dd>千葉県千葉市美浜区幸町２−１６−１３−５０５</dd>
+    <dt>価格</dt>
+    <dd>¥1,980（税込）</dd>
+    <dt>支払方法</dt>
+    <dd>クレジットカード（Stripe決済）</dd>
+    <dt>商品の引渡し</dt>
+    <dd>決済完了後、入力されたメールアドレスへ原則3営業日以内にPDF・ダウンロード方法をご案内します</dd>
+    <dt>返品・キャンセル</dt>
+    <dd>デジタル商品の性質上、お客様都合によるキャンセル・返金は原則お受けできません。重複決済・ファイル破損等、弊社都合による場合はご対応いたします</dd>
+    <dt>お問い合わせ</dt>
+    <dd><a href="mailto:manabinomorikyouikuken@gmail.com">manabinomorikyouikuken@gmail.com</a></dd>
+  </dl>
+  <a class="legal-link" href="../legal.html">特定商取引法に基づく表記（全文）→</a>
+</div>
+</div>
+
+<!-- LP：プレビュー見出し -->
+<div class="lp-preview-section" id="preview">
+  <h2>📄 教材プレビュー（全5シート）</h2>
+  <p>下記は購入後にお届けするワークシートの全内容です。実際に入力・印刷してご利用いただけます。</p>
+  <a class="lp-btn dark" href="https://buy.stripe.com/cNi4gy85yaQ15iEaQ18Vi06" target="_blank" rel="noopener noreferrer">今すぐ購入する ¥1,980</a>
+</div>
 
 <!-- 表紙 -->
 <div class="cover">
