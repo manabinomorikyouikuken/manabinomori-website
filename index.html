@@ -139,7 +139,16 @@
       margin:0 0 12px;font-size:clamp(1.72rem,3.4vw,2.55rem);line-height:1.34;letter-spacing:.01em;
     }
     .hero-lead{
-      font-size:1.08rem;color:var(--sub);margin:0 0 22px;
+      font-size:1.08rem;color:var(--sub);margin:0 0 14px;
+    }
+    .hero-usecase{
+      margin:0 0 22px;
+      padding:14px 16px;
+      border-left:4px solid var(--accent);
+      background:#f4f7f3;
+      color:#314534;
+      border-radius:12px;
+      font-weight:700;
     }
     .chips{
       display:flex;gap:10px;flex-wrap:wrap;margin:0 0 24px;padding:0;list-style:none;
@@ -291,17 +300,22 @@
       .wrap{padding:0 24px}
       .foot{padding-top:24px;padding-bottom:60px}
       .topbar-inner{align-items:flex-start;flex-direction:column}
-      nav ul{justify-content:flex-start}
+      .brand small{font-size:.68rem;letter-spacing:.015em;white-space:nowrap}
+      nav ul{justify-content:flex-start;gap:8px;flex-wrap:nowrap}
+      nav a{font-size:.82rem;white-space:nowrap}
       .hero{padding-top:34px}
       .hero-main{padding:24px 20px}
       .hero-side{padding:20px}
       .eyebrow-stacked{
-        width:min(100%,300px);margin-left:auto;margin-right:auto;
+        width:min(100%,360px);margin-left:auto;margin-right:auto;
       }
       .chips{justify-content:center}
       .chips li{text-align:center}
       .chips .chip-stacked{
         width:min(100%,300px);margin-left:auto;margin-right:auto;text-align:left;
+      }
+      .chip-singleline{
+        white-space:nowrap;font-size:.9rem;
       }
       .hero-main > .cta-row{
         justify-content:center;
@@ -359,17 +373,10 @@
       </div>
       <nav aria-label="ページ内メニュー">
         <ul>
-          <li><a href="#about">私たちについて</a></li>
-          <li><a href="#news">お知らせ</a></li>
-          <li><a href="#services">事業内容</a></li>
           <li><a href="services.html">研修・相談</a></li>
-          <li><a href="research-notes.html">研究ノート</a></li>
-          <li><a href="#flow">ご依頼の流れ</a></li>
           <li><a href="#product">教材販売</a></li>
-          <li><a href="#tools">無料ツール</a></li>
           <li><a href="#column">コラム</a></li>
           <li><a href="#profile">代表者</a></li>
-          <li><a href="#company">会社概要</a></li>
           <li><a href="#contact">お問い合わせ</a></li>
         </ul>
       </nav>
@@ -387,13 +394,15 @@
       <div class="wrap hero-grid">
         <div class="hero-main">
           <div class="eyebrow eyebrow-stacked">
-            <span class="chip-label">一番の強み</span>
-            <span class="chip-text">特別支援教育<br>29年の実務経験</span>
+            <span class="chip-text chip-singleline">特別支援教育の現場経験をもとに</span>
           </div>
           <h1>困り感を、支援と学びの言葉に整える。</h1>
           <p class="hero-lead">
-            合同会社まなびの森教育研究所は、特別支援学校、特別支援学級、通常学級、通級の現場経験をもとに、
-            子ども・保護者・教員のあいだで伝わりにくい困り感を整理し、相談・研修・教材づくりにつなげる小さな教育会社です。
+            合同会社まなびの森教育研究所は、特別支援教育29年の実務経験をもとに、子ども・保護者・教員のあいだにある困り感を整理します。
+            相談、研修、教材づくりを通して、現場で使える支援と学びの形に整えます。
+          </p>
+          <p class="hero-usecase">
+            学校との相談、合理的配慮、不登校・登校しぶり、特別支援学級の運営で悩んだときに、状況を一緒に整理します。
           </p>
           <ul class="chips">
             <li>代表：特別支援教育29年</li>
@@ -413,20 +422,16 @@
           <h2>まなびの森の強み</h2>
           <ul class="checklist">
             <li>
-              <strong>現場で使える言葉にする</strong>
-              <span>制度や専門用語を、学校・家庭で共有しやすい言葉に整理します。</span>
+              <strong>制度を現場の言葉にする</strong>
+              <span>専門用語を、学校・家庭で共有しやすい言葉に整えます。</span>
             </li>
             <li>
               <strong>子どもや家庭を責めない</strong>
-              <span>困り感と支援ニーズを分け、次にできる工夫を一緒に考えます。</span>
+              <span>困り感と支援ニーズを分け、次にできる工夫を考えます。</span>
             </li>
             <li>
-              <strong>学校と家庭の間をつなぐ</strong>
-              <span>保護者相談、校内研修、合理的配慮、情報共有の進め方を整理します。</span>
-            </li>
-            <li>
-              <strong>相談・研修・教材を一体で整える</strong>
-              <span>話して終わりではなく、後から見返せる資料や教材にも落とし込みます。</span>
+              <strong>相談・研修・教材までつなげる</strong>
+              <span>話して終わりにせず、見返せる資料や教材にも落とし込みます。</span>
             </li>
           </ul>
         </aside>
