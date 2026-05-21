@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /boki3/boki3_mondaishu.zip
+Disallow: /boki3_en/boki3_en_mondaishu.zip
 
 Sitemap: https://manabinomorikyouikuken.github.io/manabinomori-website/sitemap.xml
