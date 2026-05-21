@@ -92,15 +92,22 @@
       font-size: 1rem;
       letter-spacing: .02em;
       color: var(--ink);
+      flex: 1 1 auto;
+      min-width: 0;
     }
 
     .brand small {
       display: block;
       font-weight: 600;
       color: var(--sub);
-      font-size: .78rem;
-      letter-spacing: .04em;
+      font-size: clamp(.68rem, .95vw, .78rem);
+      letter-spacing: .02em;
       margin-top: 2px;
+      white-space: nowrap;
+    }
+
+    nav {
+      flex: 0 0 auto;
     }
 
     nav ul {
@@ -108,15 +115,17 @@
       margin: 0;
       padding: 0;
       display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
+      gap: clamp(10px, 1.3vw, 14px);
+      flex-wrap: nowrap;
       justify-content: flex-end;
+      align-items: center;
     }
 
     nav a {
       color: var(--sub);
-      font-size: .95rem;
+      font-size: clamp(.82rem, 1vw, .95rem);
       font-weight: 700;
+      white-space: nowrap;
     }
 
     .hero {
