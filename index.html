@@ -321,14 +321,16 @@
       .wrap{padding:0 24px}
       .foot{padding-top:24px;padding-bottom:60px}
       .topbar-inner{align-items:flex-start;flex-direction:column}
-      .brand small{font-size:.68rem;letter-spacing:.015em;white-space:nowrap}
-      nav ul{justify-content:flex-start;gap:8px;flex-wrap:nowrap}
+      .brand small{font-size:.68rem;letter-spacing:.015em;white-space:normal;line-height:1.4}
+      nav{width:100%}
+      nav ul{justify-content:flex-start;gap:8px 12px;flex-wrap:wrap}
       nav a{font-size:.82rem;white-space:nowrap}
       .hero{padding-top:34px}
+      .hero-grid > *{min-width:0}
       .hero-main{padding:24px 20px}
       .hero-side{padding:20px}
       .eyebrow-stacked{
-        width:min(100%,360px);margin-left:auto;margin-right:auto;
+        width:min(100%,360px);margin-left:auto;margin-right:auto;text-align:center;justify-items:center;
       }
       .chips{grid-template-columns:1fr;justify-items:center}
       .chips li{width:min(100%,300px);text-align:center}
@@ -336,7 +338,7 @@
         margin-left:auto;margin-right:auto;text-align:center;
       }
       .chip-singleline{
-        white-space:nowrap;font-size:.9rem;
+        white-space:normal;font-size:.9rem;
       }
       .hero-main > .cta-row{
         justify-content:center;
@@ -826,6 +828,15 @@
             <div class="kicker">生命の安全教育｜保護者向け実践</div>
             <h3 style="margin:0 0 10px;font-size:1.15rem;">わが子を性暴力から守るために<br>障害のある子どもを持つ親が知っておきたいこと</h3>
             <p class="muted" style="margin:0 0 12px;font-size:.92rem;">「同意」をどう伝えるか、学校に何を確認すべきか、被害を疑ったときの初動まで。特別支援教育29年の現場から保護者へ。</p>
+            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
+          </a>
+        </div>
+        <div style="margin-top:12px;"><p class="muted" style="font-size:.9rem;margin:0 0 16px;">【就学相談シリーズ】就学前の不安に、正直に答えます</p></div>
+        <div class="subgrid">
+          <a href="tokushi/shugaku-sodan-01.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
+            <div class="kicker">就学相談シリーズ①</div>
+            <h3 style="margin:0 0 10px;font-size:1.15rem;">就学相談を前に立ち止まっているあなたへ<br>相談と決定は違います</h3>
+            <p class="muted" style="margin:0 0 12px;font-size:.92rem;">「受けたら特別支援に決まる」は誤解です。希望が通らなかった経験がある方にも、制度の実態を正直にお伝えします。</p>
             <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
           </a>
         </div>
