@@ -509,13 +509,18 @@
       .brand small {
         font-size: .68rem;
         letter-spacing: .015em;
-        white-space: nowrap;
+        white-space: normal;
+        line-height: 1.4;
+      }
+
+      nav {
+        width: 100%;
       }
 
       nav ul {
         justify-content: flex-start;
-        gap: 8px;
-        flex-wrap: nowrap;
+        gap: 8px 12px;
+        flex-wrap: wrap;
       }
 
       nav a {
