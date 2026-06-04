@@ -304,6 +304,39 @@
     .subgrid{
       display:grid;grid-template-columns:1fr 1fr;gap:18px;
     }
+    .column-feature-grid{
+      display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin-bottom:18px;
+    }
+    .column-topic-grid{
+      display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;
+    }
+    .column-card,
+    .topic-card{
+      display:block;text-decoration:none;color:inherit;border-radius:18px;
+      transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+    }
+    .column-card:hover,
+    .topic-card:hover{
+      transform:translateY(-2px);text-decoration:none;border-color:#b8d4b8;box-shadow:0 12px 32px rgba(20,40,20,0.13);
+    }
+    .column-card{
+      padding:18px 16px;
+    }
+    .column-card h3,
+    .topic-card h3{
+      margin:0 0 8px;font-size:1.02rem;line-height:1.45;
+    }
+    .column-card p,
+    .topic-card p{
+      margin:0;color:var(--sub);font-size:.88rem;line-height:1.7;
+    }
+    .topic-card{
+      padding:18px 16px;background:#fbfcfa;border:1px solid var(--line);
+    }
+    .column-more{
+      margin-top:18px;padding:22px 20px;background:linear-gradient(135deg,#f5faf3,#fff);
+      border:1px solid #c9dbc7;border-radius:20px;
+    }
     .contact-fields{
       display:grid;grid-template-columns:1fr 1fr;gap:12px;
     }
@@ -324,7 +357,7 @@
       letter-spacing:.04em;text-transform:none;
     }
     @media (max-width: 960px){
-      .hero-grid,.grid-2,.grid-3,.entry-grid,.product,.subgrid{grid-template-columns:1fr}
+      .hero-grid,.grid-2,.grid-3,.entry-grid,.product,.subgrid,.column-feature-grid,.column-topic-grid{grid-template-columns:1fr}
       .flow{grid-template-columns:1fr 1fr}
     }
     @media (max-width: 720px){
@@ -817,169 +850,88 @@
       <div class="wrap">
         <div class="section-head">
           <h2>保護者・先生向けコラム</h2>
-          <p>保護者・支援員の方に向けて、特別支援教育に関する情報をお届けしています。</p>
+          <p>記事が増えてきたため、まず読みたい記事と、困りごと別の入口を整理しました。</p>
         </div>
-        <div class="subgrid">
-          <a href="tokushi/saigai-hinan-support.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">災害時支援｜保護者支援</div>
-            <h3 style="margin:0 0 10px;font-size:1.15rem;">災害時、障害のある子どもはどこへ避難すればよいのか</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.92rem;">避難所、福祉避難所、在宅避難、個別避難計画を、特別支援教育と保護者支援の視点から整理します。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
-          </a>
-          <a href="tokushi/shinro-gakkoumakase.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">進路指導｜保護者支援</div>
-            <h3 style="margin:0 0 10px;font-size:1.15rem;">「学校任せ」で、我が子の将来は決められるのか</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.92rem;">特別支援学校高等部3年生の進路指導を、本人、学校、家庭、福祉、企業の情報共有から考えます。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
-          </a>
-          <a href="tokushi/shougai_juyo.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">保護者向けコラム</div>
-            <h3 style="margin:0 0 10px;font-size:1.15rem;">我が子の診断を受け取った日から<br>就学前に親が向き合う"障害受容"の話</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.92rem;">「障害受容」とは何か。慢性的悲哀モデルを軸に、就学前の保護者が直面する5つの現実と就学相談の仕組みを解説します。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
-          </a>
-          <a href="tokushi/shinro_gaikan.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">保護者向けコラム</div>
-            <h3 style="margin:0 0 10px;font-size:1.15rem;">18歳からの扉<br>特別支援の子の"その後"を、今から親が知っておく理由</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.92rem;">就労移行支援・A型・B型・生活介護・グループホーム――卒業後の進路先を整理し、在学中からできることをお伝えします。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
-          </a>
-          <a href="tokushi/sexual-violence-prevention-for-children-with-disabilities.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">生命の安全教育｜保護者向け実践</div>
-            <h3 style="margin:0 0 10px;font-size:1.15rem;">わが子を性暴力から守るために<br>障害のある子どもを持つ親が知っておきたいこと</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.92rem;">「同意」をどう伝えるか、学校に何を確認すべきか、被害を疑ったときの初動まで。特別支援教育29年の現場から保護者へ。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
-          </a>
+
+        <div style="margin:0 0 12px;">
+          <p class="muted" style="font-size:.92rem;margin:0 0 12px;">まず読むなら、この5本</p>
         </div>
-        <div style="margin-top:12px;"><p class="muted" style="font-size:.9rem;margin:0 0 16px;">【就学相談シリーズ】就学前の不安に、正直に答えます</p></div>
-        <div class="subgrid">
-          <a href="tokushi/shugaku-sodan-01.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">就学相談シリーズ①</div>
-            <h3 style="margin:0 0 10px;font-size:1.15rem;">就学相談を前に立ち止まっているあなたへ<br>相談と決定は違います</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.92rem;">「受けたら特別支援に決まる」は誤解です。希望が通らなかった経験がある方にも、制度の実態を正直にお伝えします。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
+        <div class="column-feature-grid">
+          <a href="tokushi/shugaku-sodan-01.html" class="panel column-card">
+            <div class="kicker">就学相談</div>
+            <h3>相談と決定は違います</h3>
+            <p>就学相談を前に立ち止まっている方へ。</p>
           </a>
-          <a href="tokushi/shugaku-sodan-02.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">就学相談シリーズ②</div>
-            <h3 style="margin:0 0 10px;font-size:1.15rem;">4つの学びの場とは？<br>通常学級・通級・特別支援学級・特別支援学校</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.92rem;">どこが正解かではなく、今のお子さんが安心して学ぶために、4つの学びの場を整理します。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
+          <a href="tokushi/shougai_juyo.html" class="panel column-card">
+            <div class="kicker">障害理解</div>
+            <h3>診断を受け取った日から</h3>
+            <p>障害受容と就学前の不安を整理します。</p>
+          </a>
+          <a href="tokushi/shinro-gakkoumakase.html" class="panel column-card">
+            <div class="kicker">進路</div>
+            <h3>学校任せでよいのか</h3>
+            <p>卒業後の進路を家庭・学校・福祉で考えます。</p>
+          </a>
+          <a href="tokushi/saigai-hinan-support.html" class="panel column-card">
+            <div class="kicker">災害時支援</div>
+            <h3>どこへ避難すればよいのか</h3>
+            <p>避難所、福祉避難所、個別避難計画を整理します。</p>
+          </a>
+          <a href="tokushi/sexual-violence-prevention-for-children-with-disabilities.html" class="panel column-card">
+            <div class="kicker">安全・性教育</div>
+            <h3>わが子を性暴力から守る</h3>
+            <p>家庭と学校で確認したい視点をまとめます。</p>
           </a>
         </div>
-        <div style="margin-top:12px;"><p class="muted" style="font-size:.9rem;margin:0 0 16px;">【障害種別シリーズ】発達障害をひとつずつ正確に知る</p></div>
-        <div class="subgrid">
-          <a href="tokushi/adhd.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">障害種別シリーズ</div>
-            <h3 style="margin:0 0 10px;font-size:1.1rem;">ADHDって何？<br>「やる気がない」じゃなくて「脳の特性」だった</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.9rem;">前頭前野の機能とドーパミン系の違いから、ADHDの脳の仕組みをわかりやすく解説します。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
+
+        <div style="margin:18px 0 12px;">
+          <p class="muted" style="font-size:.92rem;margin:0;">いま気になっていることから探す</p>
+        </div>
+        <div class="column-topic-grid">
+          <a href="columns.html#school" class="topic-card">
+            <div class="kicker">就学・学校との相談</div>
+            <h3>就学先や学校との話し合いで迷っている</h3>
+            <p>就学相談、通級、合理的配慮、学びの場を整理します。</p>
           </a>
-          <a href="tokushi/asd.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">障害種別シリーズ</div>
-            <h3 style="margin:0 0 10px;font-size:1.1rem;">ASD（自閉スペクトラム症）って何？<br>「空気が読めない」の本当の理由</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.9rem;">心の理論・サリーアン課題から、「空気を読む」という複雑な処理を解説します。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
+          <a href="columns.html#understanding" class="topic-card">
+            <div class="kicker">発達特性・障害理解</div>
+            <h3>診断や子どもの特性を理解したい</h3>
+            <p>ADHD、ASD、LD、DCD、グレーゾーンなどを確認できます。</p>
           </a>
-          <a href="tokushi/ld.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">障害種別シリーズ</div>
-            <h3 style="margin:0 0 10px;font-size:1.1rem;">学習障害（LD）って何？<br>勉強が苦手なのは頭が悪いからじゃない</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.9rem;">ディスレクシア・ディスグラフィア・ディスカリキュリアの3タイプと支援を解説します。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
+          <a href="columns.html#support" class="topic-card">
+            <div class="kicker">家庭と支援の工夫</div>
+            <h3>家庭や支援場面でできることを探したい</h3>
+            <p>放課後等デイ、TEACCH、ABA、SELなどの入口です。</p>
           </a>
-          <a href="tokushi/dcd.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">障害種別シリーズ</div>
-            <h3 style="margin:0 0 10px;font-size:1.1rem;">DCD（発達性協調運動症）って何？<br>不器用な子が抱える見えにくい困難</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.9rem;">認知度が低いDCDの特徴・合併率・自己肯定感への影響を解説します。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
+          <a href="columns.html#safety" class="topic-card">
+            <div class="kicker">安全・災害</div>
+            <h3>災害や性被害への備えが心配</h3>
+            <p>平時から考えておきたい安全面の支援をまとめています。</p>
+          </a>
+          <a href="columns.html#systems" class="topic-card">
+            <div class="kicker">制度・サービス</div>
+            <h3>手帳、手当、療育サービスを確認したい</h3>
+            <p>申請や相談先を、保護者目線で整理します。</p>
+          </a>
+          <a href="columns.html#career" class="topic-card">
+            <div class="kicker">進路・卒業後</div>
+            <h3>18歳以降や卒業後の見通しを持ちたい</h3>
+            <p>高等部卒業後の支援や進路選択を考えます。</p>
           </a>
         </div>
-        <div style="margin-top:12px;"><p class="muted" style="font-size:.9rem;margin:0 0 16px;">【特別支援学校シリーズ】</p></div>
-        <div class="subgrid">
-          <a href="tokushi/kakukyouka_awaseta.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">特別支援学校シリーズ</div>
-            <h3 style="margin:0 0 10px;font-size:1.1rem;">各教科等を合わせた指導って何？<br>特別支援学校ならではの学び方の特徴と良さ</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.9rem;">日常生活の指導・遊びの指導・生活単元学習・作業学習の4形態と生活中心教育との関係を解説。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
-          </a>
-          <a href="tokushi/seikatsu_chusin.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">特別支援学校シリーズ</div>
-            <h3 style="margin:0 0 10px;font-size:1.1rem;">特別支援教育は、教科だけじゃない。<br>「各教科等を合わせた指導」が問い直す学びの本質</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.9rem;">生活中心教育とは何か。糸賀一雄の思想から2017年学習指導要領改訂まで、その哲学的背景を解説。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
-          </a>
+
+        <div class="column-more">
+          <div class="kicker">全コラム一覧</div>
+          <h3 style="margin:0 0 10px;font-size:1.18rem;">記事をテーマ別にまとめました</h3>
+          <p class="muted" style="margin:0 0 14px;font-size:.94rem;">
+            すべての記事を並べて読む場合は、コラム一覧ページから確認できます。
+            これから記事が増えても、トップページは探しやすい入口として使えるようにしています。
+          </p>
+          <div class="cta-row">
+            <a class="btn secondary" href="columns.html">コラム一覧を見る</a>
+          </div>
         </div>
-        <div style="margin-top:12px;"><p class="muted" style="font-size:.9rem;margin:0 0 16px;">【保護者向け実践・支援手法シリーズ】</p></div>
-        <div class="subgrid">
-          <a href="tokushi/goriteki_hairyo.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">保護者向け実践</div>
-            <h3 style="margin:0 0 10px;font-size:1.1rem;">合理的配慮ってどう頼む？<br>学校への上手な申請方法</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.9rem;">2024年から私立学校も義務化。申請手順・配慮例・伝え方のコツ。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
-          </a>
-          <a href="tokushi/tsukyu_shien.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">保護者向け実践</div>
-            <h3 style="margin:0 0 10px;font-size:1.1rem;">通級・支援学級・特別支援学校<br>違いと子どもに合った選び方</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.9rem;">3制度の比較表と就学先の選び方。在籍変更の方法も解説。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
-          </a>
-          <a href="tokushi/houkago_day.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">保護者向け実践</div>
-            <h3 style="margin:0 0 10px;font-size:1.1rem;">放課後等デイサービスとは？<br>利用方法・費用・選び方</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.9rem;">非課税世帯は0円。申請手順・2024年改定・事業所の選び方。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
-          </a>
-          <a href="tokushi/teacch.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">支援手法シリーズ</div>
-            <h3 style="margin:0 0 10px;font-size:1.1rem;">TEACCHって何？<br>環境を整えるだけで子どもが変わる</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.9rem;">構造化の4要素と家庭で今日からできる実践方法。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
-          </a>
-          <a href="tokushi/aba.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">支援手法シリーズ</div>
-            <h3 style="margin:0 0 10px;font-size:1.1rem;">ABAって何？<br>行動を「ほめて伸ばす」科学的な支援法</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.9rem;">強化・消去・プロンプトの基本とDTT・NATの違いを解説。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
-          </a>
-          <a href="tokushi/sel.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">支援手法シリーズ</div>
-            <h3 style="margin:0 0 10px;font-size:1.1rem;">SELって何？<br>感情を学ぶ授業が広がっている理由</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.9rem;">5つのコアコンピテンシーと家庭でできるSEL実践。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
-          </a>
-        </div>
-        <div style="margin-top:12px;"><p class="muted" style="font-size:.9rem;margin:0 0 16px;">【保護者向け制度・サービス】手続きと支援サービスを整理する</p></div>
-        <div class="subgrid">
-          <a href="tokushi/ryoiku_techou.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">保護者向け制度</div>
-            <h3 style="margin:0 0 10px;font-size:1.1rem;">療育手帳って何？<br>取得の流れとメリットを整理する</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.9rem;">判定の仕組み・等級・使える支援サービス。手帳を持つかどうか迷っている方へ。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
-          </a>
-          <a href="tokushi/jidou_teate.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">保護者向け制度</div>
-            <h3 style="margin:0 0 10px;font-size:1.1rem;">特別児童扶養手当・障害児福祉手当<br>対象なのに申請していない方へ</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.9rem;">令和8年度の支給額・所得制限・申請窓口。見落としがちな手当を整理します。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
-          </a>
-          <a href="tokushi/jidou_hattatsu.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">保護者向け制度</div>
-            <h3 style="margin:0 0 10px;font-size:1.1rem;">児童発達支援とは？<br>就学前の療育・どこに相談すればいいか</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.9rem;">相談窓口・通所のしかた・費用。「何もしていない」と感じている方へ。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
-          </a>
-          <a href="tokushi/gray_zone.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">保護者向け実践</div>
-            <h3 style="margin:0 0 10px;font-size:1.1rem;">「グレーゾーン」って何？<br>診断がなくても支援は受けられます</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.9rem;">診断なしで使える支援・相談先・学校への伝え方。「様子を見ましょう」と言われた方へ。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
-          </a>
-          <a href="tokushi/nijishogai.html" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
-            <div class="kicker">保護者向け実践</div>
-            <h3 style="margin:0 0 10px;font-size:1.1rem;">二次障害とは？<br>不登校・うつ・引きこもりになる前にできること</h3>
-            <p class="muted" style="margin:0 0 12px;font-size:.9rem;">二次障害のサインチェックリストと早期対応の方法を解説します。</p>
-            <span style="color:#285d39;font-weight:700;font-size:.9rem;">記事を読む →</span>
-          </a>
-        </div>
+
         <div class="panel" style="margin-top:18px;background:linear-gradient(135deg,#f5faf3,#fff);border:1px solid #c9dbc7;">
           <div class="kicker">記事を読んだ後の相談・教材導線</div>
           <h3 style="margin:0 0 10px;font-size:1.18rem;">個別の状況を整理したい方へ</h3>
