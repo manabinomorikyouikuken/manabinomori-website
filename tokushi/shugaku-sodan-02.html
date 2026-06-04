@@ -51,7 +51,22 @@
     .footer-nav a{color:var(--sub);font-size:.9rem;margin:0 12px;}
     .article-date{max-width:var(--max);margin:0 auto;padding:0 24px 40px;text-align:right;font-size:.82rem;color:#8a9e8c;}
     .manabi-ref{font-size:.92em;color:#444;}
-    @media(max-width:640px){.article-body{padding:32px 20px 60px;}.manabi-article{font-size:15.5px;line-height:1.85;}.manabi-article h2{font-size:1.15rem;}.place-grid{grid-template-columns:1fr;}.footer-nav a{display:block;margin:8px 0;}}
+    @media(max-width:640px){
+      .article-body{padding:32px 20px 60px;}
+      .manabi-article{font-size:15.5px;line-height:1.85;}
+      .manabi-article h2{font-size:1.15rem;}
+      .place-grid{grid-template-columns:1fr;}
+      .compare-wrap{overflow:visible;margin:1.6em 0;border:0;background:transparent;border-radius:0;}
+      .compare-table{min-width:0;border-collapse:separate;border-spacing:0;width:100%;font-size:.9rem;}
+      .compare-table tr:first-child{display:none;}
+      .compare-table tr{display:block;margin:0 0 14px;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 8px 20px rgba(55,45,30,0.06);}
+      .compare-table td{display:grid;grid-template-columns:7.5em 1fr;gap:8px;border:0;border-bottom:1px solid var(--line);padding:10px 12px;}
+      .compare-table td::before{content:attr(data-label);font-weight:800;color:#35553a;}
+      .compare-table td:first-child{display:block;background:#eef3ed;font-weight:800;color:#35553a;}
+      .compare-table td:first-child::before{content:"";display:none;}
+      .compare-table td:last-child{border-bottom:0;}
+      .footer-nav a{display:block;margin:8px 0;}
+    }
   </style>
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MRXYRR7DF7"></script>
@@ -149,10 +164,10 @@
 <div class="compare-wrap">
 <table class="compare-table">
   <tr><th>学びの場</th><th>在籍の考え方</th><th>支援の特徴</th><th>考えるときの視点</th></tr>
-  <tr><td><strong>通常学級</strong></td><td>通常学級に在籍</td><td>担任・校内支援・合理的配慮で学びやすさを整える</td><td>集団の中で参加できているか。必要な配慮が具体化できるか。</td></tr>
-  <tr><td><strong>通級指導教室</strong></td><td>通常学級に在籍し、一部の時間だけ通級</td><td>学習面・生活面の困り感に合わせた個別または小集団の指導</td><td>通常学級での学びを土台にしながら、追加の支援が必要か。</td></tr>
-  <tr><td><strong>特別支援学級</strong></td><td>特別支援学級に在籍</td><td>少人数で、学習内容・時間・環境を調整しやすい</td><td>日常的に支援を受けながら学ぶ方が安心しやすいか。</td></tr>
-  <tr><td><strong>特別支援学校</strong></td><td>特別支援学校に在籍</td><td>障害の状態に応じた専門的な教育課程・環境・支援体制</td><td>安全面、健康面、コミュニケーション、生活面も含めた専門的支援が必要か。</td></tr>
+  <tr><td data-label="学びの場"><strong>通常学級</strong></td><td data-label="在籍の考え方">通常学級に在籍</td><td data-label="支援の特徴">担任・校内支援・合理的配慮で学びやすさを整える</td><td data-label="考えるときの視点">集団の中で参加できているか。必要な配慮が具体化できるか。</td></tr>
+  <tr><td data-label="学びの場"><strong>通級指導教室</strong></td><td data-label="在籍の考え方">通常学級に在籍し、一部の時間だけ通級</td><td data-label="支援の特徴">学習面・生活面の困り感に合わせた個別または小集団の指導</td><td data-label="考えるときの視点">通常学級での学びを土台にしながら、追加の支援が必要か。</td></tr>
+  <tr><td data-label="学びの場"><strong>特別支援学級</strong></td><td data-label="在籍の考え方">特別支援学級に在籍</td><td data-label="支援の特徴">少人数で、学習内容・時間・環境を調整しやすい</td><td data-label="考えるときの視点">日常的に支援を受けながら学ぶ方が安心しやすいか。</td></tr>
+  <tr><td data-label="学びの場"><strong>特別支援学校</strong></td><td data-label="在籍の考え方">特別支援学校に在籍</td><td data-label="支援の特徴">障害の状態に応じた専門的な教育課程・環境・支援体制</td><td data-label="考えるときの視点">安全面、健康面、コミュニケーション、生活面も含めた専門的支援が必要か。</td></tr>
 </table>
 </div>
 

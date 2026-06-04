@@ -17,19 +17,25 @@
     .hero-article h1{margin:0 0 16px;font-size:clamp(1.4rem,4vw,2rem);line-height:1.4;font-weight:800;}
     .hero-article .meta{font-size:.85rem;opacity:.8;}
     .article-body{max-width:var(--max);margin:0 auto;padding:40px 24px 80px;}
+    .column-eyecatch{margin:0 0 2em;}
+    .column-eyecatch picture{display:block;}
+    .column-eyecatch img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--line);background:#fff;}
     .article-body h2{font-size:1.2rem;font-weight:800;color:var(--accent);border-left:4px solid var(--accent);padding-left:14px;margin:48px 0 16px;}
     .article-body h3{font-size:1.05rem;font-weight:700;margin:28px 0 10px;}
     .article-body p{margin:0 0 18px;}
     .article-body ul{padding-left:1.4em;margin:0 0 18px;}
     .article-body li{margin-bottom:6px;}
     .article-body strong{color:var(--ink);}
-    .article-body table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.92rem;}
-    .article-body th{background:#eef3ed;padding:10px 12px;text-align:left;border:1px solid var(--line);font-weight:700;}
-    .article-body td{padding:10px 12px;border:1px solid var(--line);}
+    .article-body table{width:100%;max-width:680px;border-collapse:separate;border-spacing:0;margin:26px auto 34px;font-size:.92rem;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 10px 24px rgba(55,45,30,0.06);}
+    .article-body th{background:#eef3ed;padding:12px 14px;text-align:center;border-right:1px solid var(--line);border-bottom:1px solid var(--line);font-weight:700;}
+    .article-body td{padding:12px 14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);vertical-align:middle;}
+    .article-body th:last-child,.article-body td:last-child{border-right:none;}
+    .article-body tr:last-child td{border-bottom:none;}
+    .article-body td:first-child{text-align:center;}
     .point-box{background:#f0f7f0;border-left:4px solid var(--accent);padding:16px 20px;border-radius:0 12px 12px 0;margin:24px 0;}
-    .abc-box{background:#fff;border:2px solid var(--accent);border-radius:14px;padding:18px 20px;margin:24px 0;text-align:center;}
+    .abc-box{max-width:620px;background:#fff;border:2px solid var(--accent);border-radius:14px;padding:22px 24px;margin:28px auto;text-align:center;box-shadow:0 12px 28px rgba(55,45,30,0.08);}
     .abc-box .abc-flow{display:flex;justify-content:center;align-items:center;gap:10px;font-size:1.1rem;font-weight:700;flex-wrap:wrap;}
-    .abc-box .abc-item{background:#eef3ed;border-radius:10px;padding:8px 16px;}
+    .abc-box .abc-item{background:#eef3ed;border-radius:10px;padding:10px 18px;min-width:136px;}
     .abc-box .abc-arrow{color:var(--accent);font-size:1.4rem;}
     .cta-box{background:#eef3ed;border-radius:16px;padding:28px 24px;margin:48px 0;text-align:center;}
     .cta-box p{margin:0 0 16px;font-size:.95rem;}
@@ -43,7 +49,17 @@
     .keyword-box dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:.92rem;}
     .keyword-box dt{font-weight:700;color:#1f2a1f;white-space:nowrap;}
     .keyword-box dd{margin:0;color:#3a4a5a;}
-    @media(max-width:640px){.article-body{padding:32px 20px 60px;}.keyword-box dl{grid-template-columns:1fr;}}
+    @media(max-width:640px){
+      .article-body{padding:32px 20px 60px;}
+      .keyword-box dl{grid-template-columns:1fr;}
+      .abc-box{padding:20px 16px;margin:26px auto;}
+      .abc-box .abc-flow{flex-direction:column;gap:8px;font-size:1rem;}
+      .abc-box .abc-item{width:min(100%,180px);min-width:0;}
+      .abc-box .abc-arrow{line-height:1;transform:rotate(90deg);}
+      .article-body table{font-size:.86rem;margin:24px auto 32px;table-layout:fixed;}
+      .article-body th,.article-body td{padding:10px 9px;}
+      .article-body th:first-child,.article-body td:first-child{width:24%;}
+    }
   </style>
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MRXYRR7DF7"></script>
@@ -58,13 +74,13 @@
   <meta property="og:url" content="https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/aba.html">
   <meta property="og:title" content="ABAって何？行動を理解して支える考え方 | まなびの森教育研究所">
   <meta property="og:description" content="ABA（応用行動分析）の基本概念（強化・消去・プロンプト）と、DTT・NETの違い、家庭でできる実践方法を保護者向けにわかりやすく解説します。">
-  <meta property="og:image" content="https://manabinomorikyouikuken.github.io/manabinomori-website/assets/ogp.webp">
+  <meta property="og:image" content="https://manabinomorikyouikuken.github.io/manabinomori-website/assets/images/columns/aba.webp">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="合同会社まなびの森教育研究所">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ABAって何？行動を理解して支える考え方 | まなびの森教育研究所">
   <meta name="twitter:description" content="ABA（応用行動分析）の基本概念（強化・消去・プロンプト）と、DTT・NETの違い、家庭でできる実践方法を保護者向けにわかりやすく解説します。">
-  <meta name="twitter:image" content="https://manabinomorikyouikuken.github.io/manabinomori-website/assets/ogp.webp">
+  <meta name="twitter:image" content="https://manabinomorikyouikuken.github.io/manabinomori-website/assets/images/columns/aba.webp">
   <script src="../assets/analytics-events.js" defer></script>
 </head>
 <body>
@@ -78,6 +94,19 @@
   <div class="meta">合同会社まなびの森教育研究所 編集部</div>
 </div>
 <div class="article-body">
+<figure class="column-eyecatch">
+  <picture>
+    <source srcset="../assets/images/columns/aba.webp" type="image/webp">
+    <img
+      src="../assets/images/columns/aba.webp"
+      width="1672"
+      height="941"
+      alt="明るい家庭の部屋を背景にABAって何？と書かれたアイキャッチ画像"
+      loading="eager"
+      decoding="async"
+    >
+  </picture>
+</figure>
 
 <div class="keyword-box">
   <h3>📖 知っておくと読みやすくなる言葉</h3>
