@@ -509,14 +509,9 @@
     .lp-hero .lp-features{list-style:none;display:inline-block;text-align:left;margin:0 0 32px;padding:0;font-size:.95rem;}
     .lp-hero .lp-features li{padding:4px 0;}
     .lp-hero .lp-features li::before{content:"✓ ";opacity:.8;}
-    .lp-price-block{margin:0 0 24px;}
-    .lp-price{font-size:2rem;font-weight:900;letter-spacing:.02em;}
-    .lp-price small{font-size:1rem;opacity:.8;}
     .lp-btn{display:inline-block;max-width:100%;background:#fff;color:#4e7dca;padding:14px 36px;border-radius:40px;font-weight:800;font-size:1.05rem;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.2);text-align:center;}
     .lp-btn:hover{background:#f0f7ff;text-decoration:none;}
     .lp-btn.dark{background:linear-gradient(135deg,#4e7dca,#6ab4a0);color:#fff;margin-top:12px;}
-    .lp-preview-link{display:block;margin-top:16px;font-size:.88rem;opacity:.75;color:#fff;text-decoration:none;}
-    .lp-preview-link:hover{opacity:1;}
     .lp-legal-section{background:#f9f9f9;border-top:1px solid #ddd;border-bottom:1px solid #ddd;padding:32px 24px;max-width:800px;margin:0 auto;}
     .lp-legal-section h3{font-size:1rem;font-weight:700;margin:0 0 16px;color:#444;}
     .lp-legal-section dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:.88rem;color:#555;}
@@ -613,7 +608,6 @@
       .lp-hero h1 { font-size: 1.72rem; }
       .lp-hero .lp-lead { font-size: .92rem; }
       .lp-hero .lp-features { font-size: .9rem; }
-      .lp-price { font-size: clamp(1.45rem, 8vw, 1.7rem); }
       .lp-btn { width: min(100%, 320px); padding: 12px 20px; font-size: .95rem; }
       .lp-legal-section { padding: 24px 16px; }
       .lp-legal-section dl { grid-template-columns: 1fr; gap: 4px 0; }
@@ -724,11 +718,6 @@
     <li>TEACCH・ABA・SEL等の考え方を参考に作成</li>
     <li>診断・治療ではなく、家庭と学校の情報共有を助ける教材</li>
   </ul>
-  <div class="lp-price-block">
-    <div class="lp-price">¥1,980 <small>（税込）</small></div>
-  </div>
-  <a class="lp-btn" href="https://buy.stripe.com/cNi4gy85yaQ15iEaQ18Vi06" target="_blank" rel="noopener noreferrer">購入する</a>
-  <a href="#preview" class="lp-preview-link">↓ 中身を見てから購入する</a>
 </div>
 
 <!-- LP：特定商取引法記載 -->
@@ -788,7 +777,7 @@
   <a href="#sh3">③ 気持ち温度計</a>
   <a href="#sh4">④ 面談メモ</a>
   <a href="#sh5">⑤ ほめ記録</a>
-  <button class="print-btn" onclick="window.print()">🖨 印刷する</button>
+  <button class="print-btn" type="button">🖨 印刷する</button>
 </nav>
 
 <!-- ── Sheet 1 ── -->
@@ -892,11 +881,11 @@
     </div>
     <div class="thermometer-wrap">
       <div class="thermometer">
-        <div class="temp-level temp-5" onclick="selectTemp(this,5)"><span class="face">🔥</span><span class="label">爆発しそう</span></div>
-        <div class="temp-level temp-4" onclick="selectTemp(this,4)"><span class="face">😠</span><span class="label">すごくイライラ</span></div>
-        <div class="temp-level temp-3" onclick="selectTemp(this,3)"><span class="face">😐</span><span class="label">ちょっとモヤモヤ</span></div>
-        <div class="temp-level temp-2" onclick="selectTemp(this,2)"><span class="face">😊</span><span class="label">まあまあ</span></div>
-        <div class="temp-level temp-1" onclick="selectTemp(this,1)"><span class="face">😌</span><span class="label">おちついてる</span></div>
+        <div class="temp-level temp-5" data-temp-level="5"><span class="face">🔥</span><span class="label">爆発しそう</span></div>
+        <div class="temp-level temp-4" data-temp-level="4"><span class="face">😠</span><span class="label">すごくイライラ</span></div>
+        <div class="temp-level temp-3" data-temp-level="3"><span class="face">😐</span><span class="label">ちょっとモヤモヤ</span></div>
+        <div class="temp-level temp-2" data-temp-level="2"><span class="face">😊</span><span class="label">まあまあ</span></div>
+        <div class="temp-level temp-1" data-temp-level="1"><span class="face">😌</span><span class="label">おちついてる</span></div>
       </div>
       <div class="temp-right">
         <label>今日の日付</label>
@@ -905,14 +894,14 @@
         <textarea placeholder="例：給食のとき、大きな音がしてパニックになった…"></textarea>
         <label>落ち着くための方法（使えたものを選ぼう）</label>
         <div class="coping">
-          <span class="coping-tag" onclick="toggleCoping(this)">深呼吸</span>
-          <span class="coping-tag" onclick="toggleCoping(this)">その場を離れる</span>
-          <span class="coping-tag" onclick="toggleCoping(this)">好きなものを見る</span>
-          <span class="coping-tag" onclick="toggleCoping(this)">話を聞いてもらう</span>
-          <span class="coping-tag" onclick="toggleCoping(this)">音楽を聴く</span>
-          <span class="coping-tag" onclick="toggleCoping(this)">ぬいぐるみを触る</span>
-          <span class="coping-tag" onclick="toggleCoping(this)">水を飲む</span>
-          <span class="coping-tag" onclick="toggleCoping(this)">トイレで休む</span>
+          <span class="coping-tag">深呼吸</span>
+          <span class="coping-tag">その場を離れる</span>
+          <span class="coping-tag">好きなものを見る</span>
+          <span class="coping-tag">話を聞いてもらう</span>
+          <span class="coping-tag">音楽を聴く</span>
+          <span class="coping-tag">ぬいぐるみを触る</span>
+          <span class="coping-tag">水を飲む</span>
+          <span class="coping-tag">トイレで休む</span>
         </div>
         <label>保護者・支援員からひとこと</label>
         <textarea placeholder="「よく気づけたね」「一緒に考えよう」など…"></textarea>
@@ -1024,31 +1013,31 @@
         <input type="date">
         <textarea placeholder="例：朝、自分でランドセルを準備できた！"></textarea>
         <div class="star-rate">
-          <span onclick="starClick(this)">⭐</span>
-          <span onclick="starClick(this)">⭐</span>
-          <span onclick="starClick(this)">⭐</span>
+          <span>⭐</span>
+          <span>⭐</span>
+          <span>⭐</span>
         </div>
       </div>
       <div class="praise-entry">
         <input type="date">
         <textarea placeholder="例：給食を全部食べられた！"></textarea>
         <div class="star-rate">
-          <span onclick="starClick(this)">⭐</span>
-          <span onclick="starClick(this)">⭐</span>
-          <span onclick="starClick(this)">⭐</span>
+          <span>⭐</span>
+          <span>⭐</span>
+          <span>⭐</span>
         </div>
       </div>
       <div class="praise-entry">
         <input type="date">
         <textarea placeholder="例：友達に「いっしょにあそぼう」と声をかけられた！"></textarea>
         <div class="star-rate">
-          <span onclick="starClick(this)">⭐</span>
-          <span onclick="starClick(this)">⭐</span>
-          <span onclick="starClick(this)">⭐</span>
+          <span>⭐</span>
+          <span>⭐</span>
+          <span>⭐</span>
         </div>
       </div>
     </div>
-    <button class="add-btn" onclick="addPraise()">＋ 記録を追加する</button>
+    <button class="add-btn" type="button">＋ 記録を追加する</button>
   </div>
 </div>
 
@@ -1139,11 +1128,21 @@
   const tbody = document.getElementById('schedule-body');
   times.forEach(t => {
     const tr = document.createElement('tr');
-    tr.innerHTML = `
-      <td>${t}</td>
-      <td class="icon-cell" contenteditable="true" style="outline:none;cursor:pointer;"></td>
-      <td><input type="text" placeholder="　"></td>
-    `;
+    const timeCell = document.createElement('td');
+    const iconCell = document.createElement('td');
+    const taskCell = document.createElement('td');
+    const taskInput = document.createElement('input');
+
+    timeCell.textContent = t;
+    iconCell.className = 'icon-cell';
+    iconCell.contentEditable = 'true';
+    iconCell.style.outline = 'none';
+    iconCell.style.cursor = 'pointer';
+    taskInput.type = 'text';
+    taskInput.placeholder = '　';
+
+    taskCell.appendChild(taskInput);
+    tr.append(timeCell, iconCell, taskCell);
     tbody.appendChild(tr);
   });
 
@@ -1163,18 +1162,36 @@
   function addPraise() {
     const list = document.getElementById('praise-list');
     const entry = document.createElement('div');
+    const dateInput = document.createElement('input');
+    const textarea = document.createElement('textarea');
+    const starRate = document.createElement('div');
+
     entry.className = 'praise-entry';
-    entry.innerHTML = `
-      <input type="date">
-      <textarea placeholder="今日のできた！を書こう…"></textarea>
-      <div class="star-rate">
-        <span onclick="starClick(this)">⭐</span>
-        <span onclick="starClick(this)">⭐</span>
-        <span onclick="starClick(this)">⭐</span>
-      </div>
-    `;
+    dateInput.type = 'date';
+    textarea.placeholder = '今日のできた！を書こう…';
+    starRate.className = 'star-rate';
+
+    for (let i = 0; i < 3; i++) {
+      const star = document.createElement('span');
+      star.textContent = '⭐';
+      starRate.appendChild(star);
+    }
+
+    entry.append(dateInput, textarea, starRate);
     list.appendChild(entry);
   }
+
+  document.querySelector('.print-btn')?.addEventListener('click', () => window.print());
+  document.querySelector('.add-btn')?.addEventListener('click', addPraise);
+  document.querySelectorAll('.temp-level').forEach(el => {
+    el.addEventListener('click', () => selectTemp(el, Number(el.dataset.tempLevel)));
+  });
+  document.querySelectorAll('.coping-tag').forEach(el => {
+    el.addEventListener('click', () => toggleCoping(el));
+  });
+  document.getElementById('praise-list')?.addEventListener('click', event => {
+    if (event.target.matches('.star-rate span')) starClick(event.target);
+  });
 </script>
 </body>
 </html>
