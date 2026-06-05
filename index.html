@@ -191,7 +191,17 @@
       list-style:none;margin:0;padding:0;display:grid;gap:10px;
     }
     .checklist li{
-      background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px;
+      background:#fff;border:1px solid var(--line);border-radius:14px;
+      transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+    }
+    .checklist li:hover{
+      transform:translateY(-1px);border-color:#b8d4b8;box-shadow:0 10px 26px rgba(20,40,20,0.1);
+    }
+    .checklist a{
+      display:block;color:inherit;text-decoration:none;padding:12px 14px;border-radius:14px;
+    }
+    .checklist a:focus-visible{
+      outline:3px solid rgba(99,125,101,.32);outline-offset:3px;
     }
     .checklist strong{display:block;font-size:.98rem}
     .checklist span{display:block;color:var(--sub);font-size:.92rem}
@@ -216,8 +226,25 @@
     .entry-card{
       display:flex;flex-direction:column;gap:12px;
     }
+    .entry-visual{
+      margin:-8px -10px 6px;
+      aspect-ratio:3/2;
+      overflow:hidden;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:#f7faf5;
+    }
+    .entry-visual img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
     .entry-card h3{
-      margin:0;font-size:1.22rem;line-height:1.35;
+      margin:0;font-size:1.22rem;line-height:1.35;text-align:center;
+    }
+    .entry-card .kicker{
+      text-align:center;
     }
     .entry-card p{
       margin:0;color:var(--sub);
@@ -225,6 +252,12 @@
     .entry-note{
       margin-top:auto;padding-top:12px;border-top:1px solid var(--line);
       color:#4f5d52;font-size:.9rem;
+    }
+    .entry-card .cta-row{
+      justify-content:center;
+    }
+    .entry-card .btn{
+      text-align:center;
     }
     .service-card h3{margin:0 0 8px;font-size:1.18rem}
     .service-card p{margin:0 0 12px}
@@ -491,16 +524,22 @@
           <h2>はじめての方へ</h2>
           <ul class="checklist">
             <li>
-              <strong>学校・団体の方</strong>
-              <span>校内研修、講演、相談、支援体制づくりの入口はこちらです。</span>
+              <a href="services.html">
+                <strong>学校・団体の方</strong>
+                <span>校内研修、講演、相談、支援体制づくりの入口はこちらです。</span>
+              </a>
             </li>
             <li>
-              <strong>保護者・先生個人の方</strong>
-              <span>教材、コラム、相談前の整理に使える情報を確認できます。</span>
+              <a href="parents.html">
+                <strong>保護者・先生個人の方</strong>
+                <span>教材、コラム、相談前の整理に使える情報を確認できます。</span>
+              </a>
             </li>
             <li>
-              <strong>研究ノートを読みたい方</strong>
-              <span>相談や教材づくりの背景にある考え方を確認できます。</span>
+              <a href="research-notes.html">
+                <strong>研究ノートを読みたい方</strong>
+                <span>相談や教材づくりの背景にある考え方を確認できます。</span>
+              </a>
             </li>
           </ul>
         </aside>
@@ -516,6 +555,16 @@
 
         <div class="entry-grid">
           <article class="panel entry-card">
+            <figure class="entry-visual">
+              <img
+                src="assets/images/home/entry-parents.webp"
+                width="1536"
+                height="1024"
+                alt="家庭のテーブルで保護者と子どもが相談メモを見ながら困りごとを整理している水彩イラスト"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
             <div class="kicker">保護者の方へ</div>
             <h3>子どもの困り感や学校との相談を、一緒に整理します</h3>
             <p>
@@ -529,6 +578,16 @@
           </article>
 
           <article class="panel entry-card">
+            <figure class="entry-visual">
+              <img
+                src="assets/images/home/entry-training.webp"
+                width="1536"
+                height="1024"
+                alt="先生たちが資料とホワイトボードを見ながら校内研修で支援の方向性を話し合っている水彩イラスト"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
             <div class="kicker">学校・教職員の方へ</div>
             <h3>特別支援教育・不登校支援・合理的配慮の研修、相談に対応します</h3>
             <p>
@@ -541,6 +600,16 @@
           </article>
 
           <article class="panel entry-card">
+            <figure class="entry-visual">
+              <img
+                src="assets/images/home/entry-worksheets.webp"
+                width="1536"
+                height="1024"
+                alt="机の上にワークシートや記録シート、色鉛筆が並んでいる水彩イラスト"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
             <div class="kicker">教材を使いたい方へ</div>
             <h3>特別支援教育の教材・ワークシートを確認できます</h3>
             <p>
@@ -554,6 +623,16 @@
           </article>
 
           <article class="panel entry-card">
+            <figure class="entry-visual">
+              <img
+                src="assets/images/home/entry-research-note.webp"
+                width="1536"
+                height="1024"
+                alt="森の中で開いた研究ノートに記録や付箋が描かれている水彩イラスト"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
             <div class="kicker">AI活用と研究ノート</div>
             <h3>教育とAIの使い方を、現場目線で考える</h3>
             <p>
