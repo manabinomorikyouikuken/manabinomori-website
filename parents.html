@@ -111,10 +111,40 @@
       background:var(--panel);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow);
     }
     .hero-card{
+      position:relative;
+      overflow:hidden;
       padding:34px 32px 30px;
       background:
         radial-gradient(circle at top right, rgba(142,163,140,.16), transparent 34%),
         linear-gradient(180deg,#fff 0%, #fcfdfb 100%);
+    }
+    .hero-card > :not(.hero-illustration){position:relative;z-index:1}
+    .hero-illustration{
+      position:absolute;
+      right:10px;
+      top:18px;
+      z-index:0;
+      width:min(43%,460px);
+      height:calc(100% - 36px);
+      margin:0;
+      opacity:.56;
+      pointer-events:none;
+    }
+    .hero-illustration::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(252,253,251,.96) 0%, rgba(252,253,251,.58) 28%, rgba(252,253,251,0) 58%),
+        linear-gradient(180deg, rgba(252,253,251,.9) 0%, rgba(252,253,251,0) 24%, rgba(252,253,251,.76) 100%),
+        linear-gradient(90deg, rgba(252,253,251,0) 72%, rgba(252,253,251,.82) 100%);
+    }
+    .hero-illustration img{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:right center;
     }
     .eyebrow{
       display:inline-flex;background:var(--soft);color:#35553a;border:1px solid #d6e3d4;
@@ -159,6 +189,7 @@
     @media(max-width:960px){
       .grid-2,.grid-3{grid-template-columns:1fr}
       .flow{grid-template-columns:1fr 1fr}
+      .hero-illustration{width:min(40%,360px);opacity:.48}
     }
     @media(max-width:720px){
       .wrap{padding:0 24px}
@@ -169,6 +200,7 @@
       nav a{font-size:.82rem;white-space:nowrap}
       .hero{padding-top:34px}
       .hero-card,.panel{padding:22px 20px}
+      .hero-illustration{display:none}
       .flow{grid-template-columns:1fr}
       .price-table th,.price-table td{display:block;width:auto}
       .price-table th{border-bottom:none;padding-bottom:4px}
@@ -215,6 +247,16 @@
             <a class="btn primary" href="index.html#contact">相談内容を送る</a>
             <a class="btn secondary" href="#price">料金の目安を見る</a>
           </div>
+          <figure class="hero-illustration" aria-hidden="true">
+            <img
+              src="assets/images/parents/parents-hero-cut.webp"
+              width="1660"
+              height="947"
+              alt=""
+              loading="eager"
+              decoding="async"
+            >
+          </figure>
         </div>
       </div>
     </section>
