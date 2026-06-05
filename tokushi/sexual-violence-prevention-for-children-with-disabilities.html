@@ -18,6 +18,9 @@
     .hero-article .subtitle{font-size:.92rem;opacity:.85;margin:0 0 14px;}
     .hero-article .meta{font-size:.85rem;opacity:.75;}
     .article-body{max-width:var(--max);margin:0 auto;padding:40px 24px 80px;}
+    .column-eyecatch{margin:0 0 2em;}
+    .column-eyecatch picture{display:block;}
+    .column-eyecatch img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--line);background:#fff;}
     .article-body h2{font-size:1.2rem;font-weight:800;color:var(--accent);border-left:4px solid var(--accent);padding-left:14px;margin:48px 0 16px;}
     .article-body h3{font-size:1.05rem;font-weight:700;margin:28px 0 10px;color:#2e3e2e;}
     .article-body p{margin:0 0 18px;}
@@ -88,7 +91,19 @@
 
 <div class="article-body">
 
-  <img src="../assets/taisetuwagako.webp" alt="大切な我が子を守るために、今からできること" style="width:100%;border-radius:12px;margin:0 0 32px;display:block;">
+  <figure class="column-eyecatch">
+    <picture>
+      <source srcset="../assets/taisetuwagako.webp" type="image/webp">
+      <img
+        src="../assets/taisetuwagako.webp"
+        width="1536"
+        height="1024"
+        alt="大切な我が子を守るために、今からできることと書かれたアイキャッチ画像"
+        loading="eager"
+        decoding="async"
+      >
+    </picture>
+  </figure>
 
   <div class="content-warning" role="note" aria-label="注意書き">
     <p>※本稿では、性暴力・性犯罪に関する内容を扱います。具体的な描写を目的とするものではなく、保護者・支援者・教育者向けの予防・啓発の観点から論じます。被害経験のある方は、無理に読み進めないでください。</p>
