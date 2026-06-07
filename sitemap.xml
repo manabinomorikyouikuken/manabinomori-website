@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://manabinomorikyouikuken.github.io/manabinomori-website/columns.html</loc>
-    <lastmod>2026-06-04</lastmod>
+    <lastmod>2026-06-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -164,7 +164,13 @@
   </url>
   <url>
     <loc>https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/houkago_day.html</loc>
-    <lastmod>2026-05-11</lastmod>
+    <lastmod>2026-06-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/houkago_day_azukari.html</loc>
+    <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
