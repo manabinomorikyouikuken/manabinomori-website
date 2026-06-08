@@ -28,6 +28,30 @@ a[href^="mailto:"] { overflow-wrap: anywhere; }
 .section { padding: 64px 0; }
 .section-alt { background: var(--bg); }
 .center { text-align: center; }
+.site-home-link {
+  position: absolute;
+  top: 16px;
+  left: 18px;
+  z-index: 5;
+  display: inline-block;
+  padding: 7px 12px;
+  border: 1px solid rgba(255,255,255,.32);
+  border-radius: 999px;
+  background: rgba(15,23,42,.22);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none;
+}
+.site-home-link:hover {
+  background: rgba(255,255,255,.16);
+  text-decoration: none;
+}
+.site-home-link:focus-visible {
+  outline: 3px solid #fbbf24;
+  outline-offset: 3px;
+}
 
 /* ━━━ HERO ━━━ */
 .hero { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 55%, #0369a1 100%); color: #fff; padding: 80px 20px 64px; text-align: center; position: relative; overflow: hidden; }
@@ -235,6 +259,7 @@ footer a { color: #9ca3af; }
   <script src="../assets/analytics-events.js" defer></script>
 </head>
 <body>
+<a class="site-home-link" href="../index.html">Manabi no Mori Home</a>
 
 <!-- ━━━ HERO ━━━ -->
 <section class="hero">
