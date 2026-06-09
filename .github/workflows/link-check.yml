@@ -1,0 +1,33 @@
+name: リンク切れチェック
+
+# 会社HPの壊れリンク（内部リンク・自サイト絶対URL・外部リンク）を検知する。
+# 2026-06-05の壊れリンク大掃除（404×14・本文リンク切れ15記事）の再発を早期検知する目的。
+# lychee（Rust製の高速リンクチェッカー）を使う。
+
+on:
+  push:
+    branches: [main]          # mainにpushするたびに検査（＝壊した瞬間に気づける）
+  schedule:
+    - cron: "0 23 * * 0"      # 毎週日曜23:00 UTC = 月曜08:00 JST（cronはUTC基準）
+  workflow_dispatch:           # Actionsタブから手動実行も可
+
+permissions:
+  contents: read
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: リポジトリ取得
+        uses: actions/checkout@v5
+
+      - name: リンク切れチェック (lychee)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --exclude-path "旧バージョン"
+            --
+            './**/*.html'
+          fail: false          # 壊れリンクがあってもCIは赤くしない（結果はサマリーで確認）
+          jobSummary: true     # Actions実行画面のSummaryに結果一覧を出す
