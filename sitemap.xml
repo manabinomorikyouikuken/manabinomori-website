@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://manabinomorikyouikuken.github.io/manabinomori-website/columns.html</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -123,6 +123,12 @@
   <url>
     <loc>https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/morning-school-refusal-not-laziness.html</loc>
     <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/game-video-switching-support.html</loc>
+    <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
