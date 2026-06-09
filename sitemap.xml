@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://manabinomorikyouikuken.github.io/manabinomori-website/</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -87,6 +87,12 @@
   <url>
     <loc>https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/shugaku-sodan-02.html</loc>
     <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/hikitsugi-memo.html</loc>
+    <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
