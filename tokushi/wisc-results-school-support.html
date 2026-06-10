@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WISCなどの検査結果を学校支援にどう生かすか｜数字で子どもを決めつけないために | まなびの森教育研究所</title>
+  <meta name="description" content="WISCなどの検査結果を、子どもを決めつける数字ではなく、学校での支援を考えるための手がかりとして読み、伝え、生かす視点を整理します。">
+  <link rel="canonical" href="https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/wisc-results-school-support.html">
+  <style>
+    :root{--bg:#f7f5ef;--ink:#1f2a1f;--sub:#58635b;--line:#d7ddd6;--accent:#5d7c61;--soft:#eef3ed;--max:760px;}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.9;}
+    a{color:#285d39;text-decoration:none}a:hover{text-decoration:underline}
+    .topbar{background:rgba(247,245,239,0.95);border-bottom:1px solid var(--line);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;}
+    .brand{font-weight:800;font-size:.95rem;}.back{font-size:.88rem;color:var(--sub);font-weight:600;}
+    .hero-article{background:#5f6f4f;color:#fff;padding:52px 24px 40px;text-align:center;}
+    .hero-article .tag{display:inline-block;background:rgba(255,255,255,0.24);border-radius:20px;padding:4px 14px;font-size:.82rem;margin-bottom:16px;}
+    .hero-article h1{margin:0 0 16px;font-size:clamp(1.35rem,4vw,2rem);line-height:1.45;font-weight:800;}
+    .hero-article .subtitle{margin:0 0 12px;font-size:1rem;opacity:.92;}
+    .hero-article .meta{font-size:.85rem;opacity:.85;}
+    .article-body{max-width:var(--max);margin:0 auto;padding:40px 24px 80px;}
+    .column-eyecatch{margin:0 0 2em;}
+    .column-eyecatch picture{display:block;}
+    .column-eyecatch img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--line);background:#fff;}
+    .column-special-support h2,.article-body h2{font-size:1.2rem;font-weight:800;color:var(--accent);border-left:4px solid var(--accent);padding-left:14px;margin:48px 0 16px;line-height:1.5;}
+    .column-special-support h3,.article-body h3{font-size:1.05rem;font-weight:700;margin:28px 0 10px;}
+    .column-special-support p,.article-body p{margin:0 0 18px;}
+    .column-special-support ul,.column-special-support ol,.article-body ul,.article-body ol{padding-left:1.4em;margin:0 0 18px;}
+    .column-special-support li,.article-body li{margin-bottom:6px;}
+    .column-special-support strong,.article-body strong{color:var(--ink);}
+    .column-special-support table,.article-body table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.92rem;background:#fff;}
+    .column-special-support th,.article-body th{background:#eef3ed;padding:10px 12px;text-align:left;border:1px solid var(--line);font-weight:700;color:#35553a;}
+    .column-special-support td,.article-body td{padding:10px 12px;border:1px solid var(--line);vertical-align:top;}
+    .manabi-lead{font-size:1.04rem;font-weight:700;}
+    .toc-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin:28px 0;}
+    .toc-box h2{border:none;color:var(--ink);padding:0;margin:0 0 10px;font-size:1rem;}
+    .toc-box ol{margin:0;padding-left:1.3em;}
+    .point-box,.checklist-box,.phrase-box,.memo-box{background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:0 12px 12px 0;padding:16px 20px;margin:24px 0;}
+    .checklist-box{background:#f0f7f0;}
+    .phrase-box{background:#f8fbf7;}
+    .memo-box{background:#fffdf4;border-color:#eadb93;border-left-color:#c4a340;}
+    .point-box h3,.checklist-box h3,.phrase-box h3,.memo-box h3{margin-top:0;}
+    blockquote{margin:28px 0;padding:16px 20px;background:#fff;border-left:4px solid #9ab39d;color:#38443a;}
+    .related{background:#f0f7f0;border:1px solid #dfe9de;border-radius:14px;padding:20px 24px;margin:40px 0;}
+    .related h3{margin:0 0 12px;font-size:.95rem;font-weight:800;color:var(--accent);}
+    .related ul{margin:0;padding-left:1.2em;}.related li{margin-bottom:8px;font-size:.92rem;}
+    .cta-box{background:#eef3ed;border:1px solid #dfe9de;border-radius:20px;padding:28px 24px;margin:48px 0;text-align:center;}
+    .cta-box p{margin:0 0 16px;font-size:.95rem;}
+    .btn-primary{display:inline-flex;align-items:center;justify-content:center;max-width:100%;min-height:48px;background:var(--accent);color:#fff;padding:12px 24px;border-radius:999px;font-weight:800;font-size:clamp(.84rem,3.45vw,.95rem);line-height:1.2;white-space:nowrap;box-shadow:0 8px 18px rgba(93,124,97,.18);}
+    .btn-primary:hover{background:#4a6650;text-decoration:none;}
+    .column-references{font-size:.92rem;}
+    .footer-nav{text-align:center;padding:32px 20px;border-top:1px solid var(--line);margin-top:60px;}
+    .footer-nav a{color:var(--sub);font-size:.9rem;margin:0 12px;}
+    @media(max-width:640px){
+      .topbar{align-items:flex-start;gap:10px;flex-direction:column;}
+      .article-body{padding:32px 20px 60px;}
+      .btn-primary{white-space:normal;text-align:center;}
+      .column-special-support table,.column-special-support tbody,.column-special-support tr,.column-special-support td{display:block;width:100%;}
+      .column-special-support table{border-collapse:separate;border-spacing:0;background:transparent;}
+      .column-special-support tr{background:#fff;border:1px solid var(--line);border-radius:12px;margin:0 0 12px;overflow:hidden;}
+      .column-special-support th{display:none;}
+      .column-special-support td{border:none;border-bottom:1px solid var(--line);}
+      .column-special-support td:last-child{border-bottom:none;}
+      .column-special-support td::before{content:attr(data-label);display:block;font-weight:800;color:var(--accent);font-size:.82rem;margin-bottom:4px;}
+      .footer-nav a{display:block;margin:8px 0;}
+    }
+  </style>
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "WISCなどの検査結果を学校支援にどう生かすか｜数字で子どもを決めつけないために",
+    "description": "WISCなどの検査結果を、子どもを決めつける数字ではなく、学校での支援を考えるための手がかりとして読み、伝え、生かす視点を整理します。",
+    "author": {
+        "@type": "Organization",
+        "name": "合同会社まなびの森教育研究所"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "合同会社まなびの森教育研究所"
+    },
+    "datePublished": "2026-06-10",
+    "dateModified": "2026-06-10",
+    "mainEntityOfPage": "https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/wisc-results-school-support.html",
+    "image": "https://manabinomorikyouikuken.github.io/manabinomori-website/assets/images/columns/wisc-results-school-support.webp"
+}
+  </script>
+  <!-- Google Analytics GA4: HP既存ページと同じ計測タグ。新規外部サービスは追加していません。 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MRXYRR7DF7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-MRXYRR7DF7');
+  </script>
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/wisc-results-school-support.html">
+  <meta property="og:title" content="WISCなどの検査結果を学校支援にどう生かすか｜数字で子どもを決めつけないために | まなびの森教育研究所">
+  <meta property="og:description" content="WISCなどの検査結果を、子どもを決めつける数字ではなく、学校での支援を考えるための手がかりとして読み、伝え、生かす視点を整理します。">
+  <meta property="og:image" content="https://manabinomorikyouikuken.github.io/manabinomori-website/assets/images/columns/wisc-results-school-support.webp">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:site_name" content="合同会社まなびの森教育研究所">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WISCなどの検査結果を学校支援にどう生かすか｜数字で子どもを決めつけないために | まなびの森教育研究所">
+  <meta name="twitter:description" content="WISCなどの検査結果を、子どもを決めつける数字ではなく、学校での支援を考えるための手がかりとして読み、伝え、生かす視点を整理します。">
+  <meta name="twitter:image" content="https://manabinomorikyouikuken.github.io/manabinomori-website/assets/images/columns/wisc-results-school-support.webp">
+  <script src="../assets/analytics-events.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="../index.html">まなびの森教育研究所</a>
+  <a class="back" href="../columns.html#school">← コラム一覧へ</a>
+</header>
+
+<div class="hero-article">
+  <div class="tag">保護者向け｜検査結果の活用｜学校支援</div>
+  <h1>WISCなどの検査結果を学校支援にどう生かすか<br>数字で子どもを決めつけないために</h1>
+  <p class="subtitle">検査結果を、子どもを決めつける数字ではなく、支援につながる手がかりとして読む</p>
+  <div class="meta">合同会社まなびの森教育研究所 編集部｜2026年6月10日</div>
+</div>
+
+<main class="article-body">
+  <figure class="column-eyecatch">
+    <picture>
+      <source srcset="../assets/images/columns/wisc-results-school-support.webp" type="image/webp">
+      <img
+        src="../assets/images/columns/wisc-results-school-support.webp"
+        alt="緑の木立の小道を背景に、WISCなどの検査結果を学校支援にどう生かすかと書かれた水彩風アイキャッチ画像"
+        width="1536"
+        height="864"
+        loading="eager"
+        decoding="async"
+      >
+    </picture>
+  </figure>
+
+<article class="column column-special-support" data-column-id="wisc-results-school-support">
+    <p class="manabi-lead">
+    WISCなどの検査結果を受け取ったとき、保護者は戸惑うことがあります。
+    FSIQ、言語理解、ワーキングメモリー、処理速度。
+    数字や専門用語は並んでいるけれど、学校で何を変えればよいのかが見えにくい。
+    そして、数字が子どもの将来を決めてしまうように感じて、不安になることもあります。
+    この記事では、検査結果を「子どもを決めつける数字」ではなく、
+    学校での支援を考えるための手がかりとして、どう読み、どう伝え、どう生かすかを整理します。
+  </p>
+
+<nav class="toc-box column-toc" aria-label="目次">
+    <h2>この記事で扱うこと</h2>
+    <ol>
+      <li><a href="#what-is-wisc">WISCとは何を見る検査か</a></li>
+      <li><a href="#not-iq-only">FSIQやIQだけで判断しない</a></li>
+      <li><a href="#five-indexes">WISC-Vの主な指標を簡単に見る</a></li>
+      <li><a href="#translate">検査結果を学校支援へ翻訳する</a></li>
+      <li><a href="#patterns">よくある結果の見え方と支援例</a></li>
+      <li><a href="#report">検査所見を読むときのポイント</a></li>
+      <li><a href="#school-consultation">学校に伝えるときの伝え方</a></li>
+      <li><a href="#privacy">検査結果を渡すときの注意</a></li>
+      <li><a href="#child">子ども本人にどう説明するか</a></li>
+      <li><a href="#memo">学校相談前の整理メモ</a></li>
+      <li><a href="#summary">まとめ</a></li>
+    </ol>
+  </nav>
+
+  <section id="what-is-wisc">
+    <h2>1. WISCとは何を見る検査か</h2>
+    <p>
+      WISCは、子どもの知的な働き方を多面的に見るための検査です。
+      「頭の良さに点数をつける検査」と受け取られがちですが、
+      学校支援で大切なのは、単に高い・低いを見ることではありません。
+    </p>
+    <p>
+      むしろ、どのような考え方が得意なのか、
+      どのような作業で疲れやすいのか、
+      聞くこと、見ること、覚えておくこと、すばやく処理することの間に差があるのかを見ます。
+    </p>
+    <p>
+      WISCの結果は、診断名を決めるためだけのものではありません。
+      学校生活で困っている理由を整理し、
+      どのような支援があれば本人が力を出しやすいのかを考える材料になります。
+    </p>
+    <p>
+      ただし、WISCの専門的な解釈は、医師、心理士、公認心理師、臨床心理士など、
+      検査を実施・解釈する専門職の所見と合わせて見る必要があります。
+      保護者や学校が、数字だけを切り取って判断することは避けたほうがよいです。
+    </p>
+  </section>
+
+  <section id="not-iq-only">
+    <h2>2. FSIQやIQだけで判断しない</h2>
+    <p>
+      検査結果を見ると、保護者はどうしてもFSIQやIQに目が行きます。
+      全体の数字が高いか低いかで、子どもの力や将来が決まってしまうように感じることがあります。
+    </p>
+    <p>
+      しかし、学校支援で重要なのは、全体の数字だけではありません。
+      たとえば、全体の数値が平均的でも、ワーキングメモリーや処理速度が相対的に低い場合、
+      授業中の指示、板書、宿題、テスト時間で大きく困ることがあります。
+    </p>
+    <p>
+      反対に、言葉で説明する力が高い子は、大人から「わかっているはず」と見られやすくなります。
+      けれども、書く、写す、順番に作業する、時間内に終えることが苦手な場合、
+      実際の学校生活では大きな負担を抱えていることがあります。
+    </p>
+    <p>
+      検査結果を見るときは、まず次の三つに分けます。
+    </p>
+
+    <ul>
+      <li>全体としてどのくらいの力が見えているか</li>
+      <li>どの指標が比較的強く、どの指標が弱く出ているか</li>
+      <li>学校や家庭での困りごとと、結果がどうつながるか</li>
+    </ul>
+
+    <p>
+      数字は、子どもを決めるものではありません。
+      困りごとの理由を探し、支援を考えるための手がかりです。
+    </p>
+  </section>
+
+  <section id="five-indexes">
+    <h2>3. WISC-Vの主な指標を簡単に見る</h2>
+    <p>
+      WISCには版があり、使われている版によって指標名や構成が異なります。
+      ここでは、WISC-Vでよく出てくる主要な指標を、学校生活に結びつけて簡単に説明します。
+      実際には、検査者の所見と合わせて確認してください。
+    </p>
+
+    <table class="column-table">
+      <thead>
+        <tr>
+          <th scope="col">指標</th>
+          <th scope="col">簡単に言うと</th>
+          <th scope="col">学校で関係しやすい場面</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="指標">言語理解</td>
+          <td data-label="簡単に言うと">言葉で考えたり、説明したり、知識を使ったりする力</td>
+          <td data-label="学校で関係しやすい場面">先生の説明を理解する、言葉で答える、理由を説明する</td>
+        </tr>
+        <tr>
+          <td data-label="指標">視空間</td>
+          <td data-label="簡単に言うと">見た情報の形や位置関係をとらえる力</td>
+          <td data-label="学校で関係しやすい場面">図形、板書、ノートの配置、地図、図表、工作</td>
+        </tr>
+        <tr>
+          <td data-label="指標">流動性推理</td>
+          <td data-label="簡単に言うと">初めて見る問題のルールや関係性を考える力</td>
+          <td data-label="学校で関係しやすい場面">応用問題、パターンを見つける、初めての課題に取り組む</td>
+        </tr>
+        <tr>
+          <td data-label="指標">ワーキングメモリー</td>
+          <td data-label="簡単に言うと">聞いたことや見たことを一時的に覚えながら作業する力</td>
+          <td data-label="学校で関係しやすい場面">口頭指示、暗算、板書しながら聞く、複数の手順を覚える</td>
+        </tr>
+        <tr>
+          <td data-label="指標">処理速度</td>
+          <td data-label="簡単に言うと">簡単な作業を正確に、すばやく進める力</td>
+          <td data-label="学校で関係しやすい場面">書く速さ、プリント、テスト時間、板書、作業量</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      指標の名前を覚えることが目的ではありません。
+      大切なのは、
+      「この子は、どのような場面で力を出しやすく、どのような場面で負担が大きくなるのか」
+      を考えることです。
+    </p>
+  </section>
+
+  <section id="translate">
+    <h2>4. 検査結果を学校支援へ翻訳する</h2>
+    <p>
+      検査結果は、受け取っただけでは支援になりません。
+      学校生活の具体的な場面に翻訳して、初めて支援に使えます。
+    </p>
+    <p>
+      たとえば、「ワーキングメモリーが弱い」と書かれていても、
+      それだけでは担任の先生は何をすればよいかわかりにくいことがあります。
+      そこで、次のように変換します。
+    </p>
+
+    <blockquote>
+      <p>
+        「口頭で複数の指示を聞くと、途中で抜けやすいようです。<br>
+        指示を短く区切る、板書やメモに残す、手順表を使うなどを試したいです。」
+      </p>
+    </blockquote>
+
+    <p>
+      このように、検査結果を
+      <strong>学校で見える困りごと</strong>と
+      <strong>試したい支援</strong>に変えることが重要です。
+    </p>
+
+    <table class="column-table">
+      <thead>
+        <tr>
+          <th scope="col">検査で見える傾向</th>
+          <th scope="col">学校で起きやすいこと</th>
+          <th scope="col">支援の例</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="検査で見える傾向">ワーキングメモリーが弱い</td>
+          <td data-label="学校で起きやすいこと">口頭指示が抜ける。手順を忘れる。聞きながら書くことが難しい</td>
+          <td data-label="支援の例">指示を短くする。板書やメモに残す。手順表を使う</td>
+        </tr>
+        <tr>
+          <td data-label="検査で見える傾向">処理速度が低い</td>
+          <td data-label="学校で起きやすいこと">書くのが遅い。時間内に終わらない。急ぐとミスが増える</td>
+          <td data-label="支援の例">課題量を調整する。書く量を減らす。ICTを使う。時間を延ばす</td>
+        </tr>
+        <tr>
+          <td data-label="検査で見える傾向">言語理解が強い</td>
+          <td data-label="学校で起きやすいこと">話すと理解しているように見えるが、作業が追いつかない場合がある</td>
+          <td data-label="支援の例">「わかっているのにやらない」と見ず、出力方法や作業量を調整する</td>
+        </tr>
+        <tr>
+          <td data-label="検査で見える傾向">視覚的な情報が入りやすい</td>
+          <td data-label="学校で起きやすいこと">聞くより、見たほうが理解しやすい</td>
+          <td data-label="支援の例">予定表、図、板書、写真、チェックリストを使う</td>
+        </tr>
+        <tr>
+          <td data-label="検査で見える傾向">指標間の差が大きい</td>
+          <td data-label="学校で起きやすいこと">できる場面とできない場面の差が大きく、誤解されやすい</td>
+          <td data-label="支援の例">得意な方法で理解し、苦手な方法では補助を入れる</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      支援は、本人を甘やかすためではありません。
+      本人が持っている力を、学校生活の中で出しやすくするための調整です。
+    </p>
+  </section>
+
+  <section id="patterns">
+    <h2>5. よくある結果の見え方と支援例</h2>
+    <p>
+      ここでは、保護者が相談でよく悩みやすい結果の見え方を、学校支援に結びつけて整理します。
+      ただし、これは一般的な例です。
+      実際の解釈は、検査者の所見、本人の様子、学校での観察を合わせて考える必要があります。
+    </p>
+
+    <div class="point-box">
+      <h3>例1：言葉ではよく説明できるのに、書く作業が進まない</h3>
+      <p>
+        言語理解が比較的高く、処理速度や書字に関わる作業が弱い場合、
+        大人からは「わかっているのにやらない」と見られやすくなります。
+        しかし、本人は理解していても、書く量や速さで疲れている場合があります。
+      </p>
+      <p>
+        支援としては、板書量を減らす、プリントを用意する、穴埋め式にする、
+        タブレット入力を検討する、テスト時間や解答方法を調整するなどが考えられます。
+      </p>
+    </div>
+
+    <div class="point-box">
+      <h3>例2：話を聞いているのに、指示が抜ける</h3>
+      <p>
+        ワーキングメモリーに弱さがあると、本人は聞く気があっても、
+        複数の指示を頭に保持しながら作業することが難しい場合があります。
+      </p>
+      <p>
+        支援としては、指示を一つずつ出す、最後に復唱する、黒板やカードに残す、
+        「まず一つ目」「終わったら次」と手順を分ける方法があります。
+      </p>
+    </div>
+
+    <div class="point-box">
+      <h3>例3：考える力はあるのに、テストで時間が足りない</h3>
+      <p>
+        考える力や理解力があっても、処理速度や書字の負担が大きいと、
+        テストやプリントで力を出し切れないことがあります。
+      </p>
+      <p>
+        支援としては、問題数の調整、時間延長、別室受験、解答欄の工夫、
+        記述量の調整、ICTの活用などを学校と相談できます。
+      </p>
+    </div>
+
+    <div class="point-box">
+      <h3>例4：得意な場面と苦手な場面の差が大きい</h3>
+      <p>
+        指標の差が大きい子は、ある場面ではよくできるのに、
+        別の場面では急にできなくなるように見えることがあります。
+        そのため、大人から「やればできるのに」「気分でやっている」と誤解されやすくなります。
+      </p>
+      <p>
+        支援としては、得意な入力方法や理解方法を使いながら、
+        苦手な出力方法には補助を入れることが大切です。
+      </p>
+    </div>
+  </section>
+
+  <section id="report">
+    <h2>6. 検査所見を読むときのポイント</h2>
+    <p>
+      検査結果では、数字そのものよりも、所見の文章が重要なことがあります。
+      所見には、検査中の様子、課題への取り組み方、得意・苦手の傾向、
+      支援の方向性が書かれている場合があります。
+    </p>
+
+    <div class="checklist-box">
+      <h3>所見で確認したいこと</h3>
+      <ul>
+        <li>どの力が比較的強いと書かれているか</li>
+        <li>どの場面で負担が大きいと書かれているか</li>
+        <li>検査中に集中が途切れた場面はあるか</li>
+        <li>時間制限がある課題で力を出しにくかったか</li>
+        <li>口頭説明、視覚情報、手順の提示のどれが入りやすそうか</li>
+        <li>学校でどのような配慮が考えられると書かれているか</li>
+        <li>家庭での支援について何が提案されているか</li>
+      </ul>
+    </div>
+
+    <p>
+      検査結果の数字だけを学校に渡しても、支援につながりにくいことがあります。
+      可能であれば、検査者に
+      「学校にはどの部分を伝えるとよいか」
+      「授業や宿題ではどんな配慮が考えられるか」
+      を確認しておくと、相談しやすくなります。
+    </p>
+  </section>
+
+  <section id="school-consultation">
+    <h2>7. 学校に伝えるときの伝え方</h2>
+    <p>
+      学校に検査結果を伝えるときは、数字を見せるだけでなく、
+      家庭や学校で見えている困りごとと結びつけて伝えます。
+    </p>
+
+    <div class="phrase-box">
+      <h3>相談の切り出し方</h3>
+      <p>
+        「検査結果をもとに、子どもを決めつけたいわけではありません。
+        学校でどのような場面に負担があり、どの支援が合いそうかを一緒に考えたいです。」
+      </p>
+    </div>
+
+    <div class="phrase-box">
+      <h3>ワーキングメモリーについて相談するとき</h3>
+      <p>
+        「検査では、聞いたことを一時的に覚えながら作業することに負担が出やすいとありました。
+        授業中の指示を短く区切る、板書やメモに残すなどを試せないでしょうか。」
+      </p>
+    </div>
+
+    <div class="phrase-box">
+      <h3>処理速度について相談するとき</h3>
+      <p>
+        「理解はしていても、書く作業や時間制限で力を出しにくいようです。
+        課題量、板書量、提出方法、テスト時間などを調整できるか相談したいです。」
+      </p>
+    </div>
+
+    <div class="phrase-box">
+      <h3>支援を試して見直したいとき</h3>
+      <p>
+        「まず2週間ほど、指示をメモに残す方法を試して、
+        本人の様子を見ながら続けるか、別の方法にするかを相談させてください。」
+      </p>
+    </div>
+
+    <p>
+      相談では、検査結果を学校に突きつけるのではなく、
+      子どもの学びやすさを一緒に考える材料として共有します。
+    </p>
+  </section>
+
+  <section id="privacy">
+    <h2>8. 検査結果を渡すときの注意</h2>
+    <p>
+      検査結果には、子どもの大切な個人情報が含まれます。
+      学校に共有することは有効ですが、何を、誰に、どの範囲で共有するかは慎重に考えます。
+    </p>
+
+    <div class="checklist-box">
+      <h3>共有前に確認したいこと</h3>
+      <ul>
+        <li>検査結果の全文を渡すのか、必要部分を要約して渡すのか</li>
+        <li>担任だけでなく、特別支援教育コーディネーターや管理職にも共有するのか</li>
+        <li>本人にはどのように説明しているか</li>
+        <li>学級の友達に知られる必要があるか</li>
+        <li>個別の教育支援計画や個別の指導計画に反映するか</li>
+        <li>検査者から学校向けの所見や助言をもらえるか</li>
+      </ul>
+    </div>
+
+    <p>
+      検査結果を共有する目的は、子どもを分類することではありません。
+      学校で必要な支援を考えることです。
+      その目的に照らして、共有する範囲を決めます。
+    </p>
+    <p>
+      また、検査問題の内容や下位検査の詳しい中身を、保護者が学校や周囲に細かく説明する必要はありません。
+      大切なのは、検査の秘密を守りながら、支援に必要な情報を伝えることです。
+    </p>
+  </section>
+
+  <section id="child">
+    <h2>9. 子ども本人にどう説明するか</h2>
+    <p>
+      検査結果を子ども本人に伝えるときも、数字をそのまま伝えるより、
+      本人の生活に近い言葉に変えることが大切です。
+    </p>
+
+    <table class="column-table">
+      <thead>
+        <tr>
+          <th scope="col">避けたい伝え方</th>
+          <th scope="col">置き換えたい伝え方</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="避けたい伝え方">「この数字が低いから苦手」</td>
+          <td data-label="置き換えたい伝え方">「聞いたことを覚えながら作業するのは疲れやすいみたいだね」</td>
+        </tr>
+        <tr>
+          <td data-label="避けたい伝え方">「IQがこうだから仕方ない」</td>
+          <td data-label="置き換えたい伝え方">「あなたに合うやり方を使うと、力を出しやすくなるよ」</td>
+        </tr>
+        <tr>
+          <td data-label="避けたい伝え方">「書くのが遅いのは検査でも出ている」</td>
+          <td data-label="置き換えたい伝え方">「考える力と、書く速さは別の力だね。書き方を工夫しよう」</td>
+        </tr>
+        <tr>
+          <td data-label="避けたい伝え方">「この結果だから無理」</td>
+          <td data-label="置き換えたい伝え方">「どの方法ならできるかを一緒に探そう」</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      子どもに必要なのは、自分の数字を知ることよりも、
+      自分がどんな場面で困りやすく、どうすれば楽になるかを知ることです。
+    </p>
+  </section>
+
+  <section id="memo">
+    <h2>10. 学校相談前の整理メモ</h2>
+    <p>
+      検査結果を学校支援に生かすには、相談前に情報を整理しておくと役立ちます。
+      次のようなメモを作ると、学校との話し合いが具体的になります。
+    </p>
+
+    <aside class="memo-box" aria-label="WISC検査結果活用メモ">
+      <h3>WISC検査結果活用メモ</h3>
+      <ul>
+        <li>検査名と版：WISC-V、WISC-IVなど。実施日も記録する</li>
+        <li>全体の所見：FSIQだけでなく、検査者が書いた総合的な説明</li>
+        <li>比較的強い力：言葉、視覚、推理、記憶、処理など</li>
+        <li>負担が出やすい力：口頭指示、作業速度、板書、書字、時間制限など</li>
+        <li>家庭で見える困りごと：宿題、朝の準備、忘れ物、癇癪、疲れなど</li>
+        <li>学校で確認したい場面：授業、板書、テスト、提出物、休み時間、友達関係など</li>
+        <li>試したい支援：指示のメモ、手順表、課題量調整、ICT、座席、休憩など</li>
+        <li>共有範囲：担任、特別支援教育コーディネーター、管理職、通級担当など</li>
+        <li>見直し時期：2週間後、1か月後、学期末など</li>
+      </ul>
+    </aside>
+
+    <p>
+      このメモの目的は、学校に数字を見せることではありません。
+      検査結果を、本人が学びやすくなる具体的な支援に変えることです。
+    </p>
+  </section>
+
+  <section id="what-not-to-say">
+    <h2>11. 避けたい言葉と、置き換えたい言葉</h2>
+    <p>
+      検査結果をめぐる言葉は、子どもにも保護者にも強く残ります。
+      数字を使うときほど、決めつけにならない言葉を選ぶことが大切です。
+    </p>
+
+    <table class="column-table">
+      <thead>
+        <tr>
+          <th scope="col">避けたい言葉</th>
+          <th scope="col">置き換えたい言葉</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="避けたい言葉">「IQが低いからできない」</td>
+          <td data-label="置き換えたい言葉">「この方法だと負担が大きい。別の方法を試そう」</td>
+        </tr>
+        <tr>
+          <td data-label="避けたい言葉">「IQが高いから支援はいらない」</td>
+          <td data-label="置き換えたい言葉">「全体の力があっても、特定の場面で困ることがある」</td>
+        </tr>
+        <tr>
+          <td data-label="避けたい言葉">「処理速度が低い子」</td>
+          <td data-label="置き換えたい言葉">「速く処理する場面で疲れやすい子」</td>
+        </tr>
+        <tr>
+          <td data-label="避けたい言葉">「検査で出ているからこうしてください」</td>
+          <td data-label="置き換えたい言葉">「検査結果と学校での様子を合わせて、支援を相談したいです」</td>
+        </tr>
+        <tr>
+          <td data-label="避けたい言葉">「この数字がすべて」</td>
+          <td data-label="置き換えたい言葉">「数字は一つの手がかり。日常の様子と合わせて考える」</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="summary">
+    <h2>まとめ：WISCの数字は、子どもを決めるものではなく支援を考える材料</h2>
+    <p>
+      WISCなどの検査結果を見ると、保護者は数字に目を奪われやすくなります。
+      しかし、子どもの価値や将来は、検査結果だけで決まるものではありません。
+    </p>
+    <p>
+      検査結果で大切なのは、全体の数値だけではなく、
+      得意な力、負担が出やすい力、その差が学校生活でどのように表れているかを見ることです。
+    </p>
+    <p>
+      ワーキングメモリーが弱いなら、指示を見える形にする。
+      処理速度が低いなら、課題量や時間、出力方法を調整する。
+      視覚的な情報が入りやすいなら、予定表や図を使う。
+      そのように、検査結果を日々の支援へ翻訳していきます。
+    </p>
+    <p>
+      検査はゴールではありません。
+      検査結果をもとに、家庭と学校が同じ地図を持ち、
+      本人が力を出しやすい条件を一緒に探すこと。
+      そこにこそ、検査を受けた意味があります。
+    </p>
+  </section>
+
+  <section class="related" aria-labelledby="related-title">
+    <h3 id="related-title">あわせて読みたいコラム</h3>
+    <ul>
+      <li><a href="school-consultation-not-monster-parent.html">学校に相談するのが怖いとき</a></li>
+      <li><a href="goriteki_hairyo.html">合理的配慮ってどう頼む？</a></li>
+      <li><a href="hikitsugi-memo.html">支援がリセットされないための引き継ぎメモ</a></li>
+      <li><a href="telling-child-diagnosis-self-understanding.html">わが子に診断名をどう伝えるか</a></li>
+    </ul>
+  </section>
+
+  <section class="cta-box" aria-label="保護者向け相談への案内">
+    <p>
+      検査結果を学校へどう伝えるか、どの支援から相談すればよいか迷うときは、一人で抱え込まなくて大丈夫です。
+      まなびの森教育研究所では、家庭で見えている困りごとと検査所見を、学校と共有しやすい言葉に整えるお手伝いをしています。
+    </p>
+    <a class="btn-primary" href="../parents.html">保護者向け相談ページを見る</a>
+  </section>
+
+  <section class="column-references" aria-labelledby="reference-title">
+    <h2 id="reference-title">参考情報</h2>
+    <ul>
+      <li>
+        <a href="https://www.nichibun.co.jp/seek/kensa/wisc5.html" rel="noopener noreferrer">
+          日本文化科学社「WISC-V知能検査」
+        </a>
+      </li>
+      <li>
+        <a href="https://www.nichibun.co.jp/NEWS/important/news_wisc5-21.html" rel="noopener noreferrer">
+          日本文化科学社「WISC-V知能検査（21検査版）概要」
+        </a>
+      </li>
+      <li>
+        <a href="https://www.mext.go.jp/a_menu/01_m.htm" rel="noopener noreferrer">
+          文部科学省「特別支援教育」
+        </a>
+      </li>
+      <li>
+        <a href="https://www.mext.go.jp/content/1420840_05_2.pdf" rel="noopener noreferrer">
+          文部科学省関連資料「充実した合理的配慮の提供に向けて」
+        </a>
+      </li>
+    </ul>
+  </section>
+</article>
+
+  <footer class="footer-nav">
+    <a href="../columns.html#school">コラム一覧へ</a>
+    <a href="../parents.html">保護者向け相談へ</a>
+    <a href="../index.html">トップページへ</a>
+  </footer>
+</main>
+</body>
+</html>
