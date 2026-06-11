@@ -90,6 +90,7 @@
     }
     a{color:#285d39;text-decoration:none}
     a:hover{text-decoration:underline}
+    a[href^="mailto:"]{overflow-wrap:anywhere}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 40px}
     .topbar{
       position:sticky;top:0;z-index:20;
@@ -171,6 +172,24 @@
     .kicker{font-size:.9rem;font-weight:800;color:#35553a;letter-spacing:.04em;margin-bottom:8px}
     .list{margin:8px 0 0;padding-left:1.2em}
     .list li{margin:4px 0}
+    .first-contact{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+      gap:12px;
+      margin-top:16px;
+    }
+    .first-contact div{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px 16px;
+    }
+    .first-contact b{
+      display:block;
+      color:#35553a;
+      font-size:.92rem;
+      margin-bottom:4px;
+    }
     .notice{
       background:var(--warn);border:1px solid #eed8ab;border-radius:16px;padding:16px;color:#604a22;
     }
@@ -184,6 +203,22 @@
     .price-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
     .price-table th,.price-table td{padding:14px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
     .price-table th{width:230px;background:#f8fbf7;color:#35553a}
+    .contact-form{display:grid;gap:12px}
+    .contact-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .form-label{display:block;font-size:.88rem;font-weight:700;color:#35553a;margin-bottom:4px}
+    .required{color:#c0392b}
+    .form-control{
+      width:100%;
+      border:1px solid var(--line);
+      border-radius:10px;
+      padding:10px 12px;
+      font-size:.95rem;
+      box-sizing:border-box;
+      font-family:inherit;
+      background:#fff;
+    }
+    textarea.form-control{resize:vertical}
+    .form-note{margin:6px 0 0;font-size:.83rem;color:var(--sub)}
     .foot{padding:28px 0 44px;color:var(--sub);font-size:.92rem}
     .foot .panel{padding:18px 20px}
     @media(max-width:960px){
@@ -205,6 +240,8 @@
       .price-table th,.price-table td{display:block;width:auto}
       .price-table th{border-bottom:none;padding-bottom:4px}
       .price-table td{padding-top:0}
+      .first-contact{grid-template-columns:1fr}
+      .contact-fields{grid-template-columns:1fr}
       .cta-row{justify-content:center}
       .btn{width:min(100%,300px);text-align:center}
     }
@@ -224,7 +261,7 @@
           <li><a href="services.html">研修・相談</a></li>
           <li><a href="index.html#product">教材販売</a></li>
           <li><a href="index.html#profile">代表者</a></li>
-          <li><a href="index.html#contact">お問い合わせ</a></li>
+          <li><a href="#contact">お問い合わせ</a></li>
         </ul>
       </nav>
     </div>
@@ -244,8 +281,8 @@
             診断や治療の代わりではなく、状況を分けて、学校や関係機関と話すための材料を一緒に整えます。
           </p>
           <div class="cta-row">
-            <a class="btn primary" href="#topics">相談できることを見る</a>
-            <a class="btn secondary" href="#flow">初回相談の流れを見る</a>
+            <a class="btn primary" href="#contact">相談内容を送る</a>
+            <a class="btn secondary" href="#flow">相談前に流れを見る</a>
           </div>
           <figure class="hero-illustration" aria-hidden="true">
             <img
@@ -319,6 +356,39 @@
       </div>
     </section>
 
+    <section id="first-contact">
+      <div class="wrap">
+        <div class="panel soft">
+          <div class="section-head">
+            <h2>最初は、4点だけで大丈夫です</h2>
+            <p>お問い合わせの段階で、詳しい個人情報を全部書く必要はありません。分かる範囲で、次の内容を送ってください。</p>
+          </div>
+          <div class="first-contact" aria-label="初回お問い合わせで送る内容">
+            <div>
+              <b>1. 学年や年代</b>
+              <span>小学生、中学生、高校生など、おおまかな年代で構いません。</span>
+            </div>
+            <div>
+              <b>2. 困っている場面</b>
+              <span>登校前、授業中、友人関係、宿題、面談前など、気になる場面を書いてください。</span>
+            </div>
+            <div>
+              <b>3. 学校への相談状況</b>
+              <span>まだ相談前、担任に相談済み、面談予定ありなど、今の状況を整理します。</span>
+            </div>
+            <div>
+              <b>4. 希望する相談方法</b>
+              <span>オンライン、対面、まずはメールで整理したいなど、希望があれば添えてください。</span>
+            </div>
+          </div>
+          <div class="cta-row">
+            <a class="btn primary" href="#contact">この内容で問い合わせる</a>
+            <a class="btn secondary" href="#price">料金の目安を見る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="flow">
       <div class="wrap">
         <div class="section-head">
@@ -342,6 +412,10 @@
             <h3>次の一手</h3>
             <p>学校や関係機関と話すための材料、家庭で試せる工夫を確認します。</p>
           </div>
+        </div>
+        <div class="cta-row">
+          <a class="btn primary" href="#contact">初回相談を問い合わせる</a>
+          <a class="btn secondary" href="#topics">相談できることへ戻る</a>
         </div>
       </div>
     </section>
@@ -368,9 +442,43 @@
             </tr>
           </table>
           <div class="cta-row">
-            <a class="btn primary" href="index.html#contact">相談内容を送る</a>
+            <a class="btn primary" href="#contact">相談内容を送る</a>
             <a class="btn secondary" href="services.html">研修・相談ページへ戻る</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="panel">
+          <div class="section-head">
+            <h2>初回相談のお問い合わせ</h2>
+            <p>上の4点を、分かる範囲で送ってください。内容を確認し、対応できる範囲、相談方法、料金の目安を返信します。</p>
+          </div>
+          <form class="contact-form" action="https://formspree.io/f/mykolgnd" method="POST" onsubmit="this.querySelector('button[type=submit]').disabled=true;this.querySelector('button[type=submit]').textContent='送信中...';">
+            <div class="contact-fields">
+              <div>
+                <label class="form-label" for="parent-contact-name">お名前 <span class="required">*</span></label>
+                <input class="form-control" id="parent-contact-name" type="text" name="name" required autocomplete="name" placeholder="山田 太郎">
+              </div>
+              <div>
+                <label class="form-label" for="parent-contact-email">メールアドレス <span class="required">*</span></label>
+                <input class="form-control" id="parent-contact-email" type="email" name="email" required autocomplete="email" placeholder="example@gmail.com">
+              </div>
+            </div>
+            <div>
+              <label class="form-label" for="parent-contact-message">お問い合わせ内容 <span class="required">*</span></label>
+              <textarea class="form-control" id="parent-contact-message" name="message" required rows="6" placeholder="例：中学生です。登校前に不安が強く、担任の先生へ何を伝えればよいか迷っています。学校には一度相談済みです。まずはオンライン相談を希望します。"></textarea>
+              <p class="form-note">初回は、学年や年代、困っている場面、学校への相談状況、希望する相談方法を分かる範囲でお知らせください。詳しい個人情報は必要な範囲にとどめてください。</p>
+            </div>
+            <input type="hidden" name="category" value="保護者向け教育相談">
+            <input type="hidden" name="_subject" value="【まなびの森】保護者向け教育相談のお問い合わせ">
+            <input type="hidden" name="_next" value="https://manabinomorikyouikuken.github.io/manabinomori-website/thanks.html">
+            <input type="text" name="_gotcha" style="display:none;" aria-hidden="true" tabindex="-1" autocomplete="off">
+            <button class="btn primary" type="submit">送信する</button>
+          </form>
+          <p class="form-note" style="margin-top:12px;">または直接メール：<a href="mailto:manabinomorikyouikuken@gmail.com">manabinomorikyouikuken@gmail.com</a></p>
         </div>
       </div>
     </section>
@@ -378,7 +486,7 @@
     <div class="wrap foot">
       <div class="panel">
         © 2026 合同会社まなびの森教育研究所 All Rights Reserved.<br>
-        <a href="index.html">トップ</a> / <a href="services.html">研修・講演・相談</a> / <a href="index.html#contact">お問い合わせ</a> / <a href="privacy.html">プライバシーポリシー</a> / <a href="legal.html">特定商取引法に基づく表記</a>
+        <a href="index.html">トップ</a> / <a href="services.html">研修・講演・相談</a> / <a href="#contact">お問い合わせ</a> / <a href="privacy.html">プライバシーポリシー</a> / <a href="legal.html">特定商取引法に基づく表記</a>
       </div>
     </div>
   </main>
