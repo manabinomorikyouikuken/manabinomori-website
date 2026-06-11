@@ -274,6 +274,28 @@
     .price-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
     .price-table th,.price-table td{padding:14px 16px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
     .price-table th{width:230px;background:#f8fbf7;color:#35553a}
+    .price-guide{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+      margin-top:14px;
+    }
+    .price-guide div{
+      background:var(--soft-2);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:14px 16px;
+    }
+    .price-guide b{
+      display:block;
+      color:#35553a;
+      margin-bottom:4px;
+    }
+    .price-guide p{
+      margin:0;
+      color:var(--sub);
+      font-size:.92rem;
+    }
     .contact-form{display:grid;gap:12px}
     .contact-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
     .message-guide{
@@ -344,6 +366,7 @@
       .price-table th,.price-table td{display:block;width:auto}
       .price-table th{border-bottom:none;padding-bottom:4px}
       .price-table td{padding-top:0}
+      .price-guide{grid-template-columns:1fr}
       .principle-grid{grid-template-columns:1fr}
       .first-contact{grid-template-columns:1fr}
       .outcome-grid{grid-template-columns:1fr}
@@ -603,23 +626,37 @@
       <div class="wrap">
         <div class="section-head">
           <h2>料金の目安</h2>
-          <p>内容、時間、資料作成の有無により調整します。正式な金額は事前に確認します。</p>
+          <p>内容、時間、資料作成の有無により調整します。税込・税別の扱いを含め、正式な金額は事前に確認します。</p>
         </div>
         <div class="panel">
           <table class="price-table" aria-label="保護者向け相談料金の目安">
             <tr>
               <th>オンライン相談 60分</th>
-              <td>8,000円〜</td>
+              <td>8,000円〜（目安）</td>
             </tr>
             <tr>
               <th>個別相談 60分</th>
-              <td>10,000円〜</td>
+              <td>10,000円〜（目安）</td>
             </tr>
             <tr>
               <th>相談内容の整理メモ作成</th>
               <td>内容により個別見積もり</td>
             </tr>
           </table>
+          <div class="price-guide" aria-label="料金に関する確認事項">
+            <div>
+              <b>追加費用が出る場合</b>
+              <p>メモ作成、資料整理、継続相談などが必要な場合は、事前に内容と料金の目安をお知らせします。</p>
+            </div>
+            <div>
+              <b>勝手に進めません</b>
+              <p>追加の作業が必要になりそうな時は、依頼するかどうかを確認してから進めます。</p>
+            </div>
+            <div>
+              <b>迷っている段階でも大丈夫です</b>
+              <p>正式に申し込む前に、対応できる範囲、相談方法、料金の目安を確認できます。</p>
+            </div>
+          </div>
           <div class="cta-row">
             <a class="btn primary" href="#contact">相談内容を送る</a>
             <a class="btn secondary" href="services.html">研修・相談ページへ戻る</a>
