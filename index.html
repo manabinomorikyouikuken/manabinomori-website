@@ -182,24 +182,39 @@
     .hero-side{
       padding:24px 22px;
       display:flex;flex-direction:column;gap:16px;
+      overflow:hidden;
       background:linear-gradient(180deg,#f8fbf7 0%, #ffffff 100%);
     }
     .hero-side h2{
       margin:0;font-size:1.12rem;
     }
     .hero-side-visual{
-      margin:auto -4px -4px;
+      position:relative;
+      height:clamp(238px,19vw,256px);
+      margin:auto -22px -24px;
       flex:0 0 auto;
       overflow:hidden;
-      border-radius:18px;
+      border-radius:0 0 24px 24px;
       background:transparent;
     }
+    .hero-side-visual::before{
+      content:"";
+      position:absolute;
+      inset:0 0 auto;
+      height:94px;
+      z-index:1;
+      pointer-events:none;
+      background:linear-gradient(180deg,#fff 0%, rgba(255,255,255,.9) 22%, rgba(255,255,255,.42) 58%, rgba(255,255,255,0) 100%);
+      backdrop-filter:blur(2px);
+      -webkit-backdrop-filter:blur(2px);
+    }
     .hero-side-visual img{
-      width:100%;
-      height:clamp(128px,15vw,176px);
-      object-fit:cover;
-      object-position:center bottom;
-      border-radius:18px;
+      position:absolute;
+      right:-98px;
+      bottom:-24px;
+      width:192%;
+      max-width:none;
+      height:auto;
       opacity:.94;
     }
     .checklist{
@@ -472,11 +487,14 @@
         text-align:center;
       }
       .hero-side-visual{
-        width:min(100%,300px);
-        margin:4px auto 0;
+        width:auto;
+        height:clamp(198px,52vw,226px);
+        margin:4px -20px -20px;
       }
       .hero-side-visual img{
-        height:clamp(112px,36vw,150px);
+        right:-66px;
+        bottom:-16px;
+        width:188%;
       }
       .checklist{
         justify-items:center;
