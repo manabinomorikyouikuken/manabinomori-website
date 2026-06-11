@@ -60,6 +60,9 @@
       margin-top: 8px;
       line-height: 1.7;
     }
+    .note a {
+      color: var(--accent);
+    }
     .mail-box {
       background: #f7faf6;
       border: 1px solid #d7ddd6;
@@ -104,10 +107,31 @@
       color: var(--accent);
       font-weight: 700;
     }
+    .support-box {
+      background: #fffdf7;
+      border: 1px solid #ead9a8;
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin: 16px 0 0;
+      text-align: left;
+      color: #6c5a2f;
+      line-height: 1.8;
+      font-size: 0.88rem;
+    }
+    .support-box strong {
+      color: #4c3d16;
+    }
+    .support-box ul {
+      margin: 8px 0 0 1.2em;
+    }
     .footer-link {
       font-size: 0.85rem;
       color: var(--sub);
       margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
     }
     .footer-link a { color: var(--accent); }
   </style>
@@ -123,13 +147,13 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://manabinomorikyouikuken.github.io/manabinomori-website/boki3/thank-you.html">
   <meta property="og:title" content="購入完了 | 簿記3級 30日合格問題集">
-  <meta property="og:description" content="">
+  <meta property="og:description" content="簿記3級 30日合格問題集の購入完了ページです。教材のメール送付と未着時の問い合わせ方法をご案内します。">
   <meta property="og:image" content="https://manabinomorikyouikuken.github.io/manabinomori-website/assets/ogp.webp">
   <meta property="og:locale" content="ja_JP">
   <meta property="og:site_name" content="合同会社まなびの森教育研究所">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="購入完了 | 簿記3級 30日合格問題集">
-  <meta name="twitter:description" content="">
+  <meta name="twitter:description" content="簿記3級 30日合格問題集の購入完了ページです。教材のメール送付と未着時の問い合わせ方法をご案内します。">
   <meta name="twitter:image" content="https://manabinomorikyouikuken.github.io/manabinomori-website/assets/ogp.webp">
   <script src="../assets/analytics-events.js" defer></script>
 </head>
@@ -153,17 +177,30 @@
     <div class="mail-box">
       <strong>教材のお届けについて</strong><br>
       決済内容を確認後、購入時に入力されたメールアドレス宛に教材ファイルをお送りします。
-      通常2営業日以内を目安に対応します。
+      原則3営業日以内を目安に対応します。お届け時の件名は「【まなびの森】簿記3級 30日合格問題集のご案内」です。
     </div>
     <div class="note">
       ※ メールが届かない場合は、迷惑メールフォルダもご確認ください。<br>
-      ※ 2営業日を過ぎても届かない場合は <a href="mailto:manabinomorikyouikuken@gmail.com" style="color:var(--accent);">メールでお問い合わせください</a>
+      ※ 3営業日を過ぎても届かない場合は <a href="mailto:manabinomorikyouikuken@gmail.com">メールでお問い合わせください</a>
+    </div>
+
+    <div class="support-box">
+      <strong>未着確認の際に書いていただきたいこと</strong>
+      <ul>
+        <li>購入した教材名：簿記3級 30日合格問題集</li>
+        <li>購入日時</li>
+        <li>Stripe決済時のお名前</li>
+        <li>決済時に入力したメールアドレス</li>
+      </ul>
     </div>
 
     <hr class="divider">
 
     <div class="footer-link">
-      <a href="../index.html">← まなびの森教育研究所 トップへ戻る</a>
+      <a href="lp.html">商品ページへ戻る</a>
+      <a href="../legal.html">特定商取引法に基づく表記</a>
+      <a href="../privacy.html">プライバシーポリシー</a>
+      <a href="../index.html">トップへ戻る</a>
     </div>
   </div>
 </body>

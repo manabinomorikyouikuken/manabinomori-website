@@ -38,12 +38,60 @@
     return 'unknown';
   }
 
+  function pageLanguage() {
+    return (document.documentElement.getAttribute('lang') || '').toLowerCase() || 'unknown';
+  }
+
+  function currentProductName() {
+    return productName(window.location.pathname, document.title);
+  }
+
+  function policyType(pathname) {
+    if (/\/legal\.html$/i.test(pathname)) return 'legal';
+    if (/\/privacy\.html$/i.test(pathname)) return 'privacy';
+    return 'unknown';
+  }
+
   function sendEvent(name, params) {
     if (!canTrack()) return;
     window.gtag('event', name, Object.assign({
       page_path: window.location.pathname,
       page_title: document.title
     }, params || {}));
+  }
+
+  function trackPageEvents() {
+    var path = window.location.pathname;
+
+    if (/\/[^/]*thank-you\.html$/i.test(path) || /\/thank-you\.html$/i.test(path)) {
+      sendEvent('purchase_complete', {
+        product: currentProductName(),
+        page_language: pageLanguage()
+      });
+    }
+
+    if (/\/worksheets_sample\.html$/i.test(path) || /sample/i.test(path)) {
+      sendEvent('sample_view', {
+        product: currentProductName(),
+        page_language: pageLanguage()
+      });
+    }
+
+    if (/\/(?:legal|privacy)\.html$/i.test(path)) {
+      sendEvent('policy_view', {
+        policy_type: policyType(path),
+        page_language: pageLanguage()
+      });
+    }
+  }
+
+  function isPolicyLink(absoluteHref) {
+    try {
+      var url = new URL(absoluteHref, window.location.href);
+      return url.origin === window.location.origin && /\/(?:legal|privacy)\.html$/i.test(url.pathname);
+    } catch (error) {
+      return false;
+    }
   }
 
   document.addEventListener('click', function (event) {
@@ -54,6 +102,16 @@
     var absoluteHref = link.href || href;
     var text = cleanText(link.textContent);
     var source = href + ' ' + text;
+
+    if (isPolicyLink(absoluteHref)) {
+      var policyUrl = new URL(absoluteHref, window.location.href);
+      sendEvent('policy_click', {
+        policy_type: policyType(policyUrl.pathname),
+        link_url: safeUrl(absoluteHref),
+        link_text: text
+      });
+      return;
+    }
 
     if (/buy\.stripe\.com/.test(absoluteHref)) {
       sendEvent('purchase_click', {
@@ -80,6 +138,12 @@
       });
     }
   }, true);
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', trackPageEvents, { once: true });
+  } else {
+    trackPageEvents();
+  }
 
   document.addEventListener('submit', function (event) {
     var form = event.target;

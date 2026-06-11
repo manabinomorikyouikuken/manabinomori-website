@@ -509,9 +509,11 @@
     .lp-hero .lp-features{list-style:none;display:inline-block;text-align:left;margin:0 0 32px;padding:0;font-size:.95rem;}
     .lp-hero .lp-features li{padding:4px 0;}
     .lp-hero .lp-features li::before{content:"✓ ";opacity:.8;}
+    .lp-btn-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;}
     .lp-btn{display:inline-block;max-width:100%;background:#fff;color:#4e7dca;padding:14px 36px;border-radius:40px;font-weight:800;font-size:1.05rem;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.2);text-align:center;}
     .lp-btn:hover{background:#f0f7ff;text-decoration:none;}
-    .lp-btn.dark{background:linear-gradient(135deg,#4e7dca,#6ab4a0);color:#fff;margin-top:12px;}
+    .lp-btn.dark{background:linear-gradient(135deg,#4e7dca,#6ab4a0);color:#fff;}
+    .lp-btn.secondary{background:#fff;color:#3f6f58;border:1px solid rgba(78,125,202,.18);box-shadow:0 4px 14px rgba(40,80,80,.12);}
     .lp-legal-section{background:#f9f9f9;border-top:1px solid #ddd;border-bottom:1px solid #ddd;padding:32px 24px;max-width:800px;margin:0 auto;}
     .lp-legal-section h3{font-size:1rem;font-weight:700;margin:0 0 16px;color:#444;}
     .lp-legal-section dl{display:grid;grid-template-columns:auto 1fr;gap:8px 16px;font-size:.88rem;color:#555;}
@@ -748,8 +750,11 @@
 <!-- LP：プレビュー見出し -->
 <div class="lp-preview-section" id="preview">
   <h2>教材内容の概要</h2>
-  <p>購入前に方向性を確認できるよう、収録シートの概要だけを掲載しています。入力欄付きの本編PDFは、購入後にご案内します。</p>
-  <a class="lp-btn dark" href="https://buy.stripe.com/cNi4gy85yaQ15iEaQ18Vi06" target="_blank" rel="noopener noreferrer">購入する ¥1,980</a>
+  <p>購入前に方向性を確認できるよう、収録シートの概要と1枚分のサンプルを掲載しています。入力欄付きの本編PDFは、購入後にご案内します。</p>
+  <div class="lp-btn-row">
+    <a class="lp-btn secondary" href="../products/worksheets/worksheets_sample.html">サンプルを見る</a>
+    <a class="lp-btn dark" href="https://buy.stripe.com/cNi4gy85yaQ15iEaQ18Vi06" target="_blank" rel="noopener noreferrer">購入する ¥1,980</a>
+  </div>
 </div>
 
 <div class="ref-page" aria-labelledby="worksheet-summary">
@@ -774,6 +779,16 @@
         <li><span class="ref-tag">家庭</span>日々の様子を短く残し、面談や相談の前に話す内容を整理するために使います。</li>
         <li><span class="ref-tag">学校連携</span>家庭から学校へ伝えたいことを、責める言葉ではなく共有しやすい言葉に整える補助として使います。</li>
         <li><span class="ref-tag">保管</span>記入後の資料には個人情報が含まれることがあります。学校や自治体、家庭のルールに沿って扱ってください。</li>
+      </ul>
+    </div>
+
+    <div class="ref-section">
+      <h3>購入後の流れ</h3>
+      <ul class="ref-list">
+        <li><span class="ref-tag">1</span>Stripeで決済が完了すると、決済完了画面が表示されます。</li>
+        <li><span class="ref-tag">2</span>購入時に入力されたメールアドレス宛に、Stripeから領収メールが届きます。</li>
+        <li><span class="ref-tag">3</span>決済内容を確認後、原則3営業日以内に「【まなびの森】発達支援ワークシート集のご案内」という件名でPDF・ダウンロード方法をお送りします。</li>
+        <li><span class="ref-tag">4</span>3営業日を過ぎても届かない場合は、迷惑メールフォルダをご確認のうえ、購入日時・決済時のお名前・メールアドレスを添えてお問い合わせください。</li>
       </ul>
     </div>
 

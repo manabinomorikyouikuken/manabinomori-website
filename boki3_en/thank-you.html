@@ -57,6 +57,7 @@
     .product-info ul { list-style: none; font-size: 0.9rem; color: var(--sub); line-height: 2; }
     .product-info ul li::before { content: "✓ "; color: var(--accent); font-weight: 700; }
     .note { font-size: 0.82rem; color: #9ca3af; margin-top: 8px; line-height: 1.7; }
+    .note a { color: var(--accent); }
     .mail-box {
       background: #eff6ff;
       border: 1px solid #bfdbfe;
@@ -79,8 +80,21 @@
     }
     .how-to h3 { font-size: 0.88rem; font-weight: 700; margin-bottom: 10px; color: var(--ink); }
     .how-to ol { padding-left: 18px; font-size: 0.85rem; color: var(--sub); line-height: 2; }
+    .support-box {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 10px;
+      padding: 18px 20px;
+      text-align: left;
+      margin: 16px 0 0;
+      color: #6b5b20;
+      line-height: 1.8;
+      font-size: 0.86rem;
+    }
+    .support-box strong { color: #44370e; }
+    .support-box ul { margin: 8px 0 0 1.2em; }
     hr { border: none; border-top: 1px solid var(--line); margin: 28px 0; }
-    .footer-link { font-size: 0.85rem; color: var(--sub); }
+    .footer-link { font-size: 0.85rem; color: var(--sub); display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
     .footer-link a { color: var(--accent); }
     .jp-note { font-size: 0.78rem; color: #9ca3af; margin-top: 20px; }
   </style>
@@ -96,13 +110,13 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://manabinomorikyouikuken.github.io/manabinomori-website/boki3_en/thank-you.html">
   <meta property="og:title" content="Purchase Complete | Bookkeeping Level 3 — English Edition">
-  <meta property="og:description" content="">
+  <meta property="og:description" content="Purchase completion page for the Bookkeeping Level 3 English Edition. Delivery and support information are provided here.">
   <meta property="og:image" content="https://manabinomorikyouikuken.github.io/manabinomori-website/assets/ogp.webp">
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="合同会社まなびの森教育研究所">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Purchase Complete | Bookkeeping Level 3 — English Edition">
-  <meta name="twitter:description" content="">
+  <meta name="twitter:description" content="Purchase completion page for the Bookkeeping Level 3 English Edition. Delivery and support information are provided here.">
   <meta name="twitter:image" content="https://manabinomorikyouikuken.github.io/manabinomori-website/assets/ogp.webp">
   <script src="../assets/analytics-events.js" defer></script>
 </head>
@@ -128,11 +142,21 @@
     <div class="mail-box">
       <strong>Delivery by email</strong><br>
       After confirming your payment, we will send the workbook files to the email address used at checkout.
-      Delivery is usually completed within 2 business days.
+      Delivery is usually completed within 3 business days. The delivery email subject will be "Manabi no Mori: Bookkeeping Level 3 English Edition Delivery".
     </div>
     <div class="note">
       Please also check your spam or promotions folder.<br>
-      If you do not receive the email after 2 business days, <a href="mailto:manabinomorikyouikuken@gmail.com" style="color:#93c5fd;">contact us</a>.
+      If you do not receive the email after 3 business days, <a href="mailto:manabinomorikyouikuken@gmail.com">contact us</a>.
+    </div>
+
+    <div class="support-box">
+      <strong>When contacting us about a missing delivery email, please include:</strong>
+      <ul>
+        <li>Product name: Bookkeeping Level 3 — 30-Day Exam Prep (English Edition)</li>
+        <li>Purchase date and time</li>
+        <li>Name used at Stripe checkout</li>
+        <li>Email address used at Stripe checkout</li>
+      </ul>
     </div>
 
     <div class="how-to">
@@ -148,10 +172,13 @@
     <hr>
 
     <div class="footer-link">
-      <a href="../index.html">← Back to Manabinomori Educational Institute</a>
+      <a href="lp.html">Back to product page</a>
+      <a href="../legal.html">Legal Notice</a>
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../index.html">Company Home</a>
     </div>
     <p class="jp-note">
-      ご不明な点はお気軽にお問い合わせください：manabinomorikyouikuken@gmail.com
+      Seller and support contact: Manabi no Mori Educational Research Institute LLC（合同会社まなびの森教育研究所）
     </p>
   </div>
 </body>
