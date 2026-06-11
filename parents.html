@@ -172,6 +172,30 @@
     .kicker{font-size:.9rem;font-weight:800;color:#35553a;letter-spacing:.04em;margin-bottom:8px}
     .list{margin:8px 0 0;padding-left:1.2em}
     .list li{margin:4px 0}
+    .principle-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:12px;
+      margin-top:16px;
+    }
+    .principle-card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px 14px;
+    }
+    .principle-card strong{
+      display:block;
+      color:#35553a;
+      font-size:1rem;
+      line-height:1.45;
+      margin-bottom:6px;
+    }
+    .principle-card p{
+      margin:0;
+      color:var(--sub);
+      font-size:.92rem;
+    }
     .first-contact{
       display:grid;
       grid-template-columns:minmax(0,1fr) minmax(0,1fr);
@@ -206,6 +230,39 @@
     .outcome-card p{color:var(--sub)}
     .notice{
       background:var(--warn);border:1px solid #eed8ab;border-radius:16px;padding:16px;color:#604a22;
+    }
+    .faq-list{display:grid;gap:10px}
+    .faq-item{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:16px;
+      overflow:hidden;
+    }
+    .faq-item summary{
+      cursor:pointer;
+      padding:14px 16px;
+      font-weight:800;
+      color:#35553a;
+      list-style:none;
+    }
+    .faq-item summary::-webkit-details-marker{display:none}
+    .faq-item summary::before{
+      content:"Q";
+      display:inline-grid;
+      place-items:center;
+      width:24px;
+      height:24px;
+      margin-right:8px;
+      border-radius:999px;
+      background:var(--soft);
+      color:#35553a;
+      font-size:.82rem;
+      vertical-align:middle;
+    }
+    .faq-item p{
+      margin:0;
+      padding:0 16px 16px 48px;
+      color:var(--sub);
     }
     .flow{counter-reset:step;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
     .step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px 16px;box-shadow:var(--shadow)}
@@ -269,6 +326,7 @@
     .foot .panel{padding:18px 20px}
     @media(max-width:960px){
       .grid-2,.grid-3{grid-template-columns:1fr}
+      .principle-grid{grid-template-columns:1fr 1fr}
       .flow{grid-template-columns:1fr 1fr}
       .hero-illustration{width:min(40%,360px);opacity:.48}
     }
@@ -286,6 +344,7 @@
       .price-table th,.price-table td{display:block;width:auto}
       .price-table th{border-bottom:none;padding-bottom:4px}
       .price-table td{padding-top:0}
+      .principle-grid{grid-template-columns:1fr}
       .first-contact{grid-template-columns:1fr}
       .outcome-grid{grid-template-columns:1fr}
       .contact-fields{grid-template-columns:1fr}
@@ -342,6 +401,35 @@
               decoding="async"
             >
           </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="principles">
+      <div class="wrap">
+        <div class="panel soft">
+          <div class="section-head">
+            <h2>この相談で大切にすること</h2>
+            <p>困りごとを誰かの責任にせず、学校や関係機関と次に話せる言葉へ整えます。</p>
+          </div>
+          <div class="principle-grid" aria-label="保護者向け相談で大切にすること">
+            <div class="principle-card">
+              <strong>保護者を責めない</strong>
+              <p>家庭だけで抱え込んできた背景を尊重し、今見えている状況から整理します。</p>
+            </div>
+            <div class="principle-card">
+              <strong>子どもを問題扱いしない</strong>
+              <p>行動だけで決めつけず、どの場面で何に困っているのかを見ていきます。</p>
+            </div>
+            <div class="principle-card">
+              <strong>学校との対立をあおらない</strong>
+              <p>不満の整理で終わらせず、学校と共有しやすい材料づくりを大切にします。</p>
+            </div>
+            <div class="principle-card">
+              <strong>次に話せる言葉へ整える</strong>
+              <p>面談や相談で使える言葉、確認したいこと、次の一手へ分けて考えます。</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -535,6 +623,39 @@
           <div class="cta-row">
             <a class="btn primary" href="#contact">相談内容を送る</a>
             <a class="btn secondary" href="services.html">研修・相談ページへ戻る</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="panel soft">
+          <div class="section-head">
+            <h2>よくある不安</h2>
+            <p>送信前に迷いやすい点を、短く整理しました。</p>
+          </div>
+          <div class="faq-list">
+            <details class="faq-item">
+              <summary>診断名がなくても相談できますか？</summary>
+              <p>相談できます。診断名の有無だけで判断せず、家庭や学校で見えている困り感を整理するところから始めます。</p>
+            </details>
+            <details class="faq-item">
+              <summary>学校にまだ相談していなくても大丈夫ですか？</summary>
+              <p>大丈夫です。面談前に、何を伝えるか、何を確認するかを一緒に整理できます。</p>
+            </details>
+            <details class="faq-item">
+              <summary>学校への不満を言う場になりますか？</summary>
+              <p>学校との対立をあおる場ではありません。家庭で見えていることを、学校と共有しやすい言葉に整えることを大切にします。</p>
+            </details>
+            <details class="faq-item">
+              <summary>初回で詳しい個人情報まで書く必要がありますか？</summary>
+              <p>必要ありません。学年や年代、困っている場面、学校への相談状況、希望する相談方法を分かる範囲でお知らせください。</p>
+            </details>
+            <details class="faq-item">
+              <summary>相談後のメモや資料作成も頼めますか？</summary>
+              <p>必要に応じて対応します。メモ作成や資料整理が必要な場合は、内容と料金の目安を事前に確認します。</p>
+            </details>
           </div>
         </div>
       </div>
