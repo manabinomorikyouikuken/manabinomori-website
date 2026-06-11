@@ -187,6 +187,21 @@
     .hero-side h2{
       margin:0;font-size:1.12rem;
     }
+    .hero-side-visual{
+      margin:auto -4px -4px;
+      flex:0 0 auto;
+      overflow:hidden;
+      border-radius:18px;
+      background:#fff;
+    }
+    .hero-side-visual img{
+      width:100%;
+      height:clamp(128px,15vw,176px);
+      object-fit:cover;
+      object-position:center bottom;
+      border-radius:18px;
+      opacity:.94;
+    }
     .checklist{
       list-style:none;margin:0;padding:0;display:grid;gap:10px;
     }
@@ -456,6 +471,13 @@
       .hero-side h2{
         text-align:center;
       }
+      .hero-side-visual{
+        width:min(100%,300px);
+        margin:4px auto 0;
+      }
+      .hero-side-visual img{
+        height:clamp(112px,36vw,150px);
+      }
       .checklist{
         justify-items:center;
       }
@@ -573,6 +595,16 @@
               </a>
             </li>
           </ul>
+          <figure class="hero-side-visual">
+            <img
+              src="assets/images/home/hero-side-forest-study.webp"
+              width="1672"
+              height="941"
+              alt="森の中の机にノートと本が置かれた水彩イラスト"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
         </aside>
       </div>
     </section>
