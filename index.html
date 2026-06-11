@@ -334,6 +334,37 @@
     }
     .table tr:last-child th,.table tr:last-child td{border-bottom:none}
     .profile-list{margin:0;padding-left:1.2em}
+    .profile-story-link{
+      display:block;
+      margin-top:16px;
+      padding-top:14px;
+      border-top:1px solid var(--line);
+      color:inherit;
+      text-decoration:none;
+    }
+    .profile-story-link:hover{text-decoration:none}
+    .profile-story-link img{
+      width:100%;
+      height:auto;
+      aspect-ratio:1672/941;
+      object-fit:cover;
+      border:1px solid var(--line);
+      border-radius:14px;
+      margin-bottom:12px;
+    }
+    .profile-story-link strong{
+      display:block;
+      margin:2px 0 6px;
+      color:var(--ink);
+      font-size:1.04rem;
+      line-height:1.45;
+    }
+    .profile-story-link p{
+      margin:0;
+      color:var(--sub);
+      font-size:.9rem;
+      line-height:1.7;
+    }
     .subgrid{
       display:grid;grid-template-columns:1fr 1fr;gap:18px;
     }
@@ -1077,6 +1108,19 @@
             <p class="muted" style="margin-bottom:0;">
               ご相談内容に応じて、個別相談、研修、教材提供、企画支援の形で対応します。
             </p>
+            <a class="profile-story-link" href="profile-kishukusha-first-step.html">
+              <img
+                src="assets/images/columns/kishukusha-first-step.webp"
+                width="1672"
+                height="941"
+                alt="寄宿舎の生活場面と学校の夜景を描いた水彩風のアイキャッチ画像。中央に「教室だけが教育ではない」と書かれている。"
+                loading="lazy"
+                decoding="async"
+              >
+              <div class="kicker">代表コラム</div>
+              <strong>教室だけが教育ではない</strong>
+              <p>寄宿舎指導員として始まった、教育観の根っこにある1年をまとめました。</p>
+            </a>
           </div>
         </div>
       </div>
