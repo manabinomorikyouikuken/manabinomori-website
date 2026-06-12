@@ -26,6 +26,9 @@
     if (source.indexOf('9b63cu4tmcy93aw1fr8vi04') !== -1 || source.indexOf('first_30days') !== -1) {
       return 'first_30days_checksheet';
     }
+    if (source.indexOf('parent_meeting_school_collaboration') !== -1 || source.indexOf('保護者面談') !== -1) {
+      return 'parent_meeting_school_collaboration';
+    }
     if (source.indexOf('cni4gy85yaq15ieaq18vi06') !== -1 || source.indexOf('worksheets') !== -1) {
       return 'development_support_worksheets';
     }
