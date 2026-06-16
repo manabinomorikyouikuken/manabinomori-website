@@ -170,6 +170,7 @@
     }
 
     .hero-card {
+      --hero-control-width: 260px;
       position: relative;
       overflow: hidden;
       background:
@@ -266,13 +267,15 @@
     }
 
     .hero-points li {
+      width: min(100%, var(--hero-control-width));
       background: #fafcf9;
       border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 8px 12px;
+      padding: 10px 16px;
       font-size: .92rem;
       font-weight: 700;
       color: #35553a;
+      text-align: center;
     }
 
     .btn {
@@ -309,6 +312,11 @@
 
     .hero-card > .cta-row {
       justify-content: center;
+    }
+
+    .hero-card > .cta-row .btn {
+      width: min(100%, var(--hero-control-width));
+      text-align: center;
     }
 
     section {
