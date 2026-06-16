@@ -259,11 +259,12 @@
     .hero-points {
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
+      justify-content: flex-start;
       gap: 10px;
       padding: 0;
       margin: 20px 0 24px;
       list-style: none;
+      max-width: var(--hero-control-width);
     }
 
     .hero-points li {
@@ -311,7 +312,8 @@
     }
 
     .hero-card > .cta-row {
-      justify-content: center;
+      justify-content: flex-start;
+      max-width: var(--hero-control-width);
     }
 
     .hero-card > .cta-row .btn {
@@ -658,6 +660,12 @@
       .hero-card,
       .panel {
         padding: 22px 20px;
+      }
+
+      .hero-points,
+      .hero-card > .cta-row {
+        justify-content: center;
+        max-width: none;
       }
 
       .hero-illustration {
