@@ -21,7 +21,92 @@
     table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .95rem; }
     th, td { border: 1px solid #d7ddd6; padding: 10px 12px; text-align: left; vertical-align: top; }
     th { width: 30%; background: #f4f7f3; }
-    @media (max-width: 680px) { th, td { display: block; width: auto; } th { border-bottom: none; } }
+    .service-table {
+      border: 1px solid #d7ddd6;
+      border-radius: 12px;
+      border-collapse: separate;
+      border-spacing: 0;
+      overflow: hidden;
+    }
+    .service-table th,
+    .service-table td {
+      border: 0;
+      border-bottom: 1px solid #d7ddd6;
+    }
+    .service-table thead th {
+      background: #eef3ed;
+      color: #172319;
+      font-weight: 800;
+    }
+    .service-table tbody th {
+      background: #f8faf7;
+      color: #172319;
+      font-weight: 800;
+    }
+    .service-table tr:last-child th,
+    .service-table tr:last-child td {
+      border-bottom: 0;
+    }
+    .service-table a {
+      display: inline-block;
+      margin-top: 6px;
+      font-weight: 700;
+    }
+    @media (max-width: 680px) {
+      .panel { padding: 24px 16px; }
+      table:not(.service-table) th,
+      table:not(.service-table) td { display: block; width: auto; }
+      table:not(.service-table) th { border-bottom: none; }
+      .service-table {
+        border: 0;
+        border-radius: 0;
+        border-spacing: 0 12px;
+        overflow: visible;
+      }
+      .service-table thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+      }
+      .service-table,
+      .service-table tbody,
+      .service-table tr,
+      .service-table th,
+      .service-table td {
+        display: block;
+        width: 100%;
+      }
+      .service-table tr {
+        border: 1px solid #d7ddd6;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #fff;
+      }
+      .service-table tbody th {
+        border-bottom: 1px solid #d7ddd6;
+        padding: 12px 14px 10px;
+        background: #f4f7f3;
+        font-size: 1rem;
+      }
+      .service-table tbody th::before,
+      .service-table td::before {
+        display: block;
+        color: #58635b;
+        font-size: .75rem;
+        font-weight: 800;
+        line-height: 1.4;
+        margin-bottom: 4px;
+      }
+      .service-table tbody th::before { content: "サービス"; }
+      .service-table td {
+        border-bottom: 0;
+        padding: 12px 14px 14px;
+      }
+      .service-table td::before { content: "目的・取り扱い"; }
+    }
   </style>
   <!-- Google Analytics GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MRXYRR7DF7"></script>
@@ -81,29 +166,33 @@
     <p>サービス提供のため外部事業者（第4条に記載）を利用します。これらは業務委託先として扱い、守秘義務を課します。</p>
 
     <h2>第4条　外部サービスの利用</h2>
-    <table>
-      <tr><th>サービス</th><th>目的・取り扱い</th></tr>
+    <table class="service-table">
+      <thead>
+        <tr><th scope="col">サービス</th><th scope="col">目的・取り扱い</th></tr>
+      </thead>
+      <tbody>
       <tr>
-        <td>Stripe</td>
+        <th scope="row">Stripe</th>
         <td>クレジットカード決済の処理。カード情報は当社に送信されずStripeが管理します。<br>
           <a href="https://stripe.com/jp/privacy" target="_blank" rel="noopener">Stripeのプライバシーポリシー</a></td>
       </tr>
       <tr>
-        <td>GitHub Pages</td>
+        <th scope="row">GitHub Pages</th>
         <td>当社Webサイトのホスティング。アクセスログがGitHubに記録される場合があります。<br>
           <a href="https://docs.github.com/ja/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHubのプライバシーポリシー</a></td>
       </tr>
       <tr>
-        <td>Render.com</td>
+        <th scope="row">Render.com</th>
         <td>教育相談AIボットのホスティング。ボットに入力した相談内容はRenderのサーバーを経由します。Renderのサーバーログに一時的に記録される場合があります。<br>
           <a href="https://render.com/privacy" target="_blank" rel="noopener">Render.comのプライバシーポリシー</a></td>
       </tr>
       <tr>
-        <td>Google Analytics（GA4）</td>
+        <th scope="row">Google Analytics（GA4）</th>
         <td>Webサイトのアクセス解析に使用しています。Cookieを通じて、ページ閲覧状況・訪問者数・購入ボタン、無料サンプル、問い合わせリンク、特定商取引法に基づく表記・プライバシーポリシーへのリンク、購入完了ページ到達状況などの統計情報を収集します。フォーム入力内容、相談内容、購入時に入力された氏名・メールアドレス・決済情報はGoogle Analyticsには送信しません。収集されたデータはGoogleが管理し、個人を特定するものではありません。広告配信には使用しません。<br>
           <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Googleのプライバシーポリシー</a>／
           <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Googleアナリティクスのオプトアウト</a></td>
       </tr>
+      </tbody>
     </table>
 
     <h2>第5条　Webアプリのデータ取り扱い</h2>
