@@ -59,6 +59,15 @@
     gtag('config', 'G-MRXYRR7DF7');
   </script>
   <style>
+    :root{--anchor-offset:96px;}
+    [id]{scroll-margin-top:var(--anchor-offset);}
+    @media(max-width:760px){
+      :root{--anchor-offset:170px;}
+    }
+    @media(max-width:360px){
+      :root{--anchor-offset:190px;}
+    }
+
     :root{
       --bg:#f7f5ef;
       --panel:#ffffff;

@@ -18,6 +18,15 @@
   <meta name="twitter:description" content="預かりか療育かではなく、安心できる居場所、家族支援、学校連携としての役割を考えます。">
   <meta name="twitter:image" content="https://manabinomorikyouikuken.github.io/manabinomori-website/assets/images/columns/houkago_day_azukari.webp">
   <style>
+    :root{--anchor-offset:96px;}
+    [id]{scroll-margin-top:var(--anchor-offset);}
+    @media(max-width:760px){
+      :root{--anchor-offset:170px;}
+    }
+    @media(max-width:360px){
+      :root{--anchor-offset:190px;}
+    }
+
     :root{--bg:#f7f5ef;--panel:#fff;--ink:#1f2a1f;--sub:#58635b;--line:#d7ddd6;--accent:#5d7c61;--soft:#f0f7f0;--note:#f3f5f8;--warn:#fffaf1;--max:780px;}
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
