@@ -533,6 +533,31 @@
       padding: 18px 16px 16px;
     }
 
+    .step:nth-child(1) {
+      background: #f5fbf1;
+      border-color: #d9e9d5;
+    }
+
+    .step:nth-child(2) {
+      background: #eef7e9;
+      border-color: #cfe4ca;
+    }
+
+    .step:nth-child(3) {
+      background: #e8f3e2;
+      border-color: #c5ddbf;
+    }
+
+    .step:nth-child(4) {
+      background: #e2efdc;
+      border-color: #bbd6b4;
+    }
+
+    .step:nth-child(5) {
+      background: #ddebd5;
+      border-color: #b2d0aa;
+    }
+
     .step::before {
       counter-increment: step;
       content: "STEP " counter(step);
@@ -541,8 +566,8 @@
       font-weight: 900;
       letter-spacing: .06em;
       color: #35553a;
-      background: var(--soft);
-      border: 1px solid #d6e3d4;
+      background: rgba(255, 255, 255, .62);
+      border: 1px solid rgba(171, 198, 169, .75);
       border-radius: 999px;
       padding: 6px 10px;
       margin-bottom: 10px;
