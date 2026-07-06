@@ -428,6 +428,58 @@
     .subgrid{
       display:grid;grid-template-columns:1fr 1fr;gap:18px;
     }
+    .jomo-mini-banner{
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      gap:14px;
+      align-items:center;
+      margin:0 0 18px;
+      padding:16px 18px;
+      border:1px solid #d7ddd6;
+      border-radius:18px;
+      background:
+        linear-gradient(135deg, rgba(139,36,32,.08), transparent 42%),
+        linear-gradient(180deg, #fff 0%, #f9fbf7 100%);
+      color:inherit;
+      box-shadow:0 8px 22px rgba(20,40,20,.06);
+      text-decoration:none;
+    }
+    .jomo-mini-banner:hover{
+      text-decoration:none;
+      box-shadow:0 12px 30px rgba(20,40,20,.11);
+      transform:translateY(-1px);
+    }
+    .jomo-mark{
+      display:grid;
+      place-items:center;
+      width:58px;
+      height:58px;
+      border:2px solid #8b2420;
+      border-radius:14px;
+      background:#fff;
+      color:#8b2420;
+      font-family:"Hiragino Mincho ProN","Yu Mincho","YuMincho",serif;
+      font-size:1.65rem;
+      font-weight:800;
+      line-height:1;
+    }
+    .jomo-mini-banner h3{
+      margin:0 0 3px;
+      font-size:1.08rem;
+      line-height:1.45;
+    }
+    .jomo-mini-banner p{
+      margin:0;
+      color:var(--sub);
+      font-size:.9rem;
+      line-height:1.6;
+    }
+    .jomo-mini-banner .jomo-link-text{
+      color:#285d39;
+      font-weight:800;
+      white-space:nowrap;
+      font-size:.92rem;
+    }
     .column-feature-grid{
       display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:18px;
     }
@@ -595,6 +647,13 @@
       }
       .entry-card .btn{
         width:min(100%,300px);text-align:center;
+      }
+      .jomo-mini-banner{
+        grid-template-columns:auto 1fr;
+      }
+      .jomo-mini-banner .jomo-link-text{
+        grid-column:1 / -1;
+        padding-top:2px;
       }
       .panel > .cta-row{
         justify-content:center;
@@ -1051,6 +1110,15 @@
           <h2>無料で使える支援・学習ツール</h2>
           <p>特別支援教育の視点で作ったアプリとして、支援の記録や面談準備に使えるツールに加え、短時間で学べる語学アプリを無料で公開しています。インストール不要・ブラウザで動作します。</p>
         </div>
+        <a class="jomo-mini-banner" href="jomo-karuta.html" aria-label="上毛かるた学習Webアプリの専用ページを見る">
+          <span class="jomo-mark" aria-hidden="true">上</span>
+          <span>
+            <span class="kicker" style="margin:0 0 2px;display:block;">利用許諾取得済み・非公式</span>
+            <h3>上毛かるた 学習Webアプリ</h3>
+            <p>群馬県公式HP掲載データを使った、札を見て覚えるための小さな学習ページです。</p>
+          </span>
+          <span class="jomo-link-text">専用ページへ →</span>
+        </a>
         <div class="subgrid">
           <a href="https://manabinomorikyouikuken.github.io/kodo-kiroku/" target="_blank" rel="noopener noreferrer" class="panel" style="display:block;text-decoration:none;color:inherit;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 12px 32px rgba(20,40,20,0.13)'" onmouseout="this.style.boxShadow=''">
             <div class="kicker">無料Webアプリ</div>
