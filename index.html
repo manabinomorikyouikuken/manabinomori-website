@@ -227,7 +227,7 @@
       opacity:.94;
     }
     .checklist{
-      list-style:none;margin:0;padding:0;display:grid;gap:10px;
+      list-style:none;margin:0;padding:0;display:grid;gap:12px;
     }
     .checklist li{
       background:#fff;border:1px solid var(--line);border-radius:14px;
@@ -237,7 +237,7 @@
       transform:translateY(-1px);border-color:#b8d4b8;box-shadow:0 10px 26px rgba(20,40,20,0.1);
     }
     .checklist a{
-      display:block;color:inherit;text-decoration:none;padding:12px 14px;border-radius:14px;
+      display:block;color:inherit;text-decoration:none;padding:15px 16px;border-radius:14px;
     }
     .checklist a:focus-visible{
       outline:3px solid rgba(99,125,101,.32);outline-offset:3px;
@@ -605,10 +605,8 @@
       .hero{padding-top:34px}
       .hero-grid > *{min-width:0}
       .hero-main{padding:24px 20px}
-      .hero-side{padding:20px}
-      .eyebrow-stacked{
-        width:min(100%,360px);margin-left:auto;margin-right:auto;text-align:center;justify-items:center;
-      }
+      .hero-side{padding:18px 14px}
+      .eyebrow-stacked{display:grid;width:fit-content;max-width:100%;margin-left:auto;margin-right:auto;text-align:center;justify-items:center;}
       .chips{grid-template-columns:1fr;justify-items:center}
       .chips li{width:min(100%,300px);text-align:center}
       .chips .chip-stacked{
@@ -623,25 +621,19 @@
       .hero-main > .cta-row .btn{
         width:min(100%,300px);text-align:center;
       }
-      .hero-side h2{
-        text-align:center;
-      }
+      .hero-side h2{text-align:left;}
       .hero-side-visual{
         width:auto;
         height:clamp(198px,52vw,226px);
-        margin:4px -20px -20px;
+        margin:4px -14px -18px;
       }
       .hero-side-visual img{
         right:-66px;
         bottom:-16px;
         width:188%;
       }
-      .checklist{
-        justify-items:center;
-      }
-      .checklist li{
-        width:min(100%,300px);
-      }
+      .checklist{justify-items:stretch;}
+      .checklist li{width:100%;}
       .entry-card .cta-row{
         justify-content:center;
       }
@@ -687,6 +679,9 @@
     .side-projects>*:not(summary){margin-left:20px;margin-right:20px;}
     .side-projects>*:last-child{margin-bottom:20px;}
     .side-note{margin:14px 20px 6px;font-size:.88rem;color:var(--sub);}
+  
+    /* 見出しと太字は現状のゴシックのまま（ヒラギノ丸ゴはW4の1ウェイトしかなく、太字指定がブラウザの擬似太字になって輪郭がにじむため） */
+    h1,h2,h3,h4,h5,h6,strong,b,.btn,.btn-primary,.brand,th{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;}
   </style>
   <script src="assets/analytics-events.js" defer></script>
 </head>
@@ -720,7 +715,7 @@
       <div class="wrap hero-grid">
         <div class="hero-main">
           <div class="eyebrow eyebrow-stacked">
-            <span class="chip-text chip-singleline">千葉市発｜保護者向け相談・特別支援教育・学校との話し合い</span>
+            <span class="chip-text chip-singleline">千葉市発｜保護者向けの教育相談</span>
           </div>
           <h1>我が子の困りごとを、学校と話せる言葉に整える。</h1>
           <p class="hero-lead">
@@ -1074,7 +1069,7 @@
           <div class="panel">
             <div class="kicker">主な対応先</div>
             <p>
-              学校、教育機関、保護者、地域団体、学習支援に関わる個人・団体からのご相談を受けています。
+              保護者、学校、教育機関、地域団体、学習支援に関わる個人・団体からのご相談を受けています。
               ご依頼内容に応じて、対面・オンラインの両方に対応します。
             </p>
           </div>
@@ -1090,7 +1085,7 @@
           <h2 style="margin:0 0 10px;font-size:1.7rem;line-height:1.35;">研修・講演・相談をご希望の方へ</h2>
           <p class="muted" style="margin:0 0 16px;">
             特別支援教育、不登校・登校しぶりへの支援、合理的配慮、学校との連携について、
-            学校・教職員・保護者・教育関係団体向けに研修・講演・相談を行っています。
+            保護者・学校・教職員・教育関係団体向けに研修・講演・相談を行っています。
           </p>
           <div class="cta-row">
             <a class="btn primary" href="services.html">研修・講演・相談のご案内を見る</a>
@@ -1112,11 +1107,11 @@
           <article class="panel service-card">
             <h3>教育コンサルティング</h3>
             <p>
-              学校・教育機関・家庭・地域団体に向けて、教育課題の整理と改善提案を行います。
+              保護者・学校・教育機関・地域団体に向けて、教育課題の整理と改善提案を行います。
               学びの場づくり、支援体制の見直し、教育実践に関する相談に対応します。
             </p>
             <ul class="meta">
-              <li><b>対象</b><span>学校、教育機関、保護者、地域団体</span></li>
+              <li><b>対象</b><span>保護者、学校、教育機関、地域団体</span></li>
               <li><b>内容</b><span>課題整理、ヒアリング、改善提案、学びの環境設計に関する助言</span></li>
               <li><b>形式</b><span>対面／オンライン</span></li>
               <li><b>費用</b><span>内容・時間・回数に応じて個別にお見積りします</span></li>
@@ -1130,7 +1125,7 @@
               内容は、ご依頼先の課題や参加対象に合わせて調整します。
             </p>
             <ul class="meta">
-              <li><b>対象</b><span>学校、教職員、保護者、地域の学習会・研修会</span></li>
+              <li><b>対象</b><span>保護者、学校、教職員、地域の学習会・研修会</span></li>
               <li><b>内容</b><span>研修企画、資料作成、講義・対話型研修、実施後の振り返り</span></li>
               <li><b>形式</b><span>対面／オンライン</span></li>
               <li><b>費用</b><span>参加人数・実施時間・準備内容に応じて個別にお見積りします</span></li>
@@ -1161,7 +1156,7 @@
               内容に応じて、企画立案から当日の進行まで対応します。
             </p>
             <ul class="meta">
-              <li><b>対象</b><span>学校、地域団体、保護者会、教育関連の活動団体</span></li>
+              <li><b>対象</b><span>保護者会、学校、地域団体、教育関連の活動団体</span></li>
               <li><b>内容</b><span>企画設計、進行設計、資料準備、当日運営</span></li>
               <li><b>形式</b><span>対面を基本に、事前打合せはオンライン対応可</span></li>
               <li><b>費用</b><span>内容・規模・準備期間に応じて個別にお見積りします</span></li>
