@@ -31,3 +31,47 @@ jobs:
             './**/*.html'
           fail: false          # 壊れリンクがあってもCIは赤くしない（結果はサマリーで確認）
           jobSummary: true     # Actions実行画面のSummaryに結果一覧を出す
+
+      # lychee は iframe の中を見ない＝埋め込んだ動画が削除・非公開になっても検知できない。
+      # 記事に貼った YouTube 動画が消えると、読者には空欄か「動画を利用できません」が出る。
+      # oEmbed API は、生きている動画だけ 200 を返す（削除・非公開・限定公開は 401/404）。
+      - name: 埋め込みYouTube動画の死活チェック
+        run: |
+          set -uo pipefail
+          ids=$(grep -rhoE 'youtube(-nocookie)?\.com/embed/[A-Za-z0-9_-]{11}' \
+                  --include='*.html' --exclude-dir='旧バージョン' . \
+                | grep -oE '[A-Za-z0-9_-]{11}$' | sort -u)
+
+          if [ -z "$ids" ]; then
+            echo "埋め込み動画は見つかりませんでした。" | tee -a "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          echo "## 埋め込みYouTube動画の死活チェック" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| 状態 | 動画ID | タイトル |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|---|---|---|" >> "$GITHUB_STEP_SUMMARY"
+
+          ng=0
+          for id in $ids; do
+            url="https://www.youtube.com/oembed?url=https%3A//www.youtube.com/watch%3Fv%3D${id}&format=json"
+            code=$(curl -s -o /tmp/oembed.json -w '%{http_code}' --max-time 20 "$url" || echo "000")
+            if [ "$code" = "200" ]; then
+              title=$(python3 -c "import json;print(json.load(open('/tmp/oembed.json')).get('title','-'))" 2>/dev/null || echo "-")
+              echo "OK   $id  $title"
+              echo "| ✅ | \`$id\` | $title |" >> "$GITHUB_STEP_SUMMARY"
+            else
+              # どの記事に貼ってあるかを出す（直す場所がすぐ分かるように）
+              where=$(grep -rlE "embed/${id}" --include='*.html' --exclude-dir='旧バージョン' . | tr '\n' ' ')
+              echo "NG   $id (HTTP $code)  貼り付け先: $where"
+              echo "| ❌ HTTP $code | \`$id\` | 貼り付け先: $where |" >> "$GITHUB_STEP_SUMMARY"
+              ng=1
+            fi
+          done
+
+          if [ "$ng" -ne 0 ]; then
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo "> 動画が削除・非公開・限定公開になっている可能性があります。記事の埋め込みを差し替えてください。" >> "$GITHUB_STEP_SUMMARY"
+            echo "::error::埋め込み動画のいずれかが再生できない状態です。上の一覧を確認してください。"
+          fi
+          exit "$ng"
