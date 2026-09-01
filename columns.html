@@ -164,6 +164,18 @@
       .quick-links,.article-grid{grid-template-columns:1fr}
       .quick-links a{text-align:left}
     }
+      .feeling-sec{margin:0 0 8px;}
+    .feeling-head{margin:0 0 6px;font-size:1.32rem;line-height:1.5;color:#2f4a35;}
+    .feeling-note{margin:0 0 20px;color:var(--sub);font-size:.94rem;}
+    .feeling-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;}
+    .feeling-grid a{
+      display:block;background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);
+      border-radius:12px;padding:16px 18px;color:var(--ink);box-shadow:0 4px 14px rgba(20,40,20,.05);
+      transition:box-shadow .2s,transform .2s;
+    }
+    .feeling-grid a:hover{text-decoration:none;box-shadow:0 10px 24px rgba(20,40,20,.12);transform:translateY(-2px);}
+    .feeling-grid .voice{display:block;font-weight:800;font-size:.98rem;line-height:1.6;margin:0 0 6px;}
+    .feeling-grid .to{display:block;font-size:.82rem;color:var(--sub);line-height:1.6;}
   </style>
 </head>
 <body>
@@ -188,10 +200,11 @@
           <div class="eyebrow">特別支援教育コラム一覧</div>
           <h1>気になっていることから、必要な記事へ。</h1>
           <p class="lead">
-            就学相談、発達特性、家庭と学校の連携、災害時支援、制度、進路などをテーマ別に整理しています。
-            すべてを一度に読む必要はありません。今の不安に近い入口からご覧ください。
+            すべてを一度に読む必要はありません。制度の名前が分からなくても大丈夫です。
+            まずは「いま、いちばん近い気持ち」から選べるようにしています。テーマ別の一覧はその下にあります。
           </p>
           <div class="quick-links" aria-label="テーマ別リンク">
+            <a href="#kimochi">気持ちから探す</a>
             <a href="#school">就学・学校</a>
             <a href="#understanding">発達特性</a>
             <a href="#support">支援の工夫</a>
@@ -204,6 +217,84 @@
             今日そのままかけられる公的な窓口をまとめています。
           </p>
         </div>
+      </div>
+    </section>
+
+    <section class="feeling-sec" id="kimochi">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 class="feeling-head">いま、いちばん近い気持ちから</h2>
+          <p class="feeling-note">
+            制度の名前がわからなくても大丈夫です。今のお気持ちに近いものを選んでください。
+          </p>
+        </div>
+        <div class="feeling-grid">
+            <a href="tokushi/shugaku-sodan-01.html">
+              <span class="voice">「就学相談を勧められて、ショックだった」</span>
+              <span class="to">就学相談を前に立ち止まっているあなたへ</span>
+            </a>
+            <a href="tokushi/morning-school-refusal-not-laziness.html">
+              <span class="voice">「朝になると、動けなくなる」</span>
+              <span class="to">朝になると動けない子</span>
+            </a>
+            <a href="tokushi/school-consultation-not-monster-parent.html">
+              <span class="voice">「先生に相談するのが、こわい」</span>
+              <span class="to">学校に相談するのが怖いとき</span>
+            </a>
+            <a href="tokushi/ie-de-areru.html">
+              <span class="voice">「学校では大丈夫と言われるのに、家では荒れる」</span>
+              <span class="to">「学校では大丈夫」なのに家で荒れる・泣く・動けなくなる子</span>
+            </a>
+            <a href="tokushi/shukudai-areru.html">
+              <span class="voice">「宿題のたびに、家がつらくなる」</span>
+              <span class="to">宿題で毎日荒れる子</span>
+            </a>
+            <a href="tokushi/shougai_juyo.html">
+              <span class="voice">「診断を受け取ったけれど、受け止めきれない」</span>
+              <span class="to">我が子の診断を受け取った日から</span>
+            </a>
+            <a href="tokushi/gray_zone.html">
+              <span class="voice">「診断がつかないまま、支援も受けられない」</span>
+              <span class="to">「グレーゾーン」の子には支援が受けられないの？</span>
+            </a>
+            <a href="tokushi/ryoiku_techou.html">
+              <span class="voice">「手帳を取るか、ずっと迷っている」</span>
+              <span class="to">障害者手帳を取るか迷ったら</span>
+            </a>
+            <a href="tokushi/shinro-gakkoumakase.html">
+              <span class="voice">「この子の将来が不安で、眠れない」</span>
+              <span class="to">「学校任せ」で、我が子の将来は決められるのか</span>
+            </a>
+            <a href="tokushi/sibling-too-much-patience-family-support.html">
+              <span class="voice">「きょうだいに、我慢させている気がする」</span>
+              <span class="to">きょうだいが我慢しすぎているとき</span>
+            </a>
+            <a href="tokushi/early-signs-before-school-refusal.html">
+              <span class="voice">「このまま学校に行けなくなりそうで、こわい」</span>
+              <span class="to">不登校になる前に見える小さなサイン</span>
+            </a>
+            <a href="tokushi/medication-consultation-before-medical-visit.html">
+              <span class="voice">「薬を使うかどうか、決められない」</span>
+              <span class="to">薬を使うとき、迷ったとき</span>
+            </a>
+            <a href="tokushi/school-lunch-sensory-anxiety-support.html">
+              <span class="voice">「給食が食べられないと聞いて、心配になった」</span>
+              <span class="to">給食がつらい子</span>
+            </a>
+            <a href="tokushi/goriteki_hairyo.html">
+              <span class="voice">「配慮をお願いしたいが、言い方が分からない」</span>
+              <span class="to">合理的配慮ってどう頼む？</span>
+            </a>
+        </div>
+      </div>
+    </section>
+
+    <section aria-label="無料の面談シート">
+      <div class="wrap">
+        <p style="margin:0 0 8px;padding:16px 18px;background:#f9fbf8;border:1px solid #cfdccf;border-left:5px solid #5d7c61;border-radius:12px;font-size:.93rem;line-height:1.85;">
+          学校との面談が近い方へ。<a href="menkai-sheet.html">面談前に書いておく1枚</a>（無料）に、
+          家で見えていることを書き出しておく項目をまとめています。
+        </p>
       </div>
     </section>
 
