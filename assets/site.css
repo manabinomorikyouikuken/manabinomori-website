@@ -1,0 +1,45 @@
+/* ============================================================
+   合同会社まなびの森教育研究所 — サイト共通スタイル
+   2026-09-01 新設
+
+   目的：書体・本文サイズ・行間を1か所にまとめる。
+   これ以前は全ページがインラインCSSだったため、書体を1つ変えるのに
+   67ファイルを触る必要があった。ここを直せば全ページに反映される。
+
+   ここに置くもの：書体、本文の文字サイズ・行間
+   ここに置かないもの：各ページ固有のレイアウト（従来どおり各HTMLの<style>に）
+   ============================================================ */
+
+:root {
+  /* 本文の書体。macOS・iOS では丸ゴシック、Windows・Android では従来のゴシックになる。
+     Webフォントを使っていないため、読み込みも外部通信も発生しない。 */
+  --font-body:
+    "ヒラギノ丸ゴ ProN", "Hiragino Maru Gothic ProN",
+    -apple-system, BlinkMacSystemFont, "Hiragino Sans",
+    "Yu Gothic UI", "Yu Gothic", "Meiryo", sans-serif;
+
+  /* 見出しと太字の書体。
+     ヒラギノ丸ゴは W4 の1ウェイトしかなく、太字指定がブラウザの擬似太字になって
+     輪郭がにじむため、見出しだけは丸ゴシックを使わない。 */
+  --font-heading:
+    -apple-system, BlinkMacSystemFont, "Hiragino Sans",
+    "Yu Gothic UI", "Yu Gothic", "Meiryo", sans-serif;
+
+  /* 明朝。研究ノートなど、学術的な体裁を保つページで使う。 */
+  --font-serif: "Hiragino Mincho ProN", "Yu Mincho", "YuMincho", serif;
+
+  /* 本文の読みやすさ。2026-09-01 に全記事をこの値へ統一した。 */
+  --text-body: 16px;
+  --leading-body: 1.9;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6,
+strong, b,
+.btn, .btn-primary, .brand,
+th {
+  font-family: var(--font-heading);
+}

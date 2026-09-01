@@ -29,6 +29,7 @@
   </script>
   <script src="assets/analytics-events.js" defer></script>
 
+  <link rel="stylesheet" href="assets/site.css">
   <style>
     :root{
       --panel:#ffffff;
@@ -43,7 +44,7 @@
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:"ヒラギノ丸ゴ ProN","Hiragino Maru Gothic ProN",-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;
+      
       color:var(--ink);
       background:linear-gradient(180deg,#f8f6f1 0%, #f6f8f4 100%);
       line-height:1.8;
@@ -166,8 +167,9 @@
     .sheet-sub input:focus{outline:none;border-bottom-color:var(--accent);}
       .disclaimer{margin:26px 0 0;padding:14px 16px;border:1px dashed var(--line);border-radius:12px;font-size:.86rem;color:var(--sub);line-height:1.8;background:rgba(255,255,255,.6);}
   
-    /* 見出しと太字は現状のゴシックのまま（ヒラギノ丸ゴはW4の1ウェイトしかなく、太字指定がブラウザの擬似太字になって輪郭がにじむため） */
-    h1,h2,h3,h4,h5,h6,strong,b,.btn,.btn-primary,.brand,th{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic UI","Yu Gothic","Meiryo",sans-serif;}
+      .btn-clear{border-color:#e0cccc;color:#8a4257;}
+    .btn-clear:hover{background:#fdf5f6;}
+    .save-state{margin:4px 0 0;font-size:.84rem;color:var(--sub);min-height:1.4em;}
   </style>
 </head>
 <body>
@@ -208,14 +210,18 @@
         </div>
 
         <p class="privacy">
-          書いた内容は、どこにも送られません。当社にも届きません。
-          このページは入力内容を保存しないため、閉じると消えます。印刷するか、書き写してお使いください。
+          <strong>書いた内容は、どこにも送られません。当社にも届きません。</strong>
+          お使いのこの端末の中だけに自動で保存されるので、途中で閉じても、次に開いたときに続きから書けます。
+          共有のパソコンをお使いの場合や、書き終わったあとは、下の「書いた内容を消す」で消してください。
         </p>
 
         <div class="actions">
           <button type="button" class="btn primary" onclick="window.print()">印刷する</button>
+          <button type="button" class="btn" id="copy-btn">書いた内容をコピーする</button>
+          <button type="button" class="btn btn-clear" id="clear-btn">書いた内容を消す</button>
           <a class="btn" href="parents.html">書いてみて、迷ったら相談する</a>
         </div>
+        <p class="save-state" id="save-state" role="status" aria-live="polite"></p>
       </div>
     </section>
 
@@ -330,5 +336,109 @@
       <p>© 2026 合同会社まなびの森教育研究所</p>
     </div>
   </footer>
+
+<script>
+(function () {
+  "use strict";
+  var KEY = "manabi-menkai-sheet-v1";
+  var fields = Array.prototype.slice.call(
+    document.querySelectorAll(".sheet textarea, .sheet input[type=text]")
+  );
+  var state = document.getElementById("save-state");
+
+  // 保存できない環境（プライベートモード等）でもページが壊れないようにする
+  function storage() {
+    try {
+      var t = "__t";
+      window.localStorage.setItem(t, t);
+      window.localStorage.removeItem(t);
+      return window.localStorage;
+    } catch (e) {
+      return null;
+    }
+  }
+  var store = storage();
+
+  function say(msg) { if (state) state.textContent = msg; }
+
+  if (!store) {
+    say("このブラウザでは自動保存が使えません。印刷するか、書き写してお使いください。");
+  }
+
+  // 各欄に番号を振って保存する（並び順が変わっても壊れないよう aria-label を鍵にする）
+  function keyOf(el, i) { return el.getAttribute("aria-label") || ("field" + i); }
+
+  function load() {
+    if (!store) return;
+    var raw = store.getItem(KEY);
+    if (!raw) return;
+    var data;
+    try { data = JSON.parse(raw); } catch (e) { return; }
+    var restored = 0;
+    fields.forEach(function (el, i) {
+      var v = data[keyOf(el, i)];
+      if (typeof v === "string" && v !== "") { el.value = v; restored++; }
+    });
+    if (restored) say("前回の続きを読み込みました。この端末にだけ保存されています。");
+  }
+
+  var timer = null;
+  function save() {
+    if (!store) return;
+    var data = {};
+    fields.forEach(function (el, i) { data[keyOf(el, i)] = el.value; });
+    try {
+      store.setItem(KEY, JSON.stringify(data));
+      say("保存しました（この端末の中だけ）");
+    } catch (e) {
+      say("保存できませんでした。印刷するか、書き写してお使いください。");
+    }
+  }
+
+  fields.forEach(function (el) {
+    el.addEventListener("input", function () {
+      say("入力中…");
+      clearTimeout(timer);
+      timer = setTimeout(save, 600);
+    });
+  });
+
+  load();
+
+  var clearBtn = document.getElementById("clear-btn");
+  if (clearBtn) {
+    clearBtn.addEventListener("click", function () {
+      if (!window.confirm("書いた内容をすべて消します。よろしいですか。")) return;
+      fields.forEach(function (el) { el.value = ""; });
+      if (store) { try { store.removeItem(KEY); } catch (e) {} }
+      say("消しました。");
+    });
+  }
+
+  var copyBtn = document.getElementById("copy-btn");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", function () {
+      var lines = [];
+      document.querySelectorAll(".sheet .q").forEach(function (q) {
+        var head = q.querySelector("h3");
+        var ta = q.querySelector("textarea");
+        if (head && ta) {
+          lines.push("■ " + head.textContent.trim());
+          lines.push(ta.value.trim() || "（未記入）");
+          lines.push("");
+        }
+      });
+      var text = lines.join("\n");
+      function done() { say("コピーしました。メールやメモに貼り付けられます。"); }
+      function ng() { say("コピーできませんでした。文字を選んでコピーしてください。"); }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, ng);
+      } else {
+        ng();
+      }
+    });
+  }
+})();
+</script>
 </body>
 </html>
