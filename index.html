@@ -260,6 +260,38 @@
     .panel{
       padding:24px 22px;
     }
+    /* はじめての方への入口。3つの入口より前に置く（選ばせる前に受け止めるため） */
+    .first-step-card{
+      display:block;
+      background:linear-gradient(180deg,#fffdf7 0%,#f7f9f4 100%);
+      border:2px solid #cfdcc9;
+      border-radius:18px;
+      padding:26px 28px;
+      color:inherit;
+      text-decoration:none;
+      box-shadow:0 10px 30px rgba(20,40,20,.08);
+    }
+    .first-step-card:hover{border-color:#5d7c61;text-decoration:none;}
+    .first-step-kicker{
+      display:inline-block;background:#eef3ed;color:#3f5a45;
+      border-radius:999px;padding:5px 15px;font-size:.8rem;font-weight:700;margin-bottom:12px;
+    }
+    .first-step-title{
+      display:block;font-size:clamp(1.15rem,3.6vw,1.42rem);font-weight:800;
+      line-height:1.55;color:#24361f;margin-bottom:10px;
+    }
+    .first-step-text{
+      display:block;font-size:.97rem;line-height:1.9;color:#43514a;margin-bottom:14px;
+    }
+    .first-step-go{
+      display:inline-flex;align-items:center;justify-content:center;min-height:46px;
+      padding:10px 24px;border-radius:999px;background:#5d7c61;color:#fff;
+      font-weight:700;font-size:.92rem;
+    }
+    @media(max-width:760px){
+      .first-step-card{padding:22px 20px;}
+    }
+
     .entry-grid{
       display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
     }
@@ -784,6 +816,21 @@
             >
           </figure>
         </aside>
+      </div>
+    </section>
+
+    <section id="first-step">
+      <div class="wrap">
+        <a class="first-step-card" href="hajimete-no-soudan.html">
+          <span class="first-step-kicker">はじめての方へ</span>
+          <span class="first-step-title">どこに相談すればいいのか分からないとき</span>
+          <span class="first-step-text">
+            子どもの育ちが気になるけれど、まだどこにも相談していない。
+            診断も受けていないし、大げさかもしれない。
+            そんな段階の方へ、最初に行く場所をひとつだけご案内します。
+          </span>
+          <span class="first-step-go">はじめの一歩を見る</span>
+        </a>
       </div>
     </section>
 

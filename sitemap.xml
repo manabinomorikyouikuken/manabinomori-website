@@ -25,6 +25,18 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://manabinomorikyouikuken.github.io/manabinomori-website/hajimete-no-soudan.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://manabinomorikyouikuken.github.io/manabinomori-website/hajimete-sheet.html</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
     <loc>https://manabinomorikyouikuken.github.io/manabinomori-website/parents.html</loc>
     <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
