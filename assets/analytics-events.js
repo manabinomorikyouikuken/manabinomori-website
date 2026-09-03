@@ -125,6 +125,19 @@
       return;
     }
 
+    // 無料配布の教材を受け取った数を残す（2026-09-03 の無料化に伴い追加）。
+    // 申込もメールアドレスも不要にしたため、これが配布実績の唯一の記録になる。
+    if (/\/products\/[^?#]*\.pdf(\?|#|$)/i.test(absoluteHref) ||
+        /\/products\/worksheets\/worksheets_full\.html(\?|#|$)/i.test(absoluteHref)) {
+      sendEvent('material_download', {
+        product: productName(absoluteHref, text),
+        file_type: /\.pdf(\?|#|$)/i.test(absoluteHref) ? 'pdf' : 'html',
+        link_url: safeUrl(absoluteHref),
+        link_text: text
+      });
+      return;
+    }
+
     if (/mailto:/i.test(href) || /#contact\b|お問い合わせ|問い合わせ|contact/i.test(source)) {
       sendEvent('contact_click', {
         link_url: safeUrl(absoluteHref),

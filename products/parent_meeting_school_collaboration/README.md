@@ -3,68 +3,79 @@
 このメモは、公開HP repo内で確認できる最小限の運用記録です。
 下書きPDF、検証画像、内部チェック表、未公開メモはこのrepoに入れません。
 
-## 商品概要
+## 教材の概要
 
-- 商品名: 特別支援学級担任のための 保護者面談・校内連携テンプレート集
+- 名称: 特別支援学級担任のための 保護者面談・校内連携テンプレート集
 - 短縮表示: 保護者面談・校内連携テンプレート集
 - 対象: 初めて特別支援学級を担任する先生、常勤講師、若手教員、初任者を支える校内担当者
 - 形式: PDF 19ページ / A4縦 / 白黒印刷対応 / 書き込み式
-- 価格: 480円（税込）
-- 公開LP: https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/parent_meeting_school_collaboration.html
-- 無料サンプルPDF: `parent_meeting_school_collaboration_sample.pdf`
-- 決済リンク: https://buy.stripe.com/4gMdR871u5vH7qM9LX8Vi0c
+- 価格: **無料**（2026-09-03 に有料販売から無料配布へ変更）
+- 公開ページ: https://manabinomorikyouikuken.github.io/manabinomori-website/tokushi/parent_meeting_school_collaboration.html
+- 配布ファイル: `parent_meeting_school_collaboration.pdf`
+
+## 2026-09-03 の変更
+
+社長判断により、特別支援教育の教材3点を有料販売から無料配布へ切り替えました。
+
+- 本体PDFを公開フォルダに配置（それ以前は決済後にメールで個別送付）
+- 申込・メールアドレス入力なしでダウンロードできる形に変更
+- Stripeの決済リンクを無効化（簿記3級の日本語版・英語版は販売継続）
+- 特定商取引法の表記に「無料で配布しているもの」の欄を新設し、有償のものと分離
+
+**旧版の記載にあった「販売用の本体PDFは公開フォルダには置かない」という運用は、この変更で廃止しました。**
 
 ## 公開ファイル
 
-このフォルダで公開してよいファイル:
+このフォルダで公開しているファイル:
 
 - `README.md`
-- `parent_meeting_school_collaboration_sample.pdf`
+- `parent_meeting_school_collaboration.pdf`（本体・無料配布）
+- `parent_meeting_school_collaboration_sample.pdf`（旧サンプル。本体が無料になったため役目は終えているが、旧URLからの到達を考えて残置）
 
 このフォルダに置かないファイル:
 
-- 販売用の本体PDF
 - PDF下書き
 - 校正途中のMarkdown
 - 検証用スクリーンショット
 - Stripe管理画面の内部情報
-- 購入者情報、問い合わせ内容、個人情報
+- 問い合わせ内容、個人情報
 
-販売用の本体PDFは、購入後に案内するファイルとして扱い、GitHub Pagesの公開フォルダには置きません。
+## 利用条件（3教材で統一）
+
+> 無料でお配りしています。印刷、校内での共有、校内研修での配布は自由です。
+> 他校や教育委員会の研修など学校の外でお使いになる場合も、出典を書き添えていただければ自由です。
+> 参加費や受講料をいただく場でお使いになるときはご連絡ください。改変・再販売はご遠慮ください。
+
+軸は「学校の内か外か」ではなく「**お金を取る場かどうか**」です。
+無料の外部研修まで問い合わせを求めると、無料化した意味が薄れるためです。
 
 ## 公開ページの正本
 
 公開状態を変更するときは、次のファイルを同時に確認します。
 
-- LP: `tokushi/parent_meeting_school_collaboration.html`
+- 教材ページ: `tokushi/parent_meeting_school_collaboration.html`
 - トップページ教材欄: `index.html`
 - 特定商取引法に基づく表記: `legal.html`
 - プライバシーポリシー: `privacy.html`
 - サイトマップ: `sitemap.xml`
 - 計測補助: `assets/analytics-events.js`
 
-価格、納品方法、返金・キャンセル方針を変更する場合は、LP、トップページ、特商法表記、Stripe、JSON-LDを同時に更新します。
+利用条件を変更する場合は、**PDF本体・教材ページ・トップページ・特商法表記・JSON-LDを同時に**更新します。
+PDF単体で人の手を渡るため、条件はファイルの中にも書いておく必要があります。
 
 ## 最終確認
 
-確認日: 2026-06-12
+確認日: 2026-09-03
 
-確認済み:
-
-- 公開LPはHTTP 200。
-- トップページに新商品カード、購入ボタン、詳細リンク、無料サンプルPDFリンクがある。
-- LPとトップページの購入ボタンはStripe決済リンクへ接続済み。
-- Stripe決済画面は購入せずに目視確認済み。
-  - 事業者: 合同会社まなびの森教育研究所
-  - 商品名: 保護者面談・校内連携テンプレート集
-  - 価格: 480円
-- 特商法表記に商品価格、支払方法、引渡時期、返品・キャンセル方針がある。
-- 無料サンプルPDFはHTTP 200 / `application/pdf`。
-- LP、トップページ教材欄、特商法表記はスマホ幅390pxで横スクロールなし。
-- `sitemap.xml` に公開LPを掲載済み。
+- 公開ページはHTTP 200
+- 本体PDFはHTTP 200 / `application/pdf` / 19ページ（うち1ページは利用条件）
+- トップページ教材欄に無料ダウンロードボタンあり
+- Stripe決済リンクは無効化済み（Stripe管理画面で確認）
+- 特商法表記で有償（簿記2点）と無償（特支3点）を分離
+- 構造化データの価格は0
 
 ## 内部証跡
 
-詳細な販売前チェック、下書きPDF、検証画像は、ローカル親ワークスペースの
-`draft_exports/parent_meeting_sale_check_20260612/` に保存します。
+詳細な確認記録、下書きPDF、検証画像は、ローカル親ワークスペースの
+`draft_exports/parent_meeting_sale_check_20260612/` に保存しています。
 この内部証跡フォルダは、公開HP repoには入れません。
