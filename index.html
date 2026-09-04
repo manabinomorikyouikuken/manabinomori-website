@@ -144,10 +144,6 @@
       padding:8px 12px;border-radius:999px;font-size:.88rem;font-weight:800;
       margin-bottom:18px;
     }
-    .eyebrow-stacked{
-      display:inline-grid;gap:3px;align-items:start;border-radius:18px;
-      padding:10px 14px;line-height:1.55;
-    }
     h1{
       margin:0 0 12px;font-size:clamp(1.72rem,3.4vw,2.55rem);line-height:1.34;letter-spacing:.01em;
     }
@@ -163,25 +159,8 @@
       border-radius:12px;
       font-weight:700;
     }
-    .chips{
-      display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:0 0 24px;padding:0;list-style:none;
-    }
-    .chips li{
-      min-height:72px;
-      display:flex;align-items:center;justify-content:center;text-align:center;
-      background:#fafcf9;border:1px solid var(--line);border-radius:18px;
-      padding:12px 16px;font-size:.95rem;font-weight:800;color:#35553a;line-height:1.55;
-    }
-    .chips .chip-stacked{
-      flex-direction:column;gap:3px;
-    }
-    .chip-label{
-      display:block;font-size:.78rem;letter-spacing:.04em;color:#4f6b53;
-    }
-    .chip-text{
-      display:block;font-size:.95rem;color:#35553a;
-    }
     .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+      .hero-fee{margin:10px 0 0;font-size:.88rem;color:var(--sub);line-height:1.75}
     .btn{
       display:inline-block;padding:12px 18px;border-radius:12px;font-weight:800;
       border:1px solid var(--accent);transition:.2s ease;
@@ -261,35 +240,7 @@
       padding:24px 22px;
     }
     /* はじめての方への入口。3つの入口より前に置く（選ばせる前に受け止めるため） */
-    .first-step-card{
-      display:block;
-      background:linear-gradient(180deg,#fffdf7 0%,#f7f9f4 100%);
-      border:2px solid #cfdcc9;
-      border-radius:18px;
-      padding:26px 28px;
-      color:inherit;
-      text-decoration:none;
-      box-shadow:0 10px 30px rgba(20,40,20,.08);
-    }
-    .first-step-card:hover{border-color:#5d7c61;text-decoration:none;}
-    .first-step-kicker{
-      display:inline-block;background:#eef3ed;color:#3f5a45;
-      border-radius:999px;padding:5px 15px;font-size:.8rem;font-weight:700;margin-bottom:12px;
-    }
-    .first-step-title{
-      display:block;font-size:clamp(1.15rem,3.6vw,1.42rem);font-weight:800;
-      line-height:1.55;color:#24361f;margin-bottom:10px;
-    }
-    .first-step-text{
-      display:block;font-size:.97rem;line-height:1.9;color:#43514a;margin-bottom:14px;
-    }
-    .first-step-go{
-      display:inline-flex;align-items:center;justify-content:center;min-height:46px;
-      padding:10px 24px;border-radius:999px;background:#5d7c61;color:#fff;
-      font-weight:700;font-size:.92rem;
-    }
     @media(max-width:760px){
-      .first-step-card{padding:22px 20px;}
     }
 
     .entry-grid{
@@ -631,23 +582,20 @@
       .wrap{padding:0 24px}
       .foot{padding-top:24px;padding-bottom:60px}
       .topbar-inner{align-items:flex-start;flex-direction:column}
-      .brand small{font-size:.68rem;letter-spacing:.015em;white-space:normal;line-height:1.4}
+      /* 英語社名はモバイルでは隠す。不安を抱えて来た保護者に情報を足さず、
+         「会社の入口」に見えて距離を作ると3人の保護者役が指摘したため。 */
+      .brand small{display:none;}
+      /* メニューが2行に折り返して常時40px余分に占有していた。topbar は sticky で
+         下までスクロールしても消えないため、モバイルでは3項目に絞って1行に収める。
+         外した2つ（コラム・研修相談）は、本文の中に大きな入口があるので情報は失われない。 */
+      .nav-desktop-only{display:none;}
       nav{width:100%}
       nav ul{justify-content:flex-start;gap:8px 12px;flex-wrap:wrap}
       nav a{font-size:.82rem;white-space:nowrap}
-      .hero{padding-top:34px}
+      .hero{padding-top:20px}
       .hero-grid > *{min-width:0}
-      .hero-main{padding:24px 20px}
+      .hero-main{padding:20px 20px}
       .hero-side{padding:18px 14px}
-      .eyebrow-stacked{display:grid;width:fit-content;max-width:100%;margin-left:auto;margin-right:auto;text-align:center;justify-items:center;}
-      .chips{grid-template-columns:1fr;justify-items:center}
-      .chips li{width:min(100%,300px);text-align:center}
-      .chips .chip-stacked{
-        margin-left:auto;margin-right:auto;text-align:center;
-      }
-      .chip-singleline{
-        white-space:normal;font-size:.9rem;
-      }
       .hero-main > .cta-row{
         justify-content:center;
       }
@@ -716,10 +664,6 @@
       .consent-box{background:#f9fbf8;border:1px solid #cfdccf;border-radius:12px;padding:14px 16px;margin:0 0 14px;}
     .consent-label{display:flex;align-items:flex-start;gap:10px;font-size:.88rem;line-height:1.8;color:#33403a;cursor:pointer;}
     .consent-label input{flex:none;width:20px;height:20px;margin-top:3px;accent-color:#5d7c61;cursor:pointer;}
-      /* モバイルでは、保護者が最初に見る領域を本文に譲る（ロゴバナーは高さを抑える） */
-    @media(max-width:760px){
-      .site-banner{max-height:132px;object-fit:cover;object-position:center;}
-    }
       /* 「はじめての方へ」の3枚は、直後の「まず選ぶ入口」と内容が重なる。
        縦に積まれるモバイルでは同じものを2度読ませることになるため、
        モバイルでは入口を「まず選ぶ入口」1か所に集約する（デスクトップは横並びなので残す）。 */
@@ -739,9 +683,9 @@
       <nav aria-label="ページ内メニュー">
         <ul>
           <li><a href="parents.html">保護者の方へ</a></li>
-          <li><a href="#column">コラム</a></li>
+          <li class="nav-desktop-only"><a href="#column">コラム</a></li>
           <li><a href="soudan-madoguchi.html">つらいときの相談先</a></li>
-          <li><a href="services.html">研修・相談</a></li>
+          <li class="nav-desktop-only"><a href="services.html">研修・相談</a></li>
           <li><a href="#contact">お問い合わせ</a></li>
         </ul>
       </nav>
@@ -749,37 +693,23 @@
   </header>
 
   <main>
-    <div style="width:100%;background:#f7f5ef;line-height:0;border-bottom:1px solid #d7ddd6;">
-      <picture style="display:block;">
-        <source srcset="assets/manabinomori_banner_forest_blend.webp" type="image/webp">
-        <img src="assets/manabinomori_banner_forest_blend.webp" alt="まなびの森教育研究所" class="site-banner" style="width:100%;max-width:1120px;display:block;margin:0 auto;">
-      </picture>
-    </div>
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-main">
-          <div class="eyebrow eyebrow-stacked">
-            <span class="chip-text chip-singleline">千葉市発｜保護者向けの教育相談</span>
-          </div>
-          <h1>我が子の困りごとを、学校と話せる言葉に整える。</h1>
+          <h1>我が子のことを、<br>まず誰かに話したいとき。</h1>
           <p class="hero-lead">
-            登校しぶり、発達特性、学校生活の不安、就学・進路、合理的配慮のこと。
-            家庭だけで抱え込みやすい悩みを、特別支援教育の実務経験をもとに、状況と次の一歩に分けて整理します。
+            健診で「様子を見ましょう」と言われた。園の先生に気になると言われた。
+            学校に何度も話したのに、伝わらない。まだ誰にも言えていない。
           </p>
           <p class="hero-usecase">
-            診断や治療の代わりではなく、学校や関係機関と話し合うための材料づくりを一緒に行います。
+            どの段階からでも構いません。まとまっていなくて大丈夫です。
+            特別支援教育の現場で29年、同じ場面を見てきました。
+            <strong>初回30分は無料です。</strong>
           </p>
-          <ul class="chips">
-            <li>保護者向け相談</li>
-            <li>特別支援教育29年</li>
-            <li class="chip-stacked">
-              <span class="chip-label">対応領域</span>
-              <span class="chip-text">学校との相談整理</span>
-            </li>
-          </ul>
+          <p class="hero-fee">2回目以降は60分5,000円です。まずはフォームから、夜でも早朝でも構いません。</p>
           <div class="cta-row">
-            <a class="btn primary" href="parents.html">保護者向け相談を見る</a>
-            <a class="btn secondary" href="#entryways">ほかの入口も見る</a>
+            <a class="btn primary" href="hajimete-no-soudan.html">どこに相談すればいいか分からない（園や市の窓口）</a>
+            <a class="btn secondary" href="parents.html">当社に相談する（初回30分は無料）</a>
           </div>
         </div>
 
@@ -789,7 +719,7 @@
             <li>
               <a href="parents.html">
                 <strong>我が子のことで悩んでいる保護者の方へ</strong>
-                <span>登校しぶり、学校との相談、発達特性、就学・進路の不安を整理します。</span>
+                <span>次に誰へ、何を、どう伝えるかを一緒に決めます。</span>
               </a>
             </li>
             <li>
@@ -800,8 +730,8 @@
             </li>
             <li>
               <a href="#product">
-                <strong>教材・ワークシートを見たい方へ</strong>
-                <span>家庭や支援場面で使える教材を、無料でお使いいただけます。</span>
+                <strong>使える道具を探している方へ</strong>
+                <span>ご家庭で使える「おたすけ手帳」と、学校の先生向けの資料があります。どちらも無料です。</span>
               </a>
             </li>
           </ul>
@@ -819,26 +749,11 @@
       </div>
     </section>
 
-    <section id="first-step">
-      <div class="wrap">
-        <a class="first-step-card" href="hajimete-no-soudan.html">
-          <span class="first-step-kicker">はじめての方へ</span>
-          <span class="first-step-title">どこに相談すればいいのか分からないとき</span>
-          <span class="first-step-text">
-            子どもの育ちが気になるけれど、まだどこにも相談していない。
-            診断も受けていないし、大げさかもしれない。
-            そんな段階の方へ、最初に行く場所をひとつだけご案内します。
-          </span>
-          <span class="first-step-go">はじめの一歩を見る</span>
-        </a>
-      </div>
-    </section>
-
     <section id="entryways">
       <div class="wrap">
         <div class="section-head">
-          <h2>まず選ぶ入口</h2>
-          <p>我が子のことで相談したい保護者の方を先頭に、学校向け研修、教材、研究ノートへ進めるように整理しています。</p>
+          <h2>お探しのものから</h2>
+          <p>保護者の方を先頭に置いています。そのあとに学校向けの研修、教材、研究ノートが続きます。</p>
         </div>
 
         <div class="entry-grid">
@@ -854,12 +769,12 @@
               >
             </figure>
             <div class="kicker">保護者の方へ</div>
-            <h3>登校しぶり・学校との相談・発達特性の悩みを、一緒に整理します</h3>
+            <h3>次の面談で使える言葉を、一緒に作ります</h3>
             <p>
-              登校しぶり、学校生活の不安、合理的配慮、就学や進路のことなど、家庭だけで抱え込みやすい内容を整理します。
+              何度も話したのに伝わらない、どう切り出せばいいか分からない。そんなときに、次の面談で使える言葉を一緒に作ります。
               診断や治療ではなく、学校や関係機関と話し合うための材料づくりを大切にします。
             </p>
-            <div class="entry-note">保護者や子どもを責めず、状況と支援ニーズを分けて考えます。</div>
+            <div class="entry-note">どの場面で何に困っているのかを、一緒に見ていきます。</div>
             <div class="cta-row">
               <a class="btn secondary" href="parents.html">保護者向け相談を見る</a>
             </div>
@@ -899,14 +814,14 @@
               >
             </figure>
             <div class="kicker">教材を使いたい方へ</div>
-            <h3>特別支援教育の教材・ワークシートを確認できます</h3>
+            <h3>ご家庭で使える「おたすけ手帳」と、先生向けの資料があります</h3>
             <p>
               特別支援教育の初任者向け教材、家庭や支援場面で使えるワークシートなどを掲載しています。
               対象と内容を確認してから選べます。
             </p>
             <div class="entry-note">使う前に、内容・対象・注意事項を確認できます。</div>
             <div class="cta-row">
-              <a class="btn secondary" href="#product">教材一覧を見る</a>
+              <a class="btn secondary" href="#product">おたすけ手帳を見る（無料）</a>
             </div>
           </article>
 
@@ -939,7 +854,7 @@
       <div class="wrap">
         <div class="section-head">
           <h2>保護者・先生向けコラム</h2>
-          <p>記事が増えてきたため、まず読みたい記事と、困りごと別の入口を整理しました。</p>
+          <p>困りごとから探せるようにしています。</p>
         </div>
 
         <div style="margin:0 0 12px;">
@@ -959,7 +874,7 @@
           <a href="tokushi/wisc-results-school-support.html" class="panel column-card">
             <div class="kicker">検査結果の活用</div>
             <h3>WISCなどの検査結果を学校支援にどう生かすか</h3>
-            <p>数字で決めつけず、学校支援に生かす視点を整理します。</p>
+            <p>数字で決めつけず、学校支援にどう生かすかを考えます。</p>
           </a>
           <a href="tokushi/school-consultation-not-monster-parent.html" class="panel column-card">
             <div class="kicker">学校への相談</div>
@@ -969,7 +884,7 @@
           <a href="tokushi/medication-consultation-before-medical-visit.html" class="panel column-card">
             <div class="kicker">医療相談・服薬</div>
             <h3>薬を使うか迷ったとき</h3>
-            <p>家庭と学校で見えていることを、医師に相談する前に整理します。</p>
+            <p>家庭と学校で見えていることを、医師に相談する前に書き出します。</p>
           </a>
           <a href="tokushi/school-lunch-sensory-anxiety-support.html" class="panel column-card">
             <div class="kicker">給食・感覚過敏</div>
@@ -1038,7 +953,7 @@
 
         <div class="panel" style="margin-top:18px;background:linear-gradient(135deg,#f5faf3,#fff);border:1px solid #c9dbc7;">
           <div class="kicker">記事を読んだ後の相談・教材導線</div>
-          <h3 style="margin:0 0 10px;font-size:1.18rem;">個別の状況を整理したい方へ</h3>
+          <h3 style="margin:0 0 10px;font-size:1.18rem;">読んでも、決められなかったとき</h3>
           <p class="muted" style="margin:0 0 14px;font-size:.94rem;">
             コラムの内容を読んでも、家庭や学校の状況によって次に考えることは変わります。
             学校との相談、合理的配慮、就学・通級・特別支援学級のことで迷う場合は、保護者向け相談ページへ進めます。
@@ -1047,7 +962,7 @@
           <div class="cta-row">
             <a class="btn primary" href="parents.html">保護者向け相談を見る（初回無料）</a>
             <a class="btn secondary" href="soudan-madoguchi.html">今つらいときの相談先</a>
-            <a class="btn secondary" href="#product">教材一覧を見る</a>
+            <a class="btn secondary" href="#product">おたすけ手帳を見る（無料）</a>
           </div>
         </div>
       </div>
@@ -1158,7 +1073,7 @@
         <div class="section-head">
           <h2>事業内容</h2>
           <p>
-            各事業について、対象、提供内容、形式、ご依頼時の進め方が分かるように整理しています。
+            各事業の対象、内容、形式、ご依頼の進め方を載せています。
           </p>
         </div>
 
@@ -1264,9 +1179,10 @@
     <section id="product">
       <div class="wrap">
         <div class="section-head">
-          <h2>教材・ワークシート</h2>
+          <h2>おたすけ手帳</h2>
+          <p class="section-sub">得意・苦手発見シート、スケジュール表、気持ちの温度計、学校への連絡メモ、ほめ記録シートの5種類。TEACCH・PBIS・ABA・SEL などの考え方を参考に作っています。</p>
           <p>
-            ご家庭で使えるものを先に置いています。そのあとに、学校の先生向けのものが続きます。
+            ご家庭で使えるものです。書き出したり、印刷したり、学校へ持っていったりできます。すべて無料で、お申し込みも要りません。
             このほかに、<a href="menkai-sheet.html">学校との面談前に書いておく1枚</a>と<a href="hajimete-sheet.html">はじめての相談メモ</a>もあります。
           </p>
         </div>
@@ -1292,6 +1208,18 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <section id="teacher-materials">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>学校の先生向けの資料</h2>
+          <p>特別支援学級の担任になった先生、保護者面談を控えた先生へ。校内での共有・研修での配布も自由です。</p>
+        </div>
+
+        <div class="product">
           <div class="panel">
             <div class="kicker">無料：学校の先生向け</div>
             <h3 class="product-title-compact">
@@ -1439,7 +1367,7 @@
           <div class="kicker">専門性の裏づけ</div>
           <h3 style="margin:0 0 10px;font-size:1.16rem;">研究ノートも公開しています</h3>
           <p class="muted" style="margin:0 0 12px;">
-            相談や教材づくりの背景にある考え方を、未査読の研究ノートとして整理しています。
+            相談や教材づくりの背景にある考え方を、未査読の研究ノートとして公開しています。
             実践前の論点整理や専門性の確認資料としてご覧いただけます。
           </p>
           <div class="cta-row">
