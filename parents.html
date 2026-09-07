@@ -400,6 +400,7 @@
     .free-sheet p:last-child{margin-bottom:0;}
   
       .consent-box{background:#f9fbf8;border:1px solid #cfdccf;border-radius:12px;padding:14px 16px;margin:0 0 14px;}
+    .consent-note{margin:0 0 12px;font-size:.85rem;line-height:1.85;color:#4a564e;}
     .consent-label{display:flex;align-items:flex-start;gap:10px;font-size:.88rem;line-height:1.8;color:#33403a;cursor:pointer;}
     .consent-label input{flex:none;width:20px;height:20px;margin-top:3px;accent-color:#5d7c61;cursor:pointer;}
   </style>
@@ -823,10 +824,14 @@
             <input type="hidden" name="_next" value="https://manabinomorikyouikuken.github.io/manabinomori-website/thanks.html">
             <input type="text" name="_gotcha" style="display:none;" aria-hidden="true" tabindex="-1" autocomplete="off">
             <div class="consent-box">
+              <p class="consent-note">
+                書いていただいた内容は、フォームの送信を受け持つ会社（Formspree・米国）を通って、当社のメールに届きます。
+                お子さんの様子や診断など、扱いに配慮が必要なことが含まれる場合があるため、送る前にお伝えしています。
+                フォームを使わず、<a href="mailto:manabinomorikyouikuken@gmail.com">メールで直接送って</a>いただいても構いません。
+              </p>
               <label class="consent-label">
                 <input type="checkbox" name="consent" required>
-                <span><a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>を読み、
-                お子さんの様子など配慮の必要な情報を含む場合があること、送信内容が外部フォームサービス（Formspree・米国）を経由して当社へ届くことに同意します。</span>
+                <span>上の内容と<a href="privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>を読み、送信することに同意します。</span>
               </label>
             </div>
             <button class="btn primary" type="submit">送信する</button>
